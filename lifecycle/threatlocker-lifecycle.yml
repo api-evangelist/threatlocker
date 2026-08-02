@@ -1,0 +1,54 @@
+generated: '2026-08-02'
+method: searched
+source: >-
+  https://threatlocker.kb.help/portal-release-notes/, https://threatlocker.kb.help/beta-portal-release-notes/,
+  https://threatlockerstatus.com, openapi/threatlocker-portal-openapi-original.json
+versioning:
+  scheme: operation-suffix
+  current: v1.0.0
+  note: >-
+    The OpenAPI document declares info.version "v1.0.0" and the Swagger UI group is "public". There is
+    no version segment in the request path (all paths are /portalapi/<Resource>/<Action>). New
+    revisions of an operation are published as a NEW operation with a V2 suffix — e.g.
+    ActionLogGetByParametersV2, ActionLogGetByIdV2, ActionLogGetAllForFileHistoryV2 — while the
+    original operation remains callable. Platform releases are tracked separately by Portal version.
+  docs: https://threatlocker.kb.help/api-documentation/
+  observed_v2_operations:
+  - /portalapi/ActionLog/ActionLogGetByParametersV2
+  - /portalapi/ActionLog/ActionLogGetAllForFileHistoryV2
+  - /portalapi/ActionLog/ActionLogGetByIdV2
+platform_versions:
+  portal_current: '4.5.15'
+  portal_current_date: '2026-07-24'
+  portal_beta: '4.5.8'
+  release_notes: https://threatlocker.kb.help/portal-release-notes/
+  beta_release_notes: https://threatlocker.kb.help/beta-portal-release-notes/
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  note: >-
+    No published deprecation or sunset policy was found, and no operation in the spec carries
+    deprecated: true. Superseded operations are left in place alongside their V2 successors rather
+    than being marked deprecated. No `Deprecation` pointer is wired in apis.yml because no policy exists.
+deprecated_operations: []
+sla:
+  url: null
+  uptime_target: null
+  note: No public SLA or uptime target was found; SLA terms are contractual (see the Terms and Conditions).
+  terms: https://www.threatlocker.com/terms-and-conditions
+status_page: https://threatlockerstatus.com
+status_page_platform: Atlassian Statuspage
+status_page_api: https://threatlockerstatus.com/api/v2/summary.json
+status_page_components:
+  note: >-
+    ThreatLocker publishes per-instance component health. API and Portal components are tracked
+    independently for each regional instance.
+  api_instances: [A, B, C, D, E, F, G, H, AE1, AU1, CA1, EU1, SA1, QA1]
+  portal_instances: [A, B, C, D, E, F, G, H, AE1, AU1, CA1, EU1, SA1, QA1, FedRAMP]
+  groups: [Portal, AgentAPIs, Core APIs, 3rd-Party Services]
+  other_components: [CoreCDN, Core APIs, Apps APIs, Insights APIs, Web Control APIs]
+x-evidence:
+  fetched: '2026-08-02'
+  status_page_http_status: 200
+  release_notes_http_status: 200

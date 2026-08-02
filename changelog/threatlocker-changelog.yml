@@ -1,0 +1,60 @@
+generated: '2026-08-02'
+method: searched
+source: https://threatlocker.kb.help/portal-release-notes/
+docs: https://threatlocker.kb.help/portal-release-notes/
+beta_docs: https://threatlocker.kb.help/beta-portal-release-notes/
+scheme: semver-ish (major.minor.patch), dated, product-wide
+scope: >-
+  Release notes cover the whole ThreatLocker platform — Portal, Admin App, and the Windows/Mac/Linux
+  agents — not the PortalAPI in isolation. API-affecting changes appear inline in the Portal notes.
+current:
+  component: ThreatLocker Portal
+  version: '4.5.15'
+  date: '2026-07-24'
+beta:
+  component: ThreatLocker Portal (Beta)
+  version: '4.5.8'
+entries:
+- version: '4.5.15'
+  date: '2026-07-24'
+  breaking: false
+  highlights:
+  - Improved the performance and stability of various Portal API endpoints
+- version: '4.5.13'
+  date: '2026-07-21'
+  breaking: false
+  highlights:
+  - Fixed parent administrators viewing managed organizations
+  - Fixed Cloud Detect policy errors
+- version: '4.5.11'
+  date: '2026-07-16'
+  breaking: false
+  highlights:
+  - Improved SCIM provisioning so user names are correctly updated
+  - Fixed SCIM user provisioning and invoice access issues
+- version: '4.5'
+  date: '2026-07-14'
+  breaking: false
+  highlights:
+  - Home page consolidation
+  - Notification Center enhanced with a multi-step pop-up window
+  - Detect authentication workflow updates
+  - Approval Center enhancements including a new Notification Settings window
+  - Unified Audit improvements
+  - Device Access Control (DAC) security calculation changes
+  - New "Domains Visited Frequency" report
+  - Application Control policy filtering
+  - Network Control ZTNA updates
+- version: '4.4.14'
+  date: '2026-07-10'
+  breaking: false
+  highlights:
+  - User-friendly message displayed when no changes are pending
+other_components:
+  note: Agent and admin-app versions are released on their own cadence and tracked in the same release notes.
+  observed:
+  - {component: Admin App, version: '5.14'}
+  - {component: Windows Agent, version: '10.12.8'}
+  - {component: Mac Agent, version: '11.0.2', channel: beta}
+  - {component: Linux Agent, version: '4.0.4'}
+window: recent-only — the live release notes page is the source of truth

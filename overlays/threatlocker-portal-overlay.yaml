@@ -1,0 +1,99 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the ThreatLocker PortalAPI
+  version: 1.0.0
+extends: openapi/threatlocker-portal-openapi-original.json
+x-generated: '2026-08-02'
+x-method: generated
+x-source: >-
+  Derived from the verbatim spec at https://portalapi.threatlocker.com/swagger/public/swagger.json
+  plus the published documentation at threatlocker.kb.help. Captures API Evangelist enhancements
+  only — the harvested original is never mutated.
+actions:
+- target: $.info
+  description: Add provider identity, licensing context and the API Evangelist rating extension.
+  update:
+    description: >-
+      Public REST API for the ThreatLocker Portal, the multi-tenant management plane of the
+      ThreatLocker Zero Trust endpoint security platform. Covers action logs, applications, approval
+      requests, computers, computer groups, maintenance mode, online devices, organizations,
+      policies, reports, saved searches, scheduled agent actions, system audit, tags, agent versions
+      and upload requests. Authentication is an API-key token created under Users > API Users in the
+      ThreatLocker Portal.
+    contact:
+      name: ThreatLocker Support (Cyber Hero)
+      url: https://threatlocker.kb.help/
+    x-apievangelist-slug: threatlocker
+    x-apievangelist-documentation: https://threatlocker.kb.help/api-documentation/
+    x-apievangelist-getting-started: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+    x-apievangelist-status-page: https://threatlockerstatus.com
+    x-apievangelist-changelog: https://threatlocker.kb.help/portal-release-notes/
+- target: $
+  description: >-
+    Add the servers[] block the harvested spec omits. The PortalAPI is deployed as regionally
+    isolated instances; the instance letter/code is found under the organization settings in the
+    ThreatLocker Portal.
+  update:
+    servers:
+    - url: https://portalapi.{instance}threatlocker.com
+      description: ThreatLocker PortalAPI — instance-specific host
+      variables:
+        instance:
+          default: ''
+          description: >-
+            Instance prefix including the trailing dot, e.g. "b." for Instance B, "eu1." for the EU
+            instance. Leave empty for the default instance. Locate yours under the organization
+            settings in the ThreatLocker Portal.
+          enum:
+          - ''
+          - a.
+          - b.
+          - c.
+          - d.
+          - e.
+          - f.
+          - g.
+          - h.
+          - ae1.
+          - au1.
+          - ca1.
+          - eu1.
+          - sa1.
+- target: $.components.securitySchemes.Authorization
+  description: Clarify the API-key token semantics documented in the ThreatLocker Help Center.
+  update:
+    description: >-
+      API User token created in the ThreatLocker Portal under Users > API Users. Sent verbatim in the
+      Authorization request header with auth type "API Key" (no Bearer prefix). The token is shown
+      once at creation. Expiry is inactivity-based: the selected window (e.g. 90 days) resets on
+      every use. Roles and organization scope are bound to the token at creation time.
+    x-apievangelist-docs: https://threatlocker.kb.help/api-users/
+- target: $.components.securitySchemes.ManagedOrganizationId
+  description: Clarify multi-tenant scoping for parent/child (MSP) organizations.
+  update:
+    description: >-
+      GUID of the organization the request should act against, copied from the Organization ID field
+      on the Organizations page in the ThreatLocker Portal. Required when a parent (MSP) token acts
+      on a managed child organization.
+    x-apievangelist-docs: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+- target: $.tags
+  description: Declare the resource groups the operations already carry as tags.
+  update:
+  - {name: ActionLog, description: Endpoint action/audit log search and file history}
+  - {name: Application, description: Application definitions, matching and research details}
+  - {name: ApprovalRequest, description: End-user approval requests and permit decisions}
+  - {name: Computer, description: Managed endpoints — inventory, protection state, agent version}
+  - {name: ComputerCheckin, description: Endpoint check-in telemetry}
+  - {name: ComputerGroup, description: Computer group membership and dropdowns}
+  - {name: MaintenanceMode, description: Learning/maintenance windows on endpoints}
+  - {name: OnlineDevices, description: Currently online device inventory}
+  - {name: Organization, description: Organizations and deployment auth keys}
+  - {name: Policy, description: Policy retrieval}
+  - {name: Report, description: Report definitions and dynamic report data}
+  - {name: SaveSearch, description: Saved searches per portal page}
+  - {name: ScheduledAgentAction, description: Scheduled actions dispatched to agents}
+  - {name: SystemAudit, description: Administrative audit trail and health center}
+  - {name: Tag, description: Tags and tag items (text, IPv4, IPv6, paths)}
+  - {name: ThreatLockerVersion, description: Available ThreatLocker agent versions}
+  - {name: UploadRequest, description: Request and retrieve files uploaded from endpoints}
+  - {name: VDIHyperV, description: VDI / Hyper-V testing environment details}

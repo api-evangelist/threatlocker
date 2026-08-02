@@ -1,0 +1,28 @@
+generated: '2026-08-02'
+method: searched
+source: npm, PyPI, NuGet, PowerShell Gallery, RubyGems, pkg.go.dev, crates.io, Packagist + ThreatLocker docs
+summary:
+  official_sdks: 0
+  community_packages: 1
+  note: >-
+    ThreatLocker publishes NO first-party client libraries for the PortalAPI in any public package
+    registry. The documented integration path is raw HTTPS + JSON against
+    https://portalapi.<INSTANCE>.threatlocker.com/portalapi/ with an Authorization API-key header.
+    github.com/ThreatLocker exists as an organization but publishes zero public repositories
+    (verified 2026-08-02 via the GitHub API: public_repos = 0), so no first-party source-code or
+    SDK distribution was found. No `SDKs` pointer is wired in apis.yml, because no official SDK exists.
+registries_searched:
+- {registry: npm, query: threatlocker, first_party_hits: 0}
+- {registry: pypi, query: threatlocker / threatlocker-api / pythreatlocker, first_party_hits: 0}
+- {registry: nuget, query: threatlocker, total_hits: 0}
+- {registry: powershell-gallery, query: threatlocker, first_party_hits: 0}
+- {registry: github, org: ThreatLocker, public_repos: 0}
+packages: []
+community_packages:
+- language: javascript
+  registry: npm
+  name: "@spellminer/n8n-nodes-threatlocker"
+  url: https://www.npmjs.com/package/@spellminer/n8n-nodes-threatlocker
+  install: npm install @spellminer/n8n-nodes-threatlocker
+  official: false
+  description: Community n8n workflow node for ThreatLocker; not published or endorsed by ThreatLocker, Inc.

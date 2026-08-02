@@ -1,0 +1,92 @@
+generated: '2026-08-02'
+method: searched
+source: >-
+  https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/,
+  https://threatlocker.kb.help/api-users/, https://threatlocker.kb.help/api-documentation/,
+  openapi/threatlocker-portal-openapi-original.json
+api: ThreatLocker PortalAPI
+base_url:
+  pattern: https://portalapi.{INSTANCE}.threatlocker.com/portalapi/
+  note: >-
+    Instance-specific. Find your organization's instance under the organization settings in the
+    ThreatLocker Portal. The default host portalapi.threatlocker.com also serves the public Swagger
+    document. Instances observed on the public status page: A–H, AE1, AU1, CA1, EU1, SA1, FedRAMP, QA1.
+  docs: https://threatlocker.kb.help/locating-your-organizations-instance/
+authentication:
+  style: api-key-header
+  header: Authorization
+  scheme_note: >-
+    The API User token is sent verbatim in the Authorization header with an auth type of "API Key" —
+    there is NO Bearer prefix and no OAuth flow.
+  token_creation: ThreatLocker Portal > Users > API Users > New API User > Generate API Token
+  token_visibility: Shown once at creation only.
+  token_expiry: >-
+    Inactivity-based. The selected window (e.g. 90 days) RESETS on every use, so a token expires only
+    after that period of inactivity.
+  authorization_model: Roles and organization scope are bound to the token when it is created.
+  docs: https://threatlocker.kb.help/api-users/
+  artifact: authentication/threatlocker-authentication.yml
+multi_tenancy:
+  header: managedOrganizationId
+  value: The organization GUID copied from Manage > Organizations > (settings) > Organization ID
+  purpose: >-
+    Selects which organization a request acts against. Required when a parent (MSP) token operates on
+    a managed child organization.
+  additional_header: OverrideManagedOrganizationId
+  additional_header_note: Declared as a third apiKey security scheme in the spec for overriding the managed organization scope.
+  docs: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+request_response:
+  media_types_accepted: [application/json, text/json, application/*+json]
+  media_type_returned: application/json
+  casing: camelCase
+  identifiers: GUID (uuid) for organizations, computers, applications, approval requests, tags
+  method_style: >-
+    RPC-over-HTTP. Paths are /portalapi/<Resource>/<ActionName> rather than resource collections;
+    search operations are POST with a parameters DTO body, single-record reads are GET with query
+    parameters.
+pagination:
+  style: page-number
+  params: {page: pageNumber, size: pageSize}
+  location: request body (POST search operations); also present as PageNumber/PageSize on some operations
+  response_fields: null
+  note: >-
+    Documented in the Getting Started guide as '"pageNumber": <Integer>, "pageSize": <Integer>' on POST
+    requests. The spec does not declare a standard paged-response envelope, so total counts are not
+    uniformly available; ApprovalRequestGetCount exists as a dedicated count operation.
+  docs: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+sorting_filtering:
+  sort_params: [orderBy, isAscending]
+  search_params: [searchText, SearchText]
+  note: Present on a subset of operations only; most search operations take a resource-specific parameters DTO.
+idempotency:
+  supported: false
+  header: null
+  note: >-
+    NO idempotency contract is documented or present in the spec — there is no Idempotency-Key header,
+    no request-id de-duplication, and no retry-safety guidance. State-changing operations
+    (ComputerEnableProtection, ApprovalRequestPermitApplication, MaintenanceModeInsert,
+    ScheduledAgentAction) are therefore NOT safe to blind-retry. No `Idempotency` pointer is wired in
+    apis.yml because the capability does not exist.
+request_tracing:
+  request_id_header: null
+  note: No request-id or correlation-id header is documented or declared in the spec.
+versioning:
+  style: operation-suffix (V2 operations added alongside originals)
+  artifact: lifecycle/threatlocker-lifecycle.yml
+errors:
+  envelope: bare HTTP status codes
+  problem_json: false
+  documented_codes: [200, 203, 400, 401, 403, 500]
+  artifact: errors/threatlocker-problem-types.yml
+rate_limits:
+  documented: false
+  headers: null
+  note: >-
+    No rate limits, quotas, or rate-limit response headers are documented in the Help Center or
+    declared in the OpenAPI. Portal release 4.5.15 (2026-07-24) notes "Improved the performance and
+    stability of various Portal API endpoints" but publishes no limits.
+events:
+  outbound: >-
+    Event delivery is configured per-policy in ThreatLocker Detect rather than via an API-level
+    webhook subscription. See asyncapi/threatlocker-webhooks.yml.
+  artifact: asyncapi/threatlocker-webhooks.yml

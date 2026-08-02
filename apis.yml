@@ -1,23 +1,150 @@
 aid: threatlocker
 name: ThreatLocker
-description: 'ThreatLocker is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  ThreatLocker is a Zero Trust endpoint and cloud security platform used by enterprises and managed
+  service providers to enforce least privilege across endpoints, networks, and cloud workloads. Its
+  capabilities include Application Control (allowlisting), Ringfencing, Elevation Control, Storage
+  Control, Network Control / ZTNA, Web Content Control, Patch Management, and ThreatLocker Detect
+  (managed detection and response). The multi-tenant ThreatLocker Portal is exposed programmatically
+  through the PortalAPI — a public OpenAPI 3.0 REST contract covering action logs, applications,
+  approval requests, computers and computer groups, maintenance mode, organizations, policies,
+  reports, saved searches, scheduled agent actions, system audit, tags, upload requests, and agent
+  versions. The platform is deployed as regionally isolated instances (A–H plus AE1, AU1, CA1, EU1,
+  SA1 and a FedRAMP instance), so both the portal and the API are addressed per instance.
+image: https://cdn.prod.website-files.com/6356c441ce34029b327802bf/6972a0af939532eaa67988e1_ThreatLocker_Generic%20OpenGraph-Meta%20image.png
 url: https://raw.githubusercontent.com/api-evangelist/threatlocker/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
-specificationVersion: '0.20'
+specificationVersion: '0.21'
 created: '2026-08-02'
 modified: '2026-08-02'
 tags:
-- Company
-apis: []
+- cybersecurity
+- zero-trust
+- endpoint-security
+- application-control
+- allowlisting
+- ransomware-prevention
+- privileged-access-management
+- network-access-control
+- managed-detection-and-response
+- device-management
+- msp
+- compliance
+apis:
+- name: ThreatLocker PortalAPI
+  description: >-
+    Public REST API for the ThreatLocker Portal. 83 operations across 18 resource groups — ActionLog,
+    Application, ApprovalRequest, Computer, ComputerCheckin, ComputerGroup, MaintenanceMode,
+    OnlineDevices, Organization, Policy, Report, SaveSearch, ScheduledAgentAction, SystemAudit, Tag,
+    ThreatLockerVersion, UploadRequest and VDIHyperV. Authentication is an API-key token created under
+    Users > API Users in the portal and sent in the Authorization header; tenant scope is selected with
+    a managedOrganizationId header. The host is instance-specific
+    (https://portalapi.<INSTANCE>.threatlocker.com/portalapi/).
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - cybersecurity
+  - zero-trust
+  - endpoint-security
+  - application-control
+  - allowlisting
+  - device-management
+  - security-operations
+  - msp
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-portal-openapi-original.json
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
+  - type: Overlay
+    url: overlays/threatlocker-portal-overlay.yaml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+common:
+- type: AgenticAccess
+  url: agentic-access/threatlocker-agentic-access.yml
+- type: DomainSecurity
+  url: security/threatlocker-domain-security.yml
+- type: Website
+  url: https://www.threatlocker.com/
+- type: DeveloperPortal
+  url: https://threatlocker.kb.help/api-documentation/
+- type: Documentation
+  url: https://threatlocker.kb.help/api-documentation/
+- type: APIReference
+  url: https://portalapi.threatlocker.com/swagger/index.html
+- type: GettingStarted
+  url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+- type: Support
+  url: https://threatlocker.kb.help/
+- type: HelpCenter
+  url: https://threatlocker.kb.help/
+- type: Blog
+  url: https://www.threatlocker.com/resources/blogs
+- type: Pricing
+  url: https://www.threatlocker.com/pricing
+- type: SignUp
+  url: https://www.threatlocker.com/try-threatlocker
+- type: Login
+  url: https://portal.threatlocker.com/
+- type: TermsOfService
+  url: https://www.threatlocker.com/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://www.threatlocker.com/legal/privacy-policy
+- type: StatusPage
+  url: https://threatlockerstatus.com
+- type: ChangeLog
+  url: https://threatlocker.kb.help/portal-release-notes/
+- type: ChangeLog
+  url: changelog/threatlocker-changelog.yml
+- type: Compliance
+  url: https://threatlocker.kb.help/compliance/
+- type: TrustCenter
+  url: security/threatlocker-trust-center.yml
+- type: LLMsTxt
+  url: llms/threatlocker-llms.txt
+- type: Lifecycle
+  url: lifecycle/threatlocker-lifecycle.yml
+- type: Conformance
+  url: conformance/threatlocker-conformance.yml
+- type: MCPServer
+  url: mcp/threatlocker-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Packages
+  url: packages/threatlocker-packages.yml
+- type: Webhooks
+  url: asyncapi/threatlocker-webhooks.yml
+- type: Authentication
+  url: authentication/threatlocker-authentication.yml
+- type: ErrorCatalog
+  url: errors/threatlocker-problem-types.yml
+- type: Conventions
+  url: conventions/threatlocker-conventions.yml
+- type: DataModel
+  url: data-model/threatlocker-data-model.yml
+- type: Overlay
+  url: overlays/threatlocker-portal-overlay.yaml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-common:
-- type: Website
-  url: https://forgeglobal.com/threatlocker_stock/
+x-enrichment:
+  date: '2026-08-02'
+  status: enriched
+  artifacts_added: 21
+  pass: local-v1

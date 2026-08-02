@@ -1,0 +1,141 @@
+generated: '2026-08-02'
+method: derived
+source: openapi/threatlocker-portal-openapi-original.json
+summary:
+  schemas: 84
+  core_entities: 14
+  note: >-
+    Derived from components.schemas $ref links and *Id reference fields. The PortalAPI is an
+    RPC-over-HTTP surface built on DTOs rather than canonical resource representations, so several
+    entities appear as multiple purpose-shaped DTOs (e.g. Computer has 10+ ComputerDataFor*Dto
+    variants, one per action). Identifiers are GUIDs; enumerated types (actionTypeId, actionId,
+    sourceTableId, maintenanceTypeId, statusId) are integer codes documented inline in operation
+    descriptions rather than as OpenAPI enums.
+identifiers:
+  format: uuid (GUID)
+  convention: '<entity>Id — e.g. organizationId, computerId, applicationId, approvalRequestId, tagId'
+  tenant_key: organizationId — carried on nearly every DTO and also on the managedOrganizationId request header
+entities:
+- name: Organization
+  key: organizationId
+  description: Tenant. Parent (MSP) organizations manage child organizations; the tenant scope of every request.
+  schemas: [OrganizationParentsDto]
+  operations:
+  - GET /portalapi/Organization/OrganizationGetAuthKeyById
+  - POST /portalapi/Organization/OrganizationUpdateAuthKeyById
+  - GET /portalapi/Organization/OrganizationGetForMoveComputers
+- name: Computer
+  key: computerId
+  description: A managed endpoint running the ThreatLocker agent.
+  schemas: [ComputerUpdateDto, ComputerParameterDto, ComputerDataForChannelDto, ComputerDataForTransferDto, ComputerDataForVersionDto, ComputerDataForUpdateModeDto, ComputerDataForEnableProtectionDto, ComputerDataForDisableProtectionDto, ComputerDataForRescanBaselineDto, ComputerRestartServiceDto]
+  operations:
+  - POST /portalapi/Computer/ComputerGetByAllParameters
+  - GET /portalapi/Computer/ComputerGetForEditById
+  - PATCH /portalapi/Computer/ComputerUpdateForEdit
+- name: ComputerGroup
+  key: computerGroupId
+  description: Grouping of endpoints; policies and permits can be scoped to a group.
+  schemas: [ComputerGroupItemDto]
+- name: Application
+  key: applicationId
+  description: A definition of software (files, certificates, hashes, paths) that policies act on.
+  schemas: [ApplicationOnlineDto, ApplicationFileDto, ApplicationMatchParameterDto, ApplicationGetForApplicationOptionsDto]
+- name: ActionLog
+  key: actionLogId
+  description: An observed endpoint action (execute, install, network, registry, read, write, move, delete, baseline, powershell, elevate, configuration, dns) and its policy verdict.
+  schemas: [ActionLogDto, ActionLogParamsDto, ActionLogCreatedByProcessesDto]
+- name: ApprovalRequest
+  key: approvalRequestId
+  description: An end-user request to permit a blocked application or storage device, and its approval workflow state.
+  schemas: [ApprovalRequestDto, ApprovalRequestParametersDto, ApprovalRequestTimerDto, ApprovalRequestAuthorizeDto, ApprovalRequestUpdateParametersDto]
+- name: Policy
+  key: policyId
+  description: Application Control, Network Control, Storage Control and Ringfencing rules.
+  schemas: [FilePolicy, NetworkPolicy, RegistryPolicy, AssociatedApplicationPolicy, AdvRFPolicy, StoragePolicyBasicDto, PermitPolicyConditions, PermitPolicyLevel, PolicyManualOption, PolicyUserGroupDto]
+- name: MaintenanceMode
+  key: maintenanceModeId
+  description: A time-bounded learning/maintenance window during which an endpoint relaxes enforcement.
+  schemas: [MaintenanceModeInsertDto, MaintenanceModeEndDto, MaintenanceModeConditionsDto, MaintenanceModeUpdateEndDateTimeDto, MaintenanceApplicationDto, MaintenanceExistingApplicationDto]
+- name: Tag
+  key: tagId
+  description: Reusable named lists (text, IPv4, IPv6, readable path, writable path) referenced by policies.
+  schemas: [TagDto, TagItemDto]
+- name: StorageDevice
+  key: storageDeviceId
+  description: External or network storage a Storage Control policy governs.
+  schemas: [StorageDeviceDto, StorageApprovalDto]
+- name: ScheduledAgentAction
+  key: scheduledId
+  description: An action queued for dispatch to one or more agents.
+  schemas: [ScheduledAgentActionInsertDto, ScheduledAgentActionParametersDto, ScheduledAgentActionAppliesTo, ScheduledAgentActionAbortDto]
+- name: SystemAudit
+  key: systemAuditId
+  description: Administrative audit trail of portal actions, including login attempts.
+  schemas: [SystemAuditItem, SystemAuditDetails, SystemAuditParametersDto, SystemAuditHealthCenterParams]
+- name: UploadRequest
+  key: uploadRequestId
+  description: A request for an endpoint to upload a file to the portal for inspection.
+  schemas: [UploadRequestDto]
+- name: ThreatLockerVersion
+  key: threatLockerVersionId
+  description: An available ThreatLocker agent version / version group.
+  schemas: [ComputerVersionDto]
+- name: SaveSearch
+  key: saveSearchId
+  description: A stored search bound to a portal page.
+  schemas: [SaveSearchDto, SaveSearchesDto]
+- name: Certificate
+  key: null
+  description: Code-signing certificate observed on a file; used for matching and permitting.
+  schemas: [Certificate, ThreatLockerCertDto]
+- name: Report
+  key: reportId
+  description: A report definition and its parameterized dynamic data.
+  schemas: [ReportParams, ReportParamsOption]
+relationships:
+- {from: Computer, to: Organization, kind: belongs_to, via: organizationId}
+- {from: Computer, to: ComputerGroup, kind: belongs_to, via: computerGroupId}
+- {from: Computer, to: ThreatLockerVersion, kind: belongs_to, via: threatLockerVersionId}
+- {from: ComputerGroup, to: Organization, kind: belongs_to, via: organizationId}
+- {from: ActionLog, to: Computer, kind: belongs_to, via: computerId}
+- {from: ActionLog, to: Application, kind: belongs_to, via: applicationId}
+- {from: ActionLog, to: Certificate, kind: has_many, via: certificates}
+- {from: ActionLog, to: Organization, kind: has_many, via: organizationParents}
+- {from: ActionLog, to: ActionLogCreatedByProcessesDto, kind: has_many, via: actionLogCreatedByProcesses}
+- {from: ActionLog, to: ThreatLockerItemDto, kind: has_one, via: threatLockerItem}
+- {from: ActionLog, to: EngineRating, kind: has_many, via: engineRatings}
+- {from: ApprovalRequest, to: Computer, kind: belongs_to, via: computerId}
+- {from: ApprovalRequest, to: Application, kind: belongs_to, via: applicationId}
+- {from: ApprovalRequest, to: Organization, kind: belongs_to, via: assigneeOrganizationId}
+- {from: ApprovalRequest, to: ThreatLockerActionDto, kind: has_one, via: threatLockerActionDto}
+- {from: ApprovalRequest, to: ApprovalRequestTimerDto, kind: has_one, via: approvalRequestTimerDto}
+- {from: PermitApplicationDto, to: ApprovalRequest, kind: has_one, via: approvalRequest}
+- {from: PermitApplicationDto, to: ActionLog, kind: has_one, via: actionLog}
+- {from: PermitApplicationDto, to: AdvRFPolicy, kind: has_one, via: ringfencingOptions}
+- {from: PermitApplicationDto, to: ComputerGroup, kind: belongs_to, via: computerGroupId}
+- {from: PermitApplicationDto, to: SystemAudit, kind: has_many, via: systemAudits}
+- {from: PermitApplicationDto, to: Application, kind: has_many, via: applicationList}
+- {from: AdvRFPolicy, to: FilePolicy, kind: has_many, via: rfFilePolicy}
+- {from: AdvRFPolicy, to: NetworkPolicy, kind: has_many, via: rfNetworkPolicy}
+- {from: AdvRFPolicy, to: RegistryPolicy, kind: has_many, via: rfRegistryPolicy}
+- {from: AdvRFPolicy, to: AssociatedApplicationPolicy, kind: has_many, via: rfAssociatedApplicationPolicy}
+- {from: StorageApprovalDto, to: ApprovalRequest, kind: has_one, via: approvalRequest}
+- {from: StorageApprovalDto, to: StorageDevice, kind: has_one, via: newStorageDevice}
+- {from: StorageApprovalDto, to: StoragePolicyBasicDto, kind: has_one, via: existingStoragePolicy}
+- {from: StorageDevice, to: Organization, kind: belongs_to, via: organizationId}
+- {from: StorageDevice, to: StoragePolicyBasicDto, kind: belongs_to, via: storagePolicyId}
+- {from: MaintenanceMode, to: Computer, kind: belongs_to, via: computerId}
+- {from: MaintenanceMode, to: Application, kind: belongs_to, via: applicationId}
+- {from: MaintenanceMode, to: MaintenanceModeConditionsDto, kind: has_many, via: maintenanceModeConditions}
+- {from: Tag, to: Organization, kind: belongs_to, via: organizationId}
+- {from: Tag, to: TagItemDto, kind: has_many, via: allTagItems}
+- {from: SystemAudit, to: Organization, kind: belongs_to, via: organizationId}
+- {from: SystemAudit, to: SystemAuditDetails, kind: has_one, via: details}
+- {from: UploadRequest, to: Computer, kind: belongs_to, via: computerId}
+- {from: UploadRequest, to: Organization, kind: belongs_to, via: organizationId}
+- {from: ScheduledAgentAction, to: ScheduledAgentActionAppliesTo, kind: has_many, via: appliesTo}
+- {from: ApplicationFile, to: Application, kind: belongs_to, via: applicationId}
+- {from: FileExclusionDto, to: Policy, kind: belongs_to, via: policyId}
+- {from: NetworkExclusionDto, to: Policy, kind: belongs_to, via: policyId}
+- {from: Report, to: Organization, kind: belongs_to, via: organizationId}
+- {from: SaveSearch, to: Organization, kind: belongs_to, via: organizationId}

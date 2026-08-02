@@ -1,0 +1,55 @@
+generated: '2026-08-02'
+method: searched
+source: >-
+  https://threatlocker.kb.help/forwarding-information-to-your-siem-using-threatlocker-detect/,
+  https://threatlocker.kb.help/portal-release-notes/
+spec_type: none
+asyncapi_published: false
+note: >-
+  ThreatLocker publishes NO AsyncAPI document and no API-level webhook subscription endpoint. It DOES
+  ship a real outbound event surface: ThreatLocker Detect policies fire configurable response actions
+  when a detection condition is met, and two of those actions post to a customer-supplied HTTP
+  endpoint. This is a policy-driven webhook, configured in the portal per Detect policy, not a
+  subscription managed through the PortalAPI — so there is no channel catalog or message schema to
+  harvest. No AsyncAPI pointer is wired in apis.yml; only `Webhooks`.
+surface:
+  kind: policy-triggered outbound HTTP
+  product: ThreatLocker Detect
+  configured_in: ThreatLocker Portal — Detect policy response actions
+  docs: https://threatlocker.kb.help/forwarding-information-to-your-siem-using-threatlocker-detect/
+  subscription_api: false
+  replay: false
+  signing: 'not documented — authentication is whatever custom headers or OAuth bearer token the operator configures'
+actions:
+- name: Call Webhook
+  description: Sends data to a predefined URL when the Detect policy condition is met. Dispatched from the ThreatLocker cloud.
+  target: operator-supplied URL
+- name: Call Webhook (Client)
+  description: >-
+    The ThreatLocker agent on the endpoint triggers the webhook directly. ThreatLocker recommends the
+    Client variants because delivery is faster, straight from the agent.
+  target: operator-supplied URL
+- name: Call Rest API
+  description: Makes an HTTP request (GET/POST/PUT/DELETE/PATCH) to an arbitrary endpoint when the condition is met. Dispatched from the ThreatLocker cloud.
+  target: operator-supplied URL
+- name: Call Rest API (Client)
+  description: Same as Call Rest API, dispatched from the endpoint agent.
+  target: operator-supplied URL
+delivery:
+  http_methods: [GET, POST, PUT, DELETE, PATCH]
+  body: >-
+    Fully operator-defined. The documented SIEM example uses a body shaped like
+    {"event":"", "sourcetype": ""} where `event` carries the logged data and `sourcetype` is
+    operator-chosen; ThreatLocker variables are substituted into the body at dispatch time.
+  headers: Custom headers supported for authorization tokens; an optional OAuth Bearer token can be configured.
+  targets: Any SIEM HTTP Event Collector or HTTP endpoint the operator configures.
+event_sources:
+  note: >-
+    Triggering conditions are authored per Detect policy against ThreatLocker telemetry. The
+    documented example fires on a "Deny (Option to Request)" policy action. The equivalent event
+    corpus is readable over the PortalAPI via the ActionLog and SystemAudit resources.
+  polling_equivalents:
+  - "POST /portalapi/ActionLog/ActionLogGetByParametersV2 — action types: execute, install, network, registry, read, write, move, delete, baseline, powershell, elevate, configuration, dns"
+  - "POST /portalapi/SystemAudit/SystemAuditGetByParameters — administrative audit trail"
+  - "POST /portalapi/ApprovalRequest/ApprovalRequestGetByParameters — pending end-user approval requests"
+  - "POST /portalapi/ComputerCheckin/ComputerCheckinGetByParameters — endpoint check-in telemetry"

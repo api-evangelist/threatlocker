@@ -1,0 +1,50 @@
+generated: '2026-08-02'
+method: probed
+source: live probes of /.well-known/* on every ThreatLocker host in apis.yml
+note: >-
+  No /.well-known/ discovery documents are published on any ThreatLocker host. www.threatlocker.com
+  answers every /.well-known/* path with a 404 HTML body reading "Invalid .well-known request"
+  (Webflow default). portal.threatlocker.com is a single-page app that returns HTTP 200 with the
+  same 16,963-byte HTML shell for every path — those 200s are catch-all false positives, not
+  documents, and are recorded as such. No pointer is wired into apis.yml because no document exists.
+hosts:
+- host: https://www.threatlocker.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /llms.txt, status: 200, file: ../llms/threatlocker-llms.txt, content_type: text/plain}
+- host: https://portalapi.threatlocker.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://portal.threatlocker.com
+  note: SPA catch-all — every path returns 200 with the same HTML login shell; all rejected
+  documents:
+  - {path: /.well-known/security.txt, status: 200, rejected: true, reason: html-spa-catch-all}
+  - {path: /.well-known/agent-card.json, status: 200, rejected: true, reason: html-spa-catch-all}
+  - {path: /.well-known/agent.json, status: 200, rejected: true, reason: html-spa-catch-all}
+  - {path: /.well-known/openid-configuration, status: 200, rejected: true, reason: html-spa-catch-all}
+- host: https://threatlocker.kb.help
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /llms.txt, status: 404}
+x-evidence:
+  fetched: '2026-08-02'
+  security_txt: none
+  agent_card: none
+  oauth_metadata: none

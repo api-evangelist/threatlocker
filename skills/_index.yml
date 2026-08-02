@@ -1,0 +1,49 @@
+generated: '2026-08-02'
+method: generated
+source: openapi/threatlocker-portal-openapi-original.json
+api: ThreatLocker PortalAPI
+note: >-
+  ThreatLocker publishes no AGENTS.md or provider-authored agent skills, so these are generated from
+  the public OpenAPI. The spec declares NO operationIds, so every step is grounded in the verbatim
+  METHOD + path published in the spec — the only stable operation identifiers ThreatLocker offers.
+skills:
+- file: threatlocker-approve-blocked-application.md
+  name: Approve a blocked application in ThreatLocker
+  api: openapi/threatlocker-portal-openapi-original.json
+  operations:
+  - "GET /portalapi/ApprovalRequest/ApprovalRequestGetCount"
+  - "POST /portalapi/ApprovalRequest/ApprovalRequestGetByParameters"
+  - "GET /portalapi/ApprovalRequest/ApprovalRequestGetById"
+  - "GET /portalapi/ApprovalRequest/ApprovalRequestGetPermitApplicationById"
+  - "POST /portalapi/ApprovalRequest/ApprovalRequestUpdateForTakeOwnership"
+  - "POST /portalapi/ApprovalRequest/ApprovalRequestPermitApplication"
+  - "POST /portalapi/ApprovalRequest/ApprovalRequestUpdateForReject"
+  - "POST /portalapi/ApprovalRequest/ApprovalRequestUpdateForIgnore"
+- file: threatlocker-investigate-endpoint-activity.md
+  name: Investigate endpoint activity in ThreatLocker
+  api: openapi/threatlocker-portal-openapi-original.json
+  operations:
+  - "POST /portalapi/ActionLog/ActionLogGetByParametersV2"
+  - "GET /portalapi/ActionLog/ActionLogGetByIdV2"
+  - "GET /portalapi/ActionLog/ActionLogGetAllForFileHistoryV2"
+  - "GET /portalapi/ActionLog/ActionLogGetFileDownloadDetailsById"
+  - "POST /portalapi/Computer/ComputerGetByAllParameters"
+  - "POST /portalapi/ComputerCheckin/ComputerCheckinGetByParameters"
+  - "POST /portalapi/SystemAudit/SystemAuditGetByParameters"
+  - "POST /portalapi/UploadRequest/UploadRequestInsert"
+  - "POST /portalapi/UploadRequest/UploadRequestGet"
+- file: threatlocker-maintenance-and-agent-rollout.md
+  name: Run a ThreatLocker maintenance window and agent rollout
+  api: openapi/threatlocker-portal-openapi-original.json
+  operations:
+  - "POST /portalapi/MaintenanceMode/MaintenanceModeInsert"
+  - "GET /portalapi/MaintenanceMode/MaintenanceModeGetByComputerId"
+  - "POST /portalapi/MaintenanceMode/MaintenanceModeUpdateEndDateTimeForSpecificDate"
+  - "PATCH /portalapi/MaintenanceMode/MaintenanceModeEndById"
+  - "POST /portalapi/Computer/ComputerUpdateToFinishMaintenanceMode"
+  - "GET /portalapi/ThreatLockerVersion/ThreatLockerVersionGetForDropdownList"
+  - "POST /portalapi/Computer/ComputerUpdateThreatlockerVersionByIds"
+  - "POST /portalapi/Computer/ComputerUpdateBaselineRescan"
+  - "POST /portalapi/ScheduledAgentAction"
+  - "POST /portalapi/ScheduledAgentAction/GetByParameters"
+  - "POST /portalapi/ScheduledAgentAction/Abort"

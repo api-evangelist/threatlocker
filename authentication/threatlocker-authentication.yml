@@ -1,0 +1,66 @@
+generated: '2026-08-02'
+method: searched
+source: openapi/threatlocker-portal-openapi-original.json
+docs: https://threatlocker.kb.help/api-users/
+docs_getting_started: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+  oauth2_flows: []
+  note: >-
+    The PortalAPI is API-key only. There is no OAuth 2.0, no OIDC discovery document, and no scope
+    surface — authorization is expressed as ROLES bound to the token at creation time, plus an
+    organization scope, neither of which is exposed in the OpenAPI. Portal ADMINISTRATOR sign-in is a
+    separate concern and does support SAML SSO and SCIM provisioning; those do not apply to API tokens.
+schemes:
+- name: Authorization
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: Please insert Standard Authorization header.
+  docs_description: >-
+    API User token created in the ThreatLocker Portal under Users > API Users > New API User >
+    Generate API Token. Sent verbatim in the Authorization header with an auth type of "API Key" —
+    there is NO Bearer prefix. The token is displayed only once, while the creation sidebar is open.
+  expiry: >-
+    Inactivity-based. The selected expiration window (e.g. 90 days) RESETS on every use, so the token
+    expires only after that period of inactivity.
+  authorization: Roles and the organizations the token is valid for are selected at creation time.
+  sources:
+  - openapi/threatlocker-portal-openapi-original.json
+  - https://threatlocker.kb.help/api-users/
+- name: ManagedOrganizationId
+  type: apiKey
+  in: header
+  parameter: ManagedOrganizationId
+  description: Please insert Managed Organization Id.
+  docs_description: >-
+    Documented in the Getting Started guide as a header named "managedOrganizationId" carrying the
+    target organization's GUID, copied from Manage > Organizations > (settings) > Organization ID.
+    Selects the tenant a request acts against; required when a parent (MSP) token operates on a
+    managed child organization.
+  sources:
+  - openapi/threatlocker-portal-openapi-original.json
+  - https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+- name: OverrideManagedOrganizationId
+  type: apiKey
+  in: header
+  parameter: OverrideManagedOrganizationId
+  description: Please insert Managed Organization Id.
+  docs_description: Third apiKey scheme declared in the spec for overriding the managed-organization scope of a request.
+  sources:
+  - openapi/threatlocker-portal-openapi-original.json
+global_security:
+  note: All three schemes are listed in the document-level `security` requirement of the OpenAPI.
+  requirement: [Authorization, ManagedOrganizationId, OverrideManagedOrganizationId]
+portal_administrator_sign_in:
+  note: Separate from API tokens — governs human sign-in to the ThreatLocker Portal, not PortalAPI calls.
+  saml_sso: true
+  saml_docs: https://threatlocker.kb.help/saml-integration/
+  saml_detail: Enabled via Administrators > Login Settings > Allow SSO; IdP groups map to ThreatLocker user roles on the Group Mapping tab.
+  scim: true
+  scim_docs: https://threatlocker.kb.help/scim-integration-for-threatlocker-administrator-accounts/
+  scim_detail: SCIM provisioning of administrators available since Portal 3.8; provisioned users get a SAML-enabled account or an email invitation.
+  oidc: false

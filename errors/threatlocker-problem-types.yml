@@ -1,0 +1,72 @@
+generated: '2026-08-02'
+method: searched
+source: >-
+  Derived from openapi/threatlocker-portal-openapi-original.json 4xx/5xx responses and enriched from
+  https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+format: http-status
+envelope:
+  media_type: application/json
+  problem_json: false
+  note: >-
+    The PortalAPI does NOT use RFC 9457 application/problem+json. Errors are returned as bare HTTP
+    status codes; only 3 of 83 operations declare 400/401/403/500 responses in the spec at all, and
+    none declare a response schema. The status-code meanings and remediation below come from the
+    provider's published "Getting Started with ThreatLocker PortalAPIs" guide.
+problems:
+- status: 200
+  title: Success
+  description: The request succeeded.
+  remediation: null
+- status: 203
+  title: Non-Authoritative Information
+  description: >-
+    Documented by ThreatLocker as a response the PortalAPI can return; the payload did not originate
+    from the authoritative origin server.
+  remediation: Retry the request; if it persists, contact ThreatLocker Cyber Hero support.
+- status: 400
+  title: Bad Request
+  description: The request body or parameters were malformed or failed validation.
+  remediation: >-
+    Verify the JSON body matches the schema in the public Swagger document, and that required ids
+    (organizationId, computerId, approvalRequestId) are valid GUIDs.
+  source_operations:
+  - "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction"
+  - "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction/Abort"
+  - "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction/GetByParameters"
+- status: 401
+  title: Unauthorized
+  description: The Authorization header is missing, malformed, or the API User token is invalid or expired.
+  remediation: >-
+    Confirm the Authorization header carries the API User token verbatim with auth type "API Key"
+    (no Bearer prefix). Tokens expire after the configured window of INACTIVITY; regenerate under
+    Users > API Users in the ThreatLocker Portal.
+  docs: https://threatlocker.kb.help/api-users/
+  source_operations:
+  - "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction"
+  - "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction/Abort"
+  - "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction/GetByParameters"
+- status: 403
+  title: Forbidden
+  description: >-
+    The token is valid but the roles bound to it do not grant this operation, or the
+    managedOrganizationId targets an organization the token is not scoped to.
+  remediation: >-
+    Review the roles and organization scope assigned to the API User token, and confirm the
+    managedOrganizationId header holds the correct organization GUID.
+  source_operations:
+  - "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction"
+  - "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction/Abort"
+  - "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction/GetByParameters"
+- status: 500
+  title: Internal Server Error
+  description: An unhandled error occurred in the ThreatLocker Portal API.
+  remediation: >-
+    Check https://threatlockerstatus.com for the health of your API instance, then contact
+    ThreatLocker Cyber Hero support with the request details.
+  source_operations:
+  - "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction"
+  - "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction/Abort"
+  - "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction/GetByParameters"
+gaps:
+- 80 of 83 operations declare only a 200 response — no 4xx/5xx contract is published per operation.
+- No machine-readable error body schema, error code registry, or problem type URIs are published.
