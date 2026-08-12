@@ -32,29 +32,16 @@ tags:
 - msp
 - compliance
 apis:
-- name: ThreatLocker PortalAPI
-  description: >-
-    Public REST API for the ThreatLocker Portal. 83 operations across 18 resource groups — ActionLog,
-    Application, ApprovalRequest, Computer, ComputerCheckin, ComputerGroup, MaintenanceMode,
-    OnlineDevices, Organization, Policy, Report, SaveSearch, ScheduledAgentAction, SystemAudit, Tag,
-    ThreatLockerVersion, UploadRequest and VDIHyperV. Authentication is an API-key token created under
-    Users > API Users in the portal and sent in the Authorization header; tenant scope is selected with
-    a managedOrganizationId header. The host is instance-specific
-    (https://portalapi.<INSTANCE>.threatlocker.com/portalapi/).
+- aid: threatlocker:threatlocker-actionlog-api
+  name: ThreatLocker Action Log API
+  description: The ActionLog API from ThreatLocker — 9 operation(s) for actionlog.
   humanURL: https://threatlocker.kb.help/api-documentation/
   baseURL: https://portalapi.threatlocker.com/portalapi/
   tags:
-  - cybersecurity
-  - zero-trust
-  - endpoint-security
-  - application-control
-  - allowlisting
-  - device-management
-  - security-operations
-  - msp
+  - ActionLog
   properties:
   - type: OpenAPI
-    url: openapi/threatlocker-portal-openapi-original.json
+    url: openapi/threatlocker-actionlog-api-openapi.yml
   - type: Documentation
     url: https://threatlocker.kb.help/api-documentation/
   - type: APIReference
@@ -69,8 +56,449 @@ apis:
     url: errors/threatlocker-problem-types.yml
   - type: DataModel
     url: data-model/threatlocker-data-model.yml
-  - type: Overlay
-    url: overlays/threatlocker-portal-overlay.yaml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+- aid: threatlocker:threatlocker-application-api
+  name: ThreatLocker Application API
+  description: The Application API from ThreatLocker — 6 operation(s) for application.
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - Application
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-application-api-openapi.yml
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+- aid: threatlocker:threatlocker-approvalrequest-api
+  name: ThreatLocker Approval Request API
+  description: The ApprovalRequest API from ThreatLocker — 12 operation(s) for approvalrequest.
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - ApprovalRequest
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-approvalrequest-api-openapi.yml
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+- aid: threatlocker:threatlocker-computer-api
+  name: ThreatLocker Computer API
+  description: The Computer API from ThreatLocker — 21 operation(s) for computer.
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - Computer
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-computer-api-openapi.yml
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+- aid: threatlocker:threatlocker-computercheckin-api
+  name: ThreatLocker Computer Checkin API
+  description: The ComputerCheckin API from ThreatLocker — 1 operation(s) for computercheckin.
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - ComputerCheckin
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-computercheckin-api-openapi.yml
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+- aid: threatlocker:threatlocker-computergroup-api
+  name: ThreatLocker Computer Group API
+  description: The ComputerGroup API from ThreatLocker — 4 operation(s) for computergroup.
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - ComputerGroup
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-computergroup-api-openapi.yml
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+- aid: threatlocker:threatlocker-maintenancemode-api
+  name: ThreatLocker Maintenance Mode API
+  description: The MaintenanceMode API from ThreatLocker — 4 operation(s) for maintenancemode.
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - MaintenanceMode
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-maintenancemode-api-openapi.yml
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+- aid: threatlocker:threatlocker-onlinedevices-api
+  name: ThreatLocker Online Devices API
+  description: The OnlineDevices API from ThreatLocker — 1 operation(s) for onlinedevices.
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - OnlineDevices
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-onlinedevices-api-openapi.yml
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+- aid: threatlocker:threatlocker-organization-api
+  name: ThreatLocker Organization API
+  description: The Organization API from ThreatLocker — 3 operation(s) for organization.
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - Organization
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-organization-api-openapi.yml
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+- aid: threatlocker:threatlocker-policy-api
+  name: ThreatLocker Policy API
+  description: The Policy API from ThreatLocker — 1 operation(s) for policy.
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - Policy
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-policy-api-openapi.yml
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+- aid: threatlocker:threatlocker-report-api
+  name: ThreatLocker Report API
+  description: The Report API from ThreatLocker — 2 operation(s) for report.
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - Report
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-report-api-openapi.yml
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+- aid: threatlocker:threatlocker-savesearch-api
+  name: ThreatLocker Save Search API
+  description: The SaveSearch API from ThreatLocker — 3 operation(s) for savesearch.
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - SaveSearch
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-savesearch-api-openapi.yml
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+- aid: threatlocker:threatlocker-scheduledagentaction-api
+  name: ThreatLocker Scheduled Agent Action API
+  description: >-
+    The ScheduledAgentAction API from ThreatLocker — 6 operation(s) for scheduledagentaction.
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - ScheduledAgentAction
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-scheduledagentaction-api-openapi.yml
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+- aid: threatlocker:threatlocker-systemaudit-api
+  name: ThreatLocker System Audit API
+  description: The SystemAudit API from ThreatLocker — 3 operation(s) for systemaudit.
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - SystemAudit
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-systemaudit-api-openapi.yml
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+- aid: threatlocker:threatlocker-tag-api
+  name: ThreatLocker Tag API
+  description: The Tag API from ThreatLocker — 3 operation(s) for tag.
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - Tag
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-tag-api-openapi.yml
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+- aid: threatlocker:threatlocker-threatlockerversion-api
+  name: ThreatLocker Threat Locker Version API
+  description: The ThreatLockerVersion API from ThreatLocker — 1 operation(s) for threatlockerversion.
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - ThreatLockerVersion
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-threatlockerversion-api-openapi.yml
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+- aid: threatlocker:threatlocker-uploadrequest-api
+  name: ThreatLocker Upload Request API
+  description: The UploadRequest API from ThreatLocker — 2 operation(s) for uploadrequest.
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - UploadRequest
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-uploadrequest-api-openapi.yml
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
+  - type: Webhooks
+    url: asyncapi/threatlocker-webhooks.yml
+- aid: threatlocker:threatlocker-vdihyperv-api
+  name: ThreatLocker VDI Hyper V API
+  description: The VDIHyperV API from ThreatLocker — 1 operation(s) for vdihyperv.
+  humanURL: https://threatlocker.kb.help/api-documentation/
+  baseURL: https://portalapi.threatlocker.com/portalapi/
+  tags:
+  - VDIHyperV
+  properties:
+  - type: OpenAPI
+    url: openapi/threatlocker-vdihyperv-api-openapi.yml
+  - type: Documentation
+    url: https://threatlocker.kb.help/api-documentation/
+  - type: APIReference
+    url: https://portalapi.threatlocker.com/swagger/index.html
+  - type: GettingStarted
+    url: https://threatlocker.kb.help/getting-started-with-threatlocker-portalapis/
+  - type: Authentication
+    url: authentication/threatlocker-authentication.yml
+  - type: Conventions
+    url: conventions/threatlocker-conventions.yml
+  - type: ErrorCatalog
+    url: errors/threatlocker-problem-types.yml
+  - type: DataModel
+    url: data-model/threatlocker-data-model.yml
   - type: Webhooks
     url: asyncapi/threatlocker-webhooks.yml
 common:
