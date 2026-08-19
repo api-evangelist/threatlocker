@@ -15,7 +15,7 @@ image: https://cdn.prod.website-files.com/6356c441ce34029b327802bf/6972a0af93953
 url: https://raw.githubusercontent.com/api-evangelist/threatlocker/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-specificationVersion: '0.21'
+specificationVersion: '0.23'
 created: '2026-08-02'
 modified: '2026-08-02'
 tags:
