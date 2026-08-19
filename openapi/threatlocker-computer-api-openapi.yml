@@ -1,0 +1,1094 @@
+openapi: 3.2.0
+info:
+  title: Portal Computer API
+  version: v1.0.0
+security:
+- Authorization: []
+  ManagedOrganizationId: []
+  OverrideManagedOrganizationId: []
+tags:
+- name: Computer
+paths:
+  /portalapi/Computer/ComputerGetByAllParameters:
+    post:
+      tags:
+      - Computer
+      summary: Load Computers By All Parameters
+      description: "Parameters Values:\n            \n    \n    {\n       \"OrderBy\": \"computername\
+        \ | group | action | lastcheckin | computerinstalldate | deniedcountthreedays | updatechannel\
+        \ | threatlockerversion\",\n       \"Action\": \" All Computer Mode | Secure | Installation |\
+        \ Learning | MonitorOnly | Manual Update | Pre-Releases | Regular | Expedited | Slow and Steady\"\
+        ,\n       \"KindOfAction\": \" Computer Mode | TamperProtectionDisabled | NeedsReview | ReadyToSecure\
+        \ | BaselineNotUploaded | Update Channel\"\n    }"
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComputerParameterDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ComputerParameterDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ComputerParameterDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerGetForEditById:
+    get:
+      tags:
+      - Computer
+      summary: Get Computer Information By Id.
+      parameters:
+      - name: computerId
+        in: query
+        description: ''
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerUpdateForEdit:
+    patch:
+      tags:
+      - Computer
+      summary: Update Computer
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComputerUpdateDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ComputerUpdateDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ComputerUpdateDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerUpdateBaselineRescan:
+    post:
+      tags:
+      - Computer
+      summary: Update Baseline Rescan Computer
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComputerRescanBaselineDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ComputerRescanBaselineDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ComputerRescanBaselineDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerUpdateShouldRestartByIds:
+    post:
+      tags:
+      - Computer
+      summary: Restart service for selected computers
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/ComputerRestartServiceDto'
+          text/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/ComputerRestartServiceDto'
+          application/*+json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/ComputerRestartServiceDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerUpdateShouldRestartByOrganization:
+    post:
+      tags:
+      - Computer
+      summary: Restart Organization Computers
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: boolean
+          text/json:
+            schema:
+              type: boolean
+          application/*+json:
+            schema:
+              type: boolean
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerMoveToOtherOrganization:
+    post:
+      tags:
+      - Computer
+      summary: Move Computer
+      description: "Parameters Values:\n            \n    {\n         \"MaintenanceTypeId\": \" MonitorOnly\
+        \ = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only =\
+        \ 5 | TamperProtectionDisabled = 6\",\n          \"OSType\": \"Windows = 1 | MAC = 2 | Linux =\
+        \ 3\"\n    }"
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComputerTransferDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ComputerTransferDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ComputerTransferDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerEnableProtection:
+    post:
+      tags:
+      - Computer
+      summary: Computer Enable Protection
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComputerEnableProtectionDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ComputerEnableProtectionDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ComputerEnableProtectionDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerDisableProtection:
+    post:
+      tags:
+      - Computer
+      summary: Disable Computer Protection
+      description: "Parameters Values:\n            \n    {\n        \"Action\": \" MonitorOnly | Installation\
+        \ Mode | Learning | Elevation Mode | Learning Mode Hash Only | TamperProtectionDisabled | Secure\"\
+        ,\n         \"MaintenanceModeType\": \" MonitorOnly = 1 | Learning = 3 | TamperProtectionDisabled\
+        \ = 6\"\n    }"
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComputerDisabledProtectionDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ComputerDisabledProtectionDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ComputerDisabledProtectionDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerRemoveDuplicate:
+    post:
+      tags:
+      - Computer
+      summary: Remove Duplicate Computers
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: boolean
+          text/json:
+            schema:
+              type: boolean
+          application/*+json:
+            schema:
+              type: boolean
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerUpdateMaintenanceMode:
+    post:
+      tags:
+      - Computer
+      summary: Updates a device's maintenance mode settings.
+      description: "Use this endpoint to enable or disable specific maintenance modes for a device.\n\
+        \            \n**Maintenance Mode IDs:**\n* **Application Control Monitor**: `1`\n* **Application\
+        \ Control Installation**: `2`\n* **Application Control Learning**: `3`\n* **Network Control Monitor**:\
+        \ `17`\n* **Storage Control Monitor**: `18`\n            \n**OS Type IDs:**\n* **Windows**: `1`\n\
+        * **MAC**: `2`\n* **Linux**: `3`"
+      requestBody:
+        description: A DTO containing the device identifier and the maintenance mode settings to apply.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComputerUpdateMaintenanceModeDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ComputerUpdateMaintenanceModeDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ComputerUpdateMaintenanceModeDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerUpdateThreatlockerVersionByIds:
+    post:
+      tags:
+      - Computer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComputerVersionDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ComputerVersionDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ComputerVersionDto'
+      responses:
+        '200':
+          description: OK
+      deprecated: true
+  /portalapi/Computer/ComputerGetThreatlockerVersions:
+    get:
+      tags:
+      - Computer
+      summary: Retrieves ThreatLocker agent versions for computers in the managed organization.
+      parameters:
+      - name: includeChildOrganizations
+        in: query
+        description: If true, also include computers from child organizations the user has access to.
+        schema:
+          type: boolean
+          default: false
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerUpdateToFinishMaintenanceMode:
+    post:
+      tags:
+      - Computer
+      summary: End Maintenance Mode
+      description: "Parameters Values:\n            \n    {\n         \"MaintenanceTypeId\": \" MonitorOnly\
+        \ = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only =\
+        \ 5 | TamperProtectionDisabled = 6\",\n          \"OSType\": \"Windows = 1 | MAC = 2 | Linux =\
+        \ 3\"\n    }"
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComputerUpdateToFinishMaintenanceModeDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ComputerUpdateToFinishMaintenanceModeDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ComputerUpdateToFinishMaintenanceModeDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerGetForNewComputer:
+    get:
+      tags:
+      - Computer
+      summary: Get data for new computer
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerGetDownload:
+    post:
+      tags:
+      - Computer
+      summary: Computer Get Download
+      description: "Parameters Values:\n            \n    {\n        \"FileType\": \" Stub Installer =\
+        \ stub | MSI Installer = windows | PowerShell Script = pssscript | PKG File = mac | Remediator\
+        \ Service Installer = remediation\",\n        \"Platform\": \" X86 | X64 | ''\"\n    }"
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComputerDownloadParameterDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ComputerDownloadParameterDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ComputerDownloadParameterDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerGetOSTypeByIds:
+    post:
+      tags:
+      - Computer
+      summary: Get OS Types for Computer.
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+                format: uuid
+          text/json:
+            schema:
+              type: array
+              items:
+                type: string
+                format: uuid
+          application/*+json:
+            schema:
+              type: array
+              items:
+                type: string
+                format: uuid
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerSignedScriptDownload:
+    get:
+      tags:
+      - Computer
+      summary: Download Login Script
+      parameters:
+      - name: brand
+        in: query
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerSamplePathDownload:
+    get:
+      tags:
+      - Computer
+      summary: Download Sample Batch File
+      parameters:
+      - name: brand
+        in: query
+        description: ''
+        schema:
+          type: string
+      - name: authKey
+        in: query
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerUnSignedScriptDownload:
+    get:
+      tags:
+      - Computer
+      summary: Download Unsigned Login Script
+      parameters:
+      - name: brand
+        in: query
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /portalapi/Computer/ComputerUpdateChannel:
+    post:
+      tags:
+      - Computer
+      summary: Threatlocker Update Channel
+      description: "Parameters Values:\n            \n    {\n        \"UpdateChannel\": \" Manual Update\
+        \ = 0 | Pre-Releases = 1 | Regular = 2 | Expedited = 3 | Slow and Steady = 4\"\n    }"
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComputerChannelDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ComputerChannelDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ComputerChannelDto'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    ComputerChannelDto:
+      type: object
+      properties:
+        computerDetailDtos:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ComputerDataForChannelDto'
+        updateChannel:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    ComputerUpdateMaintenanceModeDto:
+      type: object
+      properties:
+        applicationId:
+          type:
+          - string
+          - 'null'
+        computerDetailDto:
+          $ref: '#/components/schemas/ComputerDataForUpdateModeDto'
+      additionalProperties: false
+    ComputerTransferDto:
+      type: object
+      properties:
+        computerDetailDtos:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ComputerDataForTransferDto'
+        enableLearningRescan:
+          type: boolean
+          default: false
+        targetComputerGroupId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        targetOrganizationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+      additionalProperties: false
+    ComputerDataForDisableProtectionDto:
+      type: object
+      properties:
+        action:
+          type:
+          - string
+          - 'null'
+          default: ''
+        computerGroupId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        computerId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        computerName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        maintenanceEndDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          default: null
+        organizationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        startDateTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          default: null
+      additionalProperties: false
+    ComputerRescanBaselineDto:
+      type: object
+      properties:
+        computerDetailDtos:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ComputerDataForRescanBaselineDto'
+        enableLearning:
+          type: boolean
+          default: false
+      additionalProperties: false
+    ComputerRestartServiceDto:
+      type: object
+      properties:
+        computerId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        organizationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        computerName:
+          type:
+          - string
+          - 'null'
+          default: ''
+      additionalProperties: false
+    ComputerDisabledProtectionDto:
+      type: object
+      properties:
+        computerDetailDtos:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ComputerDataForDisableProtectionDto'
+        endDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          default: null
+        startDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          default: null
+        maintenanceModeType:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        permitEnd:
+          type:
+          - boolean
+          - 'null'
+          default: false
+        applicationId:
+          type:
+          - string
+          - 'null'
+          default: autocomp
+      additionalProperties: false
+    ComputerUpdateDto:
+      type: object
+      properties:
+        computerId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        computerGroupId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        name:
+          type:
+          - string
+          - 'null'
+          default: ''
+        useProxyServer:
+          type: boolean
+          default: false
+        proxyServerOption:
+          type:
+          - string
+          - 'null'
+          default: ''
+        proxyUrlEntry:
+          type:
+          - string
+          - 'null'
+          default: ''
+        proxyURL:
+          type:
+          - string
+          - 'null'
+          default: ''
+        options:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        aliases:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    ComputerParameterDto:
+      type: object
+      properties:
+        searchText:
+          type:
+          - string
+          - 'null'
+          default: ''
+        computerGroup:
+          type:
+          - string
+          - 'null'
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        orderBy:
+          type:
+          - string
+          - 'null'
+          default: computername
+        pageSize:
+          type: integer
+          format: int32
+          default: 25
+        pageNumber:
+          type: integer
+          format: int32
+          default: 1
+        childOrganizations:
+          type: boolean
+          default: false
+        action:
+          type:
+          - string
+          - 'null'
+          default: ''
+        isAscending:
+          type: boolean
+          default: true
+        kindOfAction:
+          type:
+          - string
+          - 'null'
+          default: ''
+        computerId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        showLastCheckIn:
+          type: boolean
+          default: true
+        showDeleted:
+          type: boolean
+          default: false
+        searchBy:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        threatlockerVersion:
+          type:
+          - string
+          - 'null'
+          default: All
+        isExport:
+          type: boolean
+          default: 'false'
+      additionalProperties: false
+    ComputerDataForEnableProtectionDto:
+      type: object
+      properties:
+        appliesToType:
+          type:
+          - string
+          - 'null'
+          default: ''
+        computerId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        computerInstallDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          default: null
+        computerName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        maintenanceEndDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          default: null
+        maintenanceTypeId:
+          type: integer
+          format: int32
+        organizationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        startDateTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          default: null
+      additionalProperties: false
+    ComputerDataForUpdateModeDto:
+      type: object
+      properties:
+        action:
+          type:
+          - string
+          - 'null'
+          default: ''
+        computerId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        computerGroupId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        computerName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        computerInstallDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          default: null
+        isIsolated:
+          type: boolean
+          default: false
+        isLockedOut:
+          type: boolean
+          default: false
+        lastVersionChange:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          default: null
+        maintenanceTypeId:
+          type: integer
+          format: int32
+        maintenanceEndDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          default: null
+        organizationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        osType:
+          type: integer
+          format: int32
+        pendingBaseFiles:
+          type: boolean
+          default: false
+        threatLockerVersion:
+          type:
+          - string
+          - 'null'
+          default: ''
+        threatLockerVersionId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        threatLockerVersionGroup:
+          type:
+          - string
+          - 'null'
+          default: ''
+        threatLockerVersionGroupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+      additionalProperties: false
+    ComputerDataForChannelDto:
+      type: object
+      properties:
+        computerId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        organizationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        updateChannel:
+          type:
+          - integer
+          - 'null'
+          format: int32
+          default: ''
+        computerName:
+          type:
+          - string
+          - 'null'
+          default: ''
+      additionalProperties: false
+    ComputerDataForVersionDto:
+      type: object
+      properties:
+        computerId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        computerName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        organizationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        osType:
+          type: integer
+          format: int32
+        threatLockerVersion:
+          type:
+          - string
+          - 'null'
+          default: ''
+      additionalProperties: false
+    ComputerDownloadParameterDto:
+      type: object
+      properties:
+        platform:
+          type:
+          - string
+          - 'null'
+          default: ''
+        apiKey:
+          type:
+          - string
+          - 'null'
+          default: ''
+        brand:
+          type:
+          - string
+          - 'null'
+          default: Threatlocker
+        groupName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        fileType:
+          type:
+          - string
+          - 'null'
+          default: ''
+        isUpdate:
+          type: boolean
+          default: false
+      additionalProperties: false
+    ComputerDataForRescanBaselineDto:
+      type: object
+      properties:
+        computerId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        organizationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        computerGroupId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        computerName:
+          type:
+          - string
+          - 'null'
+          default: ''
+      additionalProperties: false
+    ComputerEnableProtectionDto:
+      type: object
+      properties:
+        computerDetailDtos:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ComputerDataForEnableProtectionDto'
+      additionalProperties: false
+    ComputerVersionDto:
+      type: object
+      properties:
+        threatLockerVersion:
+          type:
+          - string
+          - 'null'
+          default: ''
+        threatLockerVersionId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        computerDetailDtos:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ComputerDataForVersionDto'
+      additionalProperties: false
+    ComputerDataForTransferDto:
+      type: object
+      properties:
+        computerGroupId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        computerId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        computerName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        group:
+          type:
+          - string
+          - 'null'
+          default: ''
+        hostname:
+          type:
+          - string
+          - 'null'
+          default: ''
+        maintenanceTypeId:
+          type: integer
+          format: int32
+        operatingSystem:
+          type:
+          - string
+          - 'null'
+          default: ''
+        organization:
+          type:
+          - string
+          - 'null'
+          default: ''
+        organizationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        osType:
+          type: integer
+          format: int32
+          default: 1
+      additionalProperties: false
+    ComputerUpdateToFinishMaintenanceModeDto:
+      type: object
+      properties:
+        computerId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        hostname:
+          type:
+          - string
+          - 'null'
+          default: ''
+        isIsolated:
+          type: boolean
+          default: false
+        isLockedOut:
+          type: boolean
+          default: false
+        lastVersionChange:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          default: null
+        maintenanceTypeId:
+          type: integer
+          format: int32
+        monitorOnlyDateTime:
+          type: string
+          format: date-time
+        maintenanceEndDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          default: null
+        osType:
+          type: integer
+          format: int32
+        organizationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        pendingBaseFiles:
+          type: boolean
+          default: false
+        threatLockerVersion:
+          type:
+          - string
+          - 'null'
+          default: ''
+        threatLockerVersionId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        threatLockerVersionGroup:
+          type:
+          - string
+          - 'null'
+          default: ''
+        threatLockerVersionGroupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+      additionalProperties: false
+  securitySchemes:
+    Authorization:
+      type: apiKey
+      description: Please insert Standard Authorization header.
+      name: Authorization
+      in: header
+    ManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: ManagedOrganizationId
+      in: header
+    OverrideManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: OverrideManagedOrganizationId
+      in: header

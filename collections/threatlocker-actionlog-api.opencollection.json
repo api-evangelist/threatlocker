@@ -1,0 +1,266 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portal Action Log API",
+    "version": "v1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ActionLog",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Action Logs By Parameters.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetByParametersV2",
+            "headers": [
+              {
+                "name": "usenewsearch",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    {\n          \"ActionType\": \"execute | install | network | registry | read | write | move |\n                          delete | baseline | powershell | elevate | configuration | dns\",\n          \"SourceTableId\": \"ActionLog = 1 | DenyActionLog = 2 | BaselineActionLog = 3 | EventLogActionLog = 4\",\n          \"ActionId\": \"Permit = 1 | Deny = 2 | DenyOptionToRequest = 3 | InstallMode = 4 | MissingCoreFiles = 5 | Ringfenced = 6 | AnyDeny = 7\",\n          \"GroupBy\": \"Full"
+        },
+        {
+          "info": {
+            "name": "Get All File History by hostname and fullpath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetAllForFileHistory",
+            "params": [
+              {
+                "name": "sourceTableId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "hostname",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fullPath",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Parameters Values:\n            \n    {\n       \"sourceTableId\": \"ActionLog = 1 | DenyActionLog = 2 | BaselineActionLog = 3 | EventLogActionLog = 4\"\n    }"
+        },
+        {
+          "info": {
+            "name": "Get All File History by hostname and fullpath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetAllForFileHistoryV2",
+            "params": [
+              {
+                "name": "sourceTableId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "hostname",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fullPath",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "computerId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Parameters Values:\n            \n    {\n       \"sourceTableId\": \"ActionLog = 1 | DenyActionLog = 2 | BaselineActionLog = 3 | EventLogActionLog = 4\"\n    }"
+        },
+        {
+          "info": {
+            "name": "Get Action Logs by Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetById",
+            "params": [
+              {
+                "name": "actionLogId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sourceTableId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "addToApplication",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Parameters Values:\n            \n    {\n          \"sourceTableId\": \"ActionLog = 1 | DenyActionLog = 2 | BaselineActionLog = 3 | EventLogActionLog = 4\"\n    }"
+        },
+        {
+          "info": {
+            "name": "GET /portalapi/ActionLog/ActionLogGetByIdV2",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetByIdV2",
+            "params": [
+              {
+                "name": "eActionLogId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sourceTableId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "addToApplication",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "getAllParents",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "openedFromLink",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Get Testing Environment Details For VDI HyperV",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetTestingEnvironmentDetailsById",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get Testing Environment Details For VDI HyperV"
+        },
+        {
+          "info": {
+            "name": "Get Policy Conditions For Permit Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetPolicyConditionsForPermitApplication",
+            "headers": [
+              {
+                "name": "usenewsearch",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    {\n          \"OSType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\n          \"ActionType\": \"None = 0 | BaseLine = 1 | Configuration = 2 | Delete = 3 | Elevation = 4 | Execute = 5 |\n                         Install = 6 | Move = 7 | Network = 8  | NewProcess = 9  | Powershell = 10 | Read = 11 |  \n                         Registry = 12 | Uninstall = 13 | Write = 14 | OSEventLog = 15\",\n    }"
+        },
+        {
+          "info": {
+            "name": "Get Search String (This is for save search).",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetSearchString",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    {\n           \"ActionType\": \"None = 0 | BaseLine = 1 | Configuration = 2 | Delete = 3 | Elevation = 4 | Execute = 5 |\n                         Install = 6 | Move = 7 | Network = 8  | NewProcess = 9  | Powershell = 10 | Read = 11 |  \n                         Registry = 12 | Uninstall = 13 | Write = 14 | OSEventLog = 15\",\n          \"SourceTableId\": \"ActionLog = 1 | DenyActionLog = 2 | BaselineActionLog = 3 | EventLogActionLog = 4\",\n          \"ActionId\": \"Permit ="
+        },
+        {
+          "info": {
+            "name": "GET /portalapi/ActionLog/ActionLogGetFileDownloadDetailsById",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetFileDownloadDetailsById",
+            "params": [
+              {
+                "name": "eActionLogId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sourceTableId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

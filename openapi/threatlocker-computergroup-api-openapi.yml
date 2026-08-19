@@ -1,0 +1,172 @@
+openapi: 3.2.0
+info:
+  title: Portal Computer Group API
+  version: v1.0.0
+security:
+- Authorization: []
+  ManagedOrganizationId: []
+  OverrideManagedOrganizationId: []
+tags:
+- name: ComputerGroup
+paths:
+  /portalapi/ComputerGroup/ComputerGroupGetGroupAndComputer:
+    get:
+      tags:
+      - ComputerGroup
+      summary: Get Groups and Computer
+      description: "Parameters Values:\n            \n    {\n       \"OSType\": \"All = 0 | Windows =\
+        \ 1 | MAC = 2 | Linux = 3\"\n    }"
+      parameters:
+      - name: ComputerGroupId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: OSType
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: IncludeGlobal
+        in: query
+        schema:
+          type: boolean
+      - name: IncludeAllPolicies
+        in: query
+        schema:
+          type: boolean
+      - name: IncludeOrganizations
+        in: query
+        schema:
+          type: boolean
+      - name: IncludeAllComputers
+        in: query
+        schema:
+          type: boolean
+      - name: IncludeParentGroups
+        in: query
+        schema:
+          type: boolean
+      - name: IncludeLoggedInObjects
+        in: query
+        schema:
+          type: boolean
+      - name: IncludeDnsServers
+        in: query
+        schema:
+          type: boolean
+      - name: IncludeIngestors
+        in: query
+        schema:
+          type: boolean
+      - name: PortalModuleTypeId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: IncludeAccessDevices
+        in: query
+        schema:
+          type: boolean
+      - name: IncludeRemovedComputers
+        in: query
+        schema:
+          type: boolean
+      - name: MinimumVersions
+        in: query
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/OSVersionDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/ComputerGroup/ComputerGroupGetDropdownByOrganizationId:
+    get:
+      tags:
+      - ComputerGroup
+      summary: Get Computer Groups by OrganizationId
+      parameters:
+      - name: computerGroupOSTypeId
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: computerOSType
+        in: query
+        schema:
+          type: string
+          default: windows
+      - name: hideGlobals
+        in: query
+        description: ''
+        schema:
+          type: boolean
+          default: false
+      responses:
+        '200':
+          description: OK
+  /portalapi/ComputerGroup/ComputerGroupGetForPermitApplication:
+    get:
+      tags:
+      - ComputerGroup
+      summary: Get Computer Groups For Permit Application
+      description: "Parameters Values:\n            \n    {\n       \"OSType\": \"All = 0 | Windows =\
+        \ 1 | MAC = 2 | Linux = 3\"\n    }"
+      parameters:
+      - name: osType
+        in: query
+        description: ''
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      responses:
+        '200':
+          description: OK
+  /portalapi/ComputerGroup/ComputerGroupGetForDownload:
+    get:
+      tags:
+      - ComputerGroup
+      summary: Get Group Download Installers
+      parameters:
+      - name: installKey
+        in: query
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    OSVersionDto:
+      type: object
+      properties:
+        osType:
+          type: integer
+          format: int32
+        majorVersion:
+          type: integer
+          format: int32
+        minorVersion:
+          type: integer
+          format: int32
+      additionalProperties: false
+  securitySchemes:
+    Authorization:
+      type: apiKey
+      description: Please insert Standard Authorization header.
+      name: Authorization
+      in: header
+    ManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: ManagedOrganizationId
+      in: header
+    OverrideManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: OverrideManagedOrganizationId
+      in: header

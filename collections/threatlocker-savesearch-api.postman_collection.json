@@ -1,0 +1,313 @@
+{
+  "item": [
+    {
+      "id": "76dc5c08-5a90-4030-a3a1-124a01b6c55e",
+      "name": "SaveSearch",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f764a760-24b0-47f1-b1ac-3d409c27c2ff",
+          "name": "Get Save Search.",
+          "request": {
+            "name": "Get Save Search.",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "SaveSearch",
+                "SaveSearchGetByPage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"saveSearchPageId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "591a8a04-7268-4eac-8f2b-490430b9d9fa",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SaveSearch",
+                    "SaveSearchGetByPage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"saveSearchPageId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5939745e-432d-43df-a00c-3f55fce89a11",
+          "name": "Insert Save Search.",
+          "request": {
+            "name": "Insert Save Search.",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "SaveSearch",
+                "SaveSearchInsert"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"searchData\": \"\",\n  \"saveSearchId\": \"<uuid>\",\n  \"saveSearchPageId\": \"<integer>\",\n  \"searchName\": \"<string,null>\",\n  \"saveParameters\": \"<string,null>\",\n  \"username\": \"<string,null>\",\n  \"organizationId\": \"<uuid>\",\n  \"searchCount\": \"<integer,null-int64>\",\n  \"datetime\": \"<string,null-date-time>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "57aeaac5-22ac-4334-9b42-5c40bda2412b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SaveSearch",
+                    "SaveSearchInsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"searchData\": \"\",\n  \"saveSearchId\": \"<uuid>\",\n  \"saveSearchPageId\": \"<integer>\",\n  \"searchName\": \"<string,null>\",\n  \"saveParameters\": \"<string,null>\",\n  \"username\": \"<string,null>\",\n  \"organizationId\": \"<uuid>\",\n  \"searchCount\": \"<integer,null-int64>\",\n  \"datetime\": \"<string,null-date-time>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7350d41d-2770-46d4-af8c-b187b2764d7e",
+          "name": "Delete Save Search.",
+          "request": {
+            "name": "Delete Save Search.",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "SaveSearch",
+                "SaveSearchDeleteById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "saveSearchId",
+                  "value": "<uuid>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d692da62-6817-4328-b405-90b0c60cd0b6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SaveSearch",
+                    "SaveSearchDeleteById"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "saveSearchId",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "04f2c13d-912c-4c48-a0c8-93471c21d55e",
+    "name": "Portal Save Search API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

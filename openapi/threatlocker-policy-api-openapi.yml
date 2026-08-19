@@ -1,0 +1,43 @@
+openapi: 3.2.0
+info:
+  title: Portal Policy API
+  version: v1.0.0
+security:
+- Authorization: []
+  ManagedOrganizationId: []
+  OverrideManagedOrganizationId: []
+tags:
+- name: Policy
+paths:
+  /portalapi/Policy/PolicyGetById:
+    get:
+      tags:
+      - Policy
+      summary: Get Policy by Id.
+      parameters:
+      - name: policyId
+        in: query
+        description: ''
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    Authorization:
+      type: apiKey
+      description: Please insert Standard Authorization header.
+      name: Authorization
+      in: header
+    ManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: ManagedOrganizationId
+      in: header
+    OverrideManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: OverrideManagedOrganizationId
+      in: header

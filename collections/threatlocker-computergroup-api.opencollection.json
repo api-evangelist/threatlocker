@@ -1,0 +1,173 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portal Computer Group API",
+    "version": "v1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ComputerGroup",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Groups and Computer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ComputerGroup/ComputerGroupGetGroupAndComputer",
+            "params": [
+              {
+                "name": "ComputerGroupId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "OSType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeGlobal",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeAllPolicies",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeOrganizations",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeAllComputers",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeParentGroups",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeLoggedInObjects",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeDnsServers",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeIngestors",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "PortalModuleTypeId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeAccessDevices",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeRemovedComputers",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "MinimumVersions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Parameters Values:\n            \n    {\n       \"OSType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\n    }"
+        },
+        {
+          "info": {
+            "name": "Get Computer Groups by OrganizationId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ComputerGroup/ComputerGroupGetDropdownByOrganizationId",
+            "params": [
+              {
+                "name": "computerGroupOSTypeId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "computerOSType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "hideGlobals",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Computer Groups by OrganizationId"
+        },
+        {
+          "info": {
+            "name": "Get Computer Groups For Permit Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ComputerGroup/ComputerGroupGetForPermitApplication",
+            "params": [
+              {
+                "name": "osType",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Parameters Values:\n            \n    {\n       \"OSType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\n    }"
+        },
+        {
+          "info": {
+            "name": "Get Group Download Installers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ComputerGroup/ComputerGroupGetForDownload",
+            "params": [
+              {
+                "name": "installKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Group Download Installers"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,233 @@
+{
+  "item": [
+    {
+      "id": "e72db915-67e0-4879-9791-36d6160f4717",
+      "name": "UploadRequest",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "56f4f140-9d24-4649-921e-f695b60b7e25",
+          "name": "Insert Upload Request.",
+          "request": {
+            "name": "Insert Upload Request.",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "UploadRequest",
+                "UploadRequestInsert"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"uploadRequestId\": \"<uuid>\",\n  \"organizationId\": \"<uuid>\",\n  \"computerId\": \"<uuid>\",\n  \"shA256\": \"<string,null>\",\n  \"hash\": \"<string,null>\",\n  \"filename\": \"<string,null>\",\n  \"filepath\": \"<string,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8463d58c-bff2-454e-bf0d-4e186f37b79c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "UploadRequest",
+                    "UploadRequestInsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"uploadRequestId\": \"<uuid>\",\n  \"organizationId\": \"<uuid>\",\n  \"computerId\": \"<uuid>\",\n  \"shA256\": \"<string,null>\",\n  \"hash\": \"<string,null>\",\n  \"filename\": \"<string,null>\",\n  \"filepath\": \"<string,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0deb379e-e4da-495c-a146-9be91fbdf8ff",
+          "name": "Get Upload Request.",
+          "request": {
+            "name": "Get Upload Request.",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "UploadRequest",
+                "UploadRequestGet"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"uploadRequestId\": \"<uuid>\",\n  \"organizationId\": \"<uuid>\",\n  \"computerId\": \"<uuid>\",\n  \"shA256\": \"<string,null>\",\n  \"hash\": \"<string,null>\",\n  \"filename\": \"<string,null>\",\n  \"filepath\": \"<string,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "75e61b83-2341-470d-8d47-3dc7aa7a2360",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "UploadRequest",
+                    "UploadRequestGet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"uploadRequestId\": \"<uuid>\",\n  \"organizationId\": \"<uuid>\",\n  \"computerId\": \"<uuid>\",\n  \"shA256\": \"<string,null>\",\n  \"hash\": \"<string,null>\",\n  \"filename\": \"<string,null>\",\n  \"filepath\": \"<string,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "cffc285f-54f4-477e-b938-98b9d047ee87",
+    "name": "Portal Upload Request API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

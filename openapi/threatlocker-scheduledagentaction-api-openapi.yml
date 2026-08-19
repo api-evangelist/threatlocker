@@ -1,0 +1,278 @@
+openapi: 3.2.0
+info:
+  title: Portal Scheduled Agent Action API
+  version: v1.0.0
+security:
+- Authorization: []
+  ManagedOrganizationId: []
+  OverrideManagedOrganizationId: []
+tags:
+- name: ScheduledAgentAction
+paths:
+  /portalapi/ScheduledAgentAction/List:
+    get:
+      tags:
+      - ScheduledAgentAction
+      summary: Get a list of Scheduled Agent Actions
+      description: "Parameters Values:\n            \n    {\n          \"ScheduledType\": \"Version Update\
+        \ = 1\",\n          \"IncludeChildren\": \"true or false\"\n    }"
+      parameters:
+      - name: scheduledType
+        in: query
+        description: Scheduled type identifier
+        schema:
+          type: integer
+          format: int32
+      - name: includeChildren
+        in: query
+        description: Whether to include child organizations.
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+  /portalapi/ScheduledAgentAction/AppliesTo:
+    get:
+      tags:
+      - ScheduledAgentAction
+      summary: Get a list of valid Applies To records
+      description: "Parameters Values:\n            \n    {\n          \"OSType\": \"Windows = 1 | Mac\
+        \ = 2 | Linux = 3 | Red Hat Enterprise Linux 6 = 7\",\n          \"IncludeChildren\": \"true or\
+        \ false\",\n          \"SearchText\": \"(Optional) - Any alphanumeric text\"\n    }"
+      parameters:
+      - name: osType
+        in: query
+        description: Operating system type identifier.
+        schema:
+          type: integer
+          format: int32
+      - name: includeChildren
+        in: query
+        description: Whether to include child organizations.
+        schema:
+          type: boolean
+      - name: searchText
+        in: query
+        description: Optional search filter text.
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: OK
+  /portalapi/ScheduledAgentAction/GetForHydration:
+    get:
+      tags:
+      - ScheduledAgentAction
+      summary: Get the Scheduled Agent Action details
+      description: "Parameters Values:\n            \n    {\n          \"ScheduledId\": \"A value present\
+        \ in the response returned from GetScheduledAgentActionList\",\n    }"
+      parameters:
+      - name: scheduledId
+        in: query
+        description: The unique identifier of the scheduled agent action.
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+  /portalapi/ScheduledAgentAction/GetByParameters:
+    post:
+      tags:
+      - ScheduledAgentAction
+      summary: Get the scheduled agent actions based on the provided filter parameters.
+      description: "Parameters Values:\n            \n    {\n          \"ScheduledId\": \"A value present\
+        \ in the response returned from GetScheduledAgentActionList\",\n          \"OrderBy\": \"scheduleddatetime\
+        \ | computername | computergroupname | organizationname\",\n          \"IsAscending\": \"true\
+        \ or false\",\n          \"SearchText\": \"Any alphanumeric text\",\n          \"PageSize\": \"\
+        The number of records per page\",\n          \"PageNumber\": \"The page number to display\",\n\
+        \          \"OrganizationIds\": \"A list of organization ids of the records to display\",\n  \
+        \        \"ComputerGroupIds\": \"A list of computer group ids of the records to display\"\n  \
+        \  }"
+      requestBody:
+        description: A DTO containing filter parameters such as organization IDs, computer group IDs,
+          sorting options, and pagination settings.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScheduledAgentActionParametersDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ScheduledAgentActionParametersDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ScheduledAgentActionParametersDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/ScheduledAgentAction:
+    post:
+      tags:
+      - ScheduledAgentAction
+      summary: Inserts a new scheduled agent action.
+      description: "Parameters Values:\n            \n    {\n          \"ScheduledType\": \"Version Update\
+        \ = 1\",\n          \"ScheduledTypePayload\": \"If ScheduledType = 1, then must include the Target\
+        \ TL Version Id\",\n          \"AppliesTo\": \"A list of Applies To\",\n          \"BatchAmount\"\
+        : \"25 | 50 | 100 | 250 | 500\",\n          \"StartDate\": \"The date to start the schedule\"\
+        ,\n          \"WindowStartTime\": \"The start time used for scheduling\",\n          \"WindowEndTime\"\
+        : \"The end time used for scheduling\"\n    }"
+      requestBody:
+        description: A DTO containing the details of the scheduled agent action to be created, including
+          type, targets, and scheduling parameters.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScheduledAgentActionInsertDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ScheduledAgentActionInsertDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ScheduledAgentActionInsertDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/ScheduledAgentAction/Abort:
+    post:
+      tags:
+      - ScheduledAgentAction
+      summary: Aborts one or more scheduled agent actions.
+      description: "Parameters Values:\n            \n    {\n          \"ScheduledId\": \"A value present\
+        \ in the response returned from GetScheduledAgentActionList\",\n          \"AppliesTo\": \"A list\
+        \ of Applies To\",\n          \"AbortAll\": \"true or false\",\n    }\n\nIf \"AbortAll\" = \"\
+        false\", then the AppliesTo must have at least 1 record.\nIf \"AbortAll\" = \"true\", then the\
+        \ AppliesTo must be empty and all records for the ScheduledId will be aborted."
+      requestBody:
+        description: A DTO containing the abort parameters, including the scheduled action ID and a flag
+          indicating whether to abort all applicable actions.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScheduledAgentActionAbortDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ScheduledAgentActionAbortDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ScheduledAgentActionAbortDto'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    ScheduledAgentActionInsertDto:
+      type: object
+      properties:
+        scheduledType:
+          type: integer
+          format: int32
+        scheduledTypePayload:
+          type:
+          - string
+          - 'null'
+        appliesTo:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ScheduledAgentActionAppliesTo'
+        batchAmount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        startDate:
+          type: string
+          format: date-time
+        windowStartTime:
+          type:
+          - string
+          - 'null'
+        windowEndTime:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    ScheduledAgentActionAbortDto:
+      type: object
+      properties:
+        scheduledId:
+          type: string
+          format: uuid
+        appliesTo:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ScheduledAgentActionAppliesTo'
+        abortAll:
+          type: boolean
+      additionalProperties: false
+    ScheduledAgentActionAppliesTo:
+      type: object
+      properties:
+        appliesToId:
+          type: string
+          format: uuid
+        appliesToTypeId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    ScheduledAgentActionParametersDto:
+      type: object
+      properties:
+        scheduledId:
+          type: string
+          format: uuid
+        orderBy:
+          type:
+          - string
+          - 'null'
+          default: scheduleddatetime
+        isAscending:
+          type: boolean
+        searchText:
+          maxLength: 255
+          type:
+          - string
+          - 'null'
+        pageSize:
+          type: integer
+          format: int32
+          default: 25
+        pageNumber:
+          type: integer
+          format: int32
+          default: 1
+        organizationIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+        computerGroupIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+      additionalProperties: false
+  securitySchemes:
+    Authorization:
+      type: apiKey
+      description: Please insert Standard Authorization header.
+      name: Authorization
+      in: header
+    ManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: ManagedOrganizationId
+      in: header
+    OverrideManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: OverrideManagedOrganizationId
+      in: header

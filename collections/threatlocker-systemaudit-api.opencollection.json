@@ -1,0 +1,109 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portal System Audit API",
+    "version": "v1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SystemAudit",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieves System Audit data for the Health Center, specifically focused on login attempts.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/SystemAudit/SystemAuditGetForHealthCenter",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint retrieves a paginated list of audit records related to user login attempts, \nfiltered by date range, search text, and whether the login was successful or denied.\nIt can also filter by latitude and longitude if provided in the correct format within the search text.\n\n\n\n**Search Text Usage:**\n\n*   **Standard Text Search:** You can enter countries, regions, or cities to search within the audit records.\n*   **Latitude/Longitude Search:** To search by geographical location, use the forma"
+        },
+        {
+          "info": {
+            "name": "Retrieves unique emails and IP addresses from system audit data for login attempts filter.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/SystemAudit/SystemAuditGetLoginAttemptFiltersForHealthCenter",
+            "params": [
+              {
+                "name": "Days",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "SearchText",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IsLoggedIn",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "EmailAddress",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IPAddresses",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "AfterKeys",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "PageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "PageNumber",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "\n\n             **Sample request:**\n                 \n                 GET /SystemAuditGetLoginAttemptFiltersForHealthCenter\n                 {\n                     \"days\": 30,\n                     \"isLoggedIn\": false,\n                     \"pageSize\": 25,\n                     \"pageNumber\": 1,\n                     \"emailAddress\": \"test.user@email.com\"\n                 }\n                 \n                 GET /SystemAuditGetLoginAttemptFiltersForHealthCenter\n                 {\n                     "
+        },
+        {
+          "info": {
+            "name": "Retrieves System Audit records based on specified parameters.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/SystemAudit/SystemAuditGetByParameters",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint retrieves a paginated list of System Audit records, allowing filtering by various parameters such as username, action, IP address, effective action, details, date range, and organization.\n\n\n\n**Filtering and Search:**\n\n\n*   **Wildcard Search:** The `Details`, `IPAddress`, `EffectiveAction`, and `Username` fields support wildcard searches.\n    - If the search text contains an asterisk (`*`), it will be replaced with a percent sign (`%`) for the SQL LIKE operator.\n    - If the search "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

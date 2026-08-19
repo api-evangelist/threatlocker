@@ -1,0 +1,519 @@
+{
+  "item": [
+    {
+      "id": "2194ce95-353b-43a0-8e6a-576acf3fce53",
+      "name": "ComputerGroup",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "440ac83e-92b8-4be2-afde-0aa21381a34c",
+          "name": "Get Groups and Computer",
+          "request": {
+            "name": "Get Groups and Computer",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n       \"OSType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "ComputerGroup",
+                "ComputerGroupGetGroupAndComputer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ComputerGroupId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "OSType",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "IncludeGlobal",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "IncludeAllPolicies",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "IncludeOrganizations",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "IncludeAllComputers",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "IncludeParentGroups",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "IncludeLoggedInObjects",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "IncludeDnsServers",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "IncludeIngestors",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "PortalModuleTypeId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "IncludeAccessDevices",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "IncludeRemovedComputers",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "MinimumVersions",
+                  "value": "{\"osType\":\"<integer>\",\"majorVersion\":\"<integer>\",\"minorVersion\":\"<integer>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "MinimumVersions",
+                  "value": "{\"osType\":\"<integer>\",\"majorVersion\":\"<integer>\",\"minorVersion\":\"<integer>\"}"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "645b58a2-1afc-4082-be38-7f5111e0657f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ComputerGroup",
+                    "ComputerGroupGetGroupAndComputer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ComputerGroupId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "OSType",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "IncludeGlobal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "IncludeAllPolicies",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "IncludeOrganizations",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "IncludeAllComputers",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "IncludeParentGroups",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "IncludeLoggedInObjects",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "IncludeDnsServers",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "IncludeIngestors",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "PortalModuleTypeId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "IncludeAccessDevices",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "IncludeRemovedComputers",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "MinimumVersions",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "key": "MinimumVersions",
+                      "value": "[object Object]"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "89bff9b7-5a71-433c-8d39-646307ea74ab",
+          "name": "Get Computer Groups by OrganizationId",
+          "request": {
+            "name": "Get Computer Groups by OrganizationId",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "ComputerGroup",
+                "ComputerGroupGetDropdownByOrganizationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "computerGroupOSTypeId",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "computerOSType",
+                  "value": "windows"
+                },
+                {
+                  "disabled": false,
+                  "key": "hideGlobals",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "79a8f9ed-651f-45fe-b987-88635f5c3aa9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ComputerGroup",
+                    "ComputerGroupGetDropdownByOrganizationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "computerGroupOSTypeId",
+                      "value": "0"
+                    },
+                    {
+                      "key": "computerOSType",
+                      "value": "windows"
+                    },
+                    {
+                      "key": "hideGlobals",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e9263a4c-8043-4e54-b210-d3a62da58ed8",
+          "name": "Get Computer Groups For Permit Application",
+          "request": {
+            "name": "Get Computer Groups For Permit Application",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n       \"OSType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "ComputerGroup",
+                "ComputerGroupGetForPermitApplication"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "osType",
+                  "value": "1"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5da59142-eba8-47d0-983f-3c0e7f5e50e2",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ComputerGroup",
+                    "ComputerGroupGetForPermitApplication"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "osType",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "849cbce8-dcbe-4dfd-a0fc-f0729682320d",
+          "name": "Get Group Download Installers",
+          "request": {
+            "name": "Get Group Download Installers",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "ComputerGroup",
+                "ComputerGroupGetForDownload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "installKey",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "64a39c66-0e8e-4396-b783-eb76dcec094c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ComputerGroup",
+                    "ComputerGroupGetForDownload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "installKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "155e652b-69e1-45f5-9177-505e833cb115",
+    "name": "Portal Computer Group API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

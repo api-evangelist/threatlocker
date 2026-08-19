@@ -1,0 +1,218 @@
+openapi: 3.2.0
+info:
+  title: Portal Tag API
+  version: v1.0.0
+security:
+- Authorization: []
+  ManagedOrganizationId: []
+  OverrideManagedOrganizationId: []
+tags:
+- name: Tag
+paths:
+  /portalapi/Tag/TagGetById:
+    get:
+      tags:
+      - Tag
+      summary: Get Tag by Id.
+      parameters:
+      - name: tagId
+        in: query
+        description: ''
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+  /portalapi/Tag/TagGetDowndownOptionsByOrganizationId:
+    get:
+      tags:
+      - Tag
+      summary: Get Tag Dropdown Options.
+      parameters:
+      - name: includeBuiltIns
+        in: query
+        description: ''
+        schema:
+          type: boolean
+      - name: tagType
+        in: query
+        description: ''
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      - name: includeNetworkTagInMaster
+        in: query
+        description: ''
+        schema:
+          type: boolean
+          default: true
+      responses:
+        '200':
+          description: OK
+  /portalapi/Tag/TagUpdate:
+    post:
+      tags:
+      - Tag
+      summary: Update Tag.
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TagDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/TagDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/TagDto'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    TagDto:
+      type: object
+      properties:
+        tagId:
+          type: string
+          format: uuid
+        organizationId:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        active:
+          type: boolean
+        tagType:
+          type: integer
+          format: int32
+        tagItemsText:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DropdownOption'
+        tagItemsIPv4:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DropdownOption'
+        tagItemsIPv6:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DropdownOption'
+        tagItemsReadablePath:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DropdownOption'
+        tagItemsWritablePath:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DropdownOption'
+        allTagItems:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TagItemDto'
+      additionalProperties: false
+    TagItemDto:
+      type: object
+      properties:
+        tagId:
+          type: string
+          format: uuid
+        tagItemId:
+          type: integer
+          format: int64
+        tagPrefixTypeId:
+          type: integer
+          format: int32
+        tagItemType:
+          type: integer
+          format: int32
+        value:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    DropdownOption:
+      type: object
+      properties:
+        label:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+        numericValue:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        entityType:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        parentId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        disabled:
+          type: boolean
+        tooltip:
+          type:
+          - string
+          - 'null'
+        featureConfigurationIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        isSupported:
+          type:
+          - boolean
+          - 'null'
+        extendedProperties:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
+      additionalProperties: false
+  securitySchemes:
+    Authorization:
+      type: apiKey
+      description: Please insert Standard Authorization header.
+      name: Authorization
+      in: header
+    ManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: ManagedOrganizationId
+      in: header
+    OverrideManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: OverrideManagedOrganizationId
+      in: header

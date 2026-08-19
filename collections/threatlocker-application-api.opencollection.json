@@ -1,0 +1,128 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portal Application API",
+    "version": "v1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Application",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Application by Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Application/ApplicationGetById",
+            "params": [
+              {
+                "name": "applicationId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Application by Id."
+        },
+        {
+          "info": {
+            "name": "Get Application Details for Network Policy Process by Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Application/ApplicationGetForNetworkPolicyProcessById",
+            "params": [
+              {
+                "name": "applicationId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Application Details for Network Policy Process by Id."
+        },
+        {
+          "info": {
+            "name": "Get Application Research Details by Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Application/ApplicationGetResearchDetailsById",
+            "params": [
+              {
+                "name": "applicationId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Application Research Details by Id."
+        },
+        {
+          "info": {
+            "name": "Get Application Options for Maintenance Scheduling",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Application/ApplicationGetForMaintenanceMode",
+            "params": [
+              {
+                "name": "osType",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Parameters Values:\n            \n    {\n          \"OSType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\n    }"
+        },
+        {
+          "info": {
+            "name": "Get Matching Applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Application/ApplicationGetMatchingList",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    {\n          \"OSType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\n    }"
+        },
+        {
+          "info": {
+            "name": "Load Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Application/ApplicationGetForApplicationOptions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    {\n          \"OSType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\n    }"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

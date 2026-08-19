@@ -1,0 +1,89 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portal Maintenance Mode API",
+    "version": "v1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "MaintenanceMode",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Maintenance Schedule By Computer Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/MaintenanceMode/MaintenanceModeGetByComputerId",
+            "params": [
+              {
+                "name": "computerId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Maintenance Schedule By Computer Id"
+        },
+        {
+          "info": {
+            "name": "Add to Maintenance Schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/MaintenanceMode/MaintenanceModeInsert",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    {\n         \"AutomaticApplicationType\": \" empty = 0 | Automatic Computer = 1 | Automatic Group = 2 | Automatic System = 3\",\n         \"MaintenanceTypeId\": \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6\"\n    }"
+        },
+        {
+          "info": {
+            "name": "End Maintenance Schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/portalapi/MaintenanceMode/MaintenanceModeEndById",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    {\n         \"AppliesToType\": \" empty = 0 | Automatic Computer = 1 | Automatic Group = 2 | Automatic System = 3\",\n         \"MaintenanceTypeId\": \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6\"\n    }"
+        },
+        {
+          "info": {
+            "name": "Updated Maintenance Mode End Date Time.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/MaintenanceMode/MaintenanceModeUpdateEndDateTimeForSpecificDate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    {\n         \"MaintenanceTypeId\": \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6\",\n         \"OSType\": \"Windows = 1 | MAC = 2 | Linux = 3\"\n    }"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

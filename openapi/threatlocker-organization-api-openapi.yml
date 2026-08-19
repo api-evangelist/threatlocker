@@ -1,0 +1,59 @@
+openapi: 3.2.0
+info:
+  title: Portal Organization API
+  version: v1.0.0
+security:
+- Authorization: []
+  ManagedOrganizationId: []
+  OverrideManagedOrganizationId: []
+tags:
+- name: Organization
+paths:
+  /portalapi/Organization/OrganizationGetAuthKeyById:
+    get:
+      tags:
+      - Organization
+      summary: Get Auth Key
+      responses:
+        '200':
+          description: OK
+  /portalapi/Organization/OrganizationUpdateAuthKeyById:
+    post:
+      tags:
+      - Organization
+      summary: Generate Auth Key
+      responses:
+        '200':
+          description: OK
+  /portalapi/Organization/OrganizationGetForMoveComputers:
+    get:
+      tags:
+      - Organization
+      summary: Get Organizations For Move Computers
+      parameters:
+      - name: searchText
+        in: query
+        description: ''
+        schema:
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    Authorization:
+      type: apiKey
+      description: Please insert Standard Authorization header.
+      name: Authorization
+      in: header
+    ManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: ManagedOrganizationId
+      in: header
+    OverrideManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: OverrideManagedOrganizationId
+      in: header

@@ -1,0 +1,1929 @@
+{
+  "item": [
+    {
+      "id": "9e704786-142c-4361-a83e-3e1bc4e91400",
+      "name": "Computer",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d446be0a-a8f2-4c68-aa23-14dc53a84f85",
+          "name": "Load Computers By All Parameters",
+          "request": {
+            "name": "Load Computers By All Parameters",
+            "description": {
+              "content": "Parameters Values:\n            \n    \n    {\n       \"OrderBy\": \"computername | group | action | lastcheckin | computerinstalldate | deniedcountthreedays | updatechannel | threatlockerversion\",\n       \"Action\": \" All Computer Mode | Secure | Installation | Learning | MonitorOnly | Manual Update | Pre-Releases | Regular | Expedited | Slow and Steady\",\n       \"KindOfAction\": \" Computer Mode | TamperProtectionDisabled | NeedsReview | ReadyToSecure | BaselineNotUploaded | Update Channel\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerGetByAllParameters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"searchText\": \"\",\n  \"computerGroup\": \"00000000-0000-0000-0000-000000000000\",\n  \"orderBy\": \"computername\",\n  \"pageSize\": 25,\n  \"pageNumber\": 1,\n  \"childOrganizations\": false,\n  \"action\": \"\",\n  \"isAscending\": true,\n  \"kindOfAction\": \"\",\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"showLastCheckIn\": true,\n  \"showDeleted\": false,\n  \"searchBy\": \"<integer,null-int32>\",\n  \"threatlockerVersion\": \"All\",\n  \"isExport\": \"false\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f4eff92e-178f-4582-b7cc-86a9220869c6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerGetByAllParameters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"searchText\": \"\",\n  \"computerGroup\": \"00000000-0000-0000-0000-000000000000\",\n  \"orderBy\": \"computername\",\n  \"pageSize\": 25,\n  \"pageNumber\": 1,\n  \"childOrganizations\": false,\n  \"action\": \"\",\n  \"isAscending\": true,\n  \"kindOfAction\": \"\",\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"showLastCheckIn\": true,\n  \"showDeleted\": false,\n  \"searchBy\": \"<integer,null-int32>\",\n  \"threatlockerVersion\": \"All\",\n  \"isExport\": \"false\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1894c2f5-f800-482b-a464-2ffd538440ef",
+          "name": "Get Computer Information By Id.",
+          "request": {
+            "name": "Get Computer Information By Id.",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerGetForEditById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "computerId",
+                  "value": "<uuid>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fc200d7f-1383-4bdf-ab3d-09cb46dcab8e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerGetForEditById"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "computerId",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9b47365c-da67-4f1a-8918-ad84cd14e214",
+          "name": "Update Computer",
+          "request": {
+            "name": "Update Computer",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerUpdateForEdit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"computerGroupId\": \"00000000-0000-0000-0000-000000000000\",\n  \"name\": \"\",\n  \"useProxyServer\": false,\n  \"proxyServerOption\": \"\",\n  \"proxyUrlEntry\": \"\",\n  \"proxyURL\": \"\",\n  \"options\": \"<array,null>\",\n  \"aliases\": \"<array,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b6107094-2697-4dbe-b5fa-88756c08a213",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerUpdateForEdit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"computerGroupId\": \"00000000-0000-0000-0000-000000000000\",\n  \"name\": \"\",\n  \"useProxyServer\": false,\n  \"proxyServerOption\": \"\",\n  \"proxyUrlEntry\": \"\",\n  \"proxyURL\": \"\",\n  \"options\": \"<array,null>\",\n  \"aliases\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2bbd9ec3-7ca9-406f-bd01-f1133286205e",
+          "name": "Update Baseline Rescan Computer",
+          "request": {
+            "name": "Update Baseline Rescan Computer",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerUpdateBaselineRescan"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"computerDetailDtos\": \"<array,null>\",\n  \"enableLearning\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5d11b33b-6755-40fe-8fe7-24b11fc6170e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerUpdateBaselineRescan"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"computerDetailDtos\": \"<array,null>\",\n  \"enableLearning\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f9f430a4-d7d3-4687-b471-08ceefda1a57",
+          "name": "Restart service for selected computers",
+          "request": {
+            "name": "Restart service for selected computers",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerUpdateShouldRestartByIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"computerName\": \"\"\n  },\n  {\n    \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"computerName\": \"\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f06c6237-1713-422a-9606-2a1998cb1573",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerUpdateShouldRestartByIds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"computerName\": \"\"\n  },\n  {\n    \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"computerName\": \"\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f20149ea-8aa1-4b35-ab9e-c691a4a7c7ab",
+          "name": "Restart Organization Computers",
+          "request": {
+            "name": "Restart Organization Computers",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerUpdateShouldRestartByOrganization"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<boolean>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cc94a76f-44c6-4685-b154-d62e01253c9a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerUpdateShouldRestartByOrganization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<boolean>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b0225cb4-5559-4821-9868-f868d1b64ace",
+          "name": "Move Computer",
+          "request": {
+            "name": "Move Computer",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n         \"MaintenanceTypeId\": \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6\",\n          \"OSType\": \"Windows = 1 | MAC = 2 | Linux = 3\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerMoveToOtherOrganization"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"computerDetailDtos\": \"<array,null>\",\n  \"enableLearningRescan\": false,\n  \"targetComputerGroupId\": \"00000000-0000-0000-0000-000000000000\",\n  \"targetOrganizationId\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0aca680e-a942-4a93-9f05-857f32382391",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerMoveToOtherOrganization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"computerDetailDtos\": \"<array,null>\",\n  \"enableLearningRescan\": false,\n  \"targetComputerGroupId\": \"00000000-0000-0000-0000-000000000000\",\n  \"targetOrganizationId\": \"00000000-0000-0000-0000-000000000000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c623120a-cfb2-476b-a768-3105df2b808c",
+          "name": "Computer Enable Protection",
+          "request": {
+            "name": "Computer Enable Protection",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerEnableProtection"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"computerDetailDtos\": \"<array,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ccaad719-9fd3-45f5-9bef-3836ffc76cc5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerEnableProtection"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"computerDetailDtos\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "88023aab-d5cd-493a-8a00-60529432ac2a",
+          "name": "Disable Computer Protection",
+          "request": {
+            "name": "Disable Computer Protection",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n        \"Action\": \" MonitorOnly | Installation Mode | Learning | Elevation Mode | Learning Mode Hash Only | TamperProtectionDisabled | Secure\",\n         \"MaintenanceModeType\": \" MonitorOnly = 1 | Learning = 3 | TamperProtectionDisabled = 6\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerDisableProtection"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"computerDetailDtos\": \"<array,null>\",\n  \"endDate\": null,\n  \"startDate\": null,\n  \"maintenanceModeType\": \"<integer,null-int32>\",\n  \"permitEnd\": false,\n  \"applicationId\": \"autocomp\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9397ffa1-c728-4c8f-9c5c-75e7d9e2c920",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerDisableProtection"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"computerDetailDtos\": \"<array,null>\",\n  \"endDate\": null,\n  \"startDate\": null,\n  \"maintenanceModeType\": \"<integer,null-int32>\",\n  \"permitEnd\": false,\n  \"applicationId\": \"autocomp\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c8e052d9-8090-44cd-9d38-8927d8439033",
+          "name": "Remove Duplicate Computers",
+          "request": {
+            "name": "Remove Duplicate Computers",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerRemoveDuplicate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<boolean>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "41f76b1b-efde-46c4-903d-2b2dc06dcc02",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerRemoveDuplicate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<boolean>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c1c9a24-85f0-4b43-81e7-32375f64d12c",
+          "name": "Updates a device's maintenance mode settings.",
+          "request": {
+            "name": "Updates a device's maintenance mode settings.",
+            "description": {
+              "content": "Use this endpoint to enable or disable specific maintenance modes for a device.\n            \n**Maintenance Mode IDs:**\n* **Application Control Monitor**: `1`\n* **Application Control Installation**: `2`\n* **Application Control Learning**: `3`\n* **Network Control Monitor**: `17`\n* **Storage Control Monitor**: `18`\n            \n**OS Type IDs:**\n* **Windows**: `1`\n* **MAC**: `2`\n* **Linux**: `3`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerUpdateMaintenanceMode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"applicationId\": \"<string,null>\",\n  \"computerDetailDto\": {\n    \"action\": \"\",\n    \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n    \"computerGroupId\": \"00000000-0000-0000-0000-000000000000\",\n    \"computerName\": \"\",\n    \"computerInstallDate\": null,\n    \"isIsolated\": false,\n    \"isLockedOut\": false,\n    \"lastVersionChange\": null,\n    \"maintenanceTypeId\": \"<integer>\",\n    \"maintenanceEndDate\": null,\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"osType\": \"<integer>\",\n    \"pendingBaseFiles\": false,\n    \"threatLockerVersion\": \"\",\n    \"threatLockerVersionId\": \"00000000-0000-0000-0000-000000000000\",\n    \"threatLockerVersionGroup\": \"\",\n    \"threatLockerVersionGroupId\": \"00000000-0000-0000-0000-000000000000\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6983f480-cd60-49f3-b63f-ab552c00c08e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerUpdateMaintenanceMode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationId\": \"<string,null>\",\n  \"computerDetailDto\": {\n    \"action\": \"\",\n    \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n    \"computerGroupId\": \"00000000-0000-0000-0000-000000000000\",\n    \"computerName\": \"\",\n    \"computerInstallDate\": null,\n    \"isIsolated\": false,\n    \"isLockedOut\": false,\n    \"lastVersionChange\": null,\n    \"maintenanceTypeId\": \"<integer>\",\n    \"maintenanceEndDate\": null,\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"osType\": \"<integer>\",\n    \"pendingBaseFiles\": false,\n    \"threatLockerVersion\": \"\",\n    \"threatLockerVersionId\": \"00000000-0000-0000-0000-000000000000\",\n    \"threatLockerVersionGroup\": \"\",\n    \"threatLockerVersionGroupId\": \"00000000-0000-0000-0000-000000000000\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30775e2f-2429-4ca7-ba04-711ffc1ee991",
+          "name": "/portalapi/Computer/ComputerUpdateThreatlockerVersionByIds",
+          "request": {
+            "name": "/portalapi/Computer/ComputerUpdateThreatlockerVersionByIds",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerUpdateThreatlockerVersionByIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"threatLockerVersion\": \"\",\n  \"threatLockerVersionId\": \"00000000-0000-0000-0000-000000000000\",\n  \"computerDetailDtos\": \"<array,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e7231a5d-7fb3-43e3-917d-a4daf3ba360d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerUpdateThreatlockerVersionByIds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"threatLockerVersion\": \"\",\n  \"threatLockerVersionId\": \"00000000-0000-0000-0000-000000000000\",\n  \"computerDetailDtos\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe310467-3084-44df-aaf7-3c6afb2b6dfc",
+          "name": "Retrieves ThreatLocker agent versions for computers in the managed organization.",
+          "request": {
+            "name": "Retrieves ThreatLocker agent versions for computers in the managed organization.",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerGetThreatlockerVersions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "includeChildOrganizations",
+                  "value": "false",
+                  "description": "If true, also include computers from child organizations the user has access to."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5692151a-8d54-4cff-8a8a-9175d3d95f3a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerGetThreatlockerVersions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeChildOrganizations",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "af5df34c-8c52-4fb3-b430-3cd02c19c84f",
+          "name": "End Maintenance Mode",
+          "request": {
+            "name": "End Maintenance Mode",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n         \"MaintenanceTypeId\": \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6\",\n          \"OSType\": \"Windows = 1 | MAC = 2 | Linux = 3\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerUpdateToFinishMaintenanceMode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"hostname\": \"\",\n  \"isIsolated\": false,\n  \"isLockedOut\": false,\n  \"lastVersionChange\": null,\n  \"maintenanceTypeId\": \"<integer>\",\n  \"monitorOnlyDateTime\": \"<dateTime>\",\n  \"maintenanceEndDate\": null,\n  \"osType\": \"<integer>\",\n  \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"pendingBaseFiles\": false,\n  \"threatLockerVersion\": \"\",\n  \"threatLockerVersionId\": \"00000000-0000-0000-0000-000000000000\",\n  \"threatLockerVersionGroup\": \"\",\n  \"threatLockerVersionGroupId\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "24654b0b-eb7d-402b-9652-683b5ed59b82",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerUpdateToFinishMaintenanceMode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"hostname\": \"\",\n  \"isIsolated\": false,\n  \"isLockedOut\": false,\n  \"lastVersionChange\": null,\n  \"maintenanceTypeId\": \"<integer>\",\n  \"monitorOnlyDateTime\": \"<dateTime>\",\n  \"maintenanceEndDate\": null,\n  \"osType\": \"<integer>\",\n  \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"pendingBaseFiles\": false,\n  \"threatLockerVersion\": \"\",\n  \"threatLockerVersionId\": \"00000000-0000-0000-0000-000000000000\",\n  \"threatLockerVersionGroup\": \"\",\n  \"threatLockerVersionGroupId\": \"00000000-0000-0000-0000-000000000000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6dfd0fdc-ae62-4fdc-b1ad-56b71a096fad",
+          "name": "Get data for new computer",
+          "request": {
+            "name": "Get data for new computer",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerGetForNewComputer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5ff9473e-f51c-4480-89b4-206d4937a02c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerGetForNewComputer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5b99de20-a093-4875-bbcf-4051cf10487f",
+          "name": "Computer Get Download",
+          "request": {
+            "name": "Computer Get Download",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n        \"FileType\": \" Stub Installer = stub | MSI Installer = windows | PowerShell Script = pssscript | PKG File = mac | Remediator Service Installer = remediation\",\n        \"Platform\": \" X86 | X64 | ''\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerGetDownload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"platform\": \"\",\n  \"apiKey\": \"\",\n  \"brand\": \"Threatlocker\",\n  \"groupName\": \"\",\n  \"fileType\": \"\",\n  \"isUpdate\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0135d155-31a3-46f7-92cf-20eb0c8c2555",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerGetDownload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"platform\": \"\",\n  \"apiKey\": \"\",\n  \"brand\": \"Threatlocker\",\n  \"groupName\": \"\",\n  \"fileType\": \"\",\n  \"isUpdate\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "858a7e1a-e0bb-434c-bf0d-7711c083a672",
+          "name": "Get OS Types for Computer.",
+          "request": {
+            "name": "Get OS Types for Computer.",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerGetOSTypeByIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  \"<uuid>\",\n  \"<uuid>\"\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "836a47f5-94e5-4599-bf9f-d12792ec470d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerGetOSTypeByIds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  \"<uuid>\",\n  \"<uuid>\"\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "687ba639-4f67-4123-a7a4-1472300290fb",
+          "name": "Download Login Script",
+          "request": {
+            "name": "Download Login Script",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerSignedScriptDownload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "brand",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "022ccab7-1e30-46cc-a026-ec2106f5f5aa",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerSignedScriptDownload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "brand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "adcc33b9-178f-41f2-b319-0ab413d24d99",
+          "name": "Download Sample Batch File",
+          "request": {
+            "name": "Download Sample Batch File",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerSamplePathDownload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "brand",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "authKey",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f386387d-3077-4d5b-9eca-1f1662b7325e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerSamplePathDownload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "brand",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "authKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "84826aca-f08b-469c-8187-e705f8137701",
+          "name": "Download Unsigned Login Script",
+          "request": {
+            "name": "Download Unsigned Login Script",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerUnSignedScriptDownload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "brand",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6c908655-673d-459d-b3c8-009e604d5f65",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerUnSignedScriptDownload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "brand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d04aa46e-c012-4879-94fc-e4c52da0e5b8",
+          "name": "Threatlocker Update Channel",
+          "request": {
+            "name": "Threatlocker Update Channel",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n        \"UpdateChannel\": \" Manual Update = 0 | Pre-Releases = 1 | Regular = 2 | Expedited = 3 | Slow and Steady = 4\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "Computer",
+                "ComputerUpdateChannel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"computerDetailDtos\": \"<array,null>\",\n  \"updateChannel\": \"<integer,null-int32>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "35ecf9b8-ebc8-4ffe-a9c2-64db2a736f89",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Computer",
+                    "ComputerUpdateChannel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"computerDetailDtos\": \"<array,null>\",\n  \"updateChannel\": \"<integer,null-int32>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "df009e99-36af-473d-9557-5589fbe3a0cd",
+    "name": "Portal Computer API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

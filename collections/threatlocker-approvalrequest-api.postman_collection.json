@@ -1,0 +1,1096 @@
+{
+  "item": [
+    {
+      "id": "40b8625d-9ea6-4c95-ae46-ada71805debf",
+      "name": "ApprovalRequest",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2790e72b-c30e-4600-94a6-bc6ee6b020e4",
+          "name": "Get Approval Request By ID",
+          "request": {
+            "name": "Get Approval Request By ID",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "ApprovalRequest",
+                "ApprovalRequestGetById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "approvalRequestId",
+                  "value": "<uuid>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ad4b51d2-4321-4811-9ccd-1630d079792c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ApprovalRequest",
+                    "ApprovalRequestGetById"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "approvalRequestId",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "24c8c358-6078-47f0-b844-8ef972adcd26",
+          "name": "Get File Download Details By Approval Request Id",
+          "request": {
+            "name": "Get File Download Details By Approval Request Id",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "ApprovalRequest",
+                "ApprovalRequestGetFileDownloadDetailsById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "approvalRequestId",
+                  "value": "<uuid>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5f8f6194-d078-4ba1-a1c5-71d90f3e23a3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ApprovalRequest",
+                    "ApprovalRequestGetFileDownloadDetailsById"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "approvalRequestId",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a89af484-26b5-4d2d-8946-3e31a1a2ecf1",
+          "name": "Get Permit Application Details By Approval Request Id",
+          "request": {
+            "name": "Get Permit Application Details By Approval Request Id",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "ApprovalRequest",
+                "ApprovalRequestGetPermitApplicationById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "approvalRequestId",
+                  "value": "<uuid>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e20eeca5-8e22-4f33-aed3-4e8c56c06f3d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ApprovalRequest",
+                    "ApprovalRequestGetPermitApplicationById"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "approvalRequestId",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3f0dfb30-b99c-4425-adb6-80ce60283ef4",
+          "name": "Approve Permit Application Request",
+          "request": {
+            "name": "Approve Permit Application Request",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n       \"osType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "ApprovalRequest",
+                "ApprovalRequestPermitApplication"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"computerGroupId\": \"00000000-0000-0000-0000-000000000000\",\n  \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"organizationIds\": \"[]\",\n  \"osType\": \"<integer>\",\n  \"userInstance\": \"\",\n  \"approvalRequest\": {\n    \"statusIdEscalatedToMSP\": \"<integer>\",\n    \"statusIdEscalatedByCustomer\": \"<integer>\",\n    \"masterOrganizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"approvedBy\": \"\",\n    \"approvalRequestId\": \"00000000-0000-0000-0000-000000000000\",\n    \"dateTime\": \"<dateTime>\",\n    \"path\": \"\",\n    \"hash\": \"\",\n    \"username\": \"\",\n    \"hostname\": \"\",\n    \"statusId\": \"<integer>\",\n    \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n    \"organizationName\": \"\",\n    \"json\": \"\",\n    \"ticketId\": \"\",\n    \"requestor\": \"\",\n    \"requestorReason\": \"\",\n    \"requestorEmailAddress\": \"\",\n    \"comments\": \"\",\n    \"actionDate\": \"<string,null-date-time>\",\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"multiLevelApprovalRequestId\": \"00000000-0000-0000-0000-000000000000\",\n    \"approvalNumber\": \"<integer>\",\n    \"approvedByTierLevel\": \"<integer>\",\n    \"tempPolicyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"policyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"tempApplicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"multiLevelApprovalStatusId\": \"<integer>\",\n    \"initialApprovalTierLevel\": \"<integer>\",\n    \"approvalCount\": \"<integer>\",\n    \"pendingTierLevel\": \"<integer>\",\n    \"hasPendingApprovalRequest\": \"<boolean>\",\n    \"ipAddress\": \"\",\n    \"assigneeUserId\": \"00000000-0000-0000-0000-000000000000\",\n    \"threatLockerDataCenterId\": \"00000000-0000-0000-0000-000000000000\",\n    \"instanceName\": \"\",\n    \"assigneeUsername\": \"\",\n    \"assigneeFirstName\": \"\",\n    \"assigneeLastname\": \"\",\n    \"threatLockerActionDto\": {\n      \"fullpath\": \"\",\n      \"policyid\": \"\",\n      \"username\": \"\",\n      \"actionid\": \"<integer>\",\n      \"hash\": \"\",\n      \"processName\": \"\",\n      \"certs\": \"<array,null>\",\n      \"applicationId\": \"\",\n      \"datetime\": \"<dateTime>\",\n      \"logAction\": \"<boolean>\",\n      \"SerialNumber\": \"\",\n      \"deviceType\": \"\",\n      \"actionType\": \"\",\n      \"size\": \"<long>\",\n      \"processId\": \"<integer>\",\n      \"ringFence\": \"<boolean>\",\n      \"policyName\": \"\",\n      \"applicationName\": \"\",\n      \"encryptionStatus\": \"<integer>\",\n      \"installedBy\": \"[]\",\n      \"monitorOnly\": \"<boolean>\",\n      \"notes\": \"\",\n      \"sha256\": \"\",\n      \"ringfencePolicyId\": \"\",\n      \"remotePresence\": \"<boolean>\",\n      \"organizationId\": \"\",\n      \"hostname\": \"\",\n      \"computerId\": \"\",\n      \"manufacturer\": \"\",\n      \"osType\": \"<integer>\",\n      \"destinationIP\": \"\",\n      \"DomainName\": \"\",\n      \"organizationName\": \"\"\n    },\n    \"notes\": \"\",\n    \"signature\": \"\",\n    \"tlInstructions\": \"\",\n    \"suggestCustomRule\": \"<boolean,null>\",\n    \"authorizeForPermit\": \"<boolean,null>\",\n    \"portalApiUrl\": \"\",\n    \"cyberHeroManagementConfigured\": \"<boolean>\",\n    \"maxTriggeredStartDate\": \"<string,null-date-time>\",\n    \"ticketApprovalManager\": \"\",\n    \"showMfaChallenge\": \"<boolean>\",\n    \"showMfaRegistration\": \"<boolean>\",\n    \"linkedMfaUser\": \"<string,null>\",\n    \"serialNumber\": \"\",\n    \"approvalRequestTimerDto\": {\n      \"approvalRequestId\": \"<uuid>\",\n      \"requestDate\": \"<dateTime>\",\n      \"assignedDate\": \"<dateTime>\",\n      \"escalatedDate\": \"<dateTime>\",\n      \"returnedDate\": \"<dateTime>\",\n      \"reassignedDate\": \"<dateTime>\",\n      \"actionedDate\": \"<dateTime>\",\n      \"totalTimeInSeconds\": 0\n    },\n    \"canRequestNewBuiltIn\": false,\n    \"isAssigneeLoggedIntoMaster\": false,\n    \"retrievedAssigneeUsername\": \"<boolean>\",\n    \"count\": \"<integer>\",\n    \"assigneeOrganizationId\": null\n  },\n  \"actionLog\": {\n    \"actionLogId\": \"<long>\",\n    \"eActionLogId\": \"<string,null>\",\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n    \"dateTime\": \"<dateTime>\",\n    \"dateTimeImported\": \"<dateTime>\",\n    \"organizationName\": \"\",\n    \"hostname\": \"\",\n    \"username\": \"\",\n    \"fullPath\": \"\",\n    \"policyName\": \"\",\n    \"actionType\": \"\",\n    \"actionTypeId\": \"<integer>\",\n    \"actionId\": \"<integer>\",\n    \"action\": \"\",\n    \"isMonitorMode\": \"<boolean>\",\n    \"monitorMode\": \"\",\n    \"learningModeEndDate\": \"<dateTime>\",\n    \"policyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"policyLocation\": \"\",\n    \"policyOrganizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"processId\": \"<integer>\",\n    \"processPath\": \"\",\n    \"hash\": \"\",\n    \"createdByProcess\": \"\",\n    \"data\": \"\",\n    \"remotePresence\": \"<boolean>\",\n    \"remotePresenceText\": \"\",\n    \"remotePresenceThreatLockerDetected\": \"<boolean>\",\n    \"deviceType\": \"\",\n    \"cert\": \"\",\n    \"certs\": \"<array,null>\",\n    \"certExists\": \"<boolean>\",\n    \"certificates\": \"<array,null>\",\n    \"certText\": \"\",\n    \"organizationParents\": \"<array,null>\",\n    \"applicationOrganizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"applicationIsBuiltIn\": \"<boolean,null>\",\n    \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"applicationName\": \"\",\n    \"notes\": \"\",\n    \"serialNumber\": \"\",\n    \"encryption\": \"<integer>\",\n    \"size\": \"<long>\",\n    \"sha256Hash\": \"\",\n    \"policyExists\": \"<boolean>\",\n    \"policyEnabled\": \"<boolean>\",\n    \"storagePolicyExists\": \"<boolean>\",\n    \"nacPolicyExists\": \"<boolean>\",\n    \"secureNetworkPolicyExists\": \"<boolean>\",\n    \"twPolicyExists\": \"<boolean>\",\n    \"webControlPolicyExists\": \"<boolean>\",\n    \"cmPolicyExists\": \"<boolean>\",\n    \"optionToRequest\": \"<boolean>\",\n    \"allowPermitVendorButton\": \"<boolean>\",\n    \"effectiveAction\": \"\",\n    \"encryptionStatus\": \"\",\n    \"reportMissing\": \"<boolean>\",\n    \"virusTotalCheckName\": \"\",\n    \"virusTotalCheckArgument\": \"\",\n    \"osType\": \"<integer>\",\n    \"isExtension\": \"<boolean>\",\n    \"edgeStoreUrl\": \"\",\n    \"chromeStoreUrl\": \"\",\n    \"firefoxStoreUrl\": \"\",\n    \"actionLogCreatedByProcesses\": \"<array,null>\",\n    \"totalCount\": \"<long>\",\n    \"lastSortValue\": \"<long>\",\n    \"networkDirection\": \"<integer>\",\n    \"sourceIPAddress\": \"<string,null>\",\n    \"destinationIPAddress\": \"<string,null>\",\n    \"groupByCount\": \"<integer>\",\n    \"destinationPort\": \"<string,null>\",\n    \"batchId\": \"<string,null>\",\n    \"isProtectedProcess\": \"<boolean>\",\n    \"memoryBytes\": \"<long>\",\n    \"processName\": \"<string,null>\",\n    \"parentProcessId\": \"<integer>\",\n    \"parentProcessName\": \"<string,null>\",\n    \"parentProcessApplicationId\": \"<uuid>\",\n    \"parentProcessApplicationName\": \"<string,null>\",\n    \"parentProcessApplicationOrganizationId\": \"<uuid>\",\n    \"hasViewComputerPermission\": \"<boolean>\",\n    \"allowFileUpload\": \"<boolean>\",\n    \"canViewOnSystemLookup\": \"<boolean>\",\n    \"systemLookupUrl\": \"<string,null>\",\n    \"threatLockerItem\": {\n      \"d\": \"<dateTime>\",\n      \"u\": \"\",\n      \"pid\": \"00000000-0000-0000-0000-000000000000\",\n      \"pn\": \"\",\n      \"at\": \"<integer>\",\n      \"aid\": \"<integer>\",\n      \"a\": \"<array,null>\"\n    },\n    \"integrationTypeId\": \"00000000-0000-0000-0000-000000000000\",\n    \"threatSeverityLevel\": \"<string,null>\",\n    \"engineRatings\": \"<array,null>\",\n    \"isVirusTotalUnavailable\": \"<boolean>\",\n    \"isAccessDevice\": \"<boolean>\"\n  },\n  \"actionType\": \"\",\n  \"isElevationRequest\": \"<boolean>\",\n  \"isExtensionRequest\": \"<boolean>\",\n  \"edgeStoreUrl\": \"\",\n  \"chromeStoreUrl\": \"\",\n  \"canViewOnSystemLookup\": \"<boolean>\",\n  \"systemLookupUrl\": \"\",\n  \"canViewVirusTotal\": \"<boolean>\",\n  \"virusTotalUrl\": \"\",\n  \"fileHistoryChecked\": \"<boolean>\",\n  \"suggestCustomRule\": \"<boolean,null>\",\n  \"fileDetails\": {\n    \"fullPath\": \"\",\n    \"processPath\": \"\",\n    \"hash\": \"\",\n    \"certificates\": \"<array,null>\",\n    \"createdByProcesses\": \"[]\",\n    \"filename\": \"\",\n    \"sha256\": \"\",\n    \"date\": \"<dateTime>\",\n    \"originalHostname\": \"\",\n    \"hostname\": \"\",\n    \"username\": \"\",\n    \"organizationName\": \"\",\n    \"policyName\": \"\",\n    \"applicationName\": \"\",\n    \"requestorReason\": \"\",\n    \"approvalStatus\": \"\",\n    \"approvalBy\": \"\",\n    \"size\": \"<long>\"\n  },\n  \"matchingApplications\": {\n    \"hasMatchingApplication\": \"<boolean>\",\n    \"useMatchingApplication\": \"<boolean>\",\n    \"matchingApplication\": {\n      \"name\": \"\",\n      \"applicationName\": \"\",\n      \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n      \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n      \"organizationName\": \"\",\n      \"osType\": \"<integer>\",\n      \"suggestedPolicyId\": \"00000000-0000-0000-0000-000000000000\",\n      \"status\": \"<integer>\",\n      \"isMaintained\": \"<boolean>\",\n      \"researchApplicationId\": \"<string,null-uuid>\"\n    },\n    \"useExistingApplication\": \"<boolean>\",\n    \"existingApplication\": {\n      \"name\": \"\",\n      \"applicationName\": \"\",\n      \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n      \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n      \"organizationName\": \"\",\n      \"osType\": \"<integer>\",\n      \"suggestedPolicyId\": \"00000000-0000-0000-0000-000000000000\",\n      \"status\": \"<integer>\",\n      \"isMaintained\": \"<boolean>\",\n      \"researchApplicationId\": \"<string,null-uuid>\"\n    },\n    \"useNewApplication\": \"<boolean>\",\n    \"newApplicationName\": \"\"\n  },\n  \"policyConditions\": {\n    \"useExistingPolicy\": \"<boolean>\",\n    \"createManualPolicy\": \"<boolean>\",\n    \"manualOptions\": \"<array,null>\",\n    \"ruleId\": \"<integer>\",\n    \"certSubjects\": \"[]\",\n    \"createdByProcesses\": \"[]\",\n    \"includedAdditionalFiles\": \"<array,null>\"\n  },\n  \"policyExpirationDate\": \"<string,null-date-time>\",\n  \"ringfencingOptions\": {\n    \"hideCustomRules\": \"<boolean>\",\n    \"restrictApplicationSpawning\": \"<boolean>\",\n    \"restrictRegistryAccess\": \"<boolean>\",\n    \"restrictFileAccess\": \"<boolean>\",\n    \"restrictNetworkAccess\": \"<boolean>\",\n    \"restrictApplication\": \"<boolean>\",\n    \"rfFilePolicy\": \"<array,null>\",\n    \"rfNetworkPolicy\": \"<array,null>\",\n    \"rfRegistryPolicy\": \"<array,null>\",\n    \"rfAssociatedApplicationPolicy\": \"<array,null>\"\n  },\n  \"networkExclusions\": \"<array,null>\",\n  \"ringfenceActionId\": \"<integer>\",\n  \"hasRingfencingAsProduct\": \"<boolean>\",\n  \"hasElevation\": \"<boolean>\",\n  \"organizationHasElevation\": \"<boolean>\",\n  \"elevationStatus\": \"<integer>\",\n  \"elevationExpiration\": \"<integer>\",\n  \"elevationExpirationDate\": \"<string,null-date-time>\",\n  \"policyLevel\": {\n    \"canUseEntireOrganization\": \"<boolean>\",\n    \"toEntireOrganization\": \"<boolean>\",\n    \"toComputerGroup\": \"<boolean>\",\n    \"selectedComputerGroup\": {\n      \"type\": [\n        \"boolean\",\n        \"null\"\n      ],\n      \"default\": \"<boolean,null>\"\n    },\n    \"toComputer\": \"<boolean>\"\n  },\n  \"adminNotes\": {\n    \"ticket\": \"\",\n    \"requestorEmail\": \"\",\n    \"comments\": \"\"\n  },\n  \"applicationList\": \"<array,null>\",\n  \"systemAudits\": \"<array,null>\",\n  \"allowTMM\": \"<boolean>\",\n  \"fileExclusions\": \"<array,null>\",\n  \"hasOriginApprovalCenter\": \"<boolean,null>\",\n  \"responseSubject\": \"<string,null>\",\n  \"responseReason\": \"<string,null>\",\n  \"notifyOnResponse\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0ef9aff7-884d-47da-a010-206692d7671d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ApprovalRequest",
+                    "ApprovalRequestPermitApplication"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"computerGroupId\": \"00000000-0000-0000-0000-000000000000\",\n  \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"organizationIds\": \"[]\",\n  \"osType\": \"<integer>\",\n  \"userInstance\": \"\",\n  \"approvalRequest\": {\n    \"statusIdEscalatedToMSP\": \"<integer>\",\n    \"statusIdEscalatedByCustomer\": \"<integer>\",\n    \"masterOrganizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"approvedBy\": \"\",\n    \"approvalRequestId\": \"00000000-0000-0000-0000-000000000000\",\n    \"dateTime\": \"<dateTime>\",\n    \"path\": \"\",\n    \"hash\": \"\",\n    \"username\": \"\",\n    \"hostname\": \"\",\n    \"statusId\": \"<integer>\",\n    \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n    \"organizationName\": \"\",\n    \"json\": \"\",\n    \"ticketId\": \"\",\n    \"requestor\": \"\",\n    \"requestorReason\": \"\",\n    \"requestorEmailAddress\": \"\",\n    \"comments\": \"\",\n    \"actionDate\": \"<string,null-date-time>\",\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"multiLevelApprovalRequestId\": \"00000000-0000-0000-0000-000000000000\",\n    \"approvalNumber\": \"<integer>\",\n    \"approvedByTierLevel\": \"<integer>\",\n    \"tempPolicyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"policyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"tempApplicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"multiLevelApprovalStatusId\": \"<integer>\",\n    \"initialApprovalTierLevel\": \"<integer>\",\n    \"approvalCount\": \"<integer>\",\n    \"pendingTierLevel\": \"<integer>\",\n    \"hasPendingApprovalRequest\": \"<boolean>\",\n    \"ipAddress\": \"\",\n    \"assigneeUserId\": \"00000000-0000-0000-0000-000000000000\",\n    \"threatLockerDataCenterId\": \"00000000-0000-0000-0000-000000000000\",\n    \"instanceName\": \"\",\n    \"assigneeUsername\": \"\",\n    \"assigneeFirstName\": \"\",\n    \"assigneeLastname\": \"\",\n    \"threatLockerActionDto\": {\n      \"fullpath\": \"\",\n      \"policyid\": \"\",\n      \"username\": \"\",\n      \"actionid\": \"<integer>\",\n      \"hash\": \"\",\n      \"processName\": \"\",\n      \"certs\": \"<array,null>\",\n      \"applicationId\": \"\",\n      \"datetime\": \"<dateTime>\",\n      \"logAction\": \"<boolean>\",\n      \"SerialNumber\": \"\",\n      \"deviceType\": \"\",\n      \"actionType\": \"\",\n      \"size\": \"<long>\",\n      \"processId\": \"<integer>\",\n      \"ringFence\": \"<boolean>\",\n      \"policyName\": \"\",\n      \"applicationName\": \"\",\n      \"encryptionStatus\": \"<integer>\",\n      \"installedBy\": \"[]\",\n      \"monitorOnly\": \"<boolean>\",\n      \"notes\": \"\",\n      \"sha256\": \"\",\n      \"ringfencePolicyId\": \"\",\n      \"remotePresence\": \"<boolean>\",\n      \"organizationId\": \"\",\n      \"hostname\": \"\",\n      \"computerId\": \"\",\n      \"manufacturer\": \"\",\n      \"osType\": \"<integer>\",\n      \"destinationIP\": \"\",\n      \"DomainName\": \"\",\n      \"organizationName\": \"\"\n    },\n    \"notes\": \"\",\n    \"signature\": \"\",\n    \"tlInstructions\": \"\",\n    \"suggestCustomRule\": \"<boolean,null>\",\n    \"authorizeForPermit\": \"<boolean,null>\",\n    \"portalApiUrl\": \"\",\n    \"cyberHeroManagementConfigured\": \"<boolean>\",\n    \"maxTriggeredStartDate\": \"<string,null-date-time>\",\n    \"ticketApprovalManager\": \"\",\n    \"showMfaChallenge\": \"<boolean>\",\n    \"showMfaRegistration\": \"<boolean>\",\n    \"linkedMfaUser\": \"<string,null>\",\n    \"serialNumber\": \"\",\n    \"approvalRequestTimerDto\": {\n      \"approvalRequestId\": \"<uuid>\",\n      \"requestDate\": \"<dateTime>\",\n      \"assignedDate\": \"<dateTime>\",\n      \"escalatedDate\": \"<dateTime>\",\n      \"returnedDate\": \"<dateTime>\",\n      \"reassignedDate\": \"<dateTime>\",\n      \"actionedDate\": \"<dateTime>\",\n      \"totalTimeInSeconds\": 0\n    },\n    \"canRequestNewBuiltIn\": false,\n    \"isAssigneeLoggedIntoMaster\": false,\n    \"retrievedAssigneeUsername\": \"<boolean>\",\n    \"count\": \"<integer>\",\n    \"assigneeOrganizationId\": null\n  },\n  \"actionLog\": {\n    \"actionLogId\": \"<long>\",\n    \"eActionLogId\": \"<string,null>\",\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n    \"dateTime\": \"<dateTime>\",\n    \"dateTimeImported\": \"<dateTime>\",\n    \"organizationName\": \"\",\n    \"hostname\": \"\",\n    \"username\": \"\",\n    \"fullPath\": \"\",\n    \"policyName\": \"\",\n    \"actionType\": \"\",\n    \"actionTypeId\": \"<integer>\",\n    \"actionId\": \"<integer>\",\n    \"action\": \"\",\n    \"isMonitorMode\": \"<boolean>\",\n    \"monitorMode\": \"\",\n    \"learningModeEndDate\": \"<dateTime>\",\n    \"policyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"policyLocation\": \"\",\n    \"policyOrganizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"processId\": \"<integer>\",\n    \"processPath\": \"\",\n    \"hash\": \"\",\n    \"createdByProcess\": \"\",\n    \"data\": \"\",\n    \"remotePresence\": \"<boolean>\",\n    \"remotePresenceText\": \"\",\n    \"remotePresenceThreatLockerDetected\": \"<boolean>\",\n    \"deviceType\": \"\",\n    \"cert\": \"\",\n    \"certs\": \"<array,null>\",\n    \"certExists\": \"<boolean>\",\n    \"certificates\": \"<array,null>\",\n    \"certText\": \"\",\n    \"organizationParents\": \"<array,null>\",\n    \"applicationOrganizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"applicationIsBuiltIn\": \"<boolean,null>\",\n    \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"applicationName\": \"\",\n    \"notes\": \"\",\n    \"serialNumber\": \"\",\n    \"encryption\": \"<integer>\",\n    \"size\": \"<long>\",\n    \"sha256Hash\": \"\",\n    \"policyExists\": \"<boolean>\",\n    \"policyEnabled\": \"<boolean>\",\n    \"storagePolicyExists\": \"<boolean>\",\n    \"nacPolicyExists\": \"<boolean>\",\n    \"secureNetworkPolicyExists\": \"<boolean>\",\n    \"twPolicyExists\": \"<boolean>\",\n    \"webControlPolicyExists\": \"<boolean>\",\n    \"cmPolicyExists\": \"<boolean>\",\n    \"optionToRequest\": \"<boolean>\",\n    \"allowPermitVendorButton\": \"<boolean>\",\n    \"effectiveAction\": \"\",\n    \"encryptionStatus\": \"\",\n    \"reportMissing\": \"<boolean>\",\n    \"virusTotalCheckName\": \"\",\n    \"virusTotalCheckArgument\": \"\",\n    \"osType\": \"<integer>\",\n    \"isExtension\": \"<boolean>\",\n    \"edgeStoreUrl\": \"\",\n    \"chromeStoreUrl\": \"\",\n    \"firefoxStoreUrl\": \"\",\n    \"actionLogCreatedByProcesses\": \"<array,null>\",\n    \"totalCount\": \"<long>\",\n    \"lastSortValue\": \"<long>\",\n    \"networkDirection\": \"<integer>\",\n    \"sourceIPAddress\": \"<string,null>\",\n    \"destinationIPAddress\": \"<string,null>\",\n    \"groupByCount\": \"<integer>\",\n    \"destinationPort\": \"<string,null>\",\n    \"batchId\": \"<string,null>\",\n    \"isProtectedProcess\": \"<boolean>\",\n    \"memoryBytes\": \"<long>\",\n    \"processName\": \"<string,null>\",\n    \"parentProcessId\": \"<integer>\",\n    \"parentProcessName\": \"<string,null>\",\n    \"parentProcessApplicationId\": \"<uuid>\",\n    \"parentProcessApplicationName\": \"<string,null>\",\n    \"parentProcessApplicationOrganizationId\": \"<uuid>\",\n    \"hasViewComputerPermission\": \"<boolean>\",\n    \"allowFileUpload\": \"<boolean>\",\n    \"canViewOnSystemLookup\": \"<boolean>\",\n    \"systemLookupUrl\": \"<string,null>\",\n    \"threatLockerItem\": {\n      \"d\": \"<dateTime>\",\n      \"u\": \"\",\n      \"pid\": \"00000000-0000-0000-0000-000000000000\",\n      \"pn\": \"\",\n      \"at\": \"<integer>\",\n      \"aid\": \"<integer>\",\n      \"a\": \"<array,null>\"\n    },\n    \"integrationTypeId\": \"00000000-0000-0000-0000-000000000000\",\n    \"threatSeverityLevel\": \"<string,null>\",\n    \"engineRatings\": \"<array,null>\",\n    \"isVirusTotalUnavailable\": \"<boolean>\",\n    \"isAccessDevice\": \"<boolean>\"\n  },\n  \"actionType\": \"\",\n  \"isElevationRequest\": \"<boolean>\",\n  \"isExtensionRequest\": \"<boolean>\",\n  \"edgeStoreUrl\": \"\",\n  \"chromeStoreUrl\": \"\",\n  \"canViewOnSystemLookup\": \"<boolean>\",\n  \"systemLookupUrl\": \"\",\n  \"canViewVirusTotal\": \"<boolean>\",\n  \"virusTotalUrl\": \"\",\n  \"fileHistoryChecked\": \"<boolean>\",\n  \"suggestCustomRule\": \"<boolean,null>\",\n  \"fileDetails\": {\n    \"fullPath\": \"\",\n    \"processPath\": \"\",\n    \"hash\": \"\",\n    \"certificates\": \"<array,null>\",\n    \"createdByProcesses\": \"[]\",\n    \"filename\": \"\",\n    \"sha256\": \"\",\n    \"date\": \"<dateTime>\",\n    \"originalHostname\": \"\",\n    \"hostname\": \"\",\n    \"username\": \"\",\n    \"organizationName\": \"\",\n    \"policyName\": \"\",\n    \"applicationName\": \"\",\n    \"requestorReason\": \"\",\n    \"approvalStatus\": \"\",\n    \"approvalBy\": \"\",\n    \"size\": \"<long>\"\n  },\n  \"matchingApplications\": {\n    \"hasMatchingApplication\": \"<boolean>\",\n    \"useMatchingApplication\": \"<boolean>\",\n    \"matchingApplication\": {\n      \"name\": \"\",\n      \"applicationName\": \"\",\n      \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n      \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n      \"organizationName\": \"\",\n      \"osType\": \"<integer>\",\n      \"suggestedPolicyId\": \"00000000-0000-0000-0000-000000000000\",\n      \"status\": \"<integer>\",\n      \"isMaintained\": \"<boolean>\",\n      \"researchApplicationId\": \"<string,null-uuid>\"\n    },\n    \"useExistingApplication\": \"<boolean>\",\n    \"existingApplication\": {\n      \"name\": \"\",\n      \"applicationName\": \"\",\n      \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n      \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n      \"organizationName\": \"\",\n      \"osType\": \"<integer>\",\n      \"suggestedPolicyId\": \"00000000-0000-0000-0000-000000000000\",\n      \"status\": \"<integer>\",\n      \"isMaintained\": \"<boolean>\",\n      \"researchApplicationId\": \"<string,null-uuid>\"\n    },\n    \"useNewApplication\": \"<boolean>\",\n    \"newApplicationName\": \"\"\n  },\n  \"policyConditions\": {\n    \"useExistingPolicy\": \"<boolean>\",\n    \"createManualPolicy\": \"<boolean>\",\n    \"manualOptions\": \"<array,null>\",\n    \"ruleId\": \"<integer>\",\n    \"certSubjects\": \"[]\",\n    \"createdByProcesses\": \"[]\",\n    \"includedAdditionalFiles\": \"<array,null>\"\n  },\n  \"policyExpirationDate\": \"<string,null-date-time>\",\n  \"ringfencingOptions\": {\n    \"hideCustomRules\": \"<boolean>\",\n    \"restrictApplicationSpawning\": \"<boolean>\",\n    \"restrictRegistryAccess\": \"<boolean>\",\n    \"restrictFileAccess\": \"<boolean>\",\n    \"restrictNetworkAccess\": \"<boolean>\",\n    \"restrictApplication\": \"<boolean>\",\n    \"rfFilePolicy\": \"<array,null>\",\n    \"rfNetworkPolicy\": \"<array,null>\",\n    \"rfRegistryPolicy\": \"<array,null>\",\n    \"rfAssociatedApplicationPolicy\": \"<array,null>\"\n  },\n  \"networkExclusions\": \"<array,null>\",\n  \"ringfenceActionId\": \"<integer>\",\n  \"hasRingfencingAsProduct\": \"<boolean>\",\n  \"hasElevation\": \"<boolean>\",\n  \"organizationHasElevation\": \"<boolean>\",\n  \"elevationStatus\": \"<integer>\",\n  \"elevationExpiration\": \"<integer>\",\n  \"elevationExpirationDate\": \"<string,null-date-time>\",\n  \"policyLevel\": {\n    \"canUseEntireOrganization\": \"<boolean>\",\n    \"toEntireOrganization\": \"<boolean>\",\n    \"toComputerGroup\": \"<boolean>\",\n    \"selectedComputerGroup\": {\n      \"type\": [\n        \"boolean\",\n        \"null\"\n      ],\n      \"default\": \"<boolean,null>\"\n    },\n    \"toComputer\": \"<boolean>\"\n  },\n  \"adminNotes\": {\n    \"ticket\": \"\",\n    \"requestorEmail\": \"\",\n    \"comments\": \"\"\n  },\n  \"applicationList\": \"<array,null>\",\n  \"systemAudits\": \"<array,null>\",\n  \"allowTMM\": \"<boolean>\",\n  \"fileExclusions\": \"<array,null>\",\n  \"hasOriginApprovalCenter\": \"<boolean,null>\",\n  \"responseSubject\": \"<string,null>\",\n  \"responseReason\": \"<string,null>\",\n  \"notifyOnResponse\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a64e3392-de80-4055-8488-506be45c219a",
+          "name": "Get Storage Approval Request By Id",
+          "request": {
+            "name": "Get Storage Approval Request By Id",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "ApprovalRequest",
+                "ApprovalRequestGetStorageApprovalById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "approvalRequestId",
+                  "value": "<uuid>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "79e1818f-4713-4627-a1e1-54833076bebb",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ApprovalRequest",
+                    "ApprovalRequestGetStorageApprovalById"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "approvalRequestId",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cdfc9141-e4a4-4ce8-a658-b5bb0b5d9217",
+          "name": "Approve Storage Request",
+          "request": {
+            "name": "Approve Storage Request",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "ApprovalRequest",
+                "ApprovalRequestPermitStorageApproval"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"approvalRequest\": {\n    \"statusIdEscalatedToMSP\": \"<integer>\",\n    \"statusIdEscalatedByCustomer\": \"<integer>\",\n    \"masterOrganizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"approvedBy\": \"\",\n    \"approvalRequestId\": \"00000000-0000-0000-0000-000000000000\",\n    \"dateTime\": \"<dateTime>\",\n    \"path\": \"\",\n    \"hash\": \"\",\n    \"username\": \"\",\n    \"hostname\": \"\",\n    \"statusId\": \"<integer>\",\n    \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n    \"organizationName\": \"\",\n    \"json\": \"\",\n    \"ticketId\": \"\",\n    \"requestor\": \"\",\n    \"requestorReason\": \"\",\n    \"requestorEmailAddress\": \"\",\n    \"comments\": \"\",\n    \"actionDate\": \"<string,null-date-time>\",\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"multiLevelApprovalRequestId\": \"00000000-0000-0000-0000-000000000000\",\n    \"approvalNumber\": \"<integer>\",\n    \"approvedByTierLevel\": \"<integer>\",\n    \"tempPolicyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"policyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"tempApplicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"multiLevelApprovalStatusId\": \"<integer>\",\n    \"initialApprovalTierLevel\": \"<integer>\",\n    \"approvalCount\": \"<integer>\",\n    \"pendingTierLevel\": \"<integer>\",\n    \"hasPendingApprovalRequest\": \"<boolean>\",\n    \"ipAddress\": \"\",\n    \"assigneeUserId\": \"00000000-0000-0000-0000-000000000000\",\n    \"threatLockerDataCenterId\": \"00000000-0000-0000-0000-000000000000\",\n    \"instanceName\": \"\",\n    \"assigneeUsername\": \"\",\n    \"assigneeFirstName\": \"\",\n    \"assigneeLastname\": \"\",\n    \"threatLockerActionDto\": {\n      \"fullpath\": \"\",\n      \"policyid\": \"\",\n      \"username\": \"\",\n      \"actionid\": \"<integer>\",\n      \"hash\": \"\",\n      \"processName\": \"\",\n      \"certs\": \"<array,null>\",\n      \"applicationId\": \"\",\n      \"datetime\": \"<dateTime>\",\n      \"logAction\": \"<boolean>\",\n      \"SerialNumber\": \"\",\n      \"deviceType\": \"\",\n      \"actionType\": \"\",\n      \"size\": \"<long>\",\n      \"processId\": \"<integer>\",\n      \"ringFence\": \"<boolean>\",\n      \"policyName\": \"\",\n      \"applicationName\": \"\",\n      \"encryptionStatus\": \"<integer>\",\n      \"installedBy\": \"[]\",\n      \"monitorOnly\": \"<boolean>\",\n      \"notes\": \"\",\n      \"sha256\": \"\",\n      \"ringfencePolicyId\": \"\",\n      \"remotePresence\": \"<boolean>\",\n      \"organizationId\": \"\",\n      \"hostname\": \"\",\n      \"computerId\": \"\",\n      \"manufacturer\": \"\",\n      \"osType\": \"<integer>\",\n      \"destinationIP\": \"\",\n      \"DomainName\": \"\",\n      \"organizationName\": \"\"\n    },\n    \"notes\": \"\",\n    \"signature\": \"\",\n    \"tlInstructions\": \"\",\n    \"suggestCustomRule\": \"<boolean,null>\",\n    \"authorizeForPermit\": \"<boolean,null>\",\n    \"portalApiUrl\": \"\",\n    \"cyberHeroManagementConfigured\": \"<boolean>\",\n    \"maxTriggeredStartDate\": \"<string,null-date-time>\",\n    \"ticketApprovalManager\": \"\",\n    \"showMfaChallenge\": \"<boolean>\",\n    \"showMfaRegistration\": \"<boolean>\",\n    \"linkedMfaUser\": \"<string,null>\",\n    \"serialNumber\": \"\",\n    \"approvalRequestTimerDto\": {\n      \"approvalRequestId\": \"<uuid>\",\n      \"requestDate\": \"<dateTime>\",\n      \"assignedDate\": \"<dateTime>\",\n      \"escalatedDate\": \"<dateTime>\",\n      \"returnedDate\": \"<dateTime>\",\n      \"reassignedDate\": \"<dateTime>\",\n      \"actionedDate\": \"<dateTime>\",\n      \"totalTimeInSeconds\": 0\n    },\n    \"canRequestNewBuiltIn\": false,\n    \"isAssigneeLoggedIntoMaster\": false,\n    \"retrievedAssigneeUsername\": \"<boolean>\",\n    \"count\": \"<integer>\",\n    \"assigneeOrganizationId\": null\n  },\n  \"addDeviceToExisting\": \"<boolean>\",\n  \"existingStoragePolicy\": {\n    \"storagePolicyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"\",\n    \"processesList\": \"<array,null>\"\n  },\n  \"addDeviceName\": \"\",\n  \"policyName\": \"\",\n  \"entityType\": \"<integer>\",\n  \"appliesToId\": \"00000000-0000-0000-0000-000000000000\",\n  \"policyType\": \"\",\n  \"allStorageDevices\": \"<boolean>\",\n  \"newStorageDevice\": {\n    \"storageDeviceId\": \"00000000-0000-0000-0000-000000000000\",\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"\",\n    \"serialNumber\": \"\",\n    \"owner\": \"\",\n    \"manufacturer\": \"\",\n    \"storagePolicyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"storagePolicyIds\": \"[]\"\n  },\n  \"deviceExists\": \"<boolean>\",\n  \"allFilePaths\": \"<boolean>\",\n  \"selectedPath\": \"\",\n  \"deviceType\": \"\",\n  \"encryptionStatus\": \"<integer>\",\n  \"json\": \"\",\n  \"allUserGroups\": \"<boolean>\",\n  \"users\": \"\",\n  \"usersList\": \"[]\",\n  \"userGroups\": \"<array,null>\",\n  \"expirationDate\": \"<string,null-date-time>\",\n  \"responseSubject\": \"<string,null>\",\n  \"responseReason\": \"<string,null>\",\n  \"notifyOnResponse\": \"<boolean>\",\n  \"processesList\": \"<array,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c0649f26-3ba8-4508-bf72-5d37365b62bc",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ApprovalRequest",
+                    "ApprovalRequestPermitStorageApproval"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"approvalRequest\": {\n    \"statusIdEscalatedToMSP\": \"<integer>\",\n    \"statusIdEscalatedByCustomer\": \"<integer>\",\n    \"masterOrganizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"approvedBy\": \"\",\n    \"approvalRequestId\": \"00000000-0000-0000-0000-000000000000\",\n    \"dateTime\": \"<dateTime>\",\n    \"path\": \"\",\n    \"hash\": \"\",\n    \"username\": \"\",\n    \"hostname\": \"\",\n    \"statusId\": \"<integer>\",\n    \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n    \"organizationName\": \"\",\n    \"json\": \"\",\n    \"ticketId\": \"\",\n    \"requestor\": \"\",\n    \"requestorReason\": \"\",\n    \"requestorEmailAddress\": \"\",\n    \"comments\": \"\",\n    \"actionDate\": \"<string,null-date-time>\",\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"multiLevelApprovalRequestId\": \"00000000-0000-0000-0000-000000000000\",\n    \"approvalNumber\": \"<integer>\",\n    \"approvedByTierLevel\": \"<integer>\",\n    \"tempPolicyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"policyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"tempApplicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"multiLevelApprovalStatusId\": \"<integer>\",\n    \"initialApprovalTierLevel\": \"<integer>\",\n    \"approvalCount\": \"<integer>\",\n    \"pendingTierLevel\": \"<integer>\",\n    \"hasPendingApprovalRequest\": \"<boolean>\",\n    \"ipAddress\": \"\",\n    \"assigneeUserId\": \"00000000-0000-0000-0000-000000000000\",\n    \"threatLockerDataCenterId\": \"00000000-0000-0000-0000-000000000000\",\n    \"instanceName\": \"\",\n    \"assigneeUsername\": \"\",\n    \"assigneeFirstName\": \"\",\n    \"assigneeLastname\": \"\",\n    \"threatLockerActionDto\": {\n      \"fullpath\": \"\",\n      \"policyid\": \"\",\n      \"username\": \"\",\n      \"actionid\": \"<integer>\",\n      \"hash\": \"\",\n      \"processName\": \"\",\n      \"certs\": \"<array,null>\",\n      \"applicationId\": \"\",\n      \"datetime\": \"<dateTime>\",\n      \"logAction\": \"<boolean>\",\n      \"SerialNumber\": \"\",\n      \"deviceType\": \"\",\n      \"actionType\": \"\",\n      \"size\": \"<long>\",\n      \"processId\": \"<integer>\",\n      \"ringFence\": \"<boolean>\",\n      \"policyName\": \"\",\n      \"applicationName\": \"\",\n      \"encryptionStatus\": \"<integer>\",\n      \"installedBy\": \"[]\",\n      \"monitorOnly\": \"<boolean>\",\n      \"notes\": \"\",\n      \"sha256\": \"\",\n      \"ringfencePolicyId\": \"\",\n      \"remotePresence\": \"<boolean>\",\n      \"organizationId\": \"\",\n      \"hostname\": \"\",\n      \"computerId\": \"\",\n      \"manufacturer\": \"\",\n      \"osType\": \"<integer>\",\n      \"destinationIP\": \"\",\n      \"DomainName\": \"\",\n      \"organizationName\": \"\"\n    },\n    \"notes\": \"\",\n    \"signature\": \"\",\n    \"tlInstructions\": \"\",\n    \"suggestCustomRule\": \"<boolean,null>\",\n    \"authorizeForPermit\": \"<boolean,null>\",\n    \"portalApiUrl\": \"\",\n    \"cyberHeroManagementConfigured\": \"<boolean>\",\n    \"maxTriggeredStartDate\": \"<string,null-date-time>\",\n    \"ticketApprovalManager\": \"\",\n    \"showMfaChallenge\": \"<boolean>\",\n    \"showMfaRegistration\": \"<boolean>\",\n    \"linkedMfaUser\": \"<string,null>\",\n    \"serialNumber\": \"\",\n    \"approvalRequestTimerDto\": {\n      \"approvalRequestId\": \"<uuid>\",\n      \"requestDate\": \"<dateTime>\",\n      \"assignedDate\": \"<dateTime>\",\n      \"escalatedDate\": \"<dateTime>\",\n      \"returnedDate\": \"<dateTime>\",\n      \"reassignedDate\": \"<dateTime>\",\n      \"actionedDate\": \"<dateTime>\",\n      \"totalTimeInSeconds\": 0\n    },\n    \"canRequestNewBuiltIn\": false,\n    \"isAssigneeLoggedIntoMaster\": false,\n    \"retrievedAssigneeUsername\": \"<boolean>\",\n    \"count\": \"<integer>\",\n    \"assigneeOrganizationId\": null\n  },\n  \"addDeviceToExisting\": \"<boolean>\",\n  \"existingStoragePolicy\": {\n    \"storagePolicyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"\",\n    \"processesList\": \"<array,null>\"\n  },\n  \"addDeviceName\": \"\",\n  \"policyName\": \"\",\n  \"entityType\": \"<integer>\",\n  \"appliesToId\": \"00000000-0000-0000-0000-000000000000\",\n  \"policyType\": \"\",\n  \"allStorageDevices\": \"<boolean>\",\n  \"newStorageDevice\": {\n    \"storageDeviceId\": \"00000000-0000-0000-0000-000000000000\",\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"\",\n    \"serialNumber\": \"\",\n    \"owner\": \"\",\n    \"manufacturer\": \"\",\n    \"storagePolicyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"storagePolicyIds\": \"[]\"\n  },\n  \"deviceExists\": \"<boolean>\",\n  \"allFilePaths\": \"<boolean>\",\n  \"selectedPath\": \"\",\n  \"deviceType\": \"\",\n  \"encryptionStatus\": \"<integer>\",\n  \"json\": \"\",\n  \"allUserGroups\": \"<boolean>\",\n  \"users\": \"\",\n  \"usersList\": \"[]\",\n  \"userGroups\": \"<array,null>\",\n  \"expirationDate\": \"<string,null-date-time>\",\n  \"responseSubject\": \"<string,null>\",\n  \"responseReason\": \"<string,null>\",\n  \"notifyOnResponse\": \"<boolean>\",\n  \"processesList\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d3700649-61c2-4fb8-92c5-4da0a812997a",
+          "name": "/portalapi/ApprovalRequest/ApprovalRequestGetByParameters",
+          "request": {
+            "name": "/portalapi/ApprovalRequest/ApprovalRequestGetByParameters",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "ApprovalRequest",
+                "ApprovalRequestGetByParameters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"statusId\": 1,\n  \"searchText\": \"\",\n  \"userApprovalTierLevel\": \"<integer>\",\n  \"showCurrentTierOnly\": false,\n  \"showChildOrganizations\": false,\n  \"requestTypeId\": \"<integer>\",\n  \"orderBy\": \"datetime\",\n  \"isAscending\": false,\n  \"actionType\": \"<array,null>\",\n  \"pageSize\": 25,\n  \"pageNumber\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c250c4d4-07cd-4451-9071-91caf6a80a61",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ApprovalRequest",
+                    "ApprovalRequestGetByParameters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"statusId\": 1,\n  \"searchText\": \"\",\n  \"userApprovalTierLevel\": \"<integer>\",\n  \"showCurrentTierOnly\": false,\n  \"showChildOrganizations\": false,\n  \"requestTypeId\": \"<integer>\",\n  \"orderBy\": \"datetime\",\n  \"isAscending\": false,\n  \"actionType\": \"<array,null>\",\n  \"pageSize\": 25,\n  \"pageNumber\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4536a59b-3f1d-46d8-acba-ce66f3cdf3db",
+          "name": "Get Approval Request Pending Count",
+          "request": {
+            "name": "Get Approval Request Pending Count",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "ApprovalRequest",
+                "ApprovalRequestGetCount"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "includeChildOrganizations",
+                  "value": "true"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "018f61b3-18d7-4148-8b39-7f0f975ad555",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ApprovalRequest",
+                    "ApprovalRequestGetCount"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeChildOrganizations",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f73b2fe0-444a-46a4-81a3-193bd955f116",
+          "name": "Take Ownership of Approval Request",
+          "request": {
+            "name": "Take Ownership of Approval Request",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "ApprovalRequest",
+                "ApprovalRequestUpdateForTakeOwnership"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"statusIdEscalatedToMSP\": \"<integer>\",\n  \"statusIdEscalatedByCustomer\": \"<integer>\",\n  \"masterOrganizationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"approvedBy\": \"\",\n  \"approvalRequestId\": \"00000000-0000-0000-0000-000000000000\",\n  \"dateTime\": \"<dateTime>\",\n  \"path\": \"\",\n  \"hash\": \"\",\n  \"username\": \"\",\n  \"hostname\": \"\",\n  \"statusId\": \"<integer>\",\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"organizationName\": \"\",\n  \"json\": \"\",\n  \"ticketId\": \"\",\n  \"requestor\": \"\",\n  \"requestorReason\": \"\",\n  \"requestorEmailAddress\": \"\",\n  \"comments\": \"\",\n  \"actionDate\": \"<string,null-date-time>\",\n  \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"multiLevelApprovalRequestId\": \"00000000-0000-0000-0000-000000000000\",\n  \"approvalNumber\": \"<integer>\",\n  \"approvedByTierLevel\": \"<integer>\",\n  \"tempPolicyId\": \"00000000-0000-0000-0000-000000000000\",\n  \"policyId\": \"00000000-0000-0000-0000-000000000000\",\n  \"tempApplicationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"multiLevelApprovalStatusId\": \"<integer>\",\n  \"initialApprovalTierLevel\": \"<integer>\",\n  \"approvalCount\": \"<integer>\",\n  \"pendingTierLevel\": \"<integer>\",\n  \"hasPendingApprovalRequest\": \"<boolean>\",\n  \"ipAddress\": \"\",\n  \"assigneeUserId\": \"00000000-0000-0000-0000-000000000000\",\n  \"threatLockerDataCenterId\": \"00000000-0000-0000-0000-000000000000\",\n  \"instanceName\": \"\",\n  \"assigneeUsername\": \"\",\n  \"assigneeFirstName\": \"\",\n  \"assigneeLastname\": \"\",\n  \"threatLockerActionDto\": {\n    \"fullpath\": \"\",\n    \"policyid\": \"\",\n    \"username\": \"\",\n    \"actionid\": \"<integer>\",\n    \"hash\": \"\",\n    \"processName\": \"\",\n    \"certs\": \"<array,null>\",\n    \"applicationId\": \"\",\n    \"datetime\": \"<dateTime>\",\n    \"logAction\": \"<boolean>\",\n    \"SerialNumber\": \"\",\n    \"deviceType\": \"\",\n    \"actionType\": \"\",\n    \"size\": \"<long>\",\n    \"processId\": \"<integer>\",\n    \"ringFence\": \"<boolean>\",\n    \"policyName\": \"\",\n    \"applicationName\": \"\",\n    \"encryptionStatus\": \"<integer>\",\n    \"installedBy\": \"[]\",\n    \"monitorOnly\": \"<boolean>\",\n    \"notes\": \"\",\n    \"sha256\": \"\",\n    \"ringfencePolicyId\": \"\",\n    \"remotePresence\": \"<boolean>\",\n    \"organizationId\": \"\",\n    \"hostname\": \"\",\n    \"computerId\": \"\",\n    \"manufacturer\": \"\",\n    \"osType\": \"<integer>\",\n    \"destinationIP\": \"\",\n    \"DomainName\": \"\",\n    \"organizationName\": \"\"\n  },\n  \"notes\": \"\",\n  \"signature\": \"\",\n  \"tlInstructions\": \"\",\n  \"suggestCustomRule\": \"<boolean,null>\",\n  \"authorizeForPermit\": \"<boolean,null>\",\n  \"portalApiUrl\": \"\",\n  \"cyberHeroManagementConfigured\": \"<boolean>\",\n  \"maxTriggeredStartDate\": \"<string,null-date-time>\",\n  \"ticketApprovalManager\": \"\",\n  \"showMfaChallenge\": \"<boolean>\",\n  \"showMfaRegistration\": \"<boolean>\",\n  \"linkedMfaUser\": \"<string,null>\",\n  \"serialNumber\": \"\",\n  \"approvalRequestTimerDto\": {\n    \"approvalRequestId\": \"<uuid>\",\n    \"requestDate\": \"<dateTime>\",\n    \"assignedDate\": \"<dateTime>\",\n    \"escalatedDate\": \"<dateTime>\",\n    \"returnedDate\": \"<dateTime>\",\n    \"reassignedDate\": \"<dateTime>\",\n    \"actionedDate\": \"<dateTime>\",\n    \"totalTimeInSeconds\": 0\n  },\n  \"canRequestNewBuiltIn\": false,\n  \"isAssigneeLoggedIntoMaster\": false,\n  \"retrievedAssigneeUsername\": \"<boolean>\",\n  \"count\": \"<integer>\",\n  \"assigneeOrganizationId\": null\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "62005210-5417-4a4b-9ae9-f590093bed48",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ApprovalRequest",
+                    "ApprovalRequestUpdateForTakeOwnership"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"statusIdEscalatedToMSP\": \"<integer>\",\n  \"statusIdEscalatedByCustomer\": \"<integer>\",\n  \"masterOrganizationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"approvedBy\": \"\",\n  \"approvalRequestId\": \"00000000-0000-0000-0000-000000000000\",\n  \"dateTime\": \"<dateTime>\",\n  \"path\": \"\",\n  \"hash\": \"\",\n  \"username\": \"\",\n  \"hostname\": \"\",\n  \"statusId\": \"<integer>\",\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"organizationName\": \"\",\n  \"json\": \"\",\n  \"ticketId\": \"\",\n  \"requestor\": \"\",\n  \"requestorReason\": \"\",\n  \"requestorEmailAddress\": \"\",\n  \"comments\": \"\",\n  \"actionDate\": \"<string,null-date-time>\",\n  \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"multiLevelApprovalRequestId\": \"00000000-0000-0000-0000-000000000000\",\n  \"approvalNumber\": \"<integer>\",\n  \"approvedByTierLevel\": \"<integer>\",\n  \"tempPolicyId\": \"00000000-0000-0000-0000-000000000000\",\n  \"policyId\": \"00000000-0000-0000-0000-000000000000\",\n  \"tempApplicationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"multiLevelApprovalStatusId\": \"<integer>\",\n  \"initialApprovalTierLevel\": \"<integer>\",\n  \"approvalCount\": \"<integer>\",\n  \"pendingTierLevel\": \"<integer>\",\n  \"hasPendingApprovalRequest\": \"<boolean>\",\n  \"ipAddress\": \"\",\n  \"assigneeUserId\": \"00000000-0000-0000-0000-000000000000\",\n  \"threatLockerDataCenterId\": \"00000000-0000-0000-0000-000000000000\",\n  \"instanceName\": \"\",\n  \"assigneeUsername\": \"\",\n  \"assigneeFirstName\": \"\",\n  \"assigneeLastname\": \"\",\n  \"threatLockerActionDto\": {\n    \"fullpath\": \"\",\n    \"policyid\": \"\",\n    \"username\": \"\",\n    \"actionid\": \"<integer>\",\n    \"hash\": \"\",\n    \"processName\": \"\",\n    \"certs\": \"<array,null>\",\n    \"applicationId\": \"\",\n    \"datetime\": \"<dateTime>\",\n    \"logAction\": \"<boolean>\",\n    \"SerialNumber\": \"\",\n    \"deviceType\": \"\",\n    \"actionType\": \"\",\n    \"size\": \"<long>\",\n    \"processId\": \"<integer>\",\n    \"ringFence\": \"<boolean>\",\n    \"policyName\": \"\",\n    \"applicationName\": \"\",\n    \"encryptionStatus\": \"<integer>\",\n    \"installedBy\": \"[]\",\n    \"monitorOnly\": \"<boolean>\",\n    \"notes\": \"\",\n    \"sha256\": \"\",\n    \"ringfencePolicyId\": \"\",\n    \"remotePresence\": \"<boolean>\",\n    \"organizationId\": \"\",\n    \"hostname\": \"\",\n    \"computerId\": \"\",\n    \"manufacturer\": \"\",\n    \"osType\": \"<integer>\",\n    \"destinationIP\": \"\",\n    \"DomainName\": \"\",\n    \"organizationName\": \"\"\n  },\n  \"notes\": \"\",\n  \"signature\": \"\",\n  \"tlInstructions\": \"\",\n  \"suggestCustomRule\": \"<boolean,null>\",\n  \"authorizeForPermit\": \"<boolean,null>\",\n  \"portalApiUrl\": \"\",\n  \"cyberHeroManagementConfigured\": \"<boolean>\",\n  \"maxTriggeredStartDate\": \"<string,null-date-time>\",\n  \"ticketApprovalManager\": \"\",\n  \"showMfaChallenge\": \"<boolean>\",\n  \"showMfaRegistration\": \"<boolean>\",\n  \"linkedMfaUser\": \"<string,null>\",\n  \"serialNumber\": \"\",\n  \"approvalRequestTimerDto\": {\n    \"approvalRequestId\": \"<uuid>\",\n    \"requestDate\": \"<dateTime>\",\n    \"assignedDate\": \"<dateTime>\",\n    \"escalatedDate\": \"<dateTime>\",\n    \"returnedDate\": \"<dateTime>\",\n    \"reassignedDate\": \"<dateTime>\",\n    \"actionedDate\": \"<dateTime>\",\n    \"totalTimeInSeconds\": 0\n  },\n  \"canRequestNewBuiltIn\": false,\n  \"isAssigneeLoggedIntoMaster\": false,\n  \"retrievedAssigneeUsername\": \"<boolean>\",\n  \"count\": \"<integer>\",\n  \"assigneeOrganizationId\": null\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6c49d6d6-03d8-4ace-b28d-b348c36f4e1c",
+          "name": "Ignore Approval Request",
+          "request": {
+            "name": "Ignore Approval Request",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "ApprovalRequest",
+                "ApprovalRequestUpdateForIgnore"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"approvalRequestDtos\": \"<array,null>\",\n  \"type\": \"\",\n  \"ignoreSubject\": \"\",\n  \"ignoreReason\": \"\",\n  \"responseSubject\": \"\",\n  \"responseReason\": \"\",\n  \"rejectReason\": \"\",\n  \"isVDI\": \"<boolean>\",\n  \"notifyOnIgnore\": \"<boolean>\",\n  \"notifyOnResponse\": \"<boolean>\",\n  \"usingCustomApprovals\": \"<boolean>\",\n  \"allowedApprovalRequestDtos\": \"<array,null>\",\n  \"deniedApprovalRequestDtos\": \"<array,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ec580334-d2a0-451d-b2d8-b2598a12b9af",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ApprovalRequest",
+                    "ApprovalRequestUpdateForIgnore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"approvalRequestDtos\": \"<array,null>\",\n  \"type\": \"\",\n  \"ignoreSubject\": \"\",\n  \"ignoreReason\": \"\",\n  \"responseSubject\": \"\",\n  \"responseReason\": \"\",\n  \"rejectReason\": \"\",\n  \"isVDI\": \"<boolean>\",\n  \"notifyOnIgnore\": \"<boolean>\",\n  \"notifyOnResponse\": \"<boolean>\",\n  \"usingCustomApprovals\": \"<boolean>\",\n  \"allowedApprovalRequestDtos\": \"<array,null>\",\n  \"deniedApprovalRequestDtos\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "109816ef-ca0a-4d92-8922-a8f934ce6fd1",
+          "name": "Reject Approval Request",
+          "request": {
+            "name": "Reject Approval Request",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "ApprovalRequest",
+                "ApprovalRequestUpdateForReject"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"approvalRequestDtos\": \"<array,null>\",\n  \"type\": \"\",\n  \"ignoreSubject\": \"\",\n  \"ignoreReason\": \"\",\n  \"responseSubject\": \"\",\n  \"responseReason\": \"\",\n  \"rejectReason\": \"\",\n  \"isVDI\": \"<boolean>\",\n  \"notifyOnIgnore\": \"<boolean>\",\n  \"notifyOnResponse\": \"<boolean>\",\n  \"usingCustomApprovals\": \"<boolean>\",\n  \"allowedApprovalRequestDtos\": \"<array,null>\",\n  \"deniedApprovalRequestDtos\": \"<array,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c8cdb120-602f-40ed-86d7-190b6b79de99",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ApprovalRequest",
+                    "ApprovalRequestUpdateForReject"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"approvalRequestDtos\": \"<array,null>\",\n  \"type\": \"\",\n  \"ignoreSubject\": \"\",\n  \"ignoreReason\": \"\",\n  \"responseSubject\": \"\",\n  \"responseReason\": \"\",\n  \"rejectReason\": \"\",\n  \"isVDI\": \"<boolean>\",\n  \"notifyOnIgnore\": \"<boolean>\",\n  \"notifyOnResponse\": \"<boolean>\",\n  \"usingCustomApprovals\": \"<boolean>\",\n  \"allowedApprovalRequestDtos\": \"<array,null>\",\n  \"deniedApprovalRequestDtos\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e828577d-2772-43c0-9f60-de58576bcc34",
+          "name": "Authorize Approval Request for Permit",
+          "request": {
+            "name": "Authorize Approval Request for Permit",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "ApprovalRequest",
+                "ApprovalRequestAuthorizeForPermitById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"approvalRequestId\": null,\n  \"message\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2f6cda68-1cca-4dea-91fa-d4caa7aa2aa9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ApprovalRequest",
+                    "ApprovalRequestAuthorizeForPermitById"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"approvalRequestId\": null,\n  \"message\": \"\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3442c6be-5c03-4776-a010-fac90d467aca",
+    "name": "Portal Approval Request API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

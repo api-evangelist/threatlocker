@@ -1,0 +1,73 @@
+openapi: 3.2.0
+info:
+  title: Portal VDI Hyper V API
+  version: v1.0.0
+security:
+- Authorization: []
+  ManagedOrganizationId: []
+  OverrideManagedOrganizationId: []
+tags:
+- name: VDIHyperV
+paths:
+  /portalapi/VDIHyperV/VDIHyperVGetTestingEnvironmentDetails:
+    post:
+      tags:
+      - VDIHyperV
+      summary: Get Testing Environment Details For VDI HyperV
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FileDownloadDetailsDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FileDownloadDetailsDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/FileDownloadDetailsDto'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    FileDownloadDetailsDto:
+      type: object
+      properties:
+        approvalRequestId:
+          type: string
+          format: uuid
+        filename:
+          type:
+          - string
+          - 'null'
+        fileUrl:
+          type:
+          - string
+          - 'null'
+        eActionLogId:
+          type:
+          - string
+          - 'null'
+        sourceTableId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+  securitySchemes:
+    Authorization:
+      type: apiKey
+      description: Please insert Standard Authorization header.
+      name: Authorization
+      in: header
+    ManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: ManagedOrganizationId
+      in: header
+    OverrideManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: OverrideManagedOrganizationId
+      in: header

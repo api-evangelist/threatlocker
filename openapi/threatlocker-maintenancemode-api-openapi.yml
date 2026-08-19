@@ -1,0 +1,321 @@
+openapi: 3.2.0
+info:
+  title: Portal Maintenance Mode API
+  version: v1.0.0
+security:
+- Authorization: []
+  ManagedOrganizationId: []
+  OverrideManagedOrganizationId: []
+tags:
+- name: MaintenanceMode
+paths:
+  /portalapi/MaintenanceMode/MaintenanceModeGetByComputerId:
+    get:
+      tags:
+      - MaintenanceMode
+      summary: Get Maintenance Schedule By Computer Id
+      parameters:
+      - name: computerId
+        in: query
+        description: ''
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+      deprecated: true
+  /portalapi/MaintenanceMode/MaintenanceModeInsert:
+    post:
+      tags:
+      - MaintenanceMode
+      summary: Add to Maintenance Schedule
+      description: "Parameters Values:\n            \n    {\n         \"AutomaticApplicationType\": \"\
+        \ empty = 0 | Automatic Computer = 1 | Automatic Group = 2 | Automatic System = 3\",\n       \
+        \  \"MaintenanceTypeId\": \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation\
+        \ Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6\"\n    }"
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MaintenanceModeInsertDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/MaintenanceModeInsertDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/MaintenanceModeInsertDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/MaintenanceMode/MaintenanceModeEndById:
+    patch:
+      tags:
+      - MaintenanceMode
+      summary: End Maintenance Schedule
+      description: "Parameters Values:\n            \n    {\n         \"AppliesToType\": \" empty = 0\
+        \ | Automatic Computer = 1 | Automatic Group = 2 | Automatic System = 3\",\n         \"MaintenanceTypeId\"\
+        : \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode\
+        \ Hash Only = 5 | TamperProtectionDisabled = 6\"\n    }"
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MaintenanceModeEndDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/MaintenanceModeEndDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/MaintenanceModeEndDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/MaintenanceMode/MaintenanceModeUpdateEndDateTimeForSpecificDate:
+    post:
+      tags:
+      - MaintenanceMode
+      summary: Updated Maintenance Mode End Date Time.
+      description: "Parameters Values:\n            \n    {\n         \"MaintenanceTypeId\": \" MonitorOnly\
+        \ = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only =\
+        \ 5 | TamperProtectionDisabled = 6\",\n         \"OSType\": \"Windows = 1 | MAC = 2 | Linux =\
+        \ 3\"\n    }"
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MaintenanceModeUpdateEndDateTimeDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/MaintenanceModeUpdateEndDateTimeDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/MaintenanceModeUpdateEndDateTimeDto'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    MaintenanceModeEndDto:
+      type: object
+      properties:
+        appliesToType:
+          type: integer
+          format: int32
+        computerId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        computerInstallDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        endDateTime:
+          type: string
+          format: date-time
+        maintenanceModeId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        maintenanceTypeId:
+          type: integer
+          format: int32
+        startDateTime:
+          type: string
+          format: date-time
+      additionalProperties: false
+    MaintenanceModeConditionsDto:
+      type: object
+      properties:
+        maintenanceModeConditionTypeId:
+          type: integer
+          format: int32
+        value:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    MaintenanceModeInsertDto:
+      type: object
+      properties:
+        allUsers:
+          type: boolean
+          default: false
+        automaticApplication:
+          type: boolean
+          default: false
+        automaticApplicationType:
+          type: integer
+          format: int32
+        computerId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        createNewApplication:
+          type: boolean
+          default: false
+        endDateTime:
+          type: string
+          format: date-time
+        existingApplication:
+          $ref: '#/components/schemas/MaintenanceExistingApplicationDto'
+        maintenanceTypeId:
+          type: integer
+          format: int32
+        newApplication:
+          $ref: '#/components/schemas/MaintenanceApplicationDto'
+        permitEnd:
+          type: boolean
+          default: false
+        startDateTime:
+          type: string
+          format: date-time
+        useExistingApplication:
+          type: boolean
+          default: false
+        usersList:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        computerDateTime:
+          type: string
+          format: date-time
+        maintenanceModeConditions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MaintenanceModeConditionsDto'
+        ticketNumber:
+          type:
+          - string
+          - 'null'
+          default: ''
+        notes:
+          type:
+          - string
+          - 'null'
+          default: ''
+      additionalProperties: false
+    MaintenanceApplicationDto:
+      type: object
+      properties:
+        applicationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        applicationName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        createApplicationOnly:
+          type: boolean
+          default: false
+        appliesToId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+      additionalProperties: false
+    MaintenanceExistingApplicationDto:
+      type: object
+      properties:
+        applicationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        name:
+          type:
+          - string
+          - 'null'
+          default: ''
+      additionalProperties: false
+    MaintenanceModeUpdateEndDateTimeDto:
+      type: object
+      properties:
+        computerId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        computerName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        isIsolated:
+          type: boolean
+          default: false
+        isLockedOut:
+          type: boolean
+          default: false
+        lastVersionChange:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        maintenanceEndDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        maintenanceTypeId:
+          type: integer
+          format: int32
+        monitorOnlyDateTime:
+          type: string
+          format: date-time
+        organizationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        osType:
+          type: integer
+          format: int32
+        pendingBaseFiles:
+          type: boolean
+          default: false
+        threatLockerVersion:
+          type:
+          - string
+          - 'null'
+          default: ''
+        threatLockerVersionId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        threatLockerVersionGroup:
+          type:
+          - string
+          - 'null'
+          default: ''
+        threatLockerVersionGroupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+      additionalProperties: false
+  securitySchemes:
+    Authorization:
+      type: apiKey
+      description: Please insert Standard Authorization header.
+      name: Authorization
+      in: header
+    ManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: ManagedOrganizationId
+      in: header
+    OverrideManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: OverrideManagedOrganizationId
+      in: header

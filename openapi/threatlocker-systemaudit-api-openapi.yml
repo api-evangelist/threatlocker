@@ -1,0 +1,343 @@
+openapi: 3.2.0
+info:
+  title: Portal System Audit API
+  version: v1.0.0
+security:
+- Authorization: []
+  ManagedOrganizationId: []
+  OverrideManagedOrganizationId: []
+tags:
+- name: SystemAudit
+paths:
+  /portalapi/SystemAudit/SystemAuditGetForHealthCenter:
+    post:
+      tags:
+      - SystemAudit
+      summary: Retrieves System Audit data for the Health Center, specifically focused on login attempts.
+      description: "This endpoint retrieves a paginated list of audit records related to user login attempts,\
+        \ \nfiltered by date range, search text, and whether the login was successful or denied.\nIt can\
+        \ also filter by latitude and longitude if provided in the correct format within the search text.\n\
+        \n\n\n**Search Text Usage:**\n\n*   **Standard Text Search:** You can enter countries, regions,\
+        \ or cities to search within the audit records.\n*   **Latitude/Longitude Search:** To search\
+        \ by geographical location, use the format \"lat:[latitude]&long:[longitude]\". \n    - For example,\
+        \ \"lat:34.0522&long:-118.2437\" will search for audit records near Los Angeles.\n\n\n\n**Sample\
+        \ request:**\n            \n    POST /SystemAuditGetForHealthCenter\n    {\n       \"days\": 30,\n\
+        \       \"isLoggedIn\": false,\n       \"pageSize\": 25,\n       \"pageNumber\": 1,\n       \"\
+        searchText\": \"lat:40.7128&long:-74.0060\"\n    }\n    \n    POST /SystemAuditGetForHealthCenter\n\
+        \    {\n        \"days\": 30,\n        \"isLoggedIn\": false,\n        \"pageSize\": 25,\n   \
+        \     \"pageNumber\": 1,\n        \"searchText\": \"United States\"\n    }\n    \n    POST /SystemAuditGetForHealthCenter\n\
+        \    {\n        \"days\": 30,\n        \"isLoggedIn\": false,\n        \"pageSize\": 25,\n   \
+        \     \"pageNumber\": 1,\n        \"emailAddress\": \"test.user@email.com\"\n    }\n    \n   \
+        \ POST /SystemAuditGetForHealthCenter\n    {\n        \"days\": 30,\n        \"isLoggedIn\": false,\n\
+        \        \"pageSize\": 25,\n        \"pageNumber\": 1,\n        \"ipAddresses\": \"123.123.123.123\"\
+        \n    }"
+      requestBody:
+        description: Parameters for filtering audit data.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SystemAuditHealthCenterParams'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SystemAuditHealthCenterParams'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SystemAuditHealthCenterParams'
+      responses:
+        '200':
+          description: Successfully retrieved the Health Center audit data.
+        '400':
+          description: The request was malformed or invalid.
+        '401':
+          description: The user does not have the required permissions.
+        '403':
+          description: The user is not authorized to perform this action.
+        '500':
+          description: An unexpected error occurred on the server.
+  /portalapi/SystemAudit/SystemAuditGetLoginAttemptFiltersForHealthCenter:
+    get:
+      tags:
+      - SystemAudit
+      summary: Retrieves unique emails and IP addresses from system audit data for login attempts filter.
+      description: "\n\n             **Sample request:**\n                 \n                 GET /SystemAuditGetLoginAttemptFiltersForHealthCenter\n\
+        \                 {\n                     \"days\": 30,\n                     \"isLoggedIn\":\
+        \ false,\n                     \"pageSize\": 25,\n                     \"pageNumber\": 1,\n  \
+        \                   \"emailAddress\": \"test.user@email.com\"\n                 }\n          \
+        \       \n                 GET /SystemAuditGetLoginAttemptFiltersForHealthCenter\n           \
+        \      {\n                     \"days\": 30,\n                     \"isLoggedIn\": false,\n  \
+        \                   \"pageSize\": 25,\n                     \"pageNumber\": 1,\n             \
+        \        \"ipAddresses\": \"123.123.123.123\"\n                 }"
+      parameters:
+      - name: Days
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 30
+      - name: SearchText
+        in: query
+        schema:
+          type: string
+          default: ''
+      - name: IsLoggedIn
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: EmailAddress
+        in: query
+        schema:
+          type: string
+      - name: IPAddresses
+        in: query
+        schema:
+          type: string
+      - name: AfterKeys
+        in: query
+        schema:
+          type: object
+          additionalProperties:
+            type:
+            - array
+            - 'null'
+            items: {}
+      - name: PageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 10
+      - name: PageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      responses:
+        '200':
+          description: Successfully retrieved the Health Center login attempt filters.
+        '400':
+          description: The request was malformed or invalid.
+        '401':
+          description: The user does not have the required permissions.
+        '403':
+          description: The user is not authorized to perform this action.
+        '500':
+          description: An unexpected error occurred on the server.
+  /portalapi/SystemAudit/SystemAuditGetByParameters:
+    post:
+      tags:
+      - SystemAudit
+      summary: Retrieves System Audit records based on specified parameters.
+      description: "This endpoint retrieves a paginated list of System Audit records, allowing filtering\
+        \ by various parameters such as username, action, IP address, effective action, details, date\
+        \ range, and organization.\n\n\n\n**Filtering and Search:**\n\n\n*   **Wildcard Search:** The\
+        \ `Details`, `IPAddress`, `EffectiveAction`, and `Username` fields support wildcard searches.\n\
+        \    - If the search text contains an asterisk (`*`), it will be replaced with a percent sign\
+        \ (`%`) for the SQL LIKE operator.\n    - If the search text does not contain an asterisk (`*`),\
+        \ a percent sign (`%`) will be added to both the beginning and end of the search text by default\
+        \ (searching for \"test\" will become \"%test%\"). This means it will search for any records that\
+        \ *contain* the search text.\n*   **Date Range:** Use `StartDate` and `EndDate` to filter records\
+        \ within a specific date range.\n*   **Organization:** By default, the endpoint retrieves records\
+        \ for the current organization. Set `ViewChildOrganizations` to `true` to include child organizations\
+        \ in the search. If the user is logged into the Master Organization, it is not necessary to use\
+        \ `ViewChildOrganizations`.\n\n\n\n**Sample Request:**\n            \n    POST /portalApi/SystemAuditGetByParameters\n\
+        \    {\n       \"username\": \"*test*\", OR \"username\": \"test\",\n       \"action\": \"Read\"\
+        ,\n       \"ipAddress\": \"*\",\n       \"effectiveAction\": \"Permitted\",\n       \"details\"\
+        : \"Viewed*\",\n       \"startDate\": \"2023-01-01T00:00:00Z\",\n       \"endDate\": \"2024-01-27T23:59:59Z\"\
+        ,\n       \"pageSize\": 25,\n       \"pageNumber\": 1,\n       \"viewChildOrganizations\": false,\n\
+        \       \"objectId\": \"00000000-0000-0000-0000-000000000000\"\n    }\n**This request would search\
+        \ for:**\n- Usernames that contain \"test\" anywhere.\n- Any IP address.\n- Details that start\
+        \ with \"Viewed\"."
+      requestBody:
+        description: Parameters for filtering System Audit records.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SystemAuditParametersDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SystemAuditParametersDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SystemAuditParametersDto'
+      responses:
+        '200':
+          description: Successfully retrieved the System Audit records.
+        '400':
+          description: The request was malformed or invalid.
+        '401':
+          description: The user is not authenticated or does not have permission to view System Audit
+            records.
+        '403':
+          description: The user is not authorized to perform this action.
+        '500':
+          description: An unexpected error occurred on the server.
+components:
+  schemas:
+    SystemAuditHealthCenterParams:
+      type: object
+      properties:
+        days:
+          type: integer
+          format: int32
+          default: 30
+        searchText:
+          type:
+          - string
+          - 'null'
+          default: ''
+        isLoggedIn:
+          type: boolean
+          default: false
+        emailAddress:
+          type:
+          - string
+          - 'null'
+        ipAddresses:
+          type:
+          - string
+          - 'null'
+        afterKeys:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - array
+            - 'null'
+            items: {}
+        pageSize:
+          type: integer
+          format: int32
+          default: 10
+        pageNumber:
+          type: integer
+          format: int32
+          default: 1
+      additionalProperties: false
+    SystemAuditParametersDto:
+      type: object
+      properties:
+        emailAddress:
+          type:
+          - string
+          - 'null'
+          default: ''
+        action:
+          type:
+          - string
+          - 'null'
+          default: ''
+        ipAddress:
+          type:
+          - string
+          - 'null'
+          default: ''
+        effectiveAction:
+          type:
+          - string
+          - 'null'
+          default: ''
+        details:
+          type:
+          - string
+          - 'null'
+          default: ''
+        searchText:
+          type:
+          - string
+          - 'null'
+        ipAddresses:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        objectTypeIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        startDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        endDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        pageSize:
+          type: integer
+          format: int32
+          default: 25
+        pageNumber:
+          type: integer
+          format: int32
+          default: 1
+        viewChildOrganizations:
+          type: boolean
+          default: false
+        objectId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        actions:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        indexName:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        afterKeys:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - array
+            - 'null'
+            items: {}
+        skipPaging:
+          type: boolean
+        function:
+          type:
+          - string
+          - 'null'
+          default: ''
+        page:
+          type:
+          - string
+          - 'null'
+          default: ''
+        emailAddresses:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+  securitySchemes:
+    Authorization:
+      type: apiKey
+      description: Please insert Standard Authorization header.
+      name: Authorization
+      in: header
+    ManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: ManagedOrganizationId
+      in: header
+    OverrideManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: OverrideManagedOrganizationId
+      in: header

@@ -1,0 +1,141 @@
+{
+  "item": [
+    {
+      "id": "acf972d1-0b86-4b9f-9ebe-21c4beab3821",
+      "name": "VDIHyperV",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "17d0a63c-fa80-4515-9ad1-ff6933b25a96",
+          "name": "Get Testing Environment Details For VDI HyperV",
+          "request": {
+            "name": "Get Testing Environment Details For VDI HyperV",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "VDIHyperV",
+                "VDIHyperVGetTestingEnvironmentDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"approvalRequestId\": \"<uuid>\",\n  \"filename\": \"<string,null>\",\n  \"fileUrl\": \"<string,null>\",\n  \"eActionLogId\": \"<string,null>\",\n  \"sourceTableId\": \"<integer,null-int32>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6a52acfb-8f18-4adf-b186-3b5d207a9b96",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "VDIHyperV",
+                    "VDIHyperVGetTestingEnvironmentDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"approvalRequestId\": \"<uuid>\",\n  \"filename\": \"<string,null>\",\n  \"fileUrl\": \"<string,null>\",\n  \"eActionLogId\": \"<string,null>\",\n  \"sourceTableId\": \"<integer,null-int32>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3269f95a-48e2-4f50-b5c0-a0f66b63dac5",
+    "name": "Portal VDI Hyper V API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

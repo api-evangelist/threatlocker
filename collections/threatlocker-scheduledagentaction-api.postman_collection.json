@@ -1,0 +1,614 @@
+{
+  "item": [
+    {
+      "id": "fea12585-889d-4328-8035-014fad757a62",
+      "name": "ScheduledAgentAction",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c491b25b-d723-4c57-9019-5b66cc9b2aeb",
+          "name": "Get a list of Scheduled Agent Actions",
+          "request": {
+            "name": "Get a list of Scheduled Agent Actions",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n          \"ScheduledType\": \"Version Update = 1\",\n          \"IncludeChildren\": \"true or false\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "ScheduledAgentAction",
+                "List"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "scheduledType",
+                  "value": "<integer>",
+                  "description": "Scheduled type identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeChildren",
+                  "value": "<boolean>",
+                  "description": "Whether to include child organizations."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8b6d2cdf-c1f4-4983-a50e-7a6c3f6e63c9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ScheduledAgentAction",
+                    "List"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "scheduledType",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "includeChildren",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "530c400c-f771-4962-b950-c4db75655304",
+          "name": "Get a list of valid Applies To records",
+          "request": {
+            "name": "Get a list of valid Applies To records",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n          \"OSType\": \"Windows = 1 | Mac = 2 | Linux = 3 | Red Hat Enterprise Linux 6 = 7\",\n          \"IncludeChildren\": \"true or false\",\n          \"SearchText\": \"(Optional) - Any alphanumeric text\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "ScheduledAgentAction",
+                "AppliesTo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "osType",
+                  "value": "<integer>",
+                  "description": "Operating system type identifier."
+                },
+                {
+                  "disabled": false,
+                  "key": "includeChildren",
+                  "value": "<boolean>",
+                  "description": "Whether to include child organizations."
+                },
+                {
+                  "disabled": false,
+                  "key": "searchText",
+                  "value": "",
+                  "description": "Optional search filter text."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "131730a7-fe04-456c-9420-930c3e33e116",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ScheduledAgentAction",
+                    "AppliesTo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "osType",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "includeChildren",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "searchText",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "49089fdd-9790-43f9-8a2e-3146440ee19b",
+          "name": "Get the Scheduled Agent Action details",
+          "request": {
+            "name": "Get the Scheduled Agent Action details",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n          \"ScheduledId\": \"A value present in the response returned from GetScheduledAgentActionList\",\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "ScheduledAgentAction",
+                "GetForHydration"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "scheduledId",
+                  "value": "<uuid>",
+                  "description": "The unique identifier of the scheduled agent action."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1d882ddd-303e-4d6c-8c9d-86fd6c45073a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ScheduledAgentAction",
+                    "GetForHydration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "scheduledId",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0616ac31-7fa8-4461-819a-f7b6daf14b18",
+          "name": "Get the scheduled agent actions based on the provided filter parameters.",
+          "request": {
+            "name": "Get the scheduled agent actions based on the provided filter parameters.",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n          \"ScheduledId\": \"A value present in the response returned from GetScheduledAgentActionList\",\n          \"OrderBy\": \"scheduleddatetime | computername | computergroupname | organizationname\",\n          \"IsAscending\": \"true or false\",\n          \"SearchText\": \"Any alphanumeric text\",\n          \"PageSize\": \"The number of records per page\",\n          \"PageNumber\": \"The page number to display\",\n          \"OrganizationIds\": \"A list of organization ids of the records to display\",\n          \"ComputerGroupIds\": \"A list of computer group ids of the records to display\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "ScheduledAgentAction",
+                "GetByParameters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"scheduledId\": \"<uuid>\",\n  \"orderBy\": \"scheduleddatetime\",\n  \"isAscending\": \"<boolean>\",\n  \"searchText\": \"<string,null>\",\n  \"pageSize\": 25,\n  \"pageNumber\": 1,\n  \"organizationIds\": \"<array,null>\",\n  \"computerGroupIds\": \"<array,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "eb9e7dd1-2891-47aa-a6aa-3e8e05a66b04",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ScheduledAgentAction",
+                    "GetByParameters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"scheduledId\": \"<uuid>\",\n  \"orderBy\": \"scheduleddatetime\",\n  \"isAscending\": \"<boolean>\",\n  \"searchText\": \"<string,null>\",\n  \"pageSize\": 25,\n  \"pageNumber\": 1,\n  \"organizationIds\": \"<array,null>\",\n  \"computerGroupIds\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2aae6c13-132d-4ff9-9a63-4795469bb46d",
+          "name": "Inserts a new scheduled agent action.",
+          "request": {
+            "name": "Inserts a new scheduled agent action.",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n          \"ScheduledType\": \"Version Update = 1\",\n          \"ScheduledTypePayload\": \"If ScheduledType = 1, then must include the Target TL Version Id\",\n          \"AppliesTo\": \"A list of Applies To\",\n          \"BatchAmount\": \"25 | 50 | 100 | 250 | 500\",\n          \"StartDate\": \"The date to start the schedule\",\n          \"WindowStartTime\": \"The start time used for scheduling\",\n          \"WindowEndTime\": \"The end time used for scheduling\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "ScheduledAgentAction"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"scheduledType\": \"<integer>\",\n  \"scheduledTypePayload\": \"<string,null>\",\n  \"appliesTo\": \"<array,null>\",\n  \"batchAmount\": \"<integer,null-int32>\",\n  \"startDate\": \"<dateTime>\",\n  \"windowStartTime\": \"<string,null>\",\n  \"windowEndTime\": \"<string,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b4dd9476-a458-4b13-b6d6-938c026ea571",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ScheduledAgentAction"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"scheduledType\": \"<integer>\",\n  \"scheduledTypePayload\": \"<string,null>\",\n  \"appliesTo\": \"<array,null>\",\n  \"batchAmount\": \"<integer,null-int32>\",\n  \"startDate\": \"<dateTime>\",\n  \"windowStartTime\": \"<string,null>\",\n  \"windowEndTime\": \"<string,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "254afa99-a840-466e-9efb-734663b93136",
+          "name": "Aborts one or more scheduled agent actions.",
+          "request": {
+            "name": "Aborts one or more scheduled agent actions.",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n          \"ScheduledId\": \"A value present in the response returned from GetScheduledAgentActionList\",\n          \"AppliesTo\": \"A list of Applies To\",\n          \"AbortAll\": \"true or false\",\n    }\n\nIf \"AbortAll\" = \"false\", then the AppliesTo must have at least 1 record.\nIf \"AbortAll\" = \"true\", then the AppliesTo must be empty and all records for the ScheduledId will be aborted.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "ScheduledAgentAction",
+                "Abort"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"scheduledId\": \"<uuid>\",\n  \"appliesTo\": \"<array,null>\",\n  \"abortAll\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "94c6631a-c483-48af-a004-c54e1354e008",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ScheduledAgentAction",
+                    "Abort"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"scheduledId\": \"<uuid>\",\n  \"appliesTo\": \"<array,null>\",\n  \"abortAll\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bce85dcf-5a77-40a7-b8c4-1289c33d9bb6",
+    "name": "Portal Scheduled Agent Action API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

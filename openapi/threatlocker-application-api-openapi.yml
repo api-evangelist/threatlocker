@@ -1,0 +1,384 @@
+openapi: 3.2.0
+info:
+  title: Portal Application API
+  version: v1.0.0
+security:
+- Authorization: []
+  ManagedOrganizationId: []
+  OverrideManagedOrganizationId: []
+tags:
+- name: Application
+paths:
+  /portalapi/Application/ApplicationGetById:
+    get:
+      tags:
+      - Application
+      summary: Get Application by Id.
+      parameters:
+      - name: applicationId
+        in: query
+        description: ''
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+  /portalapi/Application/ApplicationGetForNetworkPolicyProcessById:
+    get:
+      tags:
+      - Application
+      summary: Get Application Details for Network Policy Process by Id.
+      parameters:
+      - name: applicationId
+        in: query
+        description: ''
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+  /portalapi/Application/ApplicationGetResearchDetailsById:
+    get:
+      tags:
+      - Application
+      summary: Get Application Research Details by Id.
+      parameters:
+      - name: applicationId
+        in: query
+        description: ''
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+  /portalapi/Application/ApplicationGetForMaintenanceMode:
+    get:
+      tags:
+      - Application
+      summary: Get Application Options for Maintenance Scheduling
+      description: "Parameters Values:\n            \n    {\n          \"OSType\": \"All = 0 | Windows\
+        \ = 1 | MAC = 2 | Linux = 3\"\n    }"
+      parameters:
+      - name: osType
+        in: query
+        description: ''
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      responses:
+        '200':
+          description: OK
+  /portalapi/Application/ApplicationGetMatchingList:
+    post:
+      tags:
+      - Application
+      summary: Get Matching Applications
+      description: "Parameters Values:\n            \n    {\n          \"OSType\": \"All = 0 | Windows\
+        \ = 1 | MAC = 2 | Linux = 3\"\n    }"
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationMatchParameterDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationMatchParameterDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationMatchParameterDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/Application/ApplicationGetForApplicationOptions:
+    post:
+      tags:
+      - Application
+      summary: Load Application
+      description: "Parameters Values:\n            \n    {\n          \"OSType\": \"All = 0 | Windows\
+        \ = 1 | MAC = 2 | Linux = 3\"\n    }"
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationGetForApplicationOptionsDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationGetForApplicationOptionsDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationGetForApplicationOptionsDto'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    ApplicationMatchParameterDto:
+      type: object
+      properties:
+        hash:
+          type:
+          - string
+          - 'null'
+          default: ''
+        sha256:
+          type:
+          - string
+          - 'null'
+          default: ''
+        path:
+          type:
+          - string
+          - 'null'
+          default: ''
+        processPath:
+          type:
+          - string
+          - 'null'
+          default: ''
+        organizationIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+          default: null
+        certs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ThreatLockerCertDto'
+        createdBys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        osType:
+          type: integer
+          format: int32
+          default: 1
+        filename:
+          type:
+          - string
+          - 'null'
+          default: ''
+        folder:
+          type:
+          - string
+          - 'null'
+          default: ''
+        approvalRequestId:
+          type: string
+          format: uuid
+        builtInPartialMatchingFiles:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ApplicationFileDto'
+      additionalProperties: false
+    ApplicationFileDto:
+      type: object
+      properties:
+        applicationFileId:
+          type: integer
+          format: int64
+        applicationId:
+          type: string
+          format: uuid
+          default: null
+        fullPath:
+          type:
+          - string
+          - 'null'
+          default: ''
+        cert:
+          type:
+          - string
+          - 'null'
+          default: ''
+        hash:
+          type:
+          - string
+          - 'null'
+          default: ''
+        processPath:
+          type:
+          - string
+          - 'null'
+          default: ''
+        notes:
+          type:
+          - string
+          - 'null'
+          default: ''
+        installedBy:
+          type:
+          - string
+          - 'null'
+          default: ''
+        name:
+          type:
+          - string
+          - 'null'
+          default: ''
+        applicationFileDetails:
+          type:
+          - string
+          - 'null'
+          default: ''
+        keyFile:
+          type: boolean
+          default: false
+        originalFullPath:
+          type:
+          - string
+          - 'null'
+          default: ''
+        originalCert:
+          type:
+          - string
+          - 'null'
+          default: ''
+        originalHash:
+          type:
+          - string
+          - 'null'
+          default: ''
+        originalProcessPath:
+          type:
+          - string
+          - 'null'
+          default: ''
+        originalNotes:
+          type:
+          - string
+          - 'null'
+          default: ''
+        originalInstalledBy:
+          type:
+          - string
+          - 'null'
+          default: ''
+        originalKeyFile:
+          type: boolean
+          default: false
+        osType:
+          type: integer
+          format: int32
+          default: 1
+        isHashOnly:
+          type: boolean
+          default: false
+        minSize:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          default: null
+        maxSize:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          default: null
+        updateStatus:
+          $ref: '#/components/schemas/UpdateStatus'
+        createdBy:
+          type:
+          - string
+          - 'null'
+          default: ''
+        applicationName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        organizationId:
+          type: string
+          format: uuid
+          default: null
+      additionalProperties: false
+    ApplicationGetForApplicationOptionsDto:
+      type: object
+      properties:
+        organizationId:
+          type: string
+          format: uuid
+          default: ''
+        osType:
+          type: integer
+          format: int32
+          default: 1
+        includeBuiltIn:
+          type: boolean
+          default: false
+        searchText:
+          type:
+          - string
+          - 'null'
+          default: ''
+        hostName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        appliesToId:
+          type: string
+          format: uuid
+          default: ''
+        onlyPermitted:
+          type: boolean
+          default: false
+      additionalProperties: false
+    ThreatLockerCertDto:
+      type: object
+      properties:
+        sha:
+          type:
+          - string
+          - 'null'
+          default: ''
+        subject:
+          type:
+          - string
+          - 'null'
+          default: ''
+        validCert:
+          type: boolean
+        digestmismatch:
+          type: integer
+          format: int32
+      additionalProperties: false
+    UpdateStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      type: integer
+      format: int32
+  securitySchemes:
+    Authorization:
+      type: apiKey
+      description: Please insert Standard Authorization header.
+      name: Authorization
+      in: header
+    ManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: ManagedOrganizationId
+      in: header
+    OverrideManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: OverrideManagedOrganizationId
+      in: header

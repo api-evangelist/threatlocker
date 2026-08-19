@@ -1,0 +1,220 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portal Approval Request API",
+    "version": "v1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ApprovalRequest",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Approval Request By ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestGetById",
+            "params": [
+              {
+                "name": "approvalRequestId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Approval Request By ID"
+        },
+        {
+          "info": {
+            "name": "Get File Download Details By Approval Request Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestGetFileDownloadDetailsById",
+            "params": [
+              {
+                "name": "approvalRequestId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get File Download Details By Approval Request Id"
+        },
+        {
+          "info": {
+            "name": "Get Permit Application Details By Approval Request Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestGetPermitApplicationById",
+            "params": [
+              {
+                "name": "approvalRequestId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Permit Application Details By Approval Request Id"
+        },
+        {
+          "info": {
+            "name": "Approve Permit Application Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestPermitApplication",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    {\n       \"osType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\n    }"
+        },
+        {
+          "info": {
+            "name": "Get Storage Approval Request By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestGetStorageApprovalById",
+            "params": [
+              {
+                "name": "approvalRequestId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Storage Approval Request By Id"
+        },
+        {
+          "info": {
+            "name": "Approve Storage Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestPermitStorageApproval",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Approve Storage Request"
+        },
+        {
+          "info": {
+            "name": "POST /portalapi/ApprovalRequest/ApprovalRequestGetByParameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestGetByParameters",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Get Approval Request Pending Count",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestGetCount",
+            "params": [
+              {
+                "name": "includeChildOrganizations",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Approval Request Pending Count"
+        },
+        {
+          "info": {
+            "name": "Take Ownership of Approval Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestUpdateForTakeOwnership",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Take Ownership of Approval Request"
+        },
+        {
+          "info": {
+            "name": "Ignore Approval Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestUpdateForIgnore",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Ignore Approval Request"
+        },
+        {
+          "info": {
+            "name": "Reject Approval Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestUpdateForReject",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Reject Approval Request"
+        },
+        {
+          "info": {
+            "name": "Authorize Approval Request for Permit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestAuthorizeForPermitById",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Authorize Approval Request for Permit"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

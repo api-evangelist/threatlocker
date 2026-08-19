@@ -2,71 +2,164 @@ generated: '2026-08-02'
 method: derived
 status: candidate
 source: openapi/threatlocker-portal-openapi-original.json
-description: >-
-  ThreatLocker publishes NO official or hosted MCP server. This is a DERIVED candidate tool surface —
-  one tool per PortalAPI operation group — offered as a design starting point, not a claim that
-  ThreatLocker operates an MCP endpoint. Two independent community MCP servers built against this
-  same public OpenAPI were found during the search and are recorded under `community_servers`
-  for provenance; they are not affiliated with, endorsed by, or supported by ThreatLocker, Inc.
+description: ThreatLocker publishes NO official or hosted MCP server. This is a DERIVED candidate tool
+  surface — one tool per PortalAPI operation group — offered as a design starting point, not a claim that
+  ThreatLocker operates an MCP endpoint. Two independent community MCP servers built against this same
+  public OpenAPI were found during the search and are recorded under `community_servers` for provenance;
+  they are not affiliated with, endorsed by, or supported by ThreatLocker, Inc.
 server:
   name: threatlocker-portalapi
   transport: http
   url: null
   published_by_provider: false
 search_evidence:
-- {source: https://threatlocker.kb.help/api-documentation/, finding: no MCP server documented}
-- {source: https://www.threatlocker.com/llms.txt, finding: no MCP endpoint listed}
-- {source: registry.npmjs.org, query: threatlocker, finding: no @modelcontextprotocol/threatlocker package}
+- source: https://threatlocker.kb.help/api-documentation/
+  finding: no MCP server documented
+- source: https://www.threatlocker.com/llms.txt
+  finding: no MCP endpoint listed
+- source: registry.npmjs.org
+  query: threatlocker
+  finding: no @modelcontextprotocol/threatlocker package
 community_servers:
 - name: threatlocker-mcp
   repo: https://github.com/space-c0wboy/threatlocker-mcp
   listing: https://mcpservers.org/servers/space-c0wboy/threatlocker-mcp
   official: false
-  note: Community server; its README states 44 tools generated from the official ThreatLocker OpenAPI 3.0 spec.
+  note: Community server; its README states 44 tools generated from the official ThreatLocker OpenAPI
+    3.0 spec.
 - name: threatlocker-mcp-server
   listing: https://lobehub.com/mcp/bigfootbytes-threatlocker-mcp-server
   official: false
 tools:
-- {name: search_action_logs, description: Search endpoint action logs by parameters, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ActionLog/ActionLogGetByParametersV2"}
-- {name: get_action_log, description: Get a single action log entry by id, source_operation: "openapi/threatlocker-portal-openapi-original.json#GET /portalapi/ActionLog/ActionLogGetByIdV2"}
-- {name: get_file_history, description: Get all action log history for a file path, source_operation: "openapi/threatlocker-portal-openapi-original.json#GET /portalapi/ActionLog/ActionLogGetAllForFileHistoryV2"}
-- {name: get_application, description: Get an application definition by id, source_operation: "openapi/threatlocker-portal-openapi-original.json#GET /portalapi/Application/ApplicationGetById"}
-- {name: match_applications, description: Find applications matching a file/certificate, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Application/ApplicationGetMatchingList"}
-- {name: list_approval_requests, description: List approval requests by parameters, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ApprovalRequest/ApprovalRequestGetByParameters"}
-- {name: count_approval_requests, description: Count pending approval requests, source_operation: "openapi/threatlocker-portal-openapi-original.json#GET /portalapi/ApprovalRequest/ApprovalRequestGetCount"}
-- {name: get_approval_request, description: Get an approval request by id, source_operation: "openapi/threatlocker-portal-openapi-original.json#GET /portalapi/ApprovalRequest/ApprovalRequestGetById"}
-- {name: permit_application, description: Approve an application approval request and create the permit policy, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ApprovalRequest/ApprovalRequestPermitApplication"}
-- {name: permit_storage, description: Approve a storage approval request, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ApprovalRequest/ApprovalRequestPermitStorageApproval"}
-- {name: reject_approval_request, description: Reject an approval request, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ApprovalRequest/ApprovalRequestUpdateForReject"}
-- {name: ignore_approval_request, description: Ignore an approval request, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ApprovalRequest/ApprovalRequestUpdateForIgnore"}
-- {name: take_ownership_approval_request, description: Take ownership of an approval request, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ApprovalRequest/ApprovalRequestUpdateForTakeOwnership"}
-- {name: search_computers, description: Search computers by all parameters, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Computer/ComputerGetByAllParameters"}
-- {name: get_computer, description: Get a computer for editing by id, source_operation: "openapi/threatlocker-portal-openapi-original.json#GET /portalapi/Computer/ComputerGetForEditById"}
-- {name: update_computer, description: Update a computer record, source_operation: "openapi/threatlocker-portal-openapi-original.json#PATCH /portalapi/Computer/ComputerUpdateForEdit"}
-- {name: enable_protection, description: Enable ThreatLocker protection on computers, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Computer/ComputerEnableProtection"}
-- {name: disable_protection, description: Disable ThreatLocker protection on computers, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Computer/ComputerDisableProtection"}
-- {name: move_computer_organization, description: Move computers to another organization, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Computer/ComputerMoveToOtherOrganization"}
-- {name: rescan_baseline, description: Trigger a baseline rescan on computers, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Computer/ComputerUpdateBaselineRescan"}
-- {name: update_agent_version, description: Update the ThreatLocker agent version on computers, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Computer/ComputerUpdateThreatlockerVersionByIds"}
-- {name: list_computer_groups, description: List computer groups for an organization, source_operation: "openapi/threatlocker-portal-openapi-original.json#GET /portalapi/ComputerGroup/ComputerGroupGetDropdownByOrganizationId"}
-- {name: start_maintenance_mode, description: Put a computer into maintenance mode, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/MaintenanceMode/MaintenanceModeInsert"}
-- {name: end_maintenance_mode, description: End maintenance mode by id, source_operation: "openapi/threatlocker-portal-openapi-original.json#PATCH /portalapi/MaintenanceMode/MaintenanceModeEndById"}
-- {name: list_online_devices, description: List currently online devices, source_operation: "openapi/threatlocker-portal-openapi-original.json#GET /portalapi/OnlineDevices/OnlineDevicesGetByParameters"}
-- {name: get_organization_auth_key, description: Get an organization deployment auth key, source_operation: "openapi/threatlocker-portal-openapi-original.json#GET /portalapi/Organization/OrganizationGetAuthKeyById"}
-- {name: get_policy, description: Get a policy by id, source_operation: "openapi/threatlocker-portal-openapi-original.json#GET /portalapi/Policy/PolicyGetById"}
-- {name: list_reports, description: List reports for an organization, source_operation: "openapi/threatlocker-portal-openapi-original.json#GET /portalapi/Report/ReportGetByOrganizationId"}
-- {name: run_report, description: Run a report and return dynamic data, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Report/ReportGetDynamicData"}
-- {name: list_scheduled_agent_actions, description: List scheduled agent actions, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction/GetByParameters"}
-- {name: create_scheduled_agent_action, description: Create a scheduled agent action, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction"}
-- {name: abort_scheduled_agent_action, description: Abort a scheduled agent action, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction/Abort"}
-- {name: search_system_audit, description: Search the system audit trail, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/SystemAudit/SystemAuditGetByParameters"}
-- {name: get_health_center, description: Get health center system audit rollup, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/SystemAudit/SystemAuditGetForHealthCenter"}
-- {name: get_tag, description: Get a tag by id, source_operation: "openapi/threatlocker-portal-openapi-original.json#GET /portalapi/Tag/TagGetById"}
-- {name: update_tag, description: Update a tag and its items, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Tag/TagUpdate"}
-- {name: list_agent_versions, description: List available ThreatLocker agent versions, source_operation: "openapi/threatlocker-portal-openapi-original.json#GET /portalapi/ThreatLockerVersion/ThreatLockerVersionGetForDropdownList"}
-- {name: create_upload_request, description: Request a file upload from an endpoint, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/UploadRequest/UploadRequestInsert"}
-- {name: get_upload_request, description: Get the status/result of an upload request, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/UploadRequest/UploadRequestGet"}
-- {name: list_saved_searches, description: List saved searches by page, source_operation: "openapi/threatlocker-portal-openapi-original.json#POST /portalapi/SaveSearch/SaveSearchGetByPage"}
+- name: search_action_logs
+  description: Search endpoint action logs by parameters
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ActionLog/ActionLogGetByParametersV2
+- name: get_action_log
+  description: Get a single action log entry by id
+  source_operation: openapi/threatlocker-portal-openapi-original.json#GET /portalapi/ActionLog/ActionLogGetByIdV2
+- name: get_file_history
+  description: Get all action log history for a file path
+  source_operation: openapi/threatlocker-portal-openapi-original.json#GET /portalapi/ActionLog/ActionLogGetAllForFileHistoryV2
+- name: get_application
+  description: Get an application definition by id
+  source_operation: openapi/threatlocker-portal-openapi-original.json#GET /portalapi/Application/ApplicationGetById
+- name: match_applications
+  description: Find applications matching a file/certificate
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Application/ApplicationGetMatchingList
+- name: list_approval_requests
+  description: List approval requests by parameters
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ApprovalRequest/ApprovalRequestGetByParameters
+- name: count_approval_requests
+  description: Count pending approval requests
+  source_operation: openapi/threatlocker-portal-openapi-original.json#GET /portalapi/ApprovalRequest/ApprovalRequestGetCount
+- name: get_approval_request
+  description: Get an approval request by id
+  source_operation: openapi/threatlocker-portal-openapi-original.json#GET /portalapi/ApprovalRequest/ApprovalRequestGetById
+- name: permit_application
+  description: Approve an application approval request and create the permit policy
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ApprovalRequest/ApprovalRequestPermitApplication
+- name: permit_storage
+  description: Approve a storage approval request
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ApprovalRequest/ApprovalRequestPermitStorageApproval
+- name: reject_approval_request
+  description: Reject an approval request
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ApprovalRequest/ApprovalRequestUpdateForReject
+- name: ignore_approval_request
+  description: Ignore an approval request
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ApprovalRequest/ApprovalRequestUpdateForIgnore
+- name: take_ownership_approval_request
+  description: Take ownership of an approval request
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ApprovalRequest/ApprovalRequestUpdateForTakeOwnership
+- name: search_computers
+  description: Search computers by all parameters
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Computer/ComputerGetByAllParameters
+- name: get_computer
+  description: Get a computer for editing by id
+  source_operation: openapi/threatlocker-portal-openapi-original.json#GET /portalapi/Computer/ComputerGetForEditById
+- name: update_computer
+  description: Update a computer record
+  source_operation: openapi/threatlocker-portal-openapi-original.json#PATCH /portalapi/Computer/ComputerUpdateForEdit
+- name: enable_protection
+  description: Enable ThreatLocker protection on computers
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Computer/ComputerEnableProtection
+- name: disable_protection
+  description: Disable ThreatLocker protection on computers
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Computer/ComputerDisableProtection
+- name: move_computer_organization
+  description: Move computers to another organization
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Computer/ComputerMoveToOtherOrganization
+- name: rescan_baseline
+  description: Trigger a baseline rescan on computers
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Computer/ComputerUpdateBaselineRescan
+- name: update_agent_version
+  description: Update the ThreatLocker agent version on computers
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Computer/ComputerUpdateThreatlockerVersionByIds
+- name: list_computer_groups
+  description: List computer groups for an organization
+  source_operation: openapi/threatlocker-portal-openapi-original.json#GET /portalapi/ComputerGroup/ComputerGroupGetDropdownByOrganizationId
+- name: start_maintenance_mode
+  description: Put a computer into maintenance mode
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/MaintenanceMode/MaintenanceModeInsert
+- name: end_maintenance_mode
+  description: End maintenance mode by id
+  source_operation: openapi/threatlocker-portal-openapi-original.json#PATCH /portalapi/MaintenanceMode/MaintenanceModeEndById
+- name: list_online_devices
+  description: List currently online devices
+  source_operation: openapi/threatlocker-portal-openapi-original.json#GET /portalapi/OnlineDevices/OnlineDevicesGetByParameters
+- name: get_organization_auth_key
+  description: Get an organization deployment auth key
+  source_operation: openapi/threatlocker-portal-openapi-original.json#GET /portalapi/Organization/OrganizationGetAuthKeyById
+- name: get_policy
+  description: Get a policy by id
+  source_operation: openapi/threatlocker-portal-openapi-original.json#GET /portalapi/Policy/PolicyGetById
+- name: list_reports
+  description: List reports for an organization
+  source_operation: openapi/threatlocker-portal-openapi-original.json#GET /portalapi/Report/ReportGetByOrganizationId
+- name: run_report
+  description: Run a report and return dynamic data
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Report/ReportGetDynamicData
+- name: list_scheduled_agent_actions
+  description: List scheduled agent actions
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction/GetByParameters
+- name: create_scheduled_agent_action
+  description: Create a scheduled agent action
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction
+- name: abort_scheduled_agent_action
+  description: Abort a scheduled agent action
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/ScheduledAgentAction/Abort
+- name: search_system_audit
+  description: Search the system audit trail
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/SystemAudit/SystemAuditGetByParameters
+- name: get_health_center
+  description: Get health center system audit rollup
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/SystemAudit/SystemAuditGetForHealthCenter
+- name: get_tag
+  description: Get a tag by id
+  source_operation: openapi/threatlocker-portal-openapi-original.json#GET /portalapi/Tag/TagGetById
+- name: update_tag
+  description: Update a tag and its items
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/Tag/TagUpdate
+- name: list_agent_versions
+  description: List available ThreatLocker agent versions
+  source_operation: openapi/threatlocker-portal-openapi-original.json#GET /portalapi/ThreatLockerVersion/ThreatLockerVersionGetForDropdownList
+- name: create_upload_request
+  description: Request a file upload from an endpoint
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/UploadRequest/UploadRequestInsert
+- name: get_upload_request
+  description: Get the status/result of an upload request
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/UploadRequest/UploadRequestGet
+- name: list_saved_searches
+  description: List saved searches by page
+  source_operation: openapi/threatlocker-portal-openapi-original.json#POST /portalapi/SaveSearch/SaveSearchGetByPage
 notes:
-- The PortalAPI spec declares NO operationIds; source_operation references use METHOD + path, which are the only stable identifiers the provider publishes.
-- No tool crosswalk artifact is emitted: a crosswalk requires a real provider-published MCP (or GraphQL) surface to bind against, and ThreatLocker publishes neither. Mapping these derived candidate tools back to the operations they were derived from would be a 1:1 identity map carrying no information.
+- The PortalAPI spec declares NO operationIds; source_operation references use METHOD + path, which are
+  the only stable identifiers the provider publishes.
+- No tool crosswalk artifact is emitted: a crosswalk requires a real provider-published MCP (or GraphQL)
+    surface to bind against, and ThreatLocker publishes neither. Mapping these derived candidate tools
+    back to the operations they were derived from would be a 1:1 identity map carrying no information.
+deployment:
+  mode: none
+  verified: derived
+  tools: 40
+  checked: '2026-08-12'
+  source: catalog MCP census

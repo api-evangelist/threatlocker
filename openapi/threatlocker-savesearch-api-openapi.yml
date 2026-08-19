@@ -1,0 +1,127 @@
+openapi: 3.2.0
+info:
+  title: Portal Save Search API
+  version: v1.0.0
+security:
+- Authorization: []
+  ManagedOrganizationId: []
+  OverrideManagedOrganizationId: []
+tags:
+- name: SaveSearch
+paths:
+  /portalapi/SaveSearch/SaveSearchGetByPage:
+    post:
+      tags:
+      - SaveSearch
+      summary: Get Save Search.
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaveSearchesDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SaveSearchesDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SaveSearchesDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/SaveSearch/SaveSearchInsert:
+    post:
+      tags:
+      - SaveSearch
+      summary: Insert Save Search.
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaveSearchDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SaveSearchDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SaveSearchDto'
+      responses:
+        '200':
+          description: OK
+  /portalapi/SaveSearch/SaveSearchDeleteById:
+    delete:
+      tags:
+      - SaveSearch
+      summary: Delete Save Search.
+      parameters:
+      - name: saveSearchId
+        in: query
+        description: ''
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    SaveSearchDto:
+      type: object
+      properties:
+        searchData: {}
+        saveSearchId:
+          type: string
+          format: uuid
+        saveSearchPageId:
+          type: integer
+          format: int32
+        searchName:
+          type:
+          - string
+          - 'null'
+        saveParameters:
+          type:
+          - string
+          - 'null'
+        username:
+          type:
+          - string
+          - 'null'
+        organizationId:
+          type: string
+          format: uuid
+        searchCount:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        datetime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    SaveSearchesDto:
+      type: object
+      properties:
+        saveSearchPageId:
+          type: integer
+          format: int32
+      additionalProperties: false
+  securitySchemes:
+    Authorization:
+      type: apiKey
+      description: Please insert Standard Authorization header.
+      name: Authorization
+      in: header
+    ManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: ManagedOrganizationId
+      in: header
+    OverrideManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: OverrideManagedOrganizationId
+      in: header

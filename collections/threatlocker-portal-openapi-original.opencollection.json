@@ -1,0 +1,1739 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "PortalAPI",
+    "version": "v1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ActionLog",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Action Logs By Parameters.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetByParametersV2",
+            "headers": [
+              {
+                "name": "usenewsearch",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n          \"ActionType\": \"execute | install | network | registry | read | write | move |\r\n                          delete | baseline | powershell | elevate | configuration | dns\",\r\n          \"SourceTableId\": \"ActionLog = 1 | DenyActionLog = 2 | BaselineActionLog = 3 | EventLogActionLog = 4\",\r\n          \"ActionId\": \"Permit = 1 | Deny = 2 | DenyOptionToRequest = 3 | InstallMode = 4 | MissingCoreFiles = 5 | Ringfenced = 6 | AnyDeny = 7\",\r\n          \"GroupBy\""
+        },
+        {
+          "info": {
+            "name": "Get All File History by hostname and fullpath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetAllForFileHistory",
+            "params": [
+              {
+                "name": "sourceTableId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "hostname",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fullPath",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n       \"sourceTableId\": \"ActionLog = 1 | DenyActionLog = 2 | BaselineActionLog = 3 | EventLogActionLog = 4\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Get All File History by hostname and fullpath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetAllForFileHistoryV2",
+            "params": [
+              {
+                "name": "sourceTableId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "hostname",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fullPath",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "computerId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n       \"sourceTableId\": \"ActionLog = 1 | DenyActionLog = 2 | BaselineActionLog = 3 | EventLogActionLog = 4\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Get Action Logs by Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetById",
+            "params": [
+              {
+                "name": "actionLogId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sourceTableId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "addToApplication",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n          \"sourceTableId\": \"ActionLog = 1 | DenyActionLog = 2 | BaselineActionLog = 3 | EventLogActionLog = 4\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "GET /portalapi/ActionLog/ActionLogGetByIdV2",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetByIdV2",
+            "params": [
+              {
+                "name": "eActionLogId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sourceTableId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "addToApplication",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "getAllParents",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "openedFromLink",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Get Testing Environment Details For VDI HyperV",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetTestingEnvironmentDetailsById",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get Testing Environment Details For VDI HyperV"
+        },
+        {
+          "info": {
+            "name": "Get Policy Conditions For Permit Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetPolicyConditionsForPermitApplication",
+            "headers": [
+              {
+                "name": "usenewsearch",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n          \"OSType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\r\n          \"ActionType\": \"None = 0 | BaseLine = 1 | Configuration = 2 | Delete = 3 | Elevation = 4 | Execute = 5 |\r\n                         Install = 6 | Move = 7 | Network = 8  | NewProcess = 9  | Powershell = 10 | Read = 11 |  \r\n                         Registry = 12 | Uninstall = 13 | Write = 14 | OSEventLog = 15\",\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Get Search String (This is for save search).",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetSearchString",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n           \"ActionType\": \"None = 0 | BaseLine = 1 | Configuration = 2 | Delete = 3 | Elevation = 4 | Execute = 5 |\r\n                         Install = 6 | Move = 7 | Network = 8  | NewProcess = 9  | Powershell = 10 | Read = 11 |  \r\n                         Registry = 12 | Uninstall = 13 | Write = 14 | OSEventLog = 15\",\r\n          \"SourceTableId\": \"ActionLog = 1 | DenyActionLog = 2 | BaselineActionLog = 3 | EventLogActionLog = 4\",\r\n          \"ActionId\": \"P"
+        },
+        {
+          "info": {
+            "name": "GET /portalapi/ActionLog/ActionLogGetFileDownloadDetailsById",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ActionLog/ActionLogGetFileDownloadDetailsById",
+            "params": [
+              {
+                "name": "eActionLogId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sourceTableId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Application",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Application by Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Application/ApplicationGetById",
+            "params": [
+              {
+                "name": "applicationId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Application by Id."
+        },
+        {
+          "info": {
+            "name": "Get Application Details for Network Policy Process by Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Application/ApplicationGetForNetworkPolicyProcessById",
+            "params": [
+              {
+                "name": "applicationId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Application Details for Network Policy Process by Id."
+        },
+        {
+          "info": {
+            "name": "Get Application Research Details by Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Application/ApplicationGetResearchDetailsById",
+            "params": [
+              {
+                "name": "applicationId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Application Research Details by Id."
+        },
+        {
+          "info": {
+            "name": "Get Application Options for Maintenance Scheduling",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Application/ApplicationGetForMaintenanceMode",
+            "params": [
+              {
+                "name": "osType",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n          \"OSType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Get Matching Applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Application/ApplicationGetMatchingList",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n          \"OSType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Load Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Application/ApplicationGetForApplicationOptions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n          \"OSType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\r\n    }"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ApprovalRequest",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Approval Request By ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestGetById",
+            "params": [
+              {
+                "name": "approvalRequestId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Approval Request By ID"
+        },
+        {
+          "info": {
+            "name": "Get File Download Details By Approval Request Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestGetFileDownloadDetailsById",
+            "params": [
+              {
+                "name": "approvalRequestId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get File Download Details By Approval Request Id"
+        },
+        {
+          "info": {
+            "name": "Get Permit Application Details By Approval Request Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestGetPermitApplicationById",
+            "params": [
+              {
+                "name": "approvalRequestId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Permit Application Details By Approval Request Id"
+        },
+        {
+          "info": {
+            "name": "Approve Permit Application Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestPermitApplication",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n       \"osType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Get Storage Approval Request By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestGetStorageApprovalById",
+            "params": [
+              {
+                "name": "approvalRequestId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Storage Approval Request By Id"
+        },
+        {
+          "info": {
+            "name": "Approve Storage Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestPermitStorageApproval",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Approve Storage Request"
+        },
+        {
+          "info": {
+            "name": "POST /portalapi/ApprovalRequest/ApprovalRequestGetByParameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestGetByParameters",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Get Approval Request Pending Count",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestGetCount",
+            "params": [
+              {
+                "name": "includeChildOrganizations",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Approval Request Pending Count"
+        },
+        {
+          "info": {
+            "name": "Take Ownership of Approval Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestUpdateForTakeOwnership",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Take Ownership of Approval Request"
+        },
+        {
+          "info": {
+            "name": "Ignore Approval Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestUpdateForIgnore",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Ignore Approval Request"
+        },
+        {
+          "info": {
+            "name": "Reject Approval Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestUpdateForReject",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Reject Approval Request"
+        },
+        {
+          "info": {
+            "name": "Authorize Approval Request for Permit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ApprovalRequest/ApprovalRequestAuthorizeForPermitById",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Authorize Approval Request for Permit"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Computer",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Load Computers By All Parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerGetByAllParameters",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    \r\n    {\r\n       \"OrderBy\": \"computername | group | action | lastcheckin | computerinstalldate | deniedcountthreedays | updatechannel | threatlockerversion\",\r\n       \"Action\": \" All Computer Mode | Secure | Installation | Learning | MonitorOnly | Manual Update | Pre-Releases | Regular | Expedited | Slow and Steady\",\r\n       \"KindOfAction\": \" Computer Mode | TamperProtectionDisabled | NeedsReview | ReadyToSecure | BaselineNotUploaded | Update Channel\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Get Computer Information By Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerGetForEditById",
+            "params": [
+              {
+                "name": "computerId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Computer Information By Id."
+        },
+        {
+          "info": {
+            "name": "Update Computer",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUpdateForEdit",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Computer"
+        },
+        {
+          "info": {
+            "name": "Update Baseline Rescan Computer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUpdateBaselineRescan",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Baseline Rescan Computer"
+        },
+        {
+          "info": {
+            "name": "Restart service for selected computers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUpdateShouldRestartByIds",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Restart service for selected computers"
+        },
+        {
+          "info": {
+            "name": "Restart Organization Computers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUpdateShouldRestartByOrganization",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Restart Organization Computers"
+        },
+        {
+          "info": {
+            "name": "Move Computer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerMoveToOtherOrganization",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n         \"MaintenanceTypeId\": \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6\",\r\n          \"OSType\": \"Windows = 1 | MAC = 2 | Linux = 3\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Computer Enable Protection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerEnableProtection",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Computer Enable Protection"
+        },
+        {
+          "info": {
+            "name": "Disable Computer Protection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerDisableProtection",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n        \"Action\": \" MonitorOnly | Installation Mode | Learning | Elevation Mode | Learning Mode Hash Only | TamperProtectionDisabled | Secure\",\r\n         \"MaintenanceModeType\": \" MonitorOnly = 1 | Learning = 3 | TamperProtectionDisabled = 6\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Remove Duplicate Computers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerRemoveDuplicate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Remove Duplicate Computers"
+        },
+        {
+          "info": {
+            "name": "Updates a device's maintenance mode settings.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUpdateMaintenanceMode",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to enable or disable specific maintenance modes for a device.\r\n            \r\n**Maintenance Mode IDs:**\r\n* **Application Control Monitor**: `1`\r\n* **Application Control Installation**: `2`\r\n* **Application Control Learning**: `3`\r\n* **Network Control Monitor**: `17`\r\n* **Storage Control Monitor**: `18`\r\n            \r\n**OS Type IDs:**\r\n* **Windows**: `1`\r\n* **MAC**: `2`\r\n* **Linux**: `3`"
+        },
+        {
+          "info": {
+            "name": "POST /portalapi/Computer/ComputerUpdateThreatlockerVersionByIds",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUpdateThreatlockerVersionByIds",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Retrieves ThreatLocker agent versions for computers in the managed organization.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerGetThreatlockerVersions",
+            "params": [
+              {
+                "name": "includeChildOrganizations",
+                "value": "",
+                "type": "query",
+                "description": "If true, also include computers from child organizations the user has access to."
+              }
+            ]
+          },
+          "docs": "Retrieves ThreatLocker agent versions for computers in the managed organization."
+        },
+        {
+          "info": {
+            "name": "End Maintenance Mode",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUpdateToFinishMaintenanceMode",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n         \"MaintenanceTypeId\": \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6\",\r\n          \"OSType\": \"Windows = 1 | MAC = 2 | Linux = 3\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Get data for new computer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerGetForNewComputer"
+          },
+          "docs": "Get data for new computer"
+        },
+        {
+          "info": {
+            "name": "Computer Get Download",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerGetDownload",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n        \"FileType\": \" Stub Installer = stub | MSI Installer = windows | PowerShell Script = pssscript | PKG File = mac | Remediator Service Installer = remediation\",\r\n        \"Platform\": \" X86 | X64 | ''\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Get OS Types for Computer.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerGetOSTypeByIds",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get OS Types for Computer."
+        },
+        {
+          "info": {
+            "name": "Download Login Script",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerSignedScriptDownload",
+            "params": [
+              {
+                "name": "brand",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Download Login Script"
+        },
+        {
+          "info": {
+            "name": "Download Sample Batch File",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerSamplePathDownload",
+            "params": [
+              {
+                "name": "brand",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "authKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Download Sample Batch File"
+        },
+        {
+          "info": {
+            "name": "Download Unsigned Login Script",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUnSignedScriptDownload",
+            "params": [
+              {
+                "name": "brand",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Download Unsigned Login Script"
+        },
+        {
+          "info": {
+            "name": "Threatlocker Update Channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUpdateChannel",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n        \"UpdateChannel\": \" Manual Update = 0 | Pre-Releases = 1 | Regular = 2 | Expedited = 3 | Slow and Steady = 4\"\r\n    }"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ComputerCheckin",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Computer Check-In History by Parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ComputerCheckin/ComputerCheckinGetByParameters",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get Computer Check-In History by Parameters"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ComputerGroup",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Groups and Computer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ComputerGroup/ComputerGroupGetGroupAndComputer",
+            "params": [
+              {
+                "name": "ComputerGroupId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "OSType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeGlobal",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeAllPolicies",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeOrganizations",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeAllComputers",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeParentGroups",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeLoggedInObjects",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeDnsServers",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeIngestors",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "PortalModuleTypeId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeAccessDevices",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeRemovedComputers",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "MinimumVersions",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n       \"OSType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Get Computer Groups by OrganizationId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ComputerGroup/ComputerGroupGetDropdownByOrganizationId",
+            "params": [
+              {
+                "name": "computerGroupOSTypeId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "computerOSType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "hideGlobals",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Computer Groups by OrganizationId"
+        },
+        {
+          "info": {
+            "name": "Get Computer Groups For Permit Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ComputerGroup/ComputerGroupGetForPermitApplication",
+            "params": [
+              {
+                "name": "osType",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n       \"OSType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Get Group Download Installers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ComputerGroup/ComputerGroupGetForDownload",
+            "params": [
+              {
+                "name": "installKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Group Download Installers"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "MaintenanceMode",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Maintenance Schedule By Computer Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/MaintenanceMode/MaintenanceModeGetByComputerId",
+            "params": [
+              {
+                "name": "computerId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Maintenance Schedule By Computer Id"
+        },
+        {
+          "info": {
+            "name": "Add to Maintenance Schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/MaintenanceMode/MaintenanceModeInsert",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n         \"AutomaticApplicationType\": \" empty = 0 | Automatic Computer = 1 | Automatic Group = 2 | Automatic System = 3\",\r\n         \"MaintenanceTypeId\": \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "End Maintenance Schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/portalapi/MaintenanceMode/MaintenanceModeEndById",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n         \"AppliesToType\": \" empty = 0 | Automatic Computer = 1 | Automatic Group = 2 | Automatic System = 3\",\r\n         \"MaintenanceTypeId\": \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Updated Maintenance Mode End Date Time.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/MaintenanceMode/MaintenanceModeUpdateEndDateTimeForSpecificDate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n         \"MaintenanceTypeId\": \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6\",\r\n         \"OSType\": \"Windows = 1 | MAC = 2 | Linux = 3\"\r\n    }"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "OnlineDevices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "View Online Devices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/OnlineDevices/OnlineDevicesGetByParameters",
+            "params": [
+              {
+                "name": "pageNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isAscending",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "View Online Devices"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Organization",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Auth Key",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Organization/OrganizationGetAuthKeyById"
+          },
+          "docs": "Get Auth Key"
+        },
+        {
+          "info": {
+            "name": "Generate Auth Key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Organization/OrganizationUpdateAuthKeyById"
+          },
+          "docs": "Generate Auth Key"
+        },
+        {
+          "info": {
+            "name": "Get Organizations For Move Computers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Organization/OrganizationGetForMoveComputers",
+            "params": [
+              {
+                "name": "searchText",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Organizations For Move Computers"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Policy",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Policy by Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Policy/PolicyGetById",
+            "params": [
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Policy by Id."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Report",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get report(s) by organization id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Report/ReportGetByOrganizationId"
+          },
+          "docs": "Get report(s) by organization id."
+        },
+        {
+          "info": {
+            "name": "Generate report data.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Report/ReportGetDynamicData",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generate report data."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "SaveSearch",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Save Search.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/SaveSearch/SaveSearchGetByPage",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get Save Search."
+        },
+        {
+          "info": {
+            "name": "Insert Save Search.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/SaveSearch/SaveSearchInsert",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Insert Save Search."
+        },
+        {
+          "info": {
+            "name": "Delete Save Search.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/portalapi/SaveSearch/SaveSearchDeleteById",
+            "params": [
+              {
+                "name": "saveSearchId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Delete Save Search."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ScheduledAgentAction",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of Scheduled Agent Actions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ScheduledAgentAction/List",
+            "params": [
+              {
+                "name": "scheduledType",
+                "value": "",
+                "type": "query",
+                "description": "Scheduled type identifier"
+              },
+              {
+                "name": "includeChildren",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include child organizations."
+              }
+            ]
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n          \"ScheduledType\": \"Version Update = 1\",\r\n          \"IncludeChildren\": \"true or false\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Get a list of valid Applies To records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ScheduledAgentAction/AppliesTo",
+            "params": [
+              {
+                "name": "osType",
+                "value": "",
+                "type": "query",
+                "description": "Operating system type identifier."
+              },
+              {
+                "name": "includeChildren",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include child organizations."
+              },
+              {
+                "name": "searchText",
+                "value": "",
+                "type": "query",
+                "description": "Optional search filter text."
+              }
+            ]
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n          \"OSType\": \"Windows = 1 | Mac = 2 | Linux = 3 | Red Hat Enterprise Linux 6 = 7\",\r\n          \"IncludeChildren\": \"true or false\",\r\n          \"SearchText\": \"(Optional) - Any alphanumeric text\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Get the Scheduled Agent Action details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ScheduledAgentAction/GetForHydration",
+            "params": [
+              {
+                "name": "scheduledId",
+                "value": "",
+                "type": "query",
+                "description": "The unique identifier of the scheduled agent action."
+              }
+            ]
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n          \"ScheduledId\": \"A value present in the response returned from GetScheduledAgentActionList\",\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Get the scheduled agent actions based on the provided filter parameters.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ScheduledAgentAction/GetByParameters",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n          \"ScheduledId\": \"A value present in the response returned from GetScheduledAgentActionList\",\r\n          \"OrderBy\": \"scheduleddatetime | computername | computergroupname | organizationname\",\r\n          \"IsAscending\": \"true or false\",\r\n          \"SearchText\": \"Any alphanumeric text\",\r\n          \"PageSize\": \"The number of records per page\",\r\n          \"PageNumber\": \"The page number to display\",\r\n          \"OrganizationIds\": \"A list of organization i"
+        },
+        {
+          "info": {
+            "name": "Inserts a new scheduled agent action.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ScheduledAgentAction",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n          \"ScheduledType\": \"Version Update = 1\",\r\n          \"ScheduledTypePayload\": \"If ScheduledType = 1, then must include the Target TL Version Id\",\r\n          \"AppliesTo\": \"A list of Applies To\",\r\n          \"BatchAmount\": \"25 | 50 | 100 | 250 | 500\",\r\n          \"StartDate\": \"The date to start the schedule\",\r\n          \"WindowStartTime\": \"The start time used for scheduling\",\r\n          \"WindowEndTime\": \"The end time used for scheduling\"\r\n    }"
+        },
+        {
+          "info": {
+            "name": "Aborts one or more scheduled agent actions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ScheduledAgentAction/Abort",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\r\n            \r\n    {\r\n          \"ScheduledId\": \"A value present in the response returned from GetScheduledAgentActionList\",\r\n          \"AppliesTo\": \"A list of Applies To\",\r\n          \"AbortAll\": \"true or false\",\r\n    }\r\n\r\nIf \"AbortAll\" = \"false\", then the AppliesTo must have at least 1 record.\r\nIf \"AbortAll\" = \"true\", then the AppliesTo must be empty and all records for the ScheduledId will be aborted."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "SystemAudit",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieves System Audit data for the Health Center, specifically focused on login attempts.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/SystemAudit/SystemAuditGetForHealthCenter",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint retrieves a paginated list of audit records related to user login attempts, \r\nfiltered by date range, search text, and whether the login was successful or denied.\r\nIt can also filter by latitude and longitude if provided in the correct format within the search text.\r\n\r\n\r\n\r\n**Search Text Usage:**\r\n\r\n*   **Standard Text Search:** You can enter countries, regions, or cities to search within the audit records.\r\n*   **Latitude/Longitude Search:** To search by geographical location, use "
+        },
+        {
+          "info": {
+            "name": "Retrieves unique emails and IP addresses from system audit data for login attempts filter.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/SystemAudit/SystemAuditGetLoginAttemptFiltersForHealthCenter",
+            "params": [
+              {
+                "name": "Days",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "SearchText",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IsLoggedIn",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "EmailAddress",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IPAddresses",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "AfterKeys",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "PageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "PageNumber",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "\r\n\r\n             **Sample request:**\r\n                 \r\n                 GET /SystemAuditGetLoginAttemptFiltersForHealthCenter\r\n                 {\r\n                     \"days\": 30,\r\n                     \"isLoggedIn\": false,\r\n                     \"pageSize\": 25,\r\n                     \"pageNumber\": 1,\r\n                     \"emailAddress\": \"test.user@email.com\"\r\n                 }\r\n                 \r\n                 GET /SystemAuditGetLoginAttemptFiltersForHealthCenter\r\n                 {\r\n      "
+        },
+        {
+          "info": {
+            "name": "Retrieves System Audit records based on specified parameters.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/SystemAudit/SystemAuditGetByParameters",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint retrieves a paginated list of System Audit records, allowing filtering by various parameters such as username, action, IP address, effective action, details, date range, and organization.\r\n\r\n\r\n\r\n**Filtering and Search:**\r\n\r\n\r\n*   **Wildcard Search:** The `Details`, `IPAddress`, `EffectiveAction`, and `Username` fields support wildcard searches.\r\n    - If the search text contains an asterisk (`*`), it will be replaced with a percent sign (`%`) for the SQL LIKE operator.\r\n    - If th"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Tag",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Tag by Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Tag/TagGetById",
+            "params": [
+              {
+                "name": "tagId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Tag by Id."
+        },
+        {
+          "info": {
+            "name": "Get Tag Dropdown Options.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Tag/TagGetDowndownOptionsByOrganizationId",
+            "params": [
+              {
+                "name": "includeBuiltIns",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tagType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeNetworkTagInMaster",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Tag Dropdown Options."
+        },
+        {
+          "info": {
+            "name": "Update Tag.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Tag/TagUpdate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Tag."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ThreatLockerVersion",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Threatlocker Versions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ThreatLockerVersion/ThreatLockerVersionGetForDropdownList"
+          },
+          "docs": "Get Threatlocker Versions"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "UploadRequest",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Insert Upload Request.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/UploadRequest/UploadRequestInsert",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Insert Upload Request."
+        },
+        {
+          "info": {
+            "name": "Get Upload Request.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/UploadRequest/UploadRequestGet",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get Upload Request."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "VDIHyperV",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Testing Environment Details For VDI HyperV",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/VDIHyperV/VDIHyperVGetTestingEnvironmentDetails",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get Testing Environment Details For VDI HyperV"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

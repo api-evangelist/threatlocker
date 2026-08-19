@@ -1,0 +1,319 @@
+{
+  "item": [
+    {
+      "id": "9e247232-9177-4bf6-ac03-429cd3ca0351",
+      "name": "Tag",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ede354ce-a386-484a-b181-55c0ce2d3ff7",
+          "name": "Get Tag by Id.",
+          "request": {
+            "name": "Get Tag by Id.",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Tag",
+                "TagGetById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "tagId",
+                  "value": "<uuid>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d2a648ac-e8aa-48b4-ab86-d910a5fd5bab",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Tag",
+                    "TagGetById"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "tagId",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "75a68378-77bc-4e76-a3be-3c81265deebd",
+          "name": "Get Tag Dropdown Options.",
+          "request": {
+            "name": "Get Tag Dropdown Options.",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Tag",
+                "TagGetDowndownOptionsByOrganizationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "includeBuiltIns",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tagType",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeNetworkTagInMaster",
+                  "value": "true"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8a1fe006-6a59-4981-b514-4cfb92ec81c2",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Tag",
+                    "TagGetDowndownOptionsByOrganizationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeBuiltIns",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "tagType",
+                      "value": "1"
+                    },
+                    {
+                      "key": "includeNetworkTagInMaster",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "97169523-8e16-4e1b-ad7b-4635b29c0325",
+          "name": "Update Tag.",
+          "request": {
+            "name": "Update Tag.",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Tag",
+                "TagUpdate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tagId\": \"<uuid>\",\n  \"organizationId\": \"<uuid>\",\n  \"name\": \"<string,null>\",\n  \"active\": \"<boolean>\",\n  \"tagType\": \"<integer>\",\n  \"tagItemsText\": \"<array,null>\",\n  \"tagItemsIPv4\": \"<array,null>\",\n  \"tagItemsIPv6\": \"<array,null>\",\n  \"tagItemsReadablePath\": \"<array,null>\",\n  \"tagItemsWritablePath\": \"<array,null>\",\n  \"allTagItems\": \"<array,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cfe7678a-ff34-47b1-98a6-8c421e893d82",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Tag",
+                    "TagUpdate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tagId\": \"<uuid>\",\n  \"organizationId\": \"<uuid>\",\n  \"name\": \"<string,null>\",\n  \"active\": \"<boolean>\",\n  \"tagType\": \"<integer>\",\n  \"tagItemsText\": \"<array,null>\",\n  \"tagItemsIPv4\": \"<array,null>\",\n  \"tagItemsIPv6\": \"<array,null>\",\n  \"tagItemsReadablePath\": \"<array,null>\",\n  \"tagItemsWritablePath\": \"<array,null>\",\n  \"allTagItems\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6c2f6d7a-7988-4c79-90b1-ef8db5782fd3",
+    "name": "Portal Tag API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

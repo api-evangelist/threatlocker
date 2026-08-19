@@ -1,0 +1,414 @@
+{
+  "item": [
+    {
+      "id": "8f5f64af-8c45-40be-8672-217e71e790f6",
+      "name": "MaintenanceMode",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "479bff87-5d80-4588-95b6-b66aa56411a4",
+          "name": "Get Maintenance Schedule By Computer Id",
+          "request": {
+            "name": "Get Maintenance Schedule By Computer Id",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "MaintenanceMode",
+                "MaintenanceModeGetByComputerId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "computerId",
+                  "value": "<uuid>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "be470b73-9674-43c9-acf7-6b7989238360",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "MaintenanceMode",
+                    "MaintenanceModeGetByComputerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "computerId",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "943877d3-79c0-4d55-8f40-6c5cd738f2c5",
+          "name": "Add to Maintenance Schedule",
+          "request": {
+            "name": "Add to Maintenance Schedule",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n         \"AutomaticApplicationType\": \" empty = 0 | Automatic Computer = 1 | Automatic Group = 2 | Automatic System = 3\",\n         \"MaintenanceTypeId\": \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "MaintenanceMode",
+                "MaintenanceModeInsert"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"allUsers\": false,\n  \"automaticApplication\": false,\n  \"automaticApplicationType\": \"<integer>\",\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"createNewApplication\": false,\n  \"endDateTime\": \"<dateTime>\",\n  \"existingApplication\": {\n    \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"\"\n  },\n  \"maintenanceTypeId\": \"<integer>\",\n  \"newApplication\": {\n    \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"applicationName\": \"\",\n    \"createApplicationOnly\": false,\n    \"appliesToId\": \"00000000-0000-0000-0000-000000000000\"\n  },\n  \"permitEnd\": false,\n  \"startDateTime\": \"<dateTime>\",\n  \"useExistingApplication\": false,\n  \"usersList\": \"<array,null>\",\n  \"computerDateTime\": \"<dateTime>\",\n  \"maintenanceModeConditions\": \"<array,null>\",\n  \"ticketNumber\": \"\",\n  \"notes\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cc4a6363-8197-4fba-8200-f0aa347c8249",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "MaintenanceMode",
+                    "MaintenanceModeInsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"allUsers\": false,\n  \"automaticApplication\": false,\n  \"automaticApplicationType\": \"<integer>\",\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"createNewApplication\": false,\n  \"endDateTime\": \"<dateTime>\",\n  \"existingApplication\": {\n    \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"\"\n  },\n  \"maintenanceTypeId\": \"<integer>\",\n  \"newApplication\": {\n    \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"applicationName\": \"\",\n    \"createApplicationOnly\": false,\n    \"appliesToId\": \"00000000-0000-0000-0000-000000000000\"\n  },\n  \"permitEnd\": false,\n  \"startDateTime\": \"<dateTime>\",\n  \"useExistingApplication\": false,\n  \"usersList\": \"<array,null>\",\n  \"computerDateTime\": \"<dateTime>\",\n  \"maintenanceModeConditions\": \"<array,null>\",\n  \"ticketNumber\": \"\",\n  \"notes\": \"\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bfb27b59-bff1-4ba6-83e8-54e295676ca8",
+          "name": "End Maintenance Schedule",
+          "request": {
+            "name": "End Maintenance Schedule",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n         \"AppliesToType\": \" empty = 0 | Automatic Computer = 1 | Automatic Group = 2 | Automatic System = 3\",\n         \"MaintenanceTypeId\": \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "MaintenanceMode",
+                "MaintenanceModeEndById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appliesToType\": \"<integer>\",\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"computerInstallDate\": \"<string,null-date-time>\",\n  \"endDateTime\": \"<dateTime>\",\n  \"maintenanceModeId\": \"00000000-0000-0000-0000-000000000000\",\n  \"maintenanceTypeId\": \"<integer>\",\n  \"startDateTime\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1aaa0afd-0101-445c-93b2-df15b8868d98",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "MaintenanceMode",
+                    "MaintenanceModeEndById"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appliesToType\": \"<integer>\",\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"computerInstallDate\": \"<string,null-date-time>\",\n  \"endDateTime\": \"<dateTime>\",\n  \"maintenanceModeId\": \"00000000-0000-0000-0000-000000000000\",\n  \"maintenanceTypeId\": \"<integer>\",\n  \"startDateTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e2a94e7e-c702-47b9-bab0-99b181a921af",
+          "name": "Updated Maintenance Mode End Date Time.",
+          "request": {
+            "name": "Updated Maintenance Mode End Date Time.",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n         \"MaintenanceTypeId\": \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6\",\n         \"OSType\": \"Windows = 1 | MAC = 2 | Linux = 3\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "MaintenanceMode",
+                "MaintenanceModeUpdateEndDateTimeForSpecificDate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"computerName\": \"\",\n  \"isIsolated\": false,\n  \"isLockedOut\": false,\n  \"lastVersionChange\": \"<string,null-date-time>\",\n  \"maintenanceEndDate\": \"<string,null-date-time>\",\n  \"maintenanceTypeId\": \"<integer>\",\n  \"monitorOnlyDateTime\": \"<dateTime>\",\n  \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"osType\": \"<integer>\",\n  \"pendingBaseFiles\": false,\n  \"threatLockerVersion\": \"\",\n  \"threatLockerVersionId\": \"00000000-0000-0000-0000-000000000000\",\n  \"threatLockerVersionGroup\": \"\",\n  \"threatLockerVersionGroupId\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0d54f323-cfad-4818-99b6-188e499042a3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "MaintenanceMode",
+                    "MaintenanceModeUpdateEndDateTimeForSpecificDate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"computerName\": \"\",\n  \"isIsolated\": false,\n  \"isLockedOut\": false,\n  \"lastVersionChange\": \"<string,null-date-time>\",\n  \"maintenanceEndDate\": \"<string,null-date-time>\",\n  \"maintenanceTypeId\": \"<integer>\",\n  \"monitorOnlyDateTime\": \"<dateTime>\",\n  \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"osType\": \"<integer>\",\n  \"pendingBaseFiles\": false,\n  \"threatLockerVersion\": \"\",\n  \"threatLockerVersionId\": \"00000000-0000-0000-0000-000000000000\",\n  \"threatLockerVersionGroup\": \"\",\n  \"threatLockerVersionGroupId\": \"00000000-0000-0000-0000-000000000000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "920f7b0f-9d24-4010-baee-6b35240c5ca6",
+    "name": "Portal Maintenance Mode API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portal Tag API",
+    "version": "v1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tag",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Tag by Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Tag/TagGetById",
+            "params": [
+              {
+                "name": "tagId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Tag by Id."
+        },
+        {
+          "info": {
+            "name": "Get Tag Dropdown Options.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Tag/TagGetDowndownOptionsByOrganizationId",
+            "params": [
+              {
+                "name": "includeBuiltIns",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tagType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeNetworkTagInMaster",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Tag Dropdown Options."
+        },
+        {
+          "info": {
+            "name": "Update Tag.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Tag/TagUpdate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Tag."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

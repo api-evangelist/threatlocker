@@ -1,0 +1,210 @@
+{
+  "item": [
+    {
+      "id": "f2f9536d-1d1e-41c3-9d96-410ef793e1f1",
+      "name": "Report",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7339f47b-71dc-4857-8e20-42fd8b04439c",
+          "name": "Get report(s) by organization id.",
+          "request": {
+            "name": "Get report(s) by organization id.",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Report",
+                "ReportGetByOrganizationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "27a11f03-8114-464b-9a37-bd408902251f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Report",
+                    "ReportGetByOrganizationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "586baed3-6eba-4763-a00d-735a0ff0cab3",
+          "name": "Generate report data.",
+          "request": {
+            "name": "Generate report data.",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "Report",
+                "ReportGetDynamicData"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reportId\": \"00000000-0000-0000-0000-000000000000\",\n  \"startDate\": null,\n  \"endDate\": null,\n  \"data\": \"\",\n  \"offsetInMinutes\": \"<integer>\",\n  \"id\": \"00000000-0000-0000-0000-000000000000\",\n  \"includeChildOrganizations\": \"<boolean>\",\n  \"options\": \"<array,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "04691517-d538-48af-8404-8cc05d5e381b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "Report",
+                    "ReportGetDynamicData"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportId\": \"00000000-0000-0000-0000-000000000000\",\n  \"startDate\": null,\n  \"endDate\": null,\n  \"data\": \"\",\n  \"offsetInMinutes\": \"<integer>\",\n  \"id\": \"00000000-0000-0000-0000-000000000000\",\n  \"includeChildOrganizations\": \"<boolean>\",\n  \"options\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4763656b-9ebf-43bb-8bd6-72527d406597",
+    "name": "Portal Report API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,357 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portal Computer API",
+    "version": "v1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Computer",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Load Computers By All Parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerGetByAllParameters",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    \n    {\n       \"OrderBy\": \"computername | group | action | lastcheckin | computerinstalldate | deniedcountthreedays | updatechannel | threatlockerversion\",\n       \"Action\": \" All Computer Mode | Secure | Installation | Learning | MonitorOnly | Manual Update | Pre-Releases | Regular | Expedited | Slow and Steady\",\n       \"KindOfAction\": \" Computer Mode | TamperProtectionDisabled | NeedsReview | ReadyToSecure | BaselineNotUploaded | Update Channel\"\n    }"
+        },
+        {
+          "info": {
+            "name": "Get Computer Information By Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerGetForEditById",
+            "params": [
+              {
+                "name": "computerId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Computer Information By Id."
+        },
+        {
+          "info": {
+            "name": "Update Computer",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUpdateForEdit",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Computer"
+        },
+        {
+          "info": {
+            "name": "Update Baseline Rescan Computer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUpdateBaselineRescan",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Baseline Rescan Computer"
+        },
+        {
+          "info": {
+            "name": "Restart service for selected computers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUpdateShouldRestartByIds",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Restart service for selected computers"
+        },
+        {
+          "info": {
+            "name": "Restart Organization Computers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUpdateShouldRestartByOrganization",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Restart Organization Computers"
+        },
+        {
+          "info": {
+            "name": "Move Computer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerMoveToOtherOrganization",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    {\n         \"MaintenanceTypeId\": \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6\",\n          \"OSType\": \"Windows = 1 | MAC = 2 | Linux = 3\"\n    }"
+        },
+        {
+          "info": {
+            "name": "Computer Enable Protection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerEnableProtection",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Computer Enable Protection"
+        },
+        {
+          "info": {
+            "name": "Disable Computer Protection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerDisableProtection",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    {\n        \"Action\": \" MonitorOnly | Installation Mode | Learning | Elevation Mode | Learning Mode Hash Only | TamperProtectionDisabled | Secure\",\n         \"MaintenanceModeType\": \" MonitorOnly = 1 | Learning = 3 | TamperProtectionDisabled = 6\"\n    }"
+        },
+        {
+          "info": {
+            "name": "Remove Duplicate Computers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerRemoveDuplicate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Remove Duplicate Computers"
+        },
+        {
+          "info": {
+            "name": "Updates a device's maintenance mode settings.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUpdateMaintenanceMode",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use this endpoint to enable or disable specific maintenance modes for a device.\n            \n**Maintenance Mode IDs:**\n* **Application Control Monitor**: `1`\n* **Application Control Installation**: `2`\n* **Application Control Learning**: `3`\n* **Network Control Monitor**: `17`\n* **Storage Control Monitor**: `18`\n            \n**OS Type IDs:**\n* **Windows**: `1`\n* **MAC**: `2`\n* **Linux**: `3`"
+        },
+        {
+          "info": {
+            "name": "POST /portalapi/Computer/ComputerUpdateThreatlockerVersionByIds",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUpdateThreatlockerVersionByIds",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Retrieves ThreatLocker agent versions for computers in the managed organization.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerGetThreatlockerVersions",
+            "params": [
+              {
+                "name": "includeChildOrganizations",
+                "value": "",
+                "type": "query",
+                "description": "If true, also include computers from child organizations the user has access to."
+              }
+            ]
+          },
+          "docs": "Retrieves ThreatLocker agent versions for computers in the managed organization."
+        },
+        {
+          "info": {
+            "name": "End Maintenance Mode",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUpdateToFinishMaintenanceMode",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    {\n         \"MaintenanceTypeId\": \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6\",\n          \"OSType\": \"Windows = 1 | MAC = 2 | Linux = 3\"\n    }"
+        },
+        {
+          "info": {
+            "name": "Get data for new computer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerGetForNewComputer"
+          },
+          "docs": "Get data for new computer"
+        },
+        {
+          "info": {
+            "name": "Computer Get Download",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerGetDownload",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    {\n        \"FileType\": \" Stub Installer = stub | MSI Installer = windows | PowerShell Script = pssscript | PKG File = mac | Remediator Service Installer = remediation\",\n        \"Platform\": \" X86 | X64 | ''\"\n    }"
+        },
+        {
+          "info": {
+            "name": "Get OS Types for Computer.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerGetOSTypeByIds",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get OS Types for Computer."
+        },
+        {
+          "info": {
+            "name": "Download Login Script",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerSignedScriptDownload",
+            "params": [
+              {
+                "name": "brand",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Download Login Script"
+        },
+        {
+          "info": {
+            "name": "Download Sample Batch File",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerSamplePathDownload",
+            "params": [
+              {
+                "name": "brand",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "authKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Download Sample Batch File"
+        },
+        {
+          "info": {
+            "name": "Download Unsigned Login Script",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUnSignedScriptDownload",
+            "params": [
+              {
+                "name": "brand",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Download Unsigned Login Script"
+        },
+        {
+          "info": {
+            "name": "Threatlocker Update Channel",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/Computer/ComputerUpdateChannel",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    {\n        \"UpdateChannel\": \" Manual Update = 0 | Pre-Releases = 1 | Regular = 2 | Expedited = 3 | Slow and Steady = 4\"\n    }"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portal VDI Hyper V API",
+    "version": "v1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "VDIHyperV",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Testing Environment Details For VDI HyperV",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/VDIHyperV/VDIHyperVGetTestingEnvironmentDetails",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get Testing Environment Details For VDI HyperV"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,63 @@
+openapi: 3.2.0
+info:
+  title: Portal Online Devices API
+  version: v1.0.0
+security:
+- Authorization: []
+  ManagedOrganizationId: []
+  OverrideManagedOrganizationId: []
+tags:
+- name: OnlineDevices
+paths:
+  /portalapi/OnlineDevices/OnlineDevicesGetByParameters:
+    get:
+      tags:
+      - OnlineDevices
+      summary: View Online Devices
+      parameters:
+      - name: pageNumber
+        in: query
+        description: ''
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      - name: pageSize
+        in: query
+        description: ''
+        schema:
+          type: integer
+          format: int32
+          default: 25
+      - name: orderBy
+        in: query
+        description: ''
+        schema:
+          type: string
+          default: HostName
+      - name: isAscending
+        in: query
+        description: ''
+        schema:
+          type: boolean
+          default: true
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    Authorization:
+      type: apiKey
+      description: Please insert Standard Authorization header.
+      name: Authorization
+      in: header
+    ManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: ManagedOrganizationId
+      in: header
+    OverrideManagedOrganizationId:
+      type: apiKey
+      description: Please insert Managed Organization Id.
+      name: OverrideManagedOrganizationId
+      in: header

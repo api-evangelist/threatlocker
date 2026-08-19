@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portal Computer Checkin API",
+    "version": "v1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ComputerCheckin",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Computer Check-In History by Parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ComputerCheckin/ComputerCheckinGetByParameters",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get Computer Check-In History by Parameters"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

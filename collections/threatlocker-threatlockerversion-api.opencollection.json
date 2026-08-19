@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portal Threat Locker Version API",
+    "version": "v1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ThreatLockerVersion",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Threatlocker Versions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ThreatLockerVersion/ThreatLockerVersionGetForDropdownList"
+          },
+          "docs": "Get Threatlocker Versions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1073 @@
+{
+  "item": [
+    {
+      "id": "8f13075a-d52d-471b-997c-07b4a9ec1b63",
+      "name": "SystemAudit",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7e31539d-b389-46b3-bc13-e0974df1757d",
+          "name": "Retrieves System Audit data for the Health Center, specifically focused on login attempts.",
+          "request": {
+            "name": "Retrieves System Audit data for the Health Center, specifically focused on login attempts.",
+            "description": {
+              "content": "This endpoint retrieves a paginated list of audit records related to user login attempts, \nfiltered by date range, search text, and whether the login was successful or denied.\nIt can also filter by latitude and longitude if provided in the correct format within the search text.\n\n\n\n**Search Text Usage:**\n\n*   **Standard Text Search:** You can enter countries, regions, or cities to search within the audit records.\n*   **Latitude/Longitude Search:** To search by geographical location, use the format \"lat:[latitude]&long:[longitude]\". \n    - For example, \"lat:34.0522&long:-118.2437\" will search for audit records near Los Angeles.\n\n\n\n**Sample request:**\n            \n    POST /SystemAuditGetForHealthCenter\n    {\n       \"days\": 30,\n       \"isLoggedIn\": false,\n       \"pageSize\": 25,\n       \"pageNumber\": 1,\n       \"searchText\": \"lat:40.7128&long:-74.0060\"\n    }\n    \n    POST /SystemAuditGetForHealthCenter\n    {\n        \"days\": 30,\n        \"isLoggedIn\": false,\n        \"pageSize\": 25,\n        \"pageNumber\": 1,\n        \"searchText\": \"United States\"\n    }\n    \n    POST /SystemAuditGetForHealthCenter\n    {\n        \"days\": 30,\n        \"isLoggedIn\": false,\n        \"pageSize\": 25,\n        \"pageNumber\": 1,\n        \"emailAddress\": \"test.user@email.com\"\n    }\n    \n    POST /SystemAuditGetForHealthCenter\n    {\n        \"days\": 30,\n        \"isLoggedIn\": false,\n        \"pageSize\": 25,\n        \"pageNumber\": 1,\n        \"ipAddresses\": \"123.123.123.123\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "SystemAudit",
+                "SystemAuditGetForHealthCenter"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"days\": 30,\n  \"searchText\": \"\",\n  \"isLoggedIn\": false,\n  \"emailAddress\": \"<string,null>\",\n  \"ipAddresses\": \"<string,null>\",\n  \"afterKeys\": \"<object,null>\",\n  \"pageSize\": 10,\n  \"pageNumber\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "88cba407-451d-465e-a34f-c3d4d1485a64",
+              "name": "Successfully retrieved the Health Center audit data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SystemAudit",
+                    "SystemAuditGetForHealthCenter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"days\": 30,\n  \"searchText\": \"\",\n  \"isLoggedIn\": false,\n  \"emailAddress\": \"<string,null>\",\n  \"ipAddresses\": \"<string,null>\",\n  \"afterKeys\": \"<object,null>\",\n  \"pageSize\": 10,\n  \"pageNumber\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3bae74da-573e-4e77-9c38-3b9d6fa81896",
+              "name": "The request was malformed or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SystemAudit",
+                    "SystemAuditGetForHealthCenter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"days\": 30,\n  \"searchText\": \"\",\n  \"isLoggedIn\": false,\n  \"emailAddress\": \"<string,null>\",\n  \"ipAddresses\": \"<string,null>\",\n  \"afterKeys\": \"<object,null>\",\n  \"pageSize\": 10,\n  \"pageNumber\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5d7601ce-7b61-4938-b0ca-aded33652422",
+              "name": "The user does not have the required permissions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SystemAudit",
+                    "SystemAuditGetForHealthCenter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"days\": 30,\n  \"searchText\": \"\",\n  \"isLoggedIn\": false,\n  \"emailAddress\": \"<string,null>\",\n  \"ipAddresses\": \"<string,null>\",\n  \"afterKeys\": \"<object,null>\",\n  \"pageSize\": 10,\n  \"pageNumber\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bfcf07d7-8a31-41d5-9e44-a4a5189a8c9c",
+              "name": "The user is not authorized to perform this action.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SystemAudit",
+                    "SystemAuditGetForHealthCenter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"days\": 30,\n  \"searchText\": \"\",\n  \"isLoggedIn\": false,\n  \"emailAddress\": \"<string,null>\",\n  \"ipAddresses\": \"<string,null>\",\n  \"afterKeys\": \"<object,null>\",\n  \"pageSize\": 10,\n  \"pageNumber\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "835790bd-4417-4149-bd62-96fe10f178cf",
+              "name": "An unexpected error occurred on the server.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SystemAudit",
+                    "SystemAuditGetForHealthCenter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"days\": 30,\n  \"searchText\": \"\",\n  \"isLoggedIn\": false,\n  \"emailAddress\": \"<string,null>\",\n  \"ipAddresses\": \"<string,null>\",\n  \"afterKeys\": \"<object,null>\",\n  \"pageSize\": 10,\n  \"pageNumber\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "afcc9ab2-516b-4ba1-93bb-46ce9c8c57d5",
+          "name": "Retrieves unique emails and IP addresses from system audit data for login attempts filter.",
+          "request": {
+            "name": "Retrieves unique emails and IP addresses from system audit data for login attempts filter.",
+            "description": {
+              "content": "\n\n             **Sample request:**\n                 \n                 GET /SystemAuditGetLoginAttemptFiltersForHealthCenter\n                 {\n                     \"days\": 30,\n                     \"isLoggedIn\": false,\n                     \"pageSize\": 25,\n                     \"pageNumber\": 1,\n                     \"emailAddress\": \"test.user@email.com\"\n                 }\n                 \n                 GET /SystemAuditGetLoginAttemptFiltersForHealthCenter\n                 {\n                     \"days\": 30,\n                     \"isLoggedIn\": false,\n                     \"pageSize\": 25,\n                     \"pageNumber\": 1,\n                     \"ipAddresses\": \"123.123.123.123\"\n                 }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "SystemAudit",
+                "SystemAuditGetLoginAttemptFiltersForHealthCenter"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Days",
+                  "value": "30"
+                },
+                {
+                  "disabled": false,
+                  "key": "SearchText",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "IsLoggedIn",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "EmailAddress",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "IPAddresses",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "key_0",
+                  "value": "<array,null>"
+                },
+                {
+                  "disabled": false,
+                  "key": "PageSize",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "PageNumber",
+                  "value": "1"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "081d3fbc-fdf3-4546-9e2f-cb3a0dcf9b94",
+              "name": "Successfully retrieved the Health Center login attempt filters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SystemAudit",
+                    "SystemAuditGetLoginAttemptFiltersForHealthCenter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Days",
+                      "value": "30"
+                    },
+                    {
+                      "key": "SearchText",
+                      "value": ""
+                    },
+                    {
+                      "key": "IsLoggedIn",
+                      "value": "false"
+                    },
+                    {
+                      "key": "EmailAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "IPAddresses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<array,null>"
+                    },
+                    {
+                      "key": "PageSize",
+                      "value": "10"
+                    },
+                    {
+                      "key": "PageNumber",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "42608cf3-3f54-4825-9572-68c7adfb6dc5",
+              "name": "The request was malformed or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SystemAudit",
+                    "SystemAuditGetLoginAttemptFiltersForHealthCenter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Days",
+                      "value": "30"
+                    },
+                    {
+                      "key": "SearchText",
+                      "value": ""
+                    },
+                    {
+                      "key": "IsLoggedIn",
+                      "value": "false"
+                    },
+                    {
+                      "key": "EmailAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "IPAddresses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<array,null>"
+                    },
+                    {
+                      "key": "PageSize",
+                      "value": "10"
+                    },
+                    {
+                      "key": "PageNumber",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "936ba801-903c-4215-b0e4-7c83c621d2b2",
+              "name": "The user does not have the required permissions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SystemAudit",
+                    "SystemAuditGetLoginAttemptFiltersForHealthCenter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Days",
+                      "value": "30"
+                    },
+                    {
+                      "key": "SearchText",
+                      "value": ""
+                    },
+                    {
+                      "key": "IsLoggedIn",
+                      "value": "false"
+                    },
+                    {
+                      "key": "EmailAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "IPAddresses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<array,null>"
+                    },
+                    {
+                      "key": "PageSize",
+                      "value": "10"
+                    },
+                    {
+                      "key": "PageNumber",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fc8e0500-5f3c-43b8-9f8c-570165d0c003",
+              "name": "The user is not authorized to perform this action.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SystemAudit",
+                    "SystemAuditGetLoginAttemptFiltersForHealthCenter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Days",
+                      "value": "30"
+                    },
+                    {
+                      "key": "SearchText",
+                      "value": ""
+                    },
+                    {
+                      "key": "IsLoggedIn",
+                      "value": "false"
+                    },
+                    {
+                      "key": "EmailAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "IPAddresses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<array,null>"
+                    },
+                    {
+                      "key": "PageSize",
+                      "value": "10"
+                    },
+                    {
+                      "key": "PageNumber",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b3ac8289-310d-410d-a1cb-49aad8852cf6",
+              "name": "An unexpected error occurred on the server.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SystemAudit",
+                    "SystemAuditGetLoginAttemptFiltersForHealthCenter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Days",
+                      "value": "30"
+                    },
+                    {
+                      "key": "SearchText",
+                      "value": ""
+                    },
+                    {
+                      "key": "IsLoggedIn",
+                      "value": "false"
+                    },
+                    {
+                      "key": "EmailAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "IPAddresses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<array,null>"
+                    },
+                    {
+                      "key": "PageSize",
+                      "value": "10"
+                    },
+                    {
+                      "key": "PageNumber",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "972bace0-3634-44f6-a5a7-7717d6cd661e",
+          "name": "Retrieves System Audit records based on specified parameters.",
+          "request": {
+            "name": "Retrieves System Audit records based on specified parameters.",
+            "description": {
+              "content": "This endpoint retrieves a paginated list of System Audit records, allowing filtering by various parameters such as username, action, IP address, effective action, details, date range, and organization.\n\n\n\n**Filtering and Search:**\n\n\n*   **Wildcard Search:** The `Details`, `IPAddress`, `EffectiveAction`, and `Username` fields support wildcard searches.\n    - If the search text contains an asterisk (`*`), it will be replaced with a percent sign (`%`) for the SQL LIKE operator.\n    - If the search text does not contain an asterisk (`*`), a percent sign (`%`) will be added to both the beginning and end of the search text by default (searching for \"test\" will become \"%test%\"). This means it will search for any records that *contain* the search text.\n*   **Date Range:** Use `StartDate` and `EndDate` to filter records within a specific date range.\n*   **Organization:** By default, the endpoint retrieves records for the current organization. Set `ViewChildOrganizations` to `true` to include child organizations in the search. If the user is logged into the Master Organization, it is not necessary to use `ViewChildOrganizations`.\n\n\n\n**Sample Request:**\n            \n    POST /portalApi/SystemAuditGetByParameters\n    {\n       \"username\": \"*test*\", OR \"username\": \"test\",\n       \"action\": \"Read\",\n       \"ipAddress\": \"*\",\n       \"effectiveAction\": \"Permitted\",\n       \"details\": \"Viewed*\",\n       \"startDate\": \"2023-01-01T00:00:00Z\",\n       \"endDate\": \"2024-01-27T23:59:59Z\",\n       \"pageSize\": 25,\n       \"pageNumber\": 1,\n       \"viewChildOrganizations\": false,\n       \"objectId\": \"00000000-0000-0000-0000-000000000000\"\n    }\n**This request would search for:**\n- Usernames that contain \"test\" anywhere.\n- Any IP address.\n- Details that start with \"Viewed\".",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "SystemAudit",
+                "SystemAuditGetByParameters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"emailAddress\": \"\",\n  \"action\": \"\",\n  \"ipAddress\": \"\",\n  \"effectiveAction\": \"\",\n  \"details\": \"\",\n  \"searchText\": \"<string,null>\",\n  \"ipAddresses\": \"<array,null>\",\n  \"objectTypeIds\": \"<array,null>\",\n  \"startDate\": \"<string,null-date-time>\",\n  \"endDate\": \"<string,null-date-time>\",\n  \"pageSize\": 25,\n  \"pageNumber\": 1,\n  \"viewChildOrganizations\": false,\n  \"objectId\": \"00000000-0000-0000-0000-000000000000\",\n  \"actions\": \"<array,null>\",\n  \"afterKeys\": \"<object,null>\",\n  \"skipPaging\": \"<boolean>\",\n  \"function\": \"\",\n  \"page\": \"\",\n  \"emailAddresses\": \"<array,null>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5afa1ec8-fdd5-4ce2-905e-afb8f045c119",
+              "name": "Successfully retrieved the System Audit records.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SystemAudit",
+                    "SystemAuditGetByParameters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"emailAddress\": \"\",\n  \"action\": \"\",\n  \"ipAddress\": \"\",\n  \"effectiveAction\": \"\",\n  \"details\": \"\",\n  \"searchText\": \"<string,null>\",\n  \"ipAddresses\": \"<array,null>\",\n  \"objectTypeIds\": \"<array,null>\",\n  \"startDate\": \"<string,null-date-time>\",\n  \"endDate\": \"<string,null-date-time>\",\n  \"pageSize\": 25,\n  \"pageNumber\": 1,\n  \"viewChildOrganizations\": false,\n  \"objectId\": \"00000000-0000-0000-0000-000000000000\",\n  \"actions\": \"<array,null>\",\n  \"afterKeys\": \"<object,null>\",\n  \"skipPaging\": \"<boolean>\",\n  \"function\": \"\",\n  \"page\": \"\",\n  \"emailAddresses\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "24eed808-a962-4fa7-9542-429876c54eb7",
+              "name": "The request was malformed or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SystemAudit",
+                    "SystemAuditGetByParameters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"emailAddress\": \"\",\n  \"action\": \"\",\n  \"ipAddress\": \"\",\n  \"effectiveAction\": \"\",\n  \"details\": \"\",\n  \"searchText\": \"<string,null>\",\n  \"ipAddresses\": \"<array,null>\",\n  \"objectTypeIds\": \"<array,null>\",\n  \"startDate\": \"<string,null-date-time>\",\n  \"endDate\": \"<string,null-date-time>\",\n  \"pageSize\": 25,\n  \"pageNumber\": 1,\n  \"viewChildOrganizations\": false,\n  \"objectId\": \"00000000-0000-0000-0000-000000000000\",\n  \"actions\": \"<array,null>\",\n  \"afterKeys\": \"<object,null>\",\n  \"skipPaging\": \"<boolean>\",\n  \"function\": \"\",\n  \"page\": \"\",\n  \"emailAddresses\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "31a3e492-b92c-4e60-9597-c1f64b6dd7f4",
+              "name": "The user is not authenticated or does not have permission to view System Audit records.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SystemAudit",
+                    "SystemAuditGetByParameters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"emailAddress\": \"\",\n  \"action\": \"\",\n  \"ipAddress\": \"\",\n  \"effectiveAction\": \"\",\n  \"details\": \"\",\n  \"searchText\": \"<string,null>\",\n  \"ipAddresses\": \"<array,null>\",\n  \"objectTypeIds\": \"<array,null>\",\n  \"startDate\": \"<string,null-date-time>\",\n  \"endDate\": \"<string,null-date-time>\",\n  \"pageSize\": 25,\n  \"pageNumber\": 1,\n  \"viewChildOrganizations\": false,\n  \"objectId\": \"00000000-0000-0000-0000-000000000000\",\n  \"actions\": \"<array,null>\",\n  \"afterKeys\": \"<object,null>\",\n  \"skipPaging\": \"<boolean>\",\n  \"function\": \"\",\n  \"page\": \"\",\n  \"emailAddresses\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "365891ee-fd6b-4685-9ff7-3d7f41560edb",
+              "name": "The user is not authorized to perform this action.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SystemAudit",
+                    "SystemAuditGetByParameters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"emailAddress\": \"\",\n  \"action\": \"\",\n  \"ipAddress\": \"\",\n  \"effectiveAction\": \"\",\n  \"details\": \"\",\n  \"searchText\": \"<string,null>\",\n  \"ipAddresses\": \"<array,null>\",\n  \"objectTypeIds\": \"<array,null>\",\n  \"startDate\": \"<string,null-date-time>\",\n  \"endDate\": \"<string,null-date-time>\",\n  \"pageSize\": 25,\n  \"pageNumber\": 1,\n  \"viewChildOrganizations\": false,\n  \"objectId\": \"00000000-0000-0000-0000-000000000000\",\n  \"actions\": \"<array,null>\",\n  \"afterKeys\": \"<object,null>\",\n  \"skipPaging\": \"<boolean>\",\n  \"function\": \"\",\n  \"page\": \"\",\n  \"emailAddresses\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4a563a83-5b38-4c27-8c39-eeb298db2938",
+              "name": "An unexpected error occurred on the server.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "SystemAudit",
+                    "SystemAuditGetByParameters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"emailAddress\": \"\",\n  \"action\": \"\",\n  \"ipAddress\": \"\",\n  \"effectiveAction\": \"\",\n  \"details\": \"\",\n  \"searchText\": \"<string,null>\",\n  \"ipAddresses\": \"<array,null>\",\n  \"objectTypeIds\": \"<array,null>\",\n  \"startDate\": \"<string,null-date-time>\",\n  \"endDate\": \"<string,null-date-time>\",\n  \"pageSize\": 25,\n  \"pageNumber\": 1,\n  \"viewChildOrganizations\": false,\n  \"objectId\": \"00000000-0000-0000-0000-000000000000\",\n  \"actions\": \"<array,null>\",\n  \"afterKeys\": \"<object,null>\",\n  \"skipPaging\": \"<boolean>\",\n  \"function\": \"\",\n  \"page\": \"\",\n  \"emailAddresses\": \"<array,null>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "43ce6aad-83b2-4c20-90c3-c5dbf4c413c6",
+    "name": "Portal System Audit API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

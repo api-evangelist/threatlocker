@@ -1,0 +1,1003 @@
+{
+  "item": [
+    {
+      "id": "43fcbc30-f604-476a-be96-99cfb021690a",
+      "name": "ActionLog",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "12e792a2-d341-4cc0-898a-4b4c8f158da2",
+          "name": "Get Action Logs By Parameters.",
+          "request": {
+            "name": "Get Action Logs By Parameters.",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n          \"ActionType\": \"execute | install | network | registry | read | write | move |\n                          delete | baseline | powershell | elevate | configuration | dns\",\n          \"SourceTableId\": \"ActionLog = 1 | DenyActionLog = 2 | BaselineActionLog = 3 | EventLogActionLog = 4\",\n          \"ActionId\": \"Permit = 1 | Deny = 2 | DenyOptionToRequest = 3 | InstallMode = 4 | MissingCoreFiles = 5 | Ringfenced = 6 | AnyDeny = 7\",\n          \"GroupBy\": \"FullPath = path | Hash = hash | SourceIp = sourceip | Cert = cert | Hostname = hostname | Username = username | ProcessPath = process\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "ActionLog",
+                "ActionLogGetByParametersV2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "usenewsearch",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"actionType\": null,\n  \"sourceTableId\": 1,\n  \"actionLogId\": null,\n  \"policyId\": null,\n  \"actionId\": null,\n  \"filter\": null,\n  \"showChildOrganizations\": false,\n  \"simulateDeny\": false,\n  \"onlyTrueDenies\": false,\n  \"username\": null,\n  \"hostname\": \"\",\n  \"processId\": null,\n  \"fullPath\": \"\",\n  \"deviceType\": null,\n  \"dateTime\": null,\n  \"groupBy\": null,\n  \"pageNumber\": 1,\n  \"pageSize\": 25,\n  \"paramsFieldsDto\": \"<array,null>\",\n  \"startDate\": \"<string,null-date-time>\",\n  \"endDate\": \"<string,null-date-time>\",\n  \"dateTimeLastImported\": \"<string,null-date-time>\",\n  \"showTotalCount\": \"<boolean>\",\n  \"getNewCount\": \"<boolean>\",\n  \"exportMode\": \"<boolean>\",\n  \"totalRows\": \"<integer>\",\n  \"useEId\": \"<boolean>\",\n  \"lastSortValue\": \"<long>\",\n  \"sortBy\": \"\",\n  \"sortDescending\": true,\n  \"groupBys\": \"<array,null>\",\n  \"actionTypes\": \"<array,null>\",\n  \"showKnownThreatsOnly\": \"<boolean>\",\n  \"hasPolicyId\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bf68c026-6a63-45ef-922e-52d974537cfd",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ActionLog",
+                    "ActionLogGetByParametersV2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "usenewsearch",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"actionType\": null,\n  \"sourceTableId\": 1,\n  \"actionLogId\": null,\n  \"policyId\": null,\n  \"actionId\": null,\n  \"filter\": null,\n  \"showChildOrganizations\": false,\n  \"simulateDeny\": false,\n  \"onlyTrueDenies\": false,\n  \"username\": null,\n  \"hostname\": \"\",\n  \"processId\": null,\n  \"fullPath\": \"\",\n  \"deviceType\": null,\n  \"dateTime\": null,\n  \"groupBy\": null,\n  \"pageNumber\": 1,\n  \"pageSize\": 25,\n  \"paramsFieldsDto\": \"<array,null>\",\n  \"startDate\": \"<string,null-date-time>\",\n  \"endDate\": \"<string,null-date-time>\",\n  \"dateTimeLastImported\": \"<string,null-date-time>\",\n  \"showTotalCount\": \"<boolean>\",\n  \"getNewCount\": \"<boolean>\",\n  \"exportMode\": \"<boolean>\",\n  \"totalRows\": \"<integer>\",\n  \"useEId\": \"<boolean>\",\n  \"lastSortValue\": \"<long>\",\n  \"sortBy\": \"\",\n  \"sortDescending\": true,\n  \"groupBys\": \"<array,null>\",\n  \"actionTypes\": \"<array,null>\",\n  \"showKnownThreatsOnly\": \"<boolean>\",\n  \"hasPolicyId\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "397bc210-0645-4f68-bf3b-5ac473de6e63",
+          "name": "Get All File History by hostname and fullpath",
+          "request": {
+            "name": "Get All File History by hostname and fullpath",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n       \"sourceTableId\": \"ActionLog = 1 | DenyActionLog = 2 | BaselineActionLog = 3 | EventLogActionLog = 4\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "ActionLog",
+                "ActionLogGetAllForFileHistory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sourceTableId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hostname",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fullPath",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageNumber",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "25"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e980b472-eb46-42de-be06-9e0c22e26034",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ActionLog",
+                    "ActionLogGetAllForFileHistory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sourceTableId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "hostname",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fullPath",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageNumber",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fdb9a588-95ad-41b2-8efa-5b559aaa55e5",
+          "name": "Get All File History by hostname and fullpath",
+          "request": {
+            "name": "Get All File History by hostname and fullpath",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n       \"sourceTableId\": \"ActionLog = 1 | DenyActionLog = 2 | BaselineActionLog = 3 | EventLogActionLog = 4\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "ActionLog",
+                "ActionLogGetAllForFileHistoryV2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sourceTableId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hostname",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fullPath",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "computerId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageNumber",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "25"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b530ab14-eaca-458c-ae58-9b6302c2305e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ActionLog",
+                    "ActionLogGetAllForFileHistoryV2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sourceTableId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "hostname",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fullPath",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "computerId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "pageNumber",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bd19bba6-e446-4ca7-9d92-2dfa5bdf3783",
+          "name": "Get Action Logs by Id.",
+          "request": {
+            "name": "Get Action Logs by Id.",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n          \"sourceTableId\": \"ActionLog = 1 | DenyActionLog = 2 | BaselineActionLog = 3 | EventLogActionLog = 4\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "ActionLog",
+                "ActionLogGetById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "actionLogId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sourceTableId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "addToApplication",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d00b4826-4377-41a8-a3b2-f528b56d2913",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ActionLog",
+                    "ActionLogGetById"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "actionLogId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "sourceTableId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "addToApplication",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9e433985-c96d-424a-9283-eacb5f7453b9",
+          "name": "/portalapi/ActionLog/ActionLogGetByIdV2",
+          "request": {
+            "name": "/portalapi/ActionLog/ActionLogGetByIdV2",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "ActionLog",
+                "ActionLogGetByIdV2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "eActionLogId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sourceTableId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "addToApplication",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "getAllParents",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "openedFromLink",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6cba2d4d-a2d6-41c3-abed-0ef9fbbe68a8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ActionLog",
+                    "ActionLogGetByIdV2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "eActionLogId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sourceTableId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "addToApplication",
+                      "value": "false"
+                    },
+                    {
+                      "key": "getAllParents",
+                      "value": "false"
+                    },
+                    {
+                      "key": "openedFromLink",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "77eacf54-c0e2-49fe-bab0-345416d0e0dd",
+          "name": "Get Testing Environment Details For VDI HyperV",
+          "request": {
+            "name": "Get Testing Environment Details For VDI HyperV",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "ActionLog",
+                "ActionLogGetTestingEnvironmentDetailsById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"approvalRequestId\": \"<uuid>\",\n  \"filename\": \"<string,null>\",\n  \"fileUrl\": \"<string,null>\",\n  \"eActionLogId\": \"<string,null>\",\n  \"sourceTableId\": \"<integer,null-int32>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e70ce772-c874-42b5-b72f-48f0a6aaae99",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ActionLog",
+                    "ActionLogGetTestingEnvironmentDetailsById"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"approvalRequestId\": \"<uuid>\",\n  \"filename\": \"<string,null>\",\n  \"fileUrl\": \"<string,null>\",\n  \"eActionLogId\": \"<string,null>\",\n  \"sourceTableId\": \"<integer,null-int32>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5ea0be8f-2e2c-4ab4-8e7c-1aaf01007555",
+          "name": "Get Policy Conditions For Permit Application",
+          "request": {
+            "name": "Get Policy Conditions For Permit Application",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n          \"OSType\": \"All = 0 | Windows = 1 | MAC = 2 | Linux = 3\"\n          \"ActionType\": \"None = 0 | BaseLine = 1 | Configuration = 2 | Delete = 3 | Elevation = 4 | Execute = 5 |\n                         Install = 6 | Move = 7 | Network = 8  | NewProcess = 9  | Powershell = 10 | Read = 11 |  \n                         Registry = 12 | Uninstall = 13 | Write = 14 | OSEventLog = 15\",\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "ActionLog",
+                "ActionLogGetPolicyConditionsForPermitApplication"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "usenewsearch",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"computerGroupId\": \"00000000-0000-0000-0000-000000000000\",\n  \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"organizationIds\": \"[]\",\n  \"osType\": \"<integer>\",\n  \"userInstance\": \"\",\n  \"approvalRequest\": {\n    \"statusIdEscalatedToMSP\": \"<integer>\",\n    \"statusIdEscalatedByCustomer\": \"<integer>\",\n    \"masterOrganizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"approvedBy\": \"\",\n    \"approvalRequestId\": \"00000000-0000-0000-0000-000000000000\",\n    \"dateTime\": \"<dateTime>\",\n    \"path\": \"\",\n    \"hash\": \"\",\n    \"username\": \"\",\n    \"hostname\": \"\",\n    \"statusId\": \"<integer>\",\n    \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n    \"organizationName\": \"\",\n    \"json\": \"\",\n    \"ticketId\": \"\",\n    \"requestor\": \"\",\n    \"requestorReason\": \"\",\n    \"requestorEmailAddress\": \"\",\n    \"comments\": \"\",\n    \"actionDate\": \"<string,null-date-time>\",\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"multiLevelApprovalRequestId\": \"00000000-0000-0000-0000-000000000000\",\n    \"approvalNumber\": \"<integer>\",\n    \"approvedByTierLevel\": \"<integer>\",\n    \"tempPolicyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"policyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"tempApplicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"multiLevelApprovalStatusId\": \"<integer>\",\n    \"initialApprovalTierLevel\": \"<integer>\",\n    \"approvalCount\": \"<integer>\",\n    \"pendingTierLevel\": \"<integer>\",\n    \"hasPendingApprovalRequest\": \"<boolean>\",\n    \"ipAddress\": \"\",\n    \"assigneeUserId\": \"00000000-0000-0000-0000-000000000000\",\n    \"threatLockerDataCenterId\": \"00000000-0000-0000-0000-000000000000\",\n    \"instanceName\": \"\",\n    \"assigneeUsername\": \"\",\n    \"assigneeFirstName\": \"\",\n    \"assigneeLastname\": \"\",\n    \"threatLockerActionDto\": {\n      \"fullpath\": \"\",\n      \"policyid\": \"\",\n      \"username\": \"\",\n      \"actionid\": \"<integer>\",\n      \"hash\": \"\",\n      \"processName\": \"\",\n      \"certs\": \"<array,null>\",\n      \"applicationId\": \"\",\n      \"datetime\": \"<dateTime>\",\n      \"logAction\": \"<boolean>\",\n      \"SerialNumber\": \"\",\n      \"deviceType\": \"\",\n      \"actionType\": \"\",\n      \"size\": \"<long>\",\n      \"processId\": \"<integer>\",\n      \"ringFence\": \"<boolean>\",\n      \"policyName\": \"\",\n      \"applicationName\": \"\",\n      \"encryptionStatus\": \"<integer>\",\n      \"installedBy\": \"[]\",\n      \"monitorOnly\": \"<boolean>\",\n      \"notes\": \"\",\n      \"sha256\": \"\",\n      \"ringfencePolicyId\": \"\",\n      \"remotePresence\": \"<boolean>\",\n      \"organizationId\": \"\",\n      \"hostname\": \"\",\n      \"computerId\": \"\",\n      \"manufacturer\": \"\",\n      \"osType\": \"<integer>\",\n      \"destinationIP\": \"\",\n      \"DomainName\": \"\",\n      \"organizationName\": \"\"\n    },\n    \"notes\": \"\",\n    \"signature\": \"\",\n    \"tlInstructions\": \"\",\n    \"suggestCustomRule\": \"<boolean,null>\",\n    \"authorizeForPermit\": \"<boolean,null>\",\n    \"portalApiUrl\": \"\",\n    \"cyberHeroManagementConfigured\": \"<boolean>\",\n    \"maxTriggeredStartDate\": \"<string,null-date-time>\",\n    \"ticketApprovalManager\": \"\",\n    \"showMfaChallenge\": \"<boolean>\",\n    \"showMfaRegistration\": \"<boolean>\",\n    \"linkedMfaUser\": \"<string,null>\",\n    \"serialNumber\": \"\",\n    \"approvalRequestTimerDto\": {\n      \"approvalRequestId\": \"<uuid>\",\n      \"requestDate\": \"<dateTime>\",\n      \"assignedDate\": \"<dateTime>\",\n      \"escalatedDate\": \"<dateTime>\",\n      \"returnedDate\": \"<dateTime>\",\n      \"reassignedDate\": \"<dateTime>\",\n      \"actionedDate\": \"<dateTime>\",\n      \"totalTimeInSeconds\": 0\n    },\n    \"canRequestNewBuiltIn\": false,\n    \"isAssigneeLoggedIntoMaster\": false,\n    \"retrievedAssigneeUsername\": \"<boolean>\",\n    \"count\": \"<integer>\",\n    \"assigneeOrganizationId\": null\n  },\n  \"actionLog\": {\n    \"actionLogId\": \"<long>\",\n    \"eActionLogId\": \"<string,null>\",\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n    \"dateTime\": \"<dateTime>\",\n    \"dateTimeImported\": \"<dateTime>\",\n    \"organizationName\": \"\",\n    \"hostname\": \"\",\n    \"username\": \"\",\n    \"fullPath\": \"\",\n    \"policyName\": \"\",\n    \"actionType\": \"\",\n    \"actionTypeId\": \"<integer>\",\n    \"actionId\": \"<integer>\",\n    \"action\": \"\",\n    \"isMonitorMode\": \"<boolean>\",\n    \"monitorMode\": \"\",\n    \"learningModeEndDate\": \"<dateTime>\",\n    \"policyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"policyLocation\": \"\",\n    \"policyOrganizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"processId\": \"<integer>\",\n    \"processPath\": \"\",\n    \"hash\": \"\",\n    \"createdByProcess\": \"\",\n    \"data\": \"\",\n    \"remotePresence\": \"<boolean>\",\n    \"remotePresenceText\": \"\",\n    \"remotePresenceThreatLockerDetected\": \"<boolean>\",\n    \"deviceType\": \"\",\n    \"cert\": \"\",\n    \"certs\": \"<array,null>\",\n    \"certExists\": \"<boolean>\",\n    \"certificates\": \"<array,null>\",\n    \"certText\": \"\",\n    \"organizationParents\": \"<array,null>\",\n    \"applicationOrganizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"applicationIsBuiltIn\": \"<boolean,null>\",\n    \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"applicationName\": \"\",\n    \"notes\": \"\",\n    \"serialNumber\": \"\",\n    \"encryption\": \"<integer>\",\n    \"size\": \"<long>\",\n    \"sha256Hash\": \"\",\n    \"policyExists\": \"<boolean>\",\n    \"policyEnabled\": \"<boolean>\",\n    \"storagePolicyExists\": \"<boolean>\",\n    \"nacPolicyExists\": \"<boolean>\",\n    \"secureNetworkPolicyExists\": \"<boolean>\",\n    \"twPolicyExists\": \"<boolean>\",\n    \"webControlPolicyExists\": \"<boolean>\",\n    \"cmPolicyExists\": \"<boolean>\",\n    \"optionToRequest\": \"<boolean>\",\n    \"allowPermitVendorButton\": \"<boolean>\",\n    \"effectiveAction\": \"\",\n    \"encryptionStatus\": \"\",\n    \"reportMissing\": \"<boolean>\",\n    \"virusTotalCheckName\": \"\",\n    \"virusTotalCheckArgument\": \"\",\n    \"osType\": \"<integer>\",\n    \"isExtension\": \"<boolean>\",\n    \"edgeStoreUrl\": \"\",\n    \"chromeStoreUrl\": \"\",\n    \"firefoxStoreUrl\": \"\",\n    \"actionLogCreatedByProcesses\": \"<array,null>\",\n    \"totalCount\": \"<long>\",\n    \"lastSortValue\": \"<long>\",\n    \"networkDirection\": \"<integer>\",\n    \"sourceIPAddress\": \"<string,null>\",\n    \"destinationIPAddress\": \"<string,null>\",\n    \"groupByCount\": \"<integer>\",\n    \"destinationPort\": \"<string,null>\",\n    \"batchId\": \"<string,null>\",\n    \"isProtectedProcess\": \"<boolean>\",\n    \"memoryBytes\": \"<long>\",\n    \"processName\": \"<string,null>\",\n    \"parentProcessId\": \"<integer>\",\n    \"parentProcessName\": \"<string,null>\",\n    \"parentProcessApplicationId\": \"<uuid>\",\n    \"parentProcessApplicationName\": \"<string,null>\",\n    \"parentProcessApplicationOrganizationId\": \"<uuid>\",\n    \"hasViewComputerPermission\": \"<boolean>\",\n    \"allowFileUpload\": \"<boolean>\",\n    \"canViewOnSystemLookup\": \"<boolean>\",\n    \"systemLookupUrl\": \"<string,null>\",\n    \"threatLockerItem\": {\n      \"d\": \"<dateTime>\",\n      \"u\": \"\",\n      \"pid\": \"00000000-0000-0000-0000-000000000000\",\n      \"pn\": \"\",\n      \"at\": \"<integer>\",\n      \"aid\": \"<integer>\",\n      \"a\": \"<array,null>\"\n    },\n    \"integrationTypeId\": \"00000000-0000-0000-0000-000000000000\",\n    \"threatSeverityLevel\": \"<string,null>\",\n    \"engineRatings\": \"<array,null>\",\n    \"isVirusTotalUnavailable\": \"<boolean>\",\n    \"isAccessDevice\": \"<boolean>\"\n  },\n  \"actionType\": \"\",\n  \"isElevationRequest\": \"<boolean>\",\n  \"isExtensionRequest\": \"<boolean>\",\n  \"edgeStoreUrl\": \"\",\n  \"chromeStoreUrl\": \"\",\n  \"canViewOnSystemLookup\": \"<boolean>\",\n  \"systemLookupUrl\": \"\",\n  \"canViewVirusTotal\": \"<boolean>\",\n  \"virusTotalUrl\": \"\",\n  \"fileHistoryChecked\": \"<boolean>\",\n  \"suggestCustomRule\": \"<boolean,null>\",\n  \"fileDetails\": {\n    \"fullPath\": \"\",\n    \"processPath\": \"\",\n    \"hash\": \"\",\n    \"certificates\": \"<array,null>\",\n    \"createdByProcesses\": \"[]\",\n    \"filename\": \"\",\n    \"sha256\": \"\",\n    \"date\": \"<dateTime>\",\n    \"originalHostname\": \"\",\n    \"hostname\": \"\",\n    \"username\": \"\",\n    \"organizationName\": \"\",\n    \"policyName\": \"\",\n    \"applicationName\": \"\",\n    \"requestorReason\": \"\",\n    \"approvalStatus\": \"\",\n    \"approvalBy\": \"\",\n    \"size\": \"<long>\"\n  },\n  \"matchingApplications\": {\n    \"hasMatchingApplication\": \"<boolean>\",\n    \"useMatchingApplication\": \"<boolean>\",\n    \"matchingApplication\": {\n      \"name\": \"\",\n      \"applicationName\": \"\",\n      \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n      \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n      \"organizationName\": \"\",\n      \"osType\": \"<integer>\",\n      \"suggestedPolicyId\": \"00000000-0000-0000-0000-000000000000\",\n      \"status\": \"<integer>\",\n      \"isMaintained\": \"<boolean>\",\n      \"researchApplicationId\": \"<string,null-uuid>\"\n    },\n    \"useExistingApplication\": \"<boolean>\",\n    \"existingApplication\": {\n      \"name\": \"\",\n      \"applicationName\": \"\",\n      \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n      \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n      \"organizationName\": \"\",\n      \"osType\": \"<integer>\",\n      \"suggestedPolicyId\": \"00000000-0000-0000-0000-000000000000\",\n      \"status\": \"<integer>\",\n      \"isMaintained\": \"<boolean>\",\n      \"researchApplicationId\": \"<string,null-uuid>\"\n    },\n    \"useNewApplication\": \"<boolean>\",\n    \"newApplicationName\": \"\"\n  },\n  \"policyConditions\": {\n    \"useExistingPolicy\": \"<boolean>\",\n    \"createManualPolicy\": \"<boolean>\",\n    \"manualOptions\": \"<array,null>\",\n    \"ruleId\": \"<integer>\",\n    \"certSubjects\": \"[]\",\n    \"createdByProcesses\": \"[]\",\n    \"includedAdditionalFiles\": \"<array,null>\"\n  },\n  \"policyExpirationDate\": \"<string,null-date-time>\",\n  \"ringfencingOptions\": {\n    \"hideCustomRules\": \"<boolean>\",\n    \"restrictApplicationSpawning\": \"<boolean>\",\n    \"restrictRegistryAccess\": \"<boolean>\",\n    \"restrictFileAccess\": \"<boolean>\",\n    \"restrictNetworkAccess\": \"<boolean>\",\n    \"restrictApplication\": \"<boolean>\",\n    \"rfFilePolicy\": \"<array,null>\",\n    \"rfNetworkPolicy\": \"<array,null>\",\n    \"rfRegistryPolicy\": \"<array,null>\",\n    \"rfAssociatedApplicationPolicy\": \"<array,null>\"\n  },\n  \"networkExclusions\": \"<array,null>\",\n  \"ringfenceActionId\": \"<integer>\",\n  \"hasRingfencingAsProduct\": \"<boolean>\",\n  \"hasElevation\": \"<boolean>\",\n  \"organizationHasElevation\": \"<boolean>\",\n  \"elevationStatus\": \"<integer>\",\n  \"elevationExpiration\": \"<integer>\",\n  \"elevationExpirationDate\": \"<string,null-date-time>\",\n  \"policyLevel\": {\n    \"canUseEntireOrganization\": \"<boolean>\",\n    \"toEntireOrganization\": \"<boolean>\",\n    \"toComputerGroup\": \"<boolean>\",\n    \"selectedComputerGroup\": {\n      \"type\": [\n        \"boolean\",\n        \"null\"\n      ],\n      \"default\": \"<boolean,null>\"\n    },\n    \"toComputer\": \"<boolean>\"\n  },\n  \"adminNotes\": {\n    \"ticket\": \"\",\n    \"requestorEmail\": \"\",\n    \"comments\": \"\"\n  },\n  \"applicationList\": \"<array,null>\",\n  \"systemAudits\": \"<array,null>\",\n  \"allowTMM\": \"<boolean>\",\n  \"fileExclusions\": \"<array,null>\",\n  \"hasOriginApprovalCenter\": \"<boolean,null>\",\n  \"responseSubject\": \"<string,null>\",\n  \"responseReason\": \"<string,null>\",\n  \"notifyOnResponse\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "697dabf1-a23a-47eb-89af-4410ba85a9ed",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ActionLog",
+                    "ActionLogGetPolicyConditionsForPermitApplication"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "usenewsearch",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n  \"computerGroupId\": \"00000000-0000-0000-0000-000000000000\",\n  \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n  \"organizationIds\": \"[]\",\n  \"osType\": \"<integer>\",\n  \"userInstance\": \"\",\n  \"approvalRequest\": {\n    \"statusIdEscalatedToMSP\": \"<integer>\",\n    \"statusIdEscalatedByCustomer\": \"<integer>\",\n    \"masterOrganizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"approvedBy\": \"\",\n    \"approvalRequestId\": \"00000000-0000-0000-0000-000000000000\",\n    \"dateTime\": \"<dateTime>\",\n    \"path\": \"\",\n    \"hash\": \"\",\n    \"username\": \"\",\n    \"hostname\": \"\",\n    \"statusId\": \"<integer>\",\n    \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n    \"organizationName\": \"\",\n    \"json\": \"\",\n    \"ticketId\": \"\",\n    \"requestor\": \"\",\n    \"requestorReason\": \"\",\n    \"requestorEmailAddress\": \"\",\n    \"comments\": \"\",\n    \"actionDate\": \"<string,null-date-time>\",\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"multiLevelApprovalRequestId\": \"00000000-0000-0000-0000-000000000000\",\n    \"approvalNumber\": \"<integer>\",\n    \"approvedByTierLevel\": \"<integer>\",\n    \"tempPolicyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"policyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"tempApplicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"multiLevelApprovalStatusId\": \"<integer>\",\n    \"initialApprovalTierLevel\": \"<integer>\",\n    \"approvalCount\": \"<integer>\",\n    \"pendingTierLevel\": \"<integer>\",\n    \"hasPendingApprovalRequest\": \"<boolean>\",\n    \"ipAddress\": \"\",\n    \"assigneeUserId\": \"00000000-0000-0000-0000-000000000000\",\n    \"threatLockerDataCenterId\": \"00000000-0000-0000-0000-000000000000\",\n    \"instanceName\": \"\",\n    \"assigneeUsername\": \"\",\n    \"assigneeFirstName\": \"\",\n    \"assigneeLastname\": \"\",\n    \"threatLockerActionDto\": {\n      \"fullpath\": \"\",\n      \"policyid\": \"\",\n      \"username\": \"\",\n      \"actionid\": \"<integer>\",\n      \"hash\": \"\",\n      \"processName\": \"\",\n      \"certs\": \"<array,null>\",\n      \"applicationId\": \"\",\n      \"datetime\": \"<dateTime>\",\n      \"logAction\": \"<boolean>\",\n      \"SerialNumber\": \"\",\n      \"deviceType\": \"\",\n      \"actionType\": \"\",\n      \"size\": \"<long>\",\n      \"processId\": \"<integer>\",\n      \"ringFence\": \"<boolean>\",\n      \"policyName\": \"\",\n      \"applicationName\": \"\",\n      \"encryptionStatus\": \"<integer>\",\n      \"installedBy\": \"[]\",\n      \"monitorOnly\": \"<boolean>\",\n      \"notes\": \"\",\n      \"sha256\": \"\",\n      \"ringfencePolicyId\": \"\",\n      \"remotePresence\": \"<boolean>\",\n      \"organizationId\": \"\",\n      \"hostname\": \"\",\n      \"computerId\": \"\",\n      \"manufacturer\": \"\",\n      \"osType\": \"<integer>\",\n      \"destinationIP\": \"\",\n      \"DomainName\": \"\",\n      \"organizationName\": \"\"\n    },\n    \"notes\": \"\",\n    \"signature\": \"\",\n    \"tlInstructions\": \"\",\n    \"suggestCustomRule\": \"<boolean,null>\",\n    \"authorizeForPermit\": \"<boolean,null>\",\n    \"portalApiUrl\": \"\",\n    \"cyberHeroManagementConfigured\": \"<boolean>\",\n    \"maxTriggeredStartDate\": \"<string,null-date-time>\",\n    \"ticketApprovalManager\": \"\",\n    \"showMfaChallenge\": \"<boolean>\",\n    \"showMfaRegistration\": \"<boolean>\",\n    \"linkedMfaUser\": \"<string,null>\",\n    \"serialNumber\": \"\",\n    \"approvalRequestTimerDto\": {\n      \"approvalRequestId\": \"<uuid>\",\n      \"requestDate\": \"<dateTime>\",\n      \"assignedDate\": \"<dateTime>\",\n      \"escalatedDate\": \"<dateTime>\",\n      \"returnedDate\": \"<dateTime>\",\n      \"reassignedDate\": \"<dateTime>\",\n      \"actionedDate\": \"<dateTime>\",\n      \"totalTimeInSeconds\": 0\n    },\n    \"canRequestNewBuiltIn\": false,\n    \"isAssigneeLoggedIntoMaster\": false,\n    \"retrievedAssigneeUsername\": \"<boolean>\",\n    \"count\": \"<integer>\",\n    \"assigneeOrganizationId\": null\n  },\n  \"actionLog\": {\n    \"actionLogId\": \"<long>\",\n    \"eActionLogId\": \"<string,null>\",\n    \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"computerId\": \"00000000-0000-0000-0000-000000000000\",\n    \"dateTime\": \"<dateTime>\",\n    \"dateTimeImported\": \"<dateTime>\",\n    \"organizationName\": \"\",\n    \"hostname\": \"\",\n    \"username\": \"\",\n    \"fullPath\": \"\",\n    \"policyName\": \"\",\n    \"actionType\": \"\",\n    \"actionTypeId\": \"<integer>\",\n    \"actionId\": \"<integer>\",\n    \"action\": \"\",\n    \"isMonitorMode\": \"<boolean>\",\n    \"monitorMode\": \"\",\n    \"learningModeEndDate\": \"<dateTime>\",\n    \"policyId\": \"00000000-0000-0000-0000-000000000000\",\n    \"policyLocation\": \"\",\n    \"policyOrganizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"processId\": \"<integer>\",\n    \"processPath\": \"\",\n    \"hash\": \"\",\n    \"createdByProcess\": \"\",\n    \"data\": \"\",\n    \"remotePresence\": \"<boolean>\",\n    \"remotePresenceText\": \"\",\n    \"remotePresenceThreatLockerDetected\": \"<boolean>\",\n    \"deviceType\": \"\",\n    \"cert\": \"\",\n    \"certs\": \"<array,null>\",\n    \"certExists\": \"<boolean>\",\n    \"certificates\": \"<array,null>\",\n    \"certText\": \"\",\n    \"organizationParents\": \"<array,null>\",\n    \"applicationOrganizationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"applicationIsBuiltIn\": \"<boolean,null>\",\n    \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"applicationName\": \"\",\n    \"notes\": \"\",\n    \"serialNumber\": \"\",\n    \"encryption\": \"<integer>\",\n    \"size\": \"<long>\",\n    \"sha256Hash\": \"\",\n    \"policyExists\": \"<boolean>\",\n    \"policyEnabled\": \"<boolean>\",\n    \"storagePolicyExists\": \"<boolean>\",\n    \"nacPolicyExists\": \"<boolean>\",\n    \"secureNetworkPolicyExists\": \"<boolean>\",\n    \"twPolicyExists\": \"<boolean>\",\n    \"webControlPolicyExists\": \"<boolean>\",\n    \"cmPolicyExists\": \"<boolean>\",\n    \"optionToRequest\": \"<boolean>\",\n    \"allowPermitVendorButton\": \"<boolean>\",\n    \"effectiveAction\": \"\",\n    \"encryptionStatus\": \"\",\n    \"reportMissing\": \"<boolean>\",\n    \"virusTotalCheckName\": \"\",\n    \"virusTotalCheckArgument\": \"\",\n    \"osType\": \"<integer>\",\n    \"isExtension\": \"<boolean>\",\n    \"edgeStoreUrl\": \"\",\n    \"chromeStoreUrl\": \"\",\n    \"firefoxStoreUrl\": \"\",\n    \"actionLogCreatedByProcesses\": \"<array,null>\",\n    \"totalCount\": \"<long>\",\n    \"lastSortValue\": \"<long>\",\n    \"networkDirection\": \"<integer>\",\n    \"sourceIPAddress\": \"<string,null>\",\n    \"destinationIPAddress\": \"<string,null>\",\n    \"groupByCount\": \"<integer>\",\n    \"destinationPort\": \"<string,null>\",\n    \"batchId\": \"<string,null>\",\n    \"isProtectedProcess\": \"<boolean>\",\n    \"memoryBytes\": \"<long>\",\n    \"processName\": \"<string,null>\",\n    \"parentProcessId\": \"<integer>\",\n    \"parentProcessName\": \"<string,null>\",\n    \"parentProcessApplicationId\": \"<uuid>\",\n    \"parentProcessApplicationName\": \"<string,null>\",\n    \"parentProcessApplicationOrganizationId\": \"<uuid>\",\n    \"hasViewComputerPermission\": \"<boolean>\",\n    \"allowFileUpload\": \"<boolean>\",\n    \"canViewOnSystemLookup\": \"<boolean>\",\n    \"systemLookupUrl\": \"<string,null>\",\n    \"threatLockerItem\": {\n      \"d\": \"<dateTime>\",\n      \"u\": \"\",\n      \"pid\": \"00000000-0000-0000-0000-000000000000\",\n      \"pn\": \"\",\n      \"at\": \"<integer>\",\n      \"aid\": \"<integer>\",\n      \"a\": \"<array,null>\"\n    },\n    \"integrationTypeId\": \"00000000-0000-0000-0000-000000000000\",\n    \"threatSeverityLevel\": \"<string,null>\",\n    \"engineRatings\": \"<array,null>\",\n    \"isVirusTotalUnavailable\": \"<boolean>\",\n    \"isAccessDevice\": \"<boolean>\"\n  },\n  \"actionType\": \"\",\n  \"isElevationRequest\": \"<boolean>\",\n  \"isExtensionRequest\": \"<boolean>\",\n  \"edgeStoreUrl\": \"\",\n  \"chromeStoreUrl\": \"\",\n  \"canViewOnSystemLookup\": \"<boolean>\",\n  \"systemLookupUrl\": \"\",\n  \"canViewVirusTotal\": \"<boolean>\",\n  \"virusTotalUrl\": \"\",\n  \"fileHistoryChecked\": \"<boolean>\",\n  \"suggestCustomRule\": \"<boolean,null>\",\n  \"fileDetails\": {\n    \"fullPath\": \"\",\n    \"processPath\": \"\",\n    \"hash\": \"\",\n    \"certificates\": \"<array,null>\",\n    \"createdByProcesses\": \"[]\",\n    \"filename\": \"\",\n    \"sha256\": \"\",\n    \"date\": \"<dateTime>\",\n    \"originalHostname\": \"\",\n    \"hostname\": \"\",\n    \"username\": \"\",\n    \"organizationName\": \"\",\n    \"policyName\": \"\",\n    \"applicationName\": \"\",\n    \"requestorReason\": \"\",\n    \"approvalStatus\": \"\",\n    \"approvalBy\": \"\",\n    \"size\": \"<long>\"\n  },\n  \"matchingApplications\": {\n    \"hasMatchingApplication\": \"<boolean>\",\n    \"useMatchingApplication\": \"<boolean>\",\n    \"matchingApplication\": {\n      \"name\": \"\",\n      \"applicationName\": \"\",\n      \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n      \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n      \"organizationName\": \"\",\n      \"osType\": \"<integer>\",\n      \"suggestedPolicyId\": \"00000000-0000-0000-0000-000000000000\",\n      \"status\": \"<integer>\",\n      \"isMaintained\": \"<boolean>\",\n      \"researchApplicationId\": \"<string,null-uuid>\"\n    },\n    \"useExistingApplication\": \"<boolean>\",\n    \"existingApplication\": {\n      \"name\": \"\",\n      \"applicationName\": \"\",\n      \"applicationId\": \"00000000-0000-0000-0000-000000000000\",\n      \"organizationId\": \"00000000-0000-0000-0000-000000000000\",\n      \"organizationName\": \"\",\n      \"osType\": \"<integer>\",\n      \"suggestedPolicyId\": \"00000000-0000-0000-0000-000000000000\",\n      \"status\": \"<integer>\",\n      \"isMaintained\": \"<boolean>\",\n      \"researchApplicationId\": \"<string,null-uuid>\"\n    },\n    \"useNewApplication\": \"<boolean>\",\n    \"newApplicationName\": \"\"\n  },\n  \"policyConditions\": {\n    \"useExistingPolicy\": \"<boolean>\",\n    \"createManualPolicy\": \"<boolean>\",\n    \"manualOptions\": \"<array,null>\",\n    \"ruleId\": \"<integer>\",\n    \"certSubjects\": \"[]\",\n    \"createdByProcesses\": \"[]\",\n    \"includedAdditionalFiles\": \"<array,null>\"\n  },\n  \"policyExpirationDate\": \"<string,null-date-time>\",\n  \"ringfencingOptions\": {\n    \"hideCustomRules\": \"<boolean>\",\n    \"restrictApplicationSpawning\": \"<boolean>\",\n    \"restrictRegistryAccess\": \"<boolean>\",\n    \"restrictFileAccess\": \"<boolean>\",\n    \"restrictNetworkAccess\": \"<boolean>\",\n    \"restrictApplication\": \"<boolean>\",\n    \"rfFilePolicy\": \"<array,null>\",\n    \"rfNetworkPolicy\": \"<array,null>\",\n    \"rfRegistryPolicy\": \"<array,null>\",\n    \"rfAssociatedApplicationPolicy\": \"<array,null>\"\n  },\n  \"networkExclusions\": \"<array,null>\",\n  \"ringfenceActionId\": \"<integer>\",\n  \"hasRingfencingAsProduct\": \"<boolean>\",\n  \"hasElevation\": \"<boolean>\",\n  \"organizationHasElevation\": \"<boolean>\",\n  \"elevationStatus\": \"<integer>\",\n  \"elevationExpiration\": \"<integer>\",\n  \"elevationExpirationDate\": \"<string,null-date-time>\",\n  \"policyLevel\": {\n    \"canUseEntireOrganization\": \"<boolean>\",\n    \"toEntireOrganization\": \"<boolean>\",\n    \"toComputerGroup\": \"<boolean>\",\n    \"selectedComputerGroup\": {\n      \"type\": [\n        \"boolean\",\n        \"null\"\n      ],\n      \"default\": \"<boolean,null>\"\n    },\n    \"toComputer\": \"<boolean>\"\n  },\n  \"adminNotes\": {\n    \"ticket\": \"\",\n    \"requestorEmail\": \"\",\n    \"comments\": \"\"\n  },\n  \"applicationList\": \"<array,null>\",\n  \"systemAudits\": \"<array,null>\",\n  \"allowTMM\": \"<boolean>\",\n  \"fileExclusions\": \"<array,null>\",\n  \"hasOriginApprovalCenter\": \"<boolean,null>\",\n  \"responseSubject\": \"<string,null>\",\n  \"responseReason\": \"<string,null>\",\n  \"notifyOnResponse\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "40c3105d-97d7-4c7d-bdb3-e801b8f1fd3e",
+          "name": "Get Search String (This is for save search).",
+          "request": {
+            "name": "Get Search String (This is for save search).",
+            "description": {
+              "content": "Parameters Values:\n            \n    {\n           \"ActionType\": \"None = 0 | BaseLine = 1 | Configuration = 2 | Delete = 3 | Elevation = 4 | Execute = 5 |\n                         Install = 6 | Move = 7 | Network = 8  | NewProcess = 9  | Powershell = 10 | Read = 11 |  \n                         Registry = 12 | Uninstall = 13 | Write = 14 | OSEventLog = 15\",\n          \"SourceTableId\": \"ActionLog = 1 | DenyActionLog = 2 | BaselineActionLog = 3 | EventLogActionLog = 4\",\n          \"ActionId\": \"Permit = 1 | Deny = 2 | DenyOptionToRequest = 3 | InstallMode = 4 | MissingCoreFiles = 5 | Ringfenced = 6 | AnyDeny = 7\",\n          \"GroupBy\": \"FullPath = path | Hash = hash | SourceIp = sourceip | Cert = cert | Hostname = hostname | Username = username | ProcessPath = process\"\n    }",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "portalapi",
+                "ActionLog",
+                "ActionLogGetSearchString"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"actionType\": null,\n  \"sourceTableId\": 1,\n  \"actionLogId\": null,\n  \"policyId\": null,\n  \"actionId\": null,\n  \"filter\": null,\n  \"showChildOrganizations\": false,\n  \"simulateDeny\": false,\n  \"onlyTrueDenies\": false,\n  \"username\": null,\n  \"hostname\": \"\",\n  \"processId\": null,\n  \"fullPath\": \"\",\n  \"deviceType\": null,\n  \"dateTime\": null,\n  \"groupBy\": null,\n  \"pageNumber\": 1,\n  \"pageSize\": 25,\n  \"paramsFieldsDto\": \"<array,null>\",\n  \"startDate\": \"<string,null-date-time>\",\n  \"endDate\": \"<string,null-date-time>\",\n  \"dateTimeLastImported\": \"<string,null-date-time>\",\n  \"showTotalCount\": \"<boolean>\",\n  \"getNewCount\": \"<boolean>\",\n  \"exportMode\": \"<boolean>\",\n  \"totalRows\": \"<integer>\",\n  \"useEId\": \"<boolean>\",\n  \"lastSortValue\": \"<long>\",\n  \"sortBy\": \"\",\n  \"sortDescending\": true,\n  \"groupBys\": \"<array,null>\",\n  \"actionTypes\": \"<array,null>\",\n  \"showKnownThreatsOnly\": \"<boolean>\",\n  \"hasPolicyId\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6bd65b44-a957-412a-9f09-5687492d57b8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ActionLog",
+                    "ActionLogGetSearchString"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"actionType\": null,\n  \"sourceTableId\": 1,\n  \"actionLogId\": null,\n  \"policyId\": null,\n  \"actionId\": null,\n  \"filter\": null,\n  \"showChildOrganizations\": false,\n  \"simulateDeny\": false,\n  \"onlyTrueDenies\": false,\n  \"username\": null,\n  \"hostname\": \"\",\n  \"processId\": null,\n  \"fullPath\": \"\",\n  \"deviceType\": null,\n  \"dateTime\": null,\n  \"groupBy\": null,\n  \"pageNumber\": 1,\n  \"pageSize\": 25,\n  \"paramsFieldsDto\": \"<array,null>\",\n  \"startDate\": \"<string,null-date-time>\",\n  \"endDate\": \"<string,null-date-time>\",\n  \"dateTimeLastImported\": \"<string,null-date-time>\",\n  \"showTotalCount\": \"<boolean>\",\n  \"getNewCount\": \"<boolean>\",\n  \"exportMode\": \"<boolean>\",\n  \"totalRows\": \"<integer>\",\n  \"useEId\": \"<boolean>\",\n  \"lastSortValue\": \"<long>\",\n  \"sortBy\": \"\",\n  \"sortDescending\": true,\n  \"groupBys\": \"<array,null>\",\n  \"actionTypes\": \"<array,null>\",\n  \"showKnownThreatsOnly\": \"<boolean>\",\n  \"hasPolicyId\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e061c231-d395-4d7b-bfad-f32d41edc81c",
+          "name": "/portalapi/ActionLog/ActionLogGetFileDownloadDetailsById",
+          "request": {
+            "name": "/portalapi/ActionLog/ActionLogGetFileDownloadDetailsById",
+            "description": {},
+            "url": {
+              "path": [
+                "portalapi",
+                "ActionLog",
+                "ActionLogGetFileDownloadDetailsById"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "eActionLogId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sourceTableId",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c4296585-5dfb-4a39-9cea-0c32501a4ece",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "portalapi",
+                    "ActionLog",
+                    "ActionLogGetFileDownloadDetailsById"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "eActionLogId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sourceTableId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "42d834bc-6f64-4174-af30-fc940dd4842f",
+    "name": "Portal Action Log API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

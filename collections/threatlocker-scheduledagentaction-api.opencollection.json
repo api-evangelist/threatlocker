@@ -1,0 +1,146 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Portal Scheduled Agent Action API",
+    "version": "v1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ScheduledAgentAction",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of Scheduled Agent Actions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ScheduledAgentAction/List",
+            "params": [
+              {
+                "name": "scheduledType",
+                "value": "",
+                "type": "query",
+                "description": "Scheduled type identifier"
+              },
+              {
+                "name": "includeChildren",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include child organizations."
+              }
+            ]
+          },
+          "docs": "Parameters Values:\n            \n    {\n          \"ScheduledType\": \"Version Update = 1\",\n          \"IncludeChildren\": \"true or false\"\n    }"
+        },
+        {
+          "info": {
+            "name": "Get a list of valid Applies To records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ScheduledAgentAction/AppliesTo",
+            "params": [
+              {
+                "name": "osType",
+                "value": "",
+                "type": "query",
+                "description": "Operating system type identifier."
+              },
+              {
+                "name": "includeChildren",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include child organizations."
+              },
+              {
+                "name": "searchText",
+                "value": "",
+                "type": "query",
+                "description": "Optional search filter text."
+              }
+            ]
+          },
+          "docs": "Parameters Values:\n            \n    {\n          \"OSType\": \"Windows = 1 | Mac = 2 | Linux = 3 | Red Hat Enterprise Linux 6 = 7\",\n          \"IncludeChildren\": \"true or false\",\n          \"SearchText\": \"(Optional) - Any alphanumeric text\"\n    }"
+        },
+        {
+          "info": {
+            "name": "Get the Scheduled Agent Action details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/portalapi/ScheduledAgentAction/GetForHydration",
+            "params": [
+              {
+                "name": "scheduledId",
+                "value": "",
+                "type": "query",
+                "description": "The unique identifier of the scheduled agent action."
+              }
+            ]
+          },
+          "docs": "Parameters Values:\n            \n    {\n          \"ScheduledId\": \"A value present in the response returned from GetScheduledAgentActionList\",\n    }"
+        },
+        {
+          "info": {
+            "name": "Get the scheduled agent actions based on the provided filter parameters.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ScheduledAgentAction/GetByParameters",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    {\n          \"ScheduledId\": \"A value present in the response returned from GetScheduledAgentActionList\",\n          \"OrderBy\": \"scheduleddatetime | computername | computergroupname | organizationname\",\n          \"IsAscending\": \"true or false\",\n          \"SearchText\": \"Any alphanumeric text\",\n          \"PageSize\": \"The number of records per page\",\n          \"PageNumber\": \"The page number to display\",\n          \"OrganizationIds\": \"A list of organization ids of the"
+        },
+        {
+          "info": {
+            "name": "Inserts a new scheduled agent action.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ScheduledAgentAction",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    {\n          \"ScheduledType\": \"Version Update = 1\",\n          \"ScheduledTypePayload\": \"If ScheduledType = 1, then must include the Target TL Version Id\",\n          \"AppliesTo\": \"A list of Applies To\",\n          \"BatchAmount\": \"25 | 50 | 100 | 250 | 500\",\n          \"StartDate\": \"The date to start the schedule\",\n          \"WindowStartTime\": \"The start time used for scheduling\",\n          \"WindowEndTime\": \"The end time used for scheduling\"\n    }"
+        },
+        {
+          "info": {
+            "name": "Aborts one or more scheduled agent actions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/portalapi/ScheduledAgentAction/Abort",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parameters Values:\n            \n    {\n          \"ScheduledId\": \"A value present in the response returned from GetScheduledAgentActionList\",\n          \"AppliesTo\": \"A list of Applies To\",\n          \"AbortAll\": \"true or false\",\n    }\n\nIf \"AbortAll\" = \"false\", then the AppliesTo must have at least 1 record.\nIf \"AbortAll\" = \"true\", then the AppliesTo must be empty and all records for the ScheduledId will be aborted."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
