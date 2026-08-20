@@ -19,6 +19,19 @@ specificationVersion: '0.23'
 created: '2026-08-02'
 modified: '2026-08-02'
 tags:
+- Cybersecurity
+- Zero Trust
+- Endpoint Security
+- Application-Control
+- allowlisting
+- Ransomware Prevention
+- Privileged Access Management
+- Network Access Control
+- Managed Detection and Response
+- Device Management
+- MSP
+- Compliance
+tags_raw:
 - cybersecurity
 - zero-trust
 - endpoint-security
@@ -194,6 +207,8 @@ apis:
   humanURL: https://threatlocker.kb.help/api-documentation/
   baseURL: https://portalapi.threatlocker.com/portalapi/
   tags:
+  - Maintenance Mode
+  tags_raw:
   - MaintenanceMode
   properties:
   - type: OpenAPI
