@@ -32,16 +32,16 @@ created: '2026-08-02'
 modified: '2026-08-02'
 tags:
 - Cybersecurity
-- zero-trust
-- endpoint-security
-- application-control
+- Zero Trust
+- Endpoint Security
+- Application-Control
 - allowlisting
-- ransomware-prevention
-- privileged-access-management
-- network-access-control
-- managed-detection-and-response
-- device-management
-- msp
+- Ransomware Prevention
+- Privileged Access Management
+- Network Access Control
+- Managed Detection and Response
+- Device Management
+- MSP
 - Compliance
 tags_raw:
 - cybersecurity
@@ -221,7 +221,7 @@ apis:
   humanURL: https://threatlocker.kb.help/api-documentation/
   baseURL: https://portalapi.threatlocker.com/portalapi/
   tags:
-  - MaintenanceMode
+  - Maintenance Mode
   tags_raw:
   - MaintenanceMode
   properties:
