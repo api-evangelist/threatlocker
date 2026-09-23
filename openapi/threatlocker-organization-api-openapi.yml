@@ -17,6 +17,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getPortalapiOrganizationOrganizationGetAuthKeyById
+      x-operation-id-source: derived
   /portalapi/Organization/OrganizationUpdateAuthKeyById:
     post:
       tags:
@@ -25,6 +27,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: postPortalapiOrganizationOrganizationUpdateAuthKeyById
+      x-operation-id-source: derived
   /portalapi/Organization/OrganizationGetForMoveComputers:
     get:
       tags:
@@ -40,6 +44,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getPortalapiOrganizationOrganizationGetForMoveComputers
+      x-operation-id-source: derived
 components:
   securitySchemes:
     Authorization:

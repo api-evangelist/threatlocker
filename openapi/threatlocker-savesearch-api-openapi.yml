@@ -13,7 +13,7 @@ paths:
     post:
       tags:
       - SaveSearch
-      summary: Get Save Search.
+      summary: Get Save Search
       requestBody:
         description: ''
         content:
@@ -29,11 +29,13 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: postPortalapiSaveSearchSaveSearchGetByPage
+      x-operation-id-source: derived
   /portalapi/SaveSearch/SaveSearchInsert:
     post:
       tags:
       - SaveSearch
-      summary: Insert Save Search.
+      summary: Insert Save Search
       requestBody:
         description: ''
         content:
@@ -49,11 +51,13 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: postPortalapiSaveSearchSaveSearchInsert
+      x-operation-id-source: derived
   /portalapi/SaveSearch/SaveSearchDeleteById:
     delete:
       tags:
       - SaveSearch
-      summary: Delete Save Search.
+      summary: Delete Save Search
       parameters:
       - name: saveSearchId
         in: query
@@ -64,6 +68,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: deletePortalapiSaveSearchSaveSearchDeleteById
+      x-operation-id-source: derived
 components:
   schemas:
     SaveSearchDto:

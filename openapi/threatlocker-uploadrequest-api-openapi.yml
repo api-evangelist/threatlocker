@@ -13,7 +13,7 @@ paths:
     post:
       tags:
       - UploadRequest
-      summary: Insert Upload Request.
+      summary: Insert Upload Request
       requestBody:
         description: ''
         content:
@@ -29,11 +29,13 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: postPortalapiUploadRequestUploadRequestInsert
+      x-operation-id-source: derived
   /portalapi/UploadRequest/UploadRequestGet:
     post:
       tags:
       - UploadRequest
-      summary: Get Upload Request.
+      summary: Get Upload Request
       requestBody:
         description: ''
         content:
@@ -49,6 +51,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: postPortalapiUploadRequestUploadRequestGet
+      x-operation-id-source: derived
 components:
   schemas:
     UploadRequestDto:

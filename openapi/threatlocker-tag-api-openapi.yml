@@ -13,7 +13,7 @@ paths:
     get:
       tags:
       - Tag
-      summary: Get Tag by Id.
+      summary: Get Tag by Id
       parameters:
       - name: tagId
         in: query
@@ -24,11 +24,13 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getPortalapiTagTagGetById
+      x-operation-id-source: derived
   /portalapi/Tag/TagGetDowndownOptionsByOrganizationId:
     get:
       tags:
       - Tag
-      summary: Get Tag Dropdown Options.
+      summary: Get Tag Dropdown Options
       parameters:
       - name: includeBuiltIns
         in: query
@@ -51,11 +53,13 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getPortalapiTagTagGetDowndownOptionsByOrganizationId
+      x-operation-id-source: derived
   /portalapi/Tag/TagUpdate:
     post:
       tags:
       - Tag
-      summary: Update Tag.
+      summary: Update Tag
       requestBody:
         description: ''
         content:
@@ -71,63 +75,10 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: postPortalapiTagTagUpdate
+      x-operation-id-source: derived
 components:
   schemas:
-    TagDto:
-      type: object
-      properties:
-        tagId:
-          type: string
-          format: uuid
-        organizationId:
-          type: string
-          format: uuid
-        name:
-          type:
-          - string
-          - 'null'
-        active:
-          type: boolean
-        tagType:
-          type: integer
-          format: int32
-        tagItemsText:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/DropdownOption'
-        tagItemsIPv4:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/DropdownOption'
-        tagItemsIPv6:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/DropdownOption'
-        tagItemsReadablePath:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/DropdownOption'
-        tagItemsWritablePath:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/DropdownOption'
-        allTagItems:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/TagItemDto'
-      additionalProperties: false
     TagItemDto:
       type: object
       properties:
@@ -199,6 +150,61 @@ components:
             type:
             - string
             - 'null'
+      additionalProperties: false
+    TagDto:
+      type: object
+      properties:
+        tagId:
+          type: string
+          format: uuid
+        organizationId:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        active:
+          type: boolean
+        tagType:
+          type: integer
+          format: int32
+        tagItemsText:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DropdownOption'
+        tagItemsIPv4:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DropdownOption'
+        tagItemsIPv6:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DropdownOption'
+        tagItemsReadablePath:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DropdownOption'
+        tagItemsWritablePath:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DropdownOption'
+        allTagItems:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TagItemDto'
       additionalProperties: false
   securitySchemes:
     Authorization:

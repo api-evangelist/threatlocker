@@ -13,7 +13,7 @@ paths:
     get:
       tags:
       - Policy
-      summary: Get Policy by Id.
+      summary: Get Policy by Id
       parameters:
       - name: policyId
         in: query
@@ -24,6 +24,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getPortalapiPolicyPolicyGetById
+      x-operation-id-source: derived
 components:
   securitySchemes:
     Authorization:

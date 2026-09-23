@@ -14,8 +14,14 @@ paths:
       tags:
       - ComputerGroup
       summary: Get Groups and Computer
-      description: "Parameters Values:\n            \n    {\n       \"OSType\": \"All = 0 | Windows =\
-        \ 1 | MAC = 2 | Linux = 3\"\n    }"
+      description: 'Parameters Values:
+
+
+        {
+
+        "OSType": "All = 0 | Windows = 1 | MAC = 2 | Linux = 3"
+
+        }'
       parameters:
       - name: ComputerGroupId
         in: query
@@ -81,6 +87,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getPortalapiComputerGroupComputerGroupGetGroupAndComputer
+      x-operation-id-source: derived
   /portalapi/ComputerGroup/ComputerGroupGetDropdownByOrganizationId:
     get:
       tags:
@@ -107,13 +115,21 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getPortalapiComputerGroupComputerGroupGetDropdownByOrganizationId
+      x-operation-id-source: derived
   /portalapi/ComputerGroup/ComputerGroupGetForPermitApplication:
     get:
       tags:
       - ComputerGroup
       summary: Get Computer Groups For Permit Application
-      description: "Parameters Values:\n            \n    {\n       \"OSType\": \"All = 0 | Windows =\
-        \ 1 | MAC = 2 | Linux = 3\"\n    }"
+      description: 'Parameters Values:
+
+
+        {
+
+        "OSType": "All = 0 | Windows = 1 | MAC = 2 | Linux = 3"
+
+        }'
       parameters:
       - name: osType
         in: query
@@ -125,6 +141,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getPortalapiComputerGroupComputerGroupGetForPermitApplication
+      x-operation-id-source: derived
   /portalapi/ComputerGroup/ComputerGroupGetForDownload:
     get:
       tags:
@@ -139,6 +157,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getPortalapiComputerGroupComputerGroupGetForDownload
+      x-operation-id-source: derived
 components:
   schemas:
     OSVersionDto:

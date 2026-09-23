@@ -17,6 +17,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getPortalapiThreatLockerVersionThreatLockerVersionGetForDropdownList
+      x-operation-id-source: derived
 components:
   securitySchemes:
     Authorization:

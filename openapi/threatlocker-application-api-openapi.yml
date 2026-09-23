@@ -13,7 +13,7 @@ paths:
     get:
       tags:
       - Application
-      summary: Get Application by Id.
+      summary: Get Application by Id
       parameters:
       - name: applicationId
         in: query
@@ -24,11 +24,13 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getPortalapiApplicationApplicationGetById
+      x-operation-id-source: derived
   /portalapi/Application/ApplicationGetForNetworkPolicyProcessById:
     get:
       tags:
       - Application
-      summary: Get Application Details for Network Policy Process by Id.
+      summary: Get Application Details for Network Policy Process by Id
       parameters:
       - name: applicationId
         in: query
@@ -39,11 +41,13 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getPortalapiApplicationApplicationGetForNetworkPolicyProcessById
+      x-operation-id-source: derived
   /portalapi/Application/ApplicationGetResearchDetailsById:
     get:
       tags:
       - Application
-      summary: Get Application Research Details by Id.
+      summary: Get Application Research Details by Id
       parameters:
       - name: applicationId
         in: query
@@ -54,13 +58,21 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getPortalapiApplicationApplicationGetResearchDetailsById
+      x-operation-id-source: derived
   /portalapi/Application/ApplicationGetForMaintenanceMode:
     get:
       tags:
       - Application
       summary: Get Application Options for Maintenance Scheduling
-      description: "Parameters Values:\n            \n    {\n          \"OSType\": \"All = 0 | Windows\
-        \ = 1 | MAC = 2 | Linux = 3\"\n    }"
+      description: 'Parameters Values:
+
+
+        {
+
+        "OSType": "All = 0 | Windows = 1 | MAC = 2 | Linux = 3"
+
+        }'
       parameters:
       - name: osType
         in: query
@@ -72,13 +84,21 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getPortalapiApplicationApplicationGetForMaintenanceMode
+      x-operation-id-source: derived
   /portalapi/Application/ApplicationGetMatchingList:
     post:
       tags:
       - Application
       summary: Get Matching Applications
-      description: "Parameters Values:\n            \n    {\n          \"OSType\": \"All = 0 | Windows\
-        \ = 1 | MAC = 2 | Linux = 3\"\n    }"
+      description: 'Parameters Values:
+
+
+        {
+
+        "OSType": "All = 0 | Windows = 1 | MAC = 2 | Linux = 3"
+
+        }'
       requestBody:
         description: ''
         content:
@@ -94,13 +114,21 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: postPortalapiApplicationApplicationGetMatchingList
+      x-operation-id-source: derived
   /portalapi/Application/ApplicationGetForApplicationOptions:
     post:
       tags:
       - Application
       summary: Load Application
-      description: "Parameters Values:\n            \n    {\n          \"OSType\": \"All = 0 | Windows\
-        \ = 1 | MAC = 2 | Linux = 3\"\n    }"
+      description: 'Parameters Values:
+
+
+        {
+
+        "OSType": "All = 0 | Windows = 1 | MAC = 2 | Linux = 3"
+
+        }'
       requestBody:
         description: ''
         content:
@@ -116,74 +144,28 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: postPortalapiApplicationApplicationGetForApplicationOptions
+      x-operation-id-source: derived
 components:
   schemas:
-    ApplicationMatchParameterDto:
+    ThreatLockerCertDto:
       type: object
       properties:
-        hash:
+        sha:
           type:
           - string
           - 'null'
           default: ''
-        sha256:
+        subject:
           type:
           - string
           - 'null'
           default: ''
-        path:
-          type:
-          - string
-          - 'null'
-          default: ''
-        processPath:
-          type:
-          - string
-          - 'null'
-          default: ''
-        organizationIds:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-            format: uuid
-          default: null
-        certs:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ThreatLockerCertDto'
-        createdBys:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        osType:
+        validCert:
+          type: boolean
+        digestmismatch:
           type: integer
           format: int32
-          default: 1
-        filename:
-          type:
-          - string
-          - 'null'
-          default: ''
-        folder:
-          type:
-          - string
-          - 'null'
-          default: ''
-        approvalRequestId:
-          type: string
-          format: uuid
-        builtInPartialMatchingFiles:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ApplicationFileDto'
       additionalProperties: false
     ApplicationFileDto:
       type: object
@@ -307,6 +289,14 @@ components:
           format: uuid
           default: null
       additionalProperties: false
+    UpdateStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      type: integer
+      format: int32
     ApplicationGetForApplicationOptionsDto:
       type: object
       properties:
@@ -339,33 +329,73 @@ components:
           type: boolean
           default: false
       additionalProperties: false
-    ThreatLockerCertDto:
+    ApplicationMatchParameterDto:
       type: object
       properties:
-        sha:
+        hash:
           type:
           - string
           - 'null'
           default: ''
-        subject:
+        sha256:
           type:
           - string
           - 'null'
           default: ''
-        validCert:
-          type: boolean
-        digestmismatch:
+        path:
+          type:
+          - string
+          - 'null'
+          default: ''
+        processPath:
+          type:
+          - string
+          - 'null'
+          default: ''
+        organizationIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+          default: null
+        certs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ThreatLockerCertDto'
+        createdBys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        osType:
           type: integer
           format: int32
+          default: 1
+        filename:
+          type:
+          - string
+          - 'null'
+          default: ''
+        folder:
+          type:
+          - string
+          - 'null'
+          default: ''
+        approvalRequestId:
+          type: string
+          format: uuid
+        builtInPartialMatchingFiles:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ApplicationFileDto'
       additionalProperties: false
-    UpdateStatus:
-      enum:
-      - 0
-      - 1
-      - 2
-      - 3
-      type: integer
-      format: int32
   securitySchemes:
     Authorization:
       type: apiKey

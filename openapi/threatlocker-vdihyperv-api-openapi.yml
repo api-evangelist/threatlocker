@@ -29,6 +29,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: postPortalapiVDIHyperVVDIHyperVGetTestingEnvironmentDetails
+      x-operation-id-source: derived
 components:
   schemas:
     FileDownloadDetailsDto:

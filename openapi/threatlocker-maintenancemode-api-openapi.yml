@@ -25,15 +25,23 @@ paths:
         '200':
           description: OK
       deprecated: true
+      operationId: getPortalapiMaintenanceModeMaintenanceModeGetByComputerId
+      x-operation-id-source: derived
   /portalapi/MaintenanceMode/MaintenanceModeInsert:
     post:
       tags:
       - MaintenanceMode
       summary: Add to Maintenance Schedule
-      description: "Parameters Values:\n            \n    {\n         \"AutomaticApplicationType\": \"\
-        \ empty = 0 | Automatic Computer = 1 | Automatic Group = 2 | Automatic System = 3\",\n       \
-        \  \"MaintenanceTypeId\": \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation\
-        \ Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6\"\n    }"
+      description: 'Parameters Values:
+
+
+        {
+
+        "AutomaticApplicationType": " empty = 0 | Automatic Computer = 1 | Automatic Group = 2 | Automatic System = 3",
+
+        "MaintenanceTypeId": " MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6"
+
+        }'
       requestBody:
         description: ''
         content:
@@ -49,15 +57,23 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: postPortalapiMaintenanceModeMaintenanceModeInsert
+      x-operation-id-source: derived
   /portalapi/MaintenanceMode/MaintenanceModeEndById:
     patch:
       tags:
       - MaintenanceMode
       summary: End Maintenance Schedule
-      description: "Parameters Values:\n            \n    {\n         \"AppliesToType\": \" empty = 0\
-        \ | Automatic Computer = 1 | Automatic Group = 2 | Automatic System = 3\",\n         \"MaintenanceTypeId\"\
-        : \" MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode\
-        \ Hash Only = 5 | TamperProtectionDisabled = 6\"\n    }"
+      description: 'Parameters Values:
+
+
+        {
+
+        "AppliesToType": " empty = 0 | Automatic Computer = 1 | Automatic Group = 2 | Automatic System = 3",
+
+        "MaintenanceTypeId": " MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6"
+
+        }'
       requestBody:
         description: ''
         content:
@@ -73,15 +89,23 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: patchPortalapiMaintenanceModeMaintenanceModeEndById
+      x-operation-id-source: derived
   /portalapi/MaintenanceMode/MaintenanceModeUpdateEndDateTimeForSpecificDate:
     post:
       tags:
       - MaintenanceMode
-      summary: Updated Maintenance Mode End Date Time.
-      description: "Parameters Values:\n            \n    {\n         \"MaintenanceTypeId\": \" MonitorOnly\
-        \ = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only =\
-        \ 5 | TamperProtectionDisabled = 6\",\n         \"OSType\": \"Windows = 1 | MAC = 2 | Linux =\
-        \ 3\"\n    }"
+      summary: Updated Maintenance Mode End Date Time
+      description: 'Parameters Values:
+
+
+        {
+
+        "MaintenanceTypeId": " MonitorOnly = 1 | Installation Mode = 2 | Learning = 3 | Elevation Mode = 4 | Learning Mode Hash Only = 5 | TamperProtectionDisabled = 6",
+
+        "OSType": "Windows = 1 | MAC = 2 | Linux = 3"
+
+        }'
       requestBody:
         description: ''
         content:
@@ -97,6 +121,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: postPortalapiMaintenanceModeMaintenanceModeUpdateEndDateTimeForSpecificDate
+      x-operation-id-source: derived
 components:
   schemas:
     MaintenanceModeEndDto:
@@ -127,114 +153,6 @@ components:
         startDateTime:
           type: string
           format: date-time
-      additionalProperties: false
-    MaintenanceModeConditionsDto:
-      type: object
-      properties:
-        maintenanceModeConditionTypeId:
-          type: integer
-          format: int32
-        value:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    MaintenanceModeInsertDto:
-      type: object
-      properties:
-        allUsers:
-          type: boolean
-          default: false
-        automaticApplication:
-          type: boolean
-          default: false
-        automaticApplicationType:
-          type: integer
-          format: int32
-        computerId:
-          type: string
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
-        createNewApplication:
-          type: boolean
-          default: false
-        endDateTime:
-          type: string
-          format: date-time
-        existingApplication:
-          $ref: '#/components/schemas/MaintenanceExistingApplicationDto'
-        maintenanceTypeId:
-          type: integer
-          format: int32
-        newApplication:
-          $ref: '#/components/schemas/MaintenanceApplicationDto'
-        permitEnd:
-          type: boolean
-          default: false
-        startDateTime:
-          type: string
-          format: date-time
-        useExistingApplication:
-          type: boolean
-          default: false
-        usersList:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        computerDateTime:
-          type: string
-          format: date-time
-        maintenanceModeConditions:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/MaintenanceModeConditionsDto'
-        ticketNumber:
-          type:
-          - string
-          - 'null'
-          default: ''
-        notes:
-          type:
-          - string
-          - 'null'
-          default: ''
-      additionalProperties: false
-    MaintenanceApplicationDto:
-      type: object
-      properties:
-        applicationId:
-          type: string
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
-        applicationName:
-          type:
-          - string
-          - 'null'
-          default: ''
-        createApplicationOnly:
-          type: boolean
-          default: false
-        appliesToId:
-          type: string
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
-      additionalProperties: false
-    MaintenanceExistingApplicationDto:
-      type: object
-      properties:
-        applicationId:
-          type: string
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
-        name:
-          type:
-          - string
-          - 'null'
-          default: ''
       additionalProperties: false
     MaintenanceModeUpdateEndDateTimeDto:
       type: object
@@ -302,6 +220,114 @@ components:
           - 'null'
           format: uuid
           default: 00000000-0000-0000-0000-000000000000
+      additionalProperties: false
+    MaintenanceModeInsertDto:
+      type: object
+      properties:
+        allUsers:
+          type: boolean
+          default: false
+        automaticApplication:
+          type: boolean
+          default: false
+        automaticApplicationType:
+          type: integer
+          format: int32
+        computerId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        createNewApplication:
+          type: boolean
+          default: false
+        endDateTime:
+          type: string
+          format: date-time
+        existingApplication:
+          $ref: '#/components/schemas/MaintenanceExistingApplicationDto'
+        maintenanceTypeId:
+          type: integer
+          format: int32
+        newApplication:
+          $ref: '#/components/schemas/MaintenanceApplicationDto'
+        permitEnd:
+          type: boolean
+          default: false
+        startDateTime:
+          type: string
+          format: date-time
+        useExistingApplication:
+          type: boolean
+          default: false
+        usersList:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        computerDateTime:
+          type: string
+          format: date-time
+        maintenanceModeConditions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MaintenanceModeConditionsDto'
+        ticketNumber:
+          type:
+          - string
+          - 'null'
+          default: ''
+        notes:
+          type:
+          - string
+          - 'null'
+          default: ''
+      additionalProperties: false
+    MaintenanceModeConditionsDto:
+      type: object
+      properties:
+        maintenanceModeConditionTypeId:
+          type: integer
+          format: int32
+        value:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    MaintenanceApplicationDto:
+      type: object
+      properties:
+        applicationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        applicationName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        createApplicationOnly:
+          type: boolean
+          default: false
+        appliesToId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+      additionalProperties: false
+    MaintenanceExistingApplicationDto:
+      type: object
+      properties:
+        applicationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        name:
+          type:
+          - string
+          - 'null'
+          default: ''
       additionalProperties: false
   securitySchemes:
     Authorization:

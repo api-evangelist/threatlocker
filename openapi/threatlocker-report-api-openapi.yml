@@ -13,15 +13,17 @@ paths:
     get:
       tags:
       - Report
-      summary: Get report(s) by organization id.
+      summary: Get report(s) by organization id
       responses:
         '200':
           description: OK
+      operationId: getPortalapiReportReportGetByOrganizationId
+      x-operation-id-source: derived
   /portalapi/Report/ReportGetDynamicData:
     post:
       tags:
       - Report
-      summary: Generate report data.
+      summary: Generate report data
       requestBody:
         description: ''
         content:
@@ -37,8 +39,19 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: postPortalapiReportReportGetDynamicData
+      x-operation-id-source: derived
 components:
   schemas:
+    ReportParamsOption:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        value: {}
+      additionalProperties: false
     ReportParams:
       type: object
       properties:
@@ -74,15 +87,6 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/ReportParamsOption'
-      additionalProperties: false
-    ReportParamsOption:
-      type: object
-      properties:
-        name:
-          type:
-          - string
-          - 'null'
-        value: {}
       additionalProperties: false
   securitySchemes:
     Authorization:

@@ -44,6 +44,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getPortalapiOnlineDevicesOnlineDevicesGetByParameters
+      x-operation-id-source: derived
 components:
   securitySchemes:
     Authorization:
