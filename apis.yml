@@ -521,8 +521,6 @@ apis:
   humanURL: https://threatlocker.kb.help/api-documentation/
   baseURL: https://portalapi.threatlocker.com/portalapi/
   tags:
-  - ApprovalRequest
-  tags_raw:
   - Approval Request
   properties:
   - type: OpenAPI

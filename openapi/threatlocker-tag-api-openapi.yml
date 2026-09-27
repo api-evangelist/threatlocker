@@ -79,6 +79,61 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    TagDto:
+      type: object
+      properties:
+        tagId:
+          type: string
+          format: uuid
+        organizationId:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        active:
+          type: boolean
+        tagType:
+          type: integer
+          format: int32
+        tagItemsText:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DropdownOption'
+        tagItemsIPv4:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DropdownOption'
+        tagItemsIPv6:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DropdownOption'
+        tagItemsReadablePath:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DropdownOption'
+        tagItemsWritablePath:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DropdownOption'
+        allTagItems:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TagItemDto'
+      additionalProperties: false
     TagItemDto:
       type: object
       properties:
@@ -150,61 +205,6 @@ components:
             type:
             - string
             - 'null'
-      additionalProperties: false
-    TagDto:
-      type: object
-      properties:
-        tagId:
-          type: string
-          format: uuid
-        organizationId:
-          type: string
-          format: uuid
-        name:
-          type:
-          - string
-          - 'null'
-        active:
-          type: boolean
-        tagType:
-          type: integer
-          format: int32
-        tagItemsText:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/DropdownOption'
-        tagItemsIPv4:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/DropdownOption'
-        tagItemsIPv6:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/DropdownOption'
-        tagItemsReadablePath:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/DropdownOption'
-        tagItemsWritablePath:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/DropdownOption'
-        allTagItems:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/TagItemDto'
       additionalProperties: false
   securitySchemes:
     Authorization:

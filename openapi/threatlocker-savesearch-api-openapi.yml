@@ -72,6 +72,13 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    SaveSearchesDto:
+      type: object
+      properties:
+        saveSearchPageId:
+          type: integer
+          format: int32
+      additionalProperties: false
     SaveSearchDto:
       type: object
       properties:
@@ -107,13 +114,6 @@ components:
           - string
           - 'null'
           format: date-time
-      additionalProperties: false
-    SaveSearchesDto:
-      type: object
-      properties:
-        saveSearchPageId:
-          type: integer
-          format: int32
       additionalProperties: false
   securitySchemes:
     Authorization:

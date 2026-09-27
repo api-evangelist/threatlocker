@@ -289,46 +289,6 @@ components:
           format: uuid
           default: null
       additionalProperties: false
-    UpdateStatus:
-      enum:
-      - 0
-      - 1
-      - 2
-      - 3
-      type: integer
-      format: int32
-    ApplicationGetForApplicationOptionsDto:
-      type: object
-      properties:
-        organizationId:
-          type: string
-          format: uuid
-          default: ''
-        osType:
-          type: integer
-          format: int32
-          default: 1
-        includeBuiltIn:
-          type: boolean
-          default: false
-        searchText:
-          type:
-          - string
-          - 'null'
-          default: ''
-        hostName:
-          type:
-          - string
-          - 'null'
-          default: ''
-        appliesToId:
-          type: string
-          format: uuid
-          default: ''
-        onlyPermitted:
-          type: boolean
-          default: false
-      additionalProperties: false
     ApplicationMatchParameterDto:
       type: object
       properties:
@@ -396,6 +356,46 @@ components:
           items:
             $ref: '#/components/schemas/ApplicationFileDto'
       additionalProperties: false
+    ApplicationGetForApplicationOptionsDto:
+      type: object
+      properties:
+        organizationId:
+          type: string
+          format: uuid
+          default: ''
+        osType:
+          type: integer
+          format: int32
+          default: 1
+        includeBuiltIn:
+          type: boolean
+          default: false
+        searchText:
+          type:
+          - string
+          - 'null'
+          default: ''
+        hostName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        appliesToId:
+          type: string
+          format: uuid
+          default: ''
+        onlyPermitted:
+          type: boolean
+          default: false
+      additionalProperties: false
+    UpdateStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      type: integer
+      format: int32
   securitySchemes:
     Authorization:
       type: apiKey
