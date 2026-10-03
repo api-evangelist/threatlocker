@@ -233,30 +233,38 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    ScheduledAgentActionAbortDto:
+    ScheduledAgentActionInsertDto:
       type: object
       properties:
-        scheduledId:
-          type: string
-          format: uuid
+        scheduledType:
+          type: integer
+          format: int32
+        scheduledTypePayload:
+          type:
+          - string
+          - 'null'
         appliesTo:
           type:
           - array
           - 'null'
           items:
             $ref: '#/components/schemas/ScheduledAgentActionAppliesTo'
-        abortAll:
-          type: boolean
-      additionalProperties: false
-    ScheduledAgentActionAppliesTo:
-      type: object
-      properties:
-        appliesToId:
-          type: string
-          format: uuid
-        appliesToTypeId:
-          type: integer
+        batchAmount:
+          type:
+          - integer
+          - 'null'
           format: int32
+        startDate:
+          type: string
+          format: date-time
+        windowStartTime:
+          type:
+          - string
+          - 'null'
+        windowEndTime:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
     ScheduledAgentActionParametersDto:
       type: object
@@ -299,38 +307,30 @@ components:
             type: string
             format: uuid
       additionalProperties: false
-    ScheduledAgentActionInsertDto:
+    ScheduledAgentActionAppliesTo:
       type: object
       properties:
-        scheduledType:
+        appliesToId:
+          type: string
+          format: uuid
+        appliesToTypeId:
           type: integer
           format: int32
-        scheduledTypePayload:
-          type:
-          - string
-          - 'null'
+      additionalProperties: false
+    ScheduledAgentActionAbortDto:
+      type: object
+      properties:
+        scheduledId:
+          type: string
+          format: uuid
         appliesTo:
           type:
           - array
           - 'null'
           items:
             $ref: '#/components/schemas/ScheduledAgentActionAppliesTo'
-        batchAmount:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        startDate:
-          type: string
-          format: date-time
-        windowStartTime:
-          type:
-          - string
-          - 'null'
-        windowEndTime:
-          type:
-          - string
-          - 'null'
+        abortAll:
+          type: boolean
       additionalProperties: false
   securitySchemes:
     Authorization:

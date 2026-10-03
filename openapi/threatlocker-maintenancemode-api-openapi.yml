@@ -125,101 +125,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    MaintenanceModeConditionsDto:
-      type: object
-      properties:
-        maintenanceModeConditionTypeId:
-          type: integer
-          format: int32
-        value:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    MaintenanceApplicationDto:
-      type: object
-      properties:
-        applicationId:
-          type: string
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
-        applicationName:
-          type:
-          - string
-          - 'null'
-          default: ''
-        createApplicationOnly:
-          type: boolean
-          default: false
-        appliesToId:
-          type: string
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
-      additionalProperties: false
-    MaintenanceModeInsertDto:
-      type: object
-      properties:
-        allUsers:
-          type: boolean
-          default: false
-        automaticApplication:
-          type: boolean
-          default: false
-        automaticApplicationType:
-          type: integer
-          format: int32
-        computerId:
-          type: string
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
-        createNewApplication:
-          type: boolean
-          default: false
-        endDateTime:
-          type: string
-          format: date-time
-        existingApplication:
-          $ref: '#/components/schemas/MaintenanceExistingApplicationDto'
-        maintenanceTypeId:
-          type: integer
-          format: int32
-        newApplication:
-          $ref: '#/components/schemas/MaintenanceApplicationDto'
-        permitEnd:
-          type: boolean
-          default: false
-        startDateTime:
-          type: string
-          format: date-time
-        useExistingApplication:
-          type: boolean
-          default: false
-        usersList:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        computerDateTime:
-          type: string
-          format: date-time
-        maintenanceModeConditions:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/MaintenanceModeConditionsDto'
-        ticketNumber:
-          type:
-          - string
-          - 'null'
-          default: ''
-        notes:
-          type:
-          - string
-          - 'null'
-          default: ''
-      additionalProperties: false
     MaintenanceExistingApplicationDto:
       type: object
       properties:
@@ -326,6 +231,101 @@ components:
           type:
           - string
           - 'null'
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+      additionalProperties: false
+    MaintenanceModeInsertDto:
+      type: object
+      properties:
+        allUsers:
+          type: boolean
+          default: false
+        automaticApplication:
+          type: boolean
+          default: false
+        automaticApplicationType:
+          type: integer
+          format: int32
+        computerId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        createNewApplication:
+          type: boolean
+          default: false
+        endDateTime:
+          type: string
+          format: date-time
+        existingApplication:
+          $ref: '#/components/schemas/MaintenanceExistingApplicationDto'
+        maintenanceTypeId:
+          type: integer
+          format: int32
+        newApplication:
+          $ref: '#/components/schemas/MaintenanceApplicationDto'
+        permitEnd:
+          type: boolean
+          default: false
+        startDateTime:
+          type: string
+          format: date-time
+        useExistingApplication:
+          type: boolean
+          default: false
+        usersList:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        computerDateTime:
+          type: string
+          format: date-time
+        maintenanceModeConditions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/MaintenanceModeConditionsDto'
+        ticketNumber:
+          type:
+          - string
+          - 'null'
+          default: ''
+        notes:
+          type:
+          - string
+          - 'null'
+          default: ''
+      additionalProperties: false
+    MaintenanceModeConditionsDto:
+      type: object
+      properties:
+        maintenanceModeConditionTypeId:
+          type: integer
+          format: int32
+        value:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    MaintenanceApplicationDto:
+      type: object
+      properties:
+        applicationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        applicationName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        createApplicationOnly:
+          type: boolean
+          default: false
+        appliesToId:
+          type: string
           format: uuid
           default: 00000000-0000-0000-0000-000000000000
       additionalProperties: false

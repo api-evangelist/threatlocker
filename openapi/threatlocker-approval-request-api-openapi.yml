@@ -259,78 +259,244 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    ThreatLockerCertDto:
+    OrganizationParentsDto:
       type: object
       properties:
-        sha:
+        organizationId:
+          type: string
+          format: uuid
+        displayName:
           type:
           - string
           - 'null'
-          default: ''
-        subject:
-          type:
-          - string
-          - 'null'
-          default: ''
-        validCert:
-          type: boolean
-        digestmismatch:
+      additionalProperties: false
+    ApprovalRequestTimerDto:
+      type: object
+      properties:
+        approvalRequestId:
+          type: string
+          format: uuid
+        requestDate:
+          type: string
+          format: date-time
+        assignedDate:
+          type: string
+          format: date-time
+        escalatedDate:
+          type: string
+          format: date-time
+        returnedDate:
+          type: string
+          format: date-time
+        reassignedDate:
+          type: string
+          format: date-time
+        actionedDate:
+          type: string
+          format: date-time
+        totalTimeInSeconds:
           type: integer
           format: int32
+          default: 0
       additionalProperties: false
-    PermitMatchingApplications:
+    ThreatLockerActionDto:
       type: object
       properties:
-        hasMatchingApplication:
+        fullpath:
+          type:
+          - string
+          - 'null'
+          default: ''
+        policyid:
+          type:
+          - string
+          - 'null'
+          default: ''
+        username:
+          type:
+          - string
+          - 'null'
+          default: ''
+        actionid:
+          type: integer
+          format: int32
+        hash:
+          type:
+          - string
+          - 'null'
+          default: ''
+        processName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        certs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ThreatLockerCertDto'
+        applicationId:
+          type:
+          - string
+          - 'null'
+          default: ''
+        datetime:
+          type: string
+          format: date-time
+        logAction:
           type: boolean
-        useMatchingApplication:
+        SerialNumber:
+          type:
+          - string
+          - 'null'
+          default: ''
+        deviceType:
+          type:
+          - string
+          - 'null'
+          default: ''
+        actionType:
+          type:
+          - string
+          - 'null'
+          default: ''
+        size:
+          type: integer
+          format: int64
+        processId:
+          type: integer
+          format: int32
+        ringFence:
           type: boolean
-        matchingApplication:
-          $ref: '#/components/schemas/ApplicationOnlineDto'
-        useExistingApplication:
+        policyName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        applicationName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        encryptionStatus:
+          type: integer
+          format: int32
+        installedBy:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          default: '[]'
+        monitorOnly:
           type: boolean
-        existingApplication:
-          $ref: '#/components/schemas/ApplicationOnlineDto'
-        useNewApplication:
+        notes:
+          type:
+          - string
+          - 'null'
+          default: ''
+        sha256:
+          type:
+          - string
+          - 'null'
+          default: ''
+        ringfencePolicyId:
+          type:
+          - string
+          - 'null'
+          default: ''
+        remotePresence:
           type: boolean
-        newApplicationName:
+        organizationId:
+          type:
+          - string
+          - 'null'
+          default: ''
+        hostname:
+          type:
+          - string
+          - 'null'
+          default: ''
+        computerId:
+          type:
+          - string
+          - 'null'
+          default: ''
+        manufacturer:
+          type:
+          - string
+          - 'null'
+          default: ''
+        osType:
+          type: integer
+          format: int32
+        destinationIP:
+          type:
+          - string
+          - 'null'
+          default: ''
+        DomainName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        organizationName:
           type:
           - string
           - 'null'
           default: ''
       additionalProperties: false
-    PermitPolicyLevel:
+    ComputerGroupItemDto:
       type: object
       properties:
-        canUseEntireOrganization:
-          type: boolean
-        toEntireOrganization:
-          type: boolean
-        toComputerGroup:
-          type: boolean
-        selectedComputerGroup:
-          $ref: '#/components/schemas/ComputerGroupItemDto'
-        toComputer:
+        computerGroupId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        name:
+          type:
+          - string
+          - 'null'
+          default: ''
+        organizationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        organizationName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        default:
+          type:
+          - boolean
+          - 'null'
+        osType:
+          type: integer
+          format: int32
+        isGlobal:
           type: boolean
       additionalProperties: false
-    PermitAdminNotes:
+    RegistryPolicy:
       type: object
       properties:
-        ticket:
+        registryPolicyId:
           type:
           - string
           - 'null'
-          default: ''
-        requestorEmail:
+        path:
           type:
           - string
           - 'null'
-          default: ''
-        comments:
-          type:
-          - string
-          - 'null'
-          default: ''
+        action:
+          type: integer
+          description: 1 = Permit, 2 = Deny
+          format: int32
+        permission:
+          type: integer
+          description: 1 = Read, 2 = Write
+          format: int32
       additionalProperties: false
     StorageDeviceDto:
       type: object
@@ -376,102 +542,118 @@ components:
             format: uuid
           default: '[]'
       additionalProperties: false
-    NetworkExclusionDto:
+    EngineRating:
       type: object
       properties:
-        policyId:
-          type: string
-          format: uuid
-        tagPrefixTypeId:
-          type: integer
-          format: int32
+        name:
+          type:
+          - string
+          - 'null'
+        rating:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Certificate:
+      type: object
+      properties:
+        subject:
+          type:
+          - string
+          - 'null'
+          default: ''
+        sha:
+          type:
+          - string
+          - 'null'
+          default: ''
         value:
           type:
           - string
           - 'null'
+          default: ''
+        validCert:
+          type: boolean
       additionalProperties: false
-    ThreatLockerItemDto:
+    PermitPolicyLevel:
       type: object
       properties:
-        d:
-          type: string
-          format: date-time
-        u:
+        canUseEntireOrganization:
+          type: boolean
+        toEntireOrganization:
+          type: boolean
+        toComputerGroup:
+          type: boolean
+        selectedComputerGroup:
+          $ref: '#/components/schemas/ComputerGroupItemDto'
+        toComputer:
+          type: boolean
+      additionalProperties: false
+    PermitAdminNotes:
+      type: object
+      properties:
+        ticket:
           type:
           - string
           - 'null'
-          description: Username
           default: ''
-        pid:
+        requestorEmail:
           type:
           - string
           - 'null'
-          description: PolicyID
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
-        pn:
-          type:
-          - string
-          - 'null'
-          description: PolicyName
           default: ''
-        at:
+        comments:
+          type:
+          - string
+          - 'null'
+          default: ''
+      additionalProperties: false
+    ApprovalRequestParametersDto:
+      type: object
+      properties:
+        statusId:
           type: integer
-          description: ActionType
           format: int32
-        aid:
+          default: 1
+        searchText:
+          type:
+          - string
+          - 'null'
+          default: ''
+        userApprovalTierLevel:
           type: integer
-          description: ActionID
           format: int32
-        a:
+        showCurrentTierOnly:
+          type: boolean
+          default: false
+        showChildOrganizations:
+          type: boolean
+          default: false
+        requestTypeId:
+          type: integer
+          format: int32
+        orderBy:
+          type:
+          - string
+          - 'null'
+          default: datetime
+        isAscending:
+          type: boolean
+          default: false
+        actionType:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/Int32ObjectKeyValuePair'
-          description: Attribute
-      additionalProperties: false
-    ActionLogCreatedByProcessesDto:
-      type: object
-      properties:
-        createdByProcess:
-          type:
-          - string
-          - 'null'
-          default: ''
-        count:
+            type: string
+        pageSize:
           type: integer
           format: int32
-      additionalProperties: false
-    FileExclusionDto:
-      type: object
-      properties:
-        policyId:
-          type: string
-          format: uuid
-        tagItemType:
+          default: 25
+        pageNumber:
           type: integer
           format: int32
-        path:
-          type:
-          - string
-          - 'null'
-        permission:
-          type: integer
-          format: int32
-      additionalProperties: false
-    ApprovalRequestAuthorizeDto:
-      type: object
-      properties:
-        approvalRequestId:
-          type: string
-          format: uuid
-          default: null
-        message:
-          type:
-          - string
-          - 'null'
-          default: ''
+          default: 1
       additionalProperties: false
     ActionLogDto:
       type: object
@@ -835,158 +1017,35 @@ components:
         isAccessDevice:
           type: boolean
       additionalProperties: false
-    RegistryPolicy:
+    ActionLogCreatedByProcessesDto:
       type: object
       properties:
-        registryPolicyId:
+        createdByProcess:
           type:
           - string
           - 'null'
-        path:
-          type:
-          - string
-          - 'null'
-        action:
+          default: ''
+        count:
           type: integer
-          description: 1 = Permit, 2 = Deny
-          format: int32
-        permission:
-          type: integer
-          description: 1 = Read, 2 = Write
           format: int32
       additionalProperties: false
-    PermitPolicyConditions:
+    ApplicationOnlineDto:
       type: object
       properties:
-        useExistingPolicy:
-          type: boolean
-        createManualPolicy:
-          type: boolean
-        manualOptions:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/PolicyManualOption'
-        ruleId:
-          type: integer
-          format: int32
-        certSubjects:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-          default: '[]'
-        createdByProcesses:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-          default: '[]'
-        disableProtection:
-          type: boolean
-          readOnly: true
-        includedAdditionalFiles:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ActionLogDto'
-      additionalProperties: false
-    StoragePolicyBasicDto:
-      type: object
-      properties:
-        storagePolicyId:
-          type: string
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
         name:
           type:
           - string
           - 'null'
           default: ''
-        processesList:
+        applicationName:
           type:
-          - array
+          - string
           - 'null'
-          items:
-            type: string
-      additionalProperties: false
-    SystemAuditItem:
-      type: object
-      properties:
-        organizationId:
+          default: ''
+        applicationId:
           type: string
           format: uuid
           default: 00000000-0000-0000-0000-000000000000
-        userId:
-          type: string
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
-        username:
-          type:
-          - string
-          - 'null'
-          default: ''
-        action:
-          type:
-          - string
-          - 'null'
-          default: ''
-        ipAddress:
-          type:
-          - string
-          - 'null'
-          default: ''
-        effectiveAction:
-          type:
-          - string
-          - 'null'
-          default: ''
-        details:
-          $ref: '#/components/schemas/SystemAuditDetails'
-        masterViewOnly:
-          type: boolean
-        dateTime:
-          type: string
-          format: date-time
-        systemAuditId:
-          type: string
-          format: uuid
-        systemAuditObjectTypeId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        organizationName:
-          type:
-          - string
-          - 'null'
-        ticketNumber:
-          type:
-          - string
-          - 'null'
-          default: ''
-        notes:
-          type:
-          - string
-          - 'null'
-          default: ''
-      additionalProperties: false
-    ComputerGroupItemDto:
-      type: object
-      properties:
-        computerGroupId:
-          type: string
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
-        name:
-          type:
-          - string
-          - 'null'
-          default: ''
         organizationId:
           type: string
           format: uuid
@@ -996,17 +1055,41 @@ components:
           - string
           - 'null'
           default: ''
-        default:
-          type:
-          - boolean
-          - 'null'
         osType:
           type: integer
           format: int32
-        isGlobal:
+        suggestedPolicyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        status:
+          type: integer
+          format: int32
+        isMaintained:
           type: boolean
+        researchApplicationId:
+          type:
+          - string
+          - 'null'
+          format: uuid
       additionalProperties: false
-    PermitFileDetails:
+    NetworkExclusionDto:
+      type: object
+      properties:
+        policyId:
+          type: string
+          format: uuid
+        tagPrefixTypeId:
+          type: integer
+          format: int32
+        value:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    PolicyManualOption:
       type: object
       properties:
         fullPath:
@@ -1019,25 +1102,12 @@ components:
           - string
           - 'null'
           default: ''
-        hash:
+        cert:
           type:
           - string
           - 'null'
           default: ''
-        certificates:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ThreatLockerCertDto'
-        createdByProcesses:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-          default: '[]'
-        filename:
+        hash:
           type:
           - string
           - 'null'
@@ -1047,179 +1117,15 @@ components:
           - string
           - 'null'
           default: ''
-        date:
-          type: string
-          format: date-time
-        originalHostname:
+        createdBy:
           type:
           - string
           - 'null'
           default: ''
-        hostname:
-          type:
-          - string
-          - 'null'
-          default: ''
-        username:
-          type:
-          - string
-          - 'null'
-          default: ''
-        organizationName:
-          type:
-          - string
-          - 'null'
-          default: ''
-        policyName:
-          type:
-          - string
-          - 'null'
-          default: ''
-        applicationName:
-          type:
-          - string
-          - 'null'
-          default: ''
-        requestorReason:
-          type:
-          - string
-          - 'null'
-          default: ''
-        approvalStatus:
-          type:
-          - string
-          - 'null'
-          default: ''
-        approvalBy:
-          type:
-          - string
-          - 'null'
-          default: ''
-        size:
-          type: integer
-          format: int64
-      additionalProperties: false
-    NetworkPolicy:
-      type: object
-      properties:
-        networkPolicyId:
-          type:
-          - string
-          - 'null'
-        server:
-          type:
-          - string
-          - 'null'
-        port:
-          type: integer
-          format: int32
-        action:
-          type: integer
-          description: 1 = Permit, 2 = Deny
-          format: int32
-        serverDisplayName:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    StorageApprovalDto:
-      type: object
-      properties:
-        approvalRequest:
-          $ref: '#/components/schemas/ApprovalRequestDto'
-        addDeviceToExisting:
+        isDefaultOption:
           type: boolean
-        existingStoragePolicy:
-          $ref: '#/components/schemas/StoragePolicyBasicDto'
-        addDeviceName:
-          type:
-          - string
-          - 'null'
-          default: ''
-        policyName:
-          type:
-          - string
-          - 'null'
-          default: ''
-        entityType:
-          type: integer
-          format: int32
-        appliesToId:
-          type: string
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
-        policyType:
-          type:
-          - string
-          - 'null'
-          default: ''
-        allStorageDevices:
+        disabled:
           type: boolean
-        newStorageDevice:
-          $ref: '#/components/schemas/StorageDeviceDto'
-        deviceExists:
-          type: boolean
-        allFilePaths:
-          type: boolean
-        selectedPath:
-          type:
-          - string
-          - 'null'
-          default: ''
-        deviceType:
-          type:
-          - string
-          - 'null'
-          default: ''
-        encryptionStatus:
-          type: integer
-          format: int32
-        json:
-          type:
-          - string
-          - 'null'
-          default: ''
-        allUserGroups:
-          type: boolean
-        users:
-          type:
-          - string
-          - 'null'
-          default: ''
-        usersList:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-          default: '[]'
-        userGroups:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/PolicyUserGroupDto'
-        expirationDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        responseSubject:
-          type:
-          - string
-          - 'null'
-        responseReason:
-          type:
-          - string
-          - 'null'
-        notifyOnResponse:
-          type: boolean
-        processesList:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
       additionalProperties: false
     FilePolicy:
       type: object
@@ -1240,108 +1146,6 @@ components:
           type: integer
           description: 1 = Read, 2 = Write
           format: int32
-      additionalProperties: false
-    AdvRFPolicy:
-      type: object
-      properties:
-        hideCustomRules:
-          type: boolean
-        restrictApplicationSpawning:
-          type: boolean
-        restrictRegistryAccess:
-          type: boolean
-        restrictFileAccess:
-          type: boolean
-        restrictNetworkAccess:
-          type: boolean
-        restrictApplication:
-          type: boolean
-        rfFilePolicy:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/FilePolicy'
-        rfNetworkPolicy:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/NetworkPolicy'
-        rfRegistryPolicy:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/RegistryPolicy'
-        rfAssociatedApplicationPolicy:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/AssociatedApplicationPolicy'
-      additionalProperties: false
-    AssociatedApplicationPolicy:
-      type: object
-      properties:
-        name:
-          type:
-          - string
-          - 'null'
-        applicationId:
-          type:
-          - string
-          - 'null'
-        osType:
-          type: integer
-          format: int32
-      additionalProperties: false
-    ApprovalRequestParametersDto:
-      type: object
-      properties:
-        statusId:
-          type: integer
-          format: int32
-          default: 1
-        searchText:
-          type:
-          - string
-          - 'null'
-          default: ''
-        userApprovalTierLevel:
-          type: integer
-          format: int32
-        showCurrentTierOnly:
-          type: boolean
-          default: false
-        showChildOrganizations:
-          type: boolean
-          default: false
-        requestTypeId:
-          type: integer
-          format: int32
-        orderBy:
-          type:
-          - string
-          - 'null'
-          default: datetime
-        isAscending:
-          type: boolean
-          default: false
-        actionType:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        pageSize:
-          type: integer
-          format: int32
-          default: 25
-        pageNumber:
-          type: integer
-          format: int32
-          default: 1
       additionalProperties: false
     ApprovalRequestDto:
       type: object
@@ -1613,6 +1417,158 @@ components:
           format: uuid
           default: null
       additionalProperties: false
+    ThreatLockerCertDto:
+      type: object
+      properties:
+        sha:
+          type:
+          - string
+          - 'null'
+          default: ''
+        subject:
+          type:
+          - string
+          - 'null'
+          default: ''
+        validCert:
+          type: boolean
+        digestmismatch:
+          type: integer
+          format: int32
+      additionalProperties: false
+    StoragePolicyBasicDto:
+      type: object
+      properties:
+        storagePolicyId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        name:
+          type:
+          - string
+          - 'null'
+          default: ''
+        processesList:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    StorageApprovalDto:
+      type: object
+      properties:
+        approvalRequest:
+          $ref: '#/components/schemas/ApprovalRequestDto'
+        addDeviceToExisting:
+          type: boolean
+        existingStoragePolicy:
+          $ref: '#/components/schemas/StoragePolicyBasicDto'
+        addDeviceName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        policyName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        entityType:
+          type: integer
+          format: int32
+        appliesToId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        policyType:
+          type:
+          - string
+          - 'null'
+          default: ''
+        allStorageDevices:
+          type: boolean
+        newStorageDevice:
+          $ref: '#/components/schemas/StorageDeviceDto'
+        deviceExists:
+          type: boolean
+        allFilePaths:
+          type: boolean
+        selectedPath:
+          type:
+          - string
+          - 'null'
+          default: ''
+        deviceType:
+          type:
+          - string
+          - 'null'
+          default: ''
+        encryptionStatus:
+          type: integer
+          format: int32
+        json:
+          type:
+          - string
+          - 'null'
+          default: ''
+        allUserGroups:
+          type: boolean
+        users:
+          type:
+          - string
+          - 'null'
+          default: ''
+        usersList:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          default: '[]'
+        userGroups:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/PolicyUserGroupDto'
+        expirationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        responseSubject:
+          type:
+          - string
+          - 'null'
+        responseReason:
+          type:
+          - string
+          - 'null'
+        notifyOnResponse:
+          type: boolean
+        processesList:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    AssociatedApplicationPolicy:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        applicationId:
+          type:
+          - string
+          - 'null'
+        osType:
+          type: integer
+          format: int32
+      additionalProperties: false
     PolicyUserGroupDto:
       type: object
       properties:
@@ -1627,89 +1583,67 @@ components:
           - 'null'
           default: ''
       additionalProperties: false
-    PolicyManualOption:
+    ThreatLockerItemDto:
       type: object
       properties:
-        fullPath:
+        d:
+          type: string
+          format: date-time
+        u:
           type:
           - string
           - 'null'
+          description: Username
           default: ''
-        processPath:
+        pid:
           type:
           - string
           - 'null'
-          default: ''
-        cert:
+          description: PolicyID
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        pn:
           type:
           - string
           - 'null'
+          description: PolicyName
           default: ''
-        hash:
+        at:
+          type: integer
+          description: ActionType
+          format: int32
+        aid:
+          type: integer
+          description: ActionID
+          format: int32
+        a:
           type:
-          - string
+          - array
           - 'null'
-          default: ''
-        sha256:
-          type:
-          - string
-          - 'null'
-          default: ''
-        createdBy:
-          type:
-          - string
-          - 'null'
-          default: ''
-        isDefaultOption:
-          type: boolean
-        disabled:
-          type: boolean
+          items:
+            $ref: '#/components/schemas/Int32ObjectKeyValuePair'
+          description: Attribute
       additionalProperties: false
-    ApplicationOnlineDto:
+    PermitMatchingApplications:
       type: object
       properties:
-        name:
-          type:
-          - string
-          - 'null'
-          default: ''
-        applicationName:
-          type:
-          - string
-          - 'null'
-          default: ''
-        applicationId:
-          type: string
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
-        organizationId:
-          type: string
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
-        organizationName:
-          type:
-          - string
-          - 'null'
-          default: ''
-        osType:
-          type: integer
-          format: int32
-        suggestedPolicyId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
-        status:
-          type: integer
-          format: int32
-        isMaintained:
+        hasMatchingApplication:
           type: boolean
-        researchApplicationId:
+        useMatchingApplication:
+          type: boolean
+        matchingApplication:
+          $ref: '#/components/schemas/ApplicationOnlineDto'
+        useExistingApplication:
+          type: boolean
+        existingApplication:
+          $ref: '#/components/schemas/ApplicationOnlineDto'
+        useNewApplication:
+          type: boolean
+        newApplicationName:
           type:
           - string
           - 'null'
-          format: uuid
+          default: ''
       additionalProperties: false
     ApprovalRequestUpdateParametersDto:
       type: object
@@ -1772,65 +1706,117 @@ components:
           items:
             $ref: '#/components/schemas/ApprovalRequestDto'
       additionalProperties: false
-    ApprovalRequestTimerDto:
+    NetworkPolicy:
+      type: object
+      properties:
+        networkPolicyId:
+          type:
+          - string
+          - 'null'
+        server:
+          type:
+          - string
+          - 'null'
+        port:
+          type: integer
+          format: int32
+        action:
+          type: integer
+          description: 1 = Permit, 2 = Deny
+          format: int32
+        serverDisplayName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    FileExclusionDto:
+      type: object
+      properties:
+        policyId:
+          type: string
+          format: uuid
+        tagItemType:
+          type: integer
+          format: int32
+        path:
+          type:
+          - string
+          - 'null'
+        permission:
+          type: integer
+          format: int32
+      additionalProperties: false
+    ApprovalRequestAuthorizeDto:
       type: object
       properties:
         approvalRequestId:
           type: string
           format: uuid
-        requestDate:
-          type: string
-          format: date-time
-        assignedDate:
-          type: string
-          format: date-time
-        escalatedDate:
-          type: string
-          format: date-time
-        returnedDate:
-          type: string
-          format: date-time
-        reassignedDate:
-          type: string
-          format: date-time
-        actionedDate:
-          type: string
-          format: date-time
-        totalTimeInSeconds:
+          default: null
+        message:
+          type:
+          - string
+          - 'null'
+          default: ''
+      additionalProperties: false
+    Int32ObjectKeyValuePair:
+      type: object
+      properties:
+        key:
           type: integer
           format: int32
-          default: 0
+        value: {}
       additionalProperties: false
-    Certificate:
+    PermitFileDetails:
       type: object
       properties:
-        subject:
+        fullPath:
           type:
           - string
           - 'null'
           default: ''
-        sha:
+        processPath:
           type:
           - string
           - 'null'
           default: ''
-        value:
+        hash:
           type:
           - string
           - 'null'
           default: ''
-        validCert:
-          type: boolean
-      additionalProperties: false
-    ThreatLockerActionDto:
-      type: object
-      properties:
-        fullpath:
+        certificates:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ThreatLockerCertDto'
+        createdByProcesses:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          default: '[]'
+        filename:
           type:
           - string
           - 'null'
           default: ''
-        policyid:
+        sha256:
+          type:
+          - string
+          - 'null'
+          default: ''
+        date:
+          type: string
+          format: date-time
+        originalHostname:
+          type:
+          - string
+          - 'null'
+          default: ''
+        hostname:
           type:
           - string
           - 'null'
@@ -1840,58 +1826,11 @@ components:
           - string
           - 'null'
           default: ''
-        actionid:
-          type: integer
-          format: int32
-        hash:
+        organizationName:
           type:
           - string
           - 'null'
           default: ''
-        processName:
-          type:
-          - string
-          - 'null'
-          default: ''
-        certs:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ThreatLockerCertDto'
-        applicationId:
-          type:
-          - string
-          - 'null'
-          default: ''
-        datetime:
-          type: string
-          format: date-time
-        logAction:
-          type: boolean
-        SerialNumber:
-          type:
-          - string
-          - 'null'
-          default: ''
-        deviceType:
-          type:
-          - string
-          - 'null'
-          default: ''
-        actionType:
-          type:
-          - string
-          - 'null'
-          default: ''
-        size:
-          type: integer
-          format: int64
-        processId:
-          type: integer
-          format: int32
-        ringFence:
-          type: boolean
         policyName:
           type:
           - string
@@ -1902,84 +1841,165 @@ components:
           - string
           - 'null'
           default: ''
-        encryptionStatus:
+        requestorReason:
+          type:
+          - string
+          - 'null'
+          default: ''
+        approvalStatus:
+          type:
+          - string
+          - 'null'
+          default: ''
+        approvalBy:
+          type:
+          - string
+          - 'null'
+          default: ''
+        size:
+          type: integer
+          format: int64
+      additionalProperties: false
+    PermitPolicyConditions:
+      type: object
+      properties:
+        useExistingPolicy:
+          type: boolean
+        createManualPolicy:
+          type: boolean
+        manualOptions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/PolicyManualOption'
+        ruleId:
           type: integer
           format: int32
-        installedBy:
+        certSubjects:
           type:
           - array
           - 'null'
           items:
             type: string
           default: '[]'
-        monitorOnly:
+        createdByProcesses:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          default: '[]'
+        disableProtection:
           type: boolean
-        notes:
+          readOnly: true
+        includedAdditionalFiles:
           type:
-          - string
+          - array
           - 'null'
-          default: ''
-        sha256:
-          type:
-          - string
-          - 'null'
-          default: ''
-        ringfencePolicyId:
-          type:
-          - string
-          - 'null'
-          default: ''
-        remotePresence:
-          type: boolean
-        organizationId:
-          type:
-          - string
-          - 'null'
-          default: ''
-        hostname:
-          type:
-          - string
-          - 'null'
-          default: ''
-        computerId:
-          type:
-          - string
-          - 'null'
-          default: ''
-        manufacturer:
-          type:
-          - string
-          - 'null'
-          default: ''
-        osType:
-          type: integer
-          format: int32
-        destinationIP:
-          type:
-          - string
-          - 'null'
-          default: ''
-        DomainName:
-          type:
-          - string
-          - 'null'
-          default: ''
-        organizationName:
-          type:
-          - string
-          - 'null'
-          default: ''
+          items:
+            $ref: '#/components/schemas/ActionLogDto'
       additionalProperties: false
-    OrganizationParentsDto:
+    SystemAuditItem:
       type: object
       properties:
         organizationId:
           type: string
           format: uuid
-        displayName:
+          default: 00000000-0000-0000-0000-000000000000
+        userId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        username:
           type:
           - string
           - 'null'
+          default: ''
+        action:
+          type:
+          - string
+          - 'null'
+          default: ''
+        ipAddress:
+          type:
+          - string
+          - 'null'
+          default: ''
+        effectiveAction:
+          type:
+          - string
+          - 'null'
+          default: ''
+        details:
+          $ref: '#/components/schemas/SystemAuditDetails'
+        masterViewOnly:
+          type: boolean
+        dateTime:
+          type: string
+          format: date-time
+        systemAuditId:
+          type: string
+          format: uuid
+        systemAuditObjectTypeId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        organizationName:
+          type:
+          - string
+          - 'null'
+        ticketNumber:
+          type:
+          - string
+          - 'null'
+          default: ''
+        notes:
+          type:
+          - string
+          - 'null'
+          default: ''
+      additionalProperties: false
+    AdvRFPolicy:
+      type: object
+      properties:
+        hideCustomRules:
+          type: boolean
+        restrictApplicationSpawning:
+          type: boolean
+        restrictRegistryAccess:
+          type: boolean
+        restrictFileAccess:
+          type: boolean
+        restrictNetworkAccess:
+          type: boolean
+        restrictApplication:
+          type: boolean
+        rfFilePolicy:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FilePolicy'
+        rfNetworkPolicy:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/NetworkPolicy'
+        rfRegistryPolicy:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/RegistryPolicy'
+        rfAssociatedApplicationPolicy:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AssociatedApplicationPolicy'
       additionalProperties: false
     SystemAuditDetails:
       type: object
@@ -2003,26 +2023,6 @@ components:
           - string
           - 'null'
           default: ''
-      additionalProperties: false
-    Int32ObjectKeyValuePair:
-      type: object
-      properties:
-        key:
-          type: integer
-          format: int32
-        value: {}
-      additionalProperties: false
-    EngineRating:
-      type: object
-      properties:
-        name:
-          type:
-          - string
-          - 'null'
-        rating:
-          type:
-          - string
-          - 'null'
       additionalProperties: false
     PermitApplicationDto:
       type: object
