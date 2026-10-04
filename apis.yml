@@ -521,6 +521,8 @@ apis:
   humanURL: https://threatlocker.kb.help/api-documentation/
   baseURL: https://portalapi.threatlocker.com/portalapi/
   tags:
+  - ApprovalRequest
+  tags_raw:
   - Approval Request
   properties:
   - type: OpenAPI
@@ -542,6 +544,9 @@ apis:
   - type: Webhooks
     url: asyncapi/threatlocker-webhooks.yml
 common:
+- type: CapabilityMap
+  url: capabilities/threatlocker-capability-edges.yml
+  name: ThreatLocker Business Capability Map
 - type: AgenticAccess
   url: agentic-access/threatlocker-agentic-access.yml
 - type: DomainSecurity
