@@ -79,58 +79,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    DropdownOption:
-      type: object
-      properties:
-        label:
-          type:
-          - string
-          - 'null'
-        value:
-          type:
-          - string
-          - 'null'
-        numericValue:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        entityType:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        parentId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        disabled:
-          type: boolean
-        tooltip:
-          type:
-          - string
-          - 'null'
-        featureConfigurationIds:
-          type:
-          - array
-          - 'null'
-          items:
-            type: integer
-            format: int32
-        isSupported:
-          type:
-          - boolean
-          - 'null'
-        extendedProperties:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            type:
-            - string
-            - 'null'
-      additionalProperties: false
     TagItemDto:
       type: object
       properties:
@@ -205,6 +153,58 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/TagItemDto'
+      additionalProperties: false
+    DropdownOption:
+      type: object
+      properties:
+        label:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+        numericValue:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        entityType:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        parentId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        disabled:
+          type: boolean
+        tooltip:
+          type:
+          - string
+          - 'null'
+        featureConfigurationIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        isSupported:
+          type:
+          - boolean
+          - 'null'
+        extendedProperties:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - string
+            - 'null'
       additionalProperties: false
   securitySchemes:
     Authorization:

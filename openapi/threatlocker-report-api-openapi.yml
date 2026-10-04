@@ -43,15 +43,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    ReportParamsOption:
-      type: object
-      properties:
-        name:
-          type:
-          - string
-          - 'null'
-        value: {}
-      additionalProperties: false
     ReportParams:
       type: object
       properties:
@@ -87,6 +78,15 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/ReportParamsOption'
+      additionalProperties: false
+    ReportParamsOption:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        value: {}
       additionalProperties: false
   securitySchemes:
     Authorization:

@@ -233,6 +233,16 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    ScheduledAgentActionAppliesTo:
+      type: object
+      properties:
+        appliesToId:
+          type: string
+          format: uuid
+        appliesToTypeId:
+          type: integer
+          format: int32
+      additionalProperties: false
     ScheduledAgentActionInsertDto:
       type: object
       properties:
@@ -265,6 +275,21 @@ components:
           type:
           - string
           - 'null'
+      additionalProperties: false
+    ScheduledAgentActionAbortDto:
+      type: object
+      properties:
+        scheduledId:
+          type: string
+          format: uuid
+        appliesTo:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ScheduledAgentActionAppliesTo'
+        abortAll:
+          type: boolean
       additionalProperties: false
     ScheduledAgentActionParametersDto:
       type: object
@@ -306,31 +331,6 @@ components:
           items:
             type: string
             format: uuid
-      additionalProperties: false
-    ScheduledAgentActionAppliesTo:
-      type: object
-      properties:
-        appliesToId:
-          type: string
-          format: uuid
-        appliesToTypeId:
-          type: integer
-          format: int32
-      additionalProperties: false
-    ScheduledAgentActionAbortDto:
-      type: object
-      properties:
-        scheduledId:
-          type: string
-          format: uuid
-        appliesTo:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ScheduledAgentActionAppliesTo'
-        abortAll:
-          type: boolean
       additionalProperties: false
   securitySchemes:
     Authorization:
