@@ -1,38 +1,42 @@
-generated: '2026-08-02'
+generated: '2026-09-23'
 method: generated
-source: openapi/threatlocker-portal-openapi-original.json
+source: openapi/threatlocker-action-log-api-openapi.yml, openapi/threatlocker-application-api-openapi.yml,
+  openapi/threatlocker-approval-request-api-openapi.yml, openapi/threatlocker-computer-api-openapi.yml,
+  openapi/threatlocker-computercheckin-api-openapi.yml, openapi/threatlocker-computergroup-api-openapi.yml,
+  openapi/threatlocker-maintenancemode-api-openapi.yml, openapi/threatlocker-onlinedevices-api-openapi.yml,
+  openapi/threatlocker-organization-api-openapi.yml, openapi/threatlocker-policy-api-openapi.yml,
+  openapi/threatlocker-report-api-openapi.yml, openapi/threatlocker-savesearch-api-openapi.yml,
+  openapi/threatlocker-scheduledagentaction-api-openapi.yml, openapi/threatlocker-systemaudit-api-openapi.yml,
+  openapi/threatlocker-tag-api-openapi.yml, openapi/threatlocker-threatlockerversion-api-openapi.yml,
+  openapi/threatlocker-uploadrequest-api-openapi.yml, openapi/threatlocker-vdihyperv-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 83
   by_action_class:
-    acting: 46
-    connected: 37
+    connected: 45
+    acting: 38
   by_consequence:
-    write: 44
-    read: 37
+    read: 45
+    write: 36
     physical: 1
     safety-critical: 1
   human_in_the_loop_required: 1
 operations:
 - path: /portalapi/ActionLog/ActionLogGetByParametersV2
   method: post
+  operationId: postPortalapiActionLogActionLogGetByParametersV2
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /portalapi/ActionLog/ActionLogGetAllForFileHistory
   method: get
+  operationId: getPortalapiActionLogActionLogGetAllForFileHistory
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -42,6 +46,7 @@ operations:
     audit: none
 - path: /portalapi/ActionLog/ActionLogGetAllForFileHistoryV2
   method: get
+  operationId: getPortalapiActionLogActionLogGetAllForFileHistoryV2
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -51,6 +56,7 @@ operations:
     audit: none
 - path: /portalapi/ActionLog/ActionLogGetById
   method: get
+  operationId: getPortalapiActionLogActionLogGetById
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -60,6 +66,7 @@ operations:
     audit: none
 - path: /portalapi/ActionLog/ActionLogGetByIdV2
   method: get
+  operationId: getPortalapiActionLogActionLogGetByIdV2
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -69,36 +76,27 @@ operations:
     audit: none
 - path: /portalapi/ActionLog/ActionLogGetTestingEnvironmentDetailsById
   method: post
+  operationId: postPortalapiActionLogActionLogGetTestingEnvironmentDetailsById
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /portalapi/ActionLog/ActionLogGetPolicyConditionsForPermitApplication
   method: post
+  operationId: postPortalapiActionLogActionLogGetPolicyConditionsForPermitApplication
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /portalapi/ActionLog/ActionLogGetSearchString
   method: post
+  operationId: postPortalapiActionLogActionLogGetSearchString
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -114,6 +112,7 @@ operations:
     audit: required
 - path: /portalapi/ActionLog/ActionLogGetFileDownloadDetailsById
   method: get
+  operationId: getPortalapiActionLogActionLogGetFileDownloadDetailsById
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -123,6 +122,7 @@ operations:
     audit: none
 - path: /portalapi/Application/ApplicationGetById
   method: get
+  operationId: getPortalapiApplicationApplicationGetById
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -132,6 +132,7 @@ operations:
     audit: none
 - path: /portalapi/Application/ApplicationGetForNetworkPolicyProcessById
   method: get
+  operationId: getPortalapiApplicationApplicationGetForNetworkPolicyProcessById
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -141,6 +142,7 @@ operations:
     audit: none
 - path: /portalapi/Application/ApplicationGetResearchDetailsById
   method: get
+  operationId: getPortalapiApplicationApplicationGetResearchDetailsById
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -150,6 +152,7 @@ operations:
     audit: none
 - path: /portalapi/Application/ApplicationGetForMaintenanceMode
   method: get
+  operationId: getPortalapiApplicationApplicationGetForMaintenanceMode
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -159,21 +162,17 @@ operations:
     audit: none
 - path: /portalapi/Application/ApplicationGetMatchingList
   method: post
+  operationId: postPortalapiApplicationApplicationGetMatchingList
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /portalapi/Application/ApplicationGetForApplicationOptions
   method: post
+  operationId: postPortalapiApplicationApplicationGetForApplicationOptions
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -189,6 +188,7 @@ operations:
     audit: required
 - path: /portalapi/ApprovalRequest/ApprovalRequestGetById
   method: get
+  operationId: getPortalapiApprovalRequestApprovalRequestGetById
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -198,6 +198,7 @@ operations:
     audit: none
 - path: /portalapi/ApprovalRequest/ApprovalRequestGetFileDownloadDetailsById
   method: get
+  operationId: getPortalapiApprovalRequestApprovalRequestGetFileDownloadDetailsById
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -207,6 +208,7 @@ operations:
     audit: none
 - path: /portalapi/ApprovalRequest/ApprovalRequestGetPermitApplicationById
   method: get
+  operationId: getPortalapiApprovalRequestApprovalRequestGetPermitApplicationById
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -216,6 +218,7 @@ operations:
     audit: none
 - path: /portalapi/ApprovalRequest/ApprovalRequestPermitApplication
   method: post
+  operationId: postPortalapiApprovalRequestApprovalRequestPermitApplication
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -231,6 +234,7 @@ operations:
     audit: required
 - path: /portalapi/ApprovalRequest/ApprovalRequestGetStorageApprovalById
   method: get
+  operationId: getPortalapiApprovalRequestApprovalRequestGetStorageApprovalById
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -240,6 +244,7 @@ operations:
     audit: none
 - path: /portalapi/ApprovalRequest/ApprovalRequestPermitStorageApproval
   method: post
+  operationId: postPortalapiApprovalRequestApprovalRequestPermitStorageApproval
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -255,6 +260,7 @@ operations:
     audit: required
 - path: /portalapi/ApprovalRequest/ApprovalRequestGetByParameters
   method: post
+  operationId: postPortalapiApprovalRequestApprovalRequestGetByParameters
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -270,6 +276,7 @@ operations:
     audit: required
 - path: /portalapi/ApprovalRequest/ApprovalRequestGetCount
   method: get
+  operationId: getPortalapiApprovalRequestApprovalRequestGetCount
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -279,6 +286,7 @@ operations:
     audit: none
 - path: /portalapi/ApprovalRequest/ApprovalRequestUpdateForTakeOwnership
   method: post
+  operationId: postPortalapiApprovalRequestApprovalRequestUpdateForTakeOwnership
   x-agentic-access:
     action-class: acting
     consequence: physical
@@ -296,6 +304,7 @@ operations:
     audit: required
 - path: /portalapi/ApprovalRequest/ApprovalRequestUpdateForIgnore
   method: post
+  operationId: postPortalapiApprovalRequestApprovalRequestUpdateForIgnore
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -311,6 +320,7 @@ operations:
     audit: required
 - path: /portalapi/ApprovalRequest/ApprovalRequestUpdateForReject
   method: post
+  operationId: postPortalapiApprovalRequestApprovalRequestUpdateForReject
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -326,6 +336,7 @@ operations:
     audit: required
 - path: /portalapi/ApprovalRequest/ApprovalRequestAuthorizeForPermitById
   method: post
+  operationId: postPortalapiApprovalRequestApprovalRequestAuthorizeForPermitById
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -341,6 +352,7 @@ operations:
     audit: required
 - path: /portalapi/Computer/ComputerGetByAllParameters
   method: post
+  operationId: postPortalapiComputerComputerGetByAllParameters
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -356,6 +368,7 @@ operations:
     audit: required
 - path: /portalapi/Computer/ComputerGetForEditById
   method: get
+  operationId: getPortalapiComputerComputerGetForEditById
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -365,6 +378,7 @@ operations:
     audit: none
 - path: /portalapi/Computer/ComputerUpdateForEdit
   method: patch
+  operationId: patchPortalapiComputerComputerUpdateForEdit
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -380,6 +394,7 @@ operations:
     audit: required
 - path: /portalapi/Computer/ComputerUpdateBaselineRescan
   method: post
+  operationId: postPortalapiComputerComputerUpdateBaselineRescan
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -395,6 +410,7 @@ operations:
     audit: required
 - path: /portalapi/Computer/ComputerUpdateShouldRestartByIds
   method: post
+  operationId: postPortalapiComputerComputerUpdateShouldRestartByIds
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -410,6 +426,7 @@ operations:
     audit: required
 - path: /portalapi/Computer/ComputerUpdateShouldRestartByOrganization
   method: post
+  operationId: postPortalapiComputerComputerUpdateShouldRestartByOrganization
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -425,6 +442,7 @@ operations:
     audit: required
 - path: /portalapi/Computer/ComputerMoveToOtherOrganization
   method: post
+  operationId: postPortalapiComputerComputerMoveToOtherOrganization
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -440,6 +458,7 @@ operations:
     audit: required
 - path: /portalapi/Computer/ComputerEnableProtection
   method: post
+  operationId: postPortalapiComputerComputerEnableProtection
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -455,6 +474,7 @@ operations:
     audit: required
 - path: /portalapi/Computer/ComputerDisableProtection
   method: post
+  operationId: postPortalapiComputerComputerDisableProtection
   x-agentic-access:
     action-class: acting
     consequence: safety-critical
@@ -470,6 +490,7 @@ operations:
     audit: required
 - path: /portalapi/Computer/ComputerRemoveDuplicate
   method: post
+  operationId: postPortalapiComputerComputerRemoveDuplicate
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -485,6 +506,7 @@ operations:
     audit: required
 - path: /portalapi/Computer/ComputerUpdateMaintenanceMode
   method: post
+  operationId: postPortalapiComputerComputerUpdateMaintenanceMode
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -500,6 +522,7 @@ operations:
     audit: required
 - path: /portalapi/Computer/ComputerUpdateThreatlockerVersionByIds
   method: post
+  operationId: postPortalapiComputerComputerUpdateThreatlockerVersionByIds
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -515,6 +538,7 @@ operations:
     audit: required
 - path: /portalapi/Computer/ComputerGetThreatlockerVersions
   method: get
+  operationId: getPortalapiComputerComputerGetThreatlockerVersions
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -524,6 +548,7 @@ operations:
     audit: none
 - path: /portalapi/Computer/ComputerUpdateToFinishMaintenanceMode
   method: post
+  operationId: postPortalapiComputerComputerUpdateToFinishMaintenanceMode
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -539,6 +564,7 @@ operations:
     audit: required
 - path: /portalapi/Computer/ComputerGetForNewComputer
   method: get
+  operationId: getPortalapiComputerComputerGetForNewComputer
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -548,6 +574,7 @@ operations:
     audit: none
 - path: /portalapi/Computer/ComputerGetDownload
   method: post
+  operationId: postPortalapiComputerComputerGetDownload
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -563,21 +590,17 @@ operations:
     audit: required
 - path: /portalapi/Computer/ComputerGetOSTypeByIds
   method: post
+  operationId: postPortalapiComputerComputerGetOSTypeByIds
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /portalapi/Computer/ComputerSignedScriptDownload
   method: get
+  operationId: getPortalapiComputerComputerSignedScriptDownload
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -587,6 +610,7 @@ operations:
     audit: none
 - path: /portalapi/Computer/ComputerSamplePathDownload
   method: get
+  operationId: getPortalapiComputerComputerSamplePathDownload
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -596,6 +620,7 @@ operations:
     audit: none
 - path: /portalapi/Computer/ComputerUnSignedScriptDownload
   method: get
+  operationId: getPortalapiComputerComputerUnSignedScriptDownload
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -605,6 +630,7 @@ operations:
     audit: none
 - path: /portalapi/Computer/ComputerUpdateChannel
   method: post
+  operationId: postPortalapiComputerComputerUpdateChannel
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -620,21 +646,17 @@ operations:
     audit: required
 - path: /portalapi/ComputerCheckin/ComputerCheckinGetByParameters
   method: post
+  operationId: postPortalapiComputerCheckinComputerCheckinGetByParameters
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /portalapi/ComputerGroup/ComputerGroupGetGroupAndComputer
   method: get
+  operationId: getPortalapiComputerGroupComputerGroupGetGroupAndComputer
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -644,6 +666,7 @@ operations:
     audit: none
 - path: /portalapi/ComputerGroup/ComputerGroupGetDropdownByOrganizationId
   method: get
+  operationId: getPortalapiComputerGroupComputerGroupGetDropdownByOrganizationId
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -653,6 +676,7 @@ operations:
     audit: none
 - path: /portalapi/ComputerGroup/ComputerGroupGetForPermitApplication
   method: get
+  operationId: getPortalapiComputerGroupComputerGroupGetForPermitApplication
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -662,6 +686,7 @@ operations:
     audit: none
 - path: /portalapi/ComputerGroup/ComputerGroupGetForDownload
   method: get
+  operationId: getPortalapiComputerGroupComputerGroupGetForDownload
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -671,6 +696,7 @@ operations:
     audit: none
 - path: /portalapi/MaintenanceMode/MaintenanceModeGetByComputerId
   method: get
+  operationId: getPortalapiMaintenanceModeMaintenanceModeGetByComputerId
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -680,6 +706,7 @@ operations:
     audit: none
 - path: /portalapi/MaintenanceMode/MaintenanceModeInsert
   method: post
+  operationId: postPortalapiMaintenanceModeMaintenanceModeInsert
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -695,6 +722,7 @@ operations:
     audit: required
 - path: /portalapi/MaintenanceMode/MaintenanceModeEndById
   method: patch
+  operationId: patchPortalapiMaintenanceModeMaintenanceModeEndById
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -710,6 +738,7 @@ operations:
     audit: required
 - path: /portalapi/MaintenanceMode/MaintenanceModeUpdateEndDateTimeForSpecificDate
   method: post
+  operationId: postPortalapiMaintenanceModeMaintenanceModeUpdateEndDateTimeForSpecificDate
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -725,6 +754,7 @@ operations:
     audit: required
 - path: /portalapi/OnlineDevices/OnlineDevicesGetByParameters
   method: get
+  operationId: getPortalapiOnlineDevicesOnlineDevicesGetByParameters
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -734,6 +764,7 @@ operations:
     audit: none
 - path: /portalapi/Organization/OrganizationGetAuthKeyById
   method: get
+  operationId: getPortalapiOrganizationOrganizationGetAuthKeyById
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -743,6 +774,7 @@ operations:
     audit: none
 - path: /portalapi/Organization/OrganizationUpdateAuthKeyById
   method: post
+  operationId: postPortalapiOrganizationOrganizationUpdateAuthKeyById
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -758,6 +790,7 @@ operations:
     audit: required
 - path: /portalapi/Organization/OrganizationGetForMoveComputers
   method: get
+  operationId: getPortalapiOrganizationOrganizationGetForMoveComputers
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -767,6 +800,7 @@ operations:
     audit: none
 - path: /portalapi/Policy/PolicyGetById
   method: get
+  operationId: getPortalapiPolicyPolicyGetById
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -776,6 +810,7 @@ operations:
     audit: none
 - path: /portalapi/Report/ReportGetByOrganizationId
   method: get
+  operationId: getPortalapiReportReportGetByOrganizationId
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -785,6 +820,7 @@ operations:
     audit: none
 - path: /portalapi/Report/ReportGetDynamicData
   method: post
+  operationId: postPortalapiReportReportGetDynamicData
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -800,6 +836,7 @@ operations:
     audit: required
 - path: /portalapi/SaveSearch/SaveSearchGetByPage
   method: post
+  operationId: postPortalapiSaveSearchSaveSearchGetByPage
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -815,6 +852,7 @@ operations:
     audit: required
 - path: /portalapi/SaveSearch/SaveSearchInsert
   method: post
+  operationId: postPortalapiSaveSearchSaveSearchInsert
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -830,6 +868,7 @@ operations:
     audit: required
 - path: /portalapi/SaveSearch/SaveSearchDeleteById
   method: delete
+  operationId: deletePortalapiSaveSearchSaveSearchDeleteById
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -845,6 +884,7 @@ operations:
     audit: required
 - path: /portalapi/ScheduledAgentAction/List
   method: get
+  operationId: getPortalapiScheduledAgentActionList
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -854,6 +894,7 @@ operations:
     audit: none
 - path: /portalapi/ScheduledAgentAction/AppliesTo
   method: get
+  operationId: getPortalapiScheduledAgentActionAppliesTo
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -863,6 +904,7 @@ operations:
     audit: none
 - path: /portalapi/ScheduledAgentAction/GetForHydration
   method: get
+  operationId: getPortalapiScheduledAgentActionGetForHydration
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -872,21 +914,17 @@ operations:
     audit: none
 - path: /portalapi/ScheduledAgentAction/GetByParameters
   method: post
+  operationId: postPortalapiScheduledAgentActionGetByParameters
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /portalapi/ScheduledAgentAction
   method: post
+  operationId: postPortalapiScheduledAgentAction
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -902,6 +940,7 @@ operations:
     audit: required
 - path: /portalapi/ScheduledAgentAction/Abort
   method: post
+  operationId: postPortalapiScheduledAgentActionAbort
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -917,6 +956,7 @@ operations:
     audit: required
 - path: /portalapi/SystemAudit/SystemAuditGetForHealthCenter
   method: post
+  operationId: postPortalapiSystemAuditSystemAuditGetForHealthCenter
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -932,6 +972,7 @@ operations:
     audit: required
 - path: /portalapi/SystemAudit/SystemAuditGetLoginAttemptFiltersForHealthCenter
   method: get
+  operationId: getPortalapiSystemAuditSystemAuditGetLoginAttemptFiltersForHealthCenter
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -941,6 +982,7 @@ operations:
     audit: none
 - path: /portalapi/SystemAudit/SystemAuditGetByParameters
   method: post
+  operationId: postPortalapiSystemAuditSystemAuditGetByParameters
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -956,6 +998,7 @@ operations:
     audit: required
 - path: /portalapi/Tag/TagGetById
   method: get
+  operationId: getPortalapiTagTagGetById
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -965,6 +1008,7 @@ operations:
     audit: none
 - path: /portalapi/Tag/TagGetDowndownOptionsByOrganizationId
   method: get
+  operationId: getPortalapiTagTagGetDowndownOptionsByOrganizationId
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -974,6 +1018,7 @@ operations:
     audit: none
 - path: /portalapi/Tag/TagUpdate
   method: post
+  operationId: postPortalapiTagTagUpdate
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -989,6 +1034,7 @@ operations:
     audit: required
 - path: /portalapi/ThreatLockerVersion/ThreatLockerVersionGetForDropdownList
   method: get
+  operationId: getPortalapiThreatLockerVersionThreatLockerVersionGetForDropdownList
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -998,6 +1044,7 @@ operations:
     audit: none
 - path: /portalapi/UploadRequest/UploadRequestInsert
   method: post
+  operationId: postPortalapiUploadRequestUploadRequestInsert
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -1013,6 +1060,7 @@ operations:
     audit: required
 - path: /portalapi/UploadRequest/UploadRequestGet
   method: post
+  operationId: postPortalapiUploadRequestUploadRequestGet
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -1028,16 +1076,11 @@ operations:
     audit: required
 - path: /portalapi/VDIHyperV/VDIHyperVGetTestingEnvironmentDetails
   method: post
+  operationId: postPortalapiVDIHyperVVDIHyperVGetTestingEnvironmentDetails
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
