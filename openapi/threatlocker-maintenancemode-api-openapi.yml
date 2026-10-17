@@ -125,59 +125,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    MaintenanceModeEndDto:
-      type: object
-      properties:
-        appliesToType:
-          type: integer
-          format: int32
-        computerId:
-          type: string
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
-        computerInstallDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        endDateTime:
-          type: string
-          format: date-time
-        maintenanceModeId:
-          type: string
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
-        maintenanceTypeId:
-          type: integer
-          format: int32
-        startDateTime:
-          type: string
-          format: date-time
-      additionalProperties: false
-    MaintenanceModeConditionsDto:
-      type: object
-      properties:
-        maintenanceModeConditionTypeId:
-          type: integer
-          format: int32
-        value:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    MaintenanceExistingApplicationDto:
-      type: object
-      properties:
-        applicationId:
-          type: string
-          format: uuid
-          default: 00000000-0000-0000-0000-000000000000
-        name:
-          type:
-          - string
-          - 'null'
-          default: ''
-      additionalProperties: false
     MaintenanceModeInsertDto:
       type: object
       properties:
@@ -237,6 +184,50 @@ components:
           - 'null'
           default: ''
         notes:
+          type:
+          - string
+          - 'null'
+          default: ''
+      additionalProperties: false
+    MaintenanceApplicationDto:
+      type: object
+      properties:
+        applicationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        applicationName:
+          type:
+          - string
+          - 'null'
+          default: ''
+        createApplicationOnly:
+          type: boolean
+          default: false
+        appliesToId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+      additionalProperties: false
+    MaintenanceModeConditionsDto:
+      type: object
+      properties:
+        maintenanceModeConditionTypeId:
+          type: integer
+          format: int32
+        value:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    MaintenanceExistingApplicationDto:
+      type: object
+      properties:
+        applicationId:
+          type: string
+          format: uuid
+          default: 00000000-0000-0000-0000-000000000000
+        name:
           type:
           - string
           - 'null'
@@ -309,25 +300,34 @@ components:
           format: uuid
           default: 00000000-0000-0000-0000-000000000000
       additionalProperties: false
-    MaintenanceApplicationDto:
+    MaintenanceModeEndDto:
       type: object
       properties:
-        applicationId:
+        appliesToType:
+          type: integer
+          format: int32
+        computerId:
           type: string
           format: uuid
           default: 00000000-0000-0000-0000-000000000000
-        applicationName:
+        computerInstallDate:
           type:
           - string
           - 'null'
-          default: ''
-        createApplicationOnly:
-          type: boolean
-          default: false
-        appliesToId:
+          format: date-time
+        endDateTime:
+          type: string
+          format: date-time
+        maintenanceModeId:
           type: string
           format: uuid
           default: 00000000-0000-0000-0000-000000000000
+        maintenanceTypeId:
+          type: integer
+          format: int32
+        startDateTime:
+          type: string
+          format: date-time
       additionalProperties: false
   securitySchemes:
     Authorization:

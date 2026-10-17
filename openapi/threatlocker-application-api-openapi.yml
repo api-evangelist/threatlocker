@@ -199,14 +199,73 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    UpdateStatus:
-      enum:
-      - 0
-      - 1
-      - 2
-      - 3
-      type: integer
-      format: int32
+    ApplicationMatchParameterDto:
+      type: object
+      properties:
+        hash:
+          type:
+          - string
+          - 'null'
+          default: ''
+        sha256:
+          type:
+          - string
+          - 'null'
+          default: ''
+        path:
+          type:
+          - string
+          - 'null'
+          default: ''
+        processPath:
+          type:
+          - string
+          - 'null'
+          default: ''
+        organizationIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+          default: null
+        certs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ThreatLockerCertDto'
+        createdBys:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        osType:
+          type: integer
+          format: int32
+          default: 1
+        filename:
+          type:
+          - string
+          - 'null'
+          default: ''
+        folder:
+          type:
+          - string
+          - 'null'
+          default: ''
+        approvalRequestId:
+          type: string
+          format: uuid
+        builtInPartialMatchingFiles:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ApplicationFileDto'
+      additionalProperties: false
     ApplicationFileDto:
       type: object
       properties:
@@ -329,73 +388,14 @@ components:
           format: uuid
           default: null
       additionalProperties: false
-    ApplicationMatchParameterDto:
-      type: object
-      properties:
-        hash:
-          type:
-          - string
-          - 'null'
-          default: ''
-        sha256:
-          type:
-          - string
-          - 'null'
-          default: ''
-        path:
-          type:
-          - string
-          - 'null'
-          default: ''
-        processPath:
-          type:
-          - string
-          - 'null'
-          default: ''
-        organizationIds:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-            format: uuid
-          default: null
-        certs:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ThreatLockerCertDto'
-        createdBys:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        osType:
-          type: integer
-          format: int32
-          default: 1
-        filename:
-          type:
-          - string
-          - 'null'
-          default: ''
-        folder:
-          type:
-          - string
-          - 'null'
-          default: ''
-        approvalRequestId:
-          type: string
-          format: uuid
-        builtInPartialMatchingFiles:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ApplicationFileDto'
-      additionalProperties: false
+    UpdateStatus:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      type: integer
+      format: int32
   securitySchemes:
     Authorization:
       type: apiKey

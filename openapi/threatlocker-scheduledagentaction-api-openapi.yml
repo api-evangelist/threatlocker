@@ -233,6 +233,47 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    ScheduledAgentActionParametersDto:
+      type: object
+      properties:
+        scheduledId:
+          type: string
+          format: uuid
+        orderBy:
+          type:
+          - string
+          - 'null'
+          default: scheduleddatetime
+        isAscending:
+          type: boolean
+        searchText:
+          maxLength: 255
+          type:
+          - string
+          - 'null'
+        pageSize:
+          type: integer
+          format: int32
+          default: 25
+        pageNumber:
+          type: integer
+          format: int32
+          default: 1
+        organizationIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+        computerGroupIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+      additionalProperties: false
     ScheduledAgentActionAppliesTo:
       type: object
       properties:
@@ -290,47 +331,6 @@ components:
             $ref: '#/components/schemas/ScheduledAgentActionAppliesTo'
         abortAll:
           type: boolean
-      additionalProperties: false
-    ScheduledAgentActionParametersDto:
-      type: object
-      properties:
-        scheduledId:
-          type: string
-          format: uuid
-        orderBy:
-          type:
-          - string
-          - 'null'
-          default: scheduleddatetime
-        isAscending:
-          type: boolean
-        searchText:
-          maxLength: 255
-          type:
-          - string
-          - 'null'
-        pageSize:
-          type: integer
-          format: int32
-          default: 25
-        pageNumber:
-          type: integer
-          format: int32
-          default: 1
-        organizationIds:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-            format: uuid
-        computerGroupIds:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-            format: uuid
       additionalProperties: false
   securitySchemes:
     Authorization:

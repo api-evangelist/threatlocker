@@ -311,47 +311,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    SystemAuditHealthCenterParams:
-      type: object
-      properties:
-        days:
-          type: integer
-          format: int32
-          default: 30
-        searchText:
-          type:
-          - string
-          - 'null'
-          default: ''
-        isLoggedIn:
-          type: boolean
-          default: false
-        emailAddress:
-          type:
-          - string
-          - 'null'
-        ipAddresses:
-          type:
-          - string
-          - 'null'
-        afterKeys:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            type:
-            - array
-            - 'null'
-            items: {}
-        pageSize:
-          type: integer
-          format: int32
-          default: 10
-        pageNumber:
-          type: integer
-          format: int32
-          default: 1
-      additionalProperties: false
     SystemAuditParametersDto:
       type: object
       properties:
@@ -460,6 +419,47 @@ components:
           - 'null'
           items:
             type: string
+      additionalProperties: false
+    SystemAuditHealthCenterParams:
+      type: object
+      properties:
+        days:
+          type: integer
+          format: int32
+          default: 30
+        searchText:
+          type:
+          - string
+          - 'null'
+          default: ''
+        isLoggedIn:
+          type: boolean
+          default: false
+        emailAddress:
+          type:
+          - string
+          - 'null'
+        ipAddresses:
+          type:
+          - string
+          - 'null'
+        afterKeys:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type:
+            - array
+            - 'null'
+            items: {}
+        pageSize:
+          type: integer
+          format: int32
+          default: 10
+        pageNumber:
+          type: integer
+          format: int32
+          default: 1
       additionalProperties: false
   securitySchemes:
     Authorization:
